@@ -1,0 +1,359 @@
+@charset "UTF-8";
+.registration {
+  position: relative;
+  display: grid;
+  grid-template: 110px auto 1fr 61px/1fr minmax(auto, 866px) 1fr;
+  height: 100vh;
+}
+.registration__create-account {
+  grid-column: 2;
+  grid-row: 4;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.registration__create-account a {
+  color: #FF7D4E;
+}
+
+@media (max-width: 600px) {
+  .registration {
+    display: block;
+  }
+  .registration__create-account {
+    display: grid;
+    grid-template: 91px auto 42px/20px 1fr 20px;
+    font-size: 14px;
+  }
+  .registration__create-account span {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+body {
+  background: #FAF8F6;
+}
+
+.sing-in-logo {
+  top: 0;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  grid-template: 30px 50px/1fr auto 1fr;
+}
+.sing-in-logo__icon {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.account-link {
+  display: none;
+}
+
+.sing-in {
+  grid-template: 60px 90px 60px 32px 40px 65px 40px 25px 40px 56px 15px 56px 15px 56px 15px 56px 20px 65px 100px/1fr minmax(auto, 119px) minmax(auto, 444px) minmax(auto, 119px) 1fr;
+}
+.sing-in__tabs {
+  grid-row: 2;
+  grid-column: 2/5;
+  width: 100%;
+  height: 90px;
+  outline: 1px solid #E6E6E6;
+  border-radius: 16px;
+  display: grid;
+  grid-template: 13px 65px 12px/12px minmax(auto, 323px) 1fr minmax(auto, 330px) 12px;
+}
+.sing-in__tabs br {
+  display: none;
+}
+.sing-in__tab-one {
+  cursor: pointer;
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Effra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 65px;
+}
+.sing-in__tab-two {
+  cursor: pointer;
+  grid-column: 4;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Effra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 65px;
+}
+.sing-in__title {
+  grid-row: 4;
+  grid-column: 2/5;
+}
+.sing-in__info {
+  grid-row: 8;
+  grid-column: 2/5;
+}
+.sing-in__input {
+  padding-left: 23px;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 12px;
+  background: #FAF8F6;
+  height: 56px;
+  max-width: 444px;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+}
+.sing-in__or-input {
+  grid-row: 6;
+  grid-column: 2/5;
+}
+.sing-in__or-input-title {
+  grid-row: 8;
+  grid-column: 2/5;
+}
+.sing-in__email {
+  grid-row: 10;
+  grid-column: 3;
+}
+.sing-in__first-name {
+  grid-row: 12;
+  grid-column: 3;
+}
+.sing-in__last-name {
+  grid-row: 14;
+  grid-column: 3;
+}
+.sing-in__password {
+  grid-row: 16;
+  grid-column: 3;
+}
+.sing-in__btn {
+  grid-row: 18;
+  grid-column: 3;
+  width: 100%;
+}
+.sing-in__permission {
+  display: none;
+}
+.sing-in__adaptive-text {
+  display: none;
+}
+
+.regular-customer .sing-in__tab-one {
+  background-color: #FF7D4E;
+  color: #FFF;
+}
+
+.wholesale-customer .sing-in {
+  margin-bottom: 40px;
+  grid-template: 60px 90px 60px 32px 40px 65px 40px 25px 40px 56px 15px 56px 15px 56px 15px 56px 15px 56px 20px 65px 60px/1fr minmax(auto, 119px) minmax(auto, 444px) minmax(auto, 119px) 1fr;
+}
+.wholesale-customer .sing-in__tab-two {
+  background-color: #FF7D4E;
+  color: #FFF;
+}
+.wholesale-customer .sing-in__permission {
+  position: relative;
+  display: block;
+  grid-row: 18;
+  grid-column: 3;
+}
+.wholesale-customer .sing-in__permission-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 104px;
+  height: 36px;
+  border-radius: 12px;
+  background: #FF7D4E;
+  /* Скрыть стандартный input типа file */
+  /* Стилизуем кастомную кнопку */
+}
+.wholesale-customer .sing-in__permission-btn input[type=file] {
+  display: none;
+}
+.wholesale-customer .sing-in__permission-btn label {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+}
+.wholesale-customer .sing-in__permission-btn .custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.wholesale-customer .sing-in__btn {
+  grid-row: 20;
+  grid-column: 3;
+  width: 444px;
+}
+
+@media (max-width: 600px) {
+  .registration {
+    display: block;
+  }
+  .registration__create-account {
+    display: grid;
+    grid-template: 81px auto 42px/20px 1fr 20px;
+    font-size: 14px;
+  }
+  .registration__create-account span {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .sing-in-logo {
+    display: none;
+  }
+  .account-link {
+    grid-column: 1;
+    grid-row: 1;
+    display: block;
+    display: grid;
+    -ms-flex-align: center;
+        align-items: center;
+    grid-template: 72px/20px 32px 0.65fr auto 1fr;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .account-link__title {
+    grid-row: 1;
+    grid-column: 4;
+    text-align: center;
+    font-family: Effra;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .account-link svg {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .sing-in {
+    overflow: hidden;
+    grid-column: 1;
+    grid-row: 2;
+    grid-template: 48px 87px 40px 32px 25px auto 41px 20px 39px 56px 10px 56px 10px 56px 10px 56px 20px 56px 0px/minmax(20px, 1fr) minmax(20px, 375px) minmax(20px, 1fr);
+  }
+  .sing-in__tabs {
+    grid-column: 2;
+    height: 87px;
+    grid-template: 10px 65px 10px/10px 1fr 3px 1fr 10px;
+  }
+  .sing-in__tab-one {
+    font-size: 16px;
+    display: grid;
+    -ms-flex-align: center;
+        align-items: center;
+    line-height: normal;
+  }
+  .sing-in__tab-two {
+    font-size: 16px;
+    display: grid;
+    -ms-flex-align: center;
+        align-items: center;
+    line-height: normal;
+  }
+  .sing-in__title {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .sing-in__or-input {
+    grid-column: 2;
+    grid-row: 6;
+  }
+  .sing-in__or-input-title {
+    grid-column: 2;
+    grid-row: 8;
+  }
+  .sing-in__email {
+    grid-column: 2;
+    grid-row: 10;
+  }
+  .sing-in__first-name {
+    grid-column: 2;
+    grid-row: 12;
+  }
+  .sing-in__last-name {
+    grid-column: 2;
+    grid-row: 14;
+  }
+  .sing-in__password {
+    grid-column: 2;
+    grid-row: 16;
+  }
+  .sing-in__btn {
+    grid-column: 2;
+    grid-row: 18;
+  }
+  .sing-in__permission {
+    display: none;
+  }
+  .sing-in__or-input-item {
+    grid-template: 56px/minmax(auto, 16px) 10px 0.81fr auto 1fr;
+  }
+  .wholesale-customer .sing-in {
+    margin-bottom: 0;
+    grid-template: 48px 87px 40px 32px 25px auto 41px 20px 39px 56px 10px 56px 10px 56px 10px 56px 10px 56px 8px 18px 20px 56px 0px/minmax(20px, 1fr) minmax(20px, 375px) minmax(20px, 1fr);
+  }
+  .wholesale-customer .sing-in__permission {
+    grid-column: 2;
+  }
+  .wholesale-customer .sing-in__adaptive-text {
+    display: block;
+    grid-column: 2;
+    grid-row: 20;
+    font-family: Open Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.3;
+  }
+  .wholesale-customer .sing-in__btn {
+    grid-column: 2;
+    grid-row: 22;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .sing-in__tabs br {
+    display: block;
+  }
+}
+@media (max-width: 330px) {
+  .account-link {
+    grid-template: 72px/20px 32px 0.58fr auto 1fr;
+  }
+  .sing-in__or-input-item {
+    grid-template: 56px/minmax(auto, 16px) 10px 0.78fr auto 1fr;
+  }
+  .sing-in__or-input-facebook {
+    grid-template: 56px/minmax(auto, 16px) 10px 0.75fr auto 1fr;
+  }
+}

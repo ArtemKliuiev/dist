@@ -1,0 +1,60 @@
+.recovery {
+  position: relative;
+  display: grid;
+  grid-template: minmax(100px, 1fr) 351px 0.789fr 62px/1fr minmax(auto, 920px) 1fr;
+  height: 100vh;
+}
+.recovery__create-account {
+  grid-column: 2;
+  grid-row: 4;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.recovery__create-account a {
+  color: #FF7D4E;
+}
+
+.sing-in {
+  grid-template: 60px 32px 8px 28px 20px 56px 22px 65px 1fr/1fr minmax(auto, 444px) 1fr;
+}
+.sing-in__title {
+  grid-row: 2;
+  grid-column: 2;
+}
+.sing-in__info {
+  grid-row: 4;
+  grid-column: 2;
+}
+.sing-in__email {
+  grid-row: 6;
+  grid-column: 2;
+}
+.sing-in__btn {
+  grid-row: 8;
+  grid-column: 2;
+}
+
+@media (max-width: 600px) {
+  .recovery {
+    display: block;
+  }
+  .recovery__create-account {
+    display: grid;
+    grid-template: 21px auto 42px/1fr;
+    font-size: 14px;
+  }
+  .recovery__create-account span {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .sing-in {
+    grid-column: 1;
+    grid-row: 2;
+    grid-template: 48px 29px 6px 28px 15px 56px 20px 56px 1fr/20px 1fr 20px;
+  }
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Метаописание">
+    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="assets/css/component/header.min.css">
+    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/component/comentars.min.css">
+    <link rel="stylesheet" href="assets/css/component/banners.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/component/product.min.css">
+    <link rel="stylesheet" href="assets/css/pages/catalog.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Catalog</title>
+</head>
+<body>
+
+
+    <div class="indent-for-sticky"></div>
+    <header class="header">
+        <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+            <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
+            <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+            <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
+            <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+        </div>
+    </header>
+    <div class="adaptive-menu">
+        <div class="adaptive-menu__main">
+            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+            <div class="adaptive-menu__email">support@medstogo.com</div>
+            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+        </div>
+    </div>
+    <div class="adaptive-menu-shop">
+        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Shop</span>
+        </div>
+        <nav class="menu adaptive-menu-shop__menu">
+            <a href="../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+            <a href="../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+            <a href="../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+            <a href="../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+            <a href="../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+            <a href="../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+            <a href="../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+            <a href="../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+            <a href="../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+        </nav>
+        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+        <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+    </div>
+    <div class="adaptive-menu-information">
+        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Information</span>
+        </div>
+        <nav class="menu adaptive-menu-information__menu">
+            <a href="" class="menu__item">Subscription Cycle & Billing</a>
+            <a href="" class="menu__item">Terms & Conditions</a>
+            <a href="" class="menu__item">Privacy Policy</a>
+            <a href="" class="menu__item">Shipping & Delivery</a>
+            <a href="" class="menu__item">Return Policy</a>
+        </nav>
+    </div>
+    <div class="adaptive-menu-profile">
+        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Profile</span>
+        </div>
+        <nav class="menu adaptive-menu-profile__menu">
+            <a href="" class="menu__item">Subscriptions</a>
+            <a href="" class="menu__item">Orders</a>
+            <a href="" class="menu__item">Account Overview</a>
+            <a href="" class="menu__item">Payment methods</a>
+            <a href="" class="menu__item">Change Password</a>
+            <a href="" class="menu__item">Sign Out</a>
+        </nav>
+    </div>
+    <div class="basket">
+        <div class="basket__title-row">
+            <div class="basket__title">Cart</div>
+            <div class="basket__exit" onclick="basket()"></div>
+        </div>
+        <div class="basket__line"></div>
+        <div id="basket-goods" class="basket__goods">
+        </div>
+        <div class="basket__btn">
+            <div class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$156.58</span></div>
+        </div>
+    </div><main>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide" slide-index="1">
+                <div class="banner banners__one">
+                    <div class="banner__info">
+                        <div class="banner__title">Don’t know what vitamins your body needs?</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">Take the quiz</a>
+                    </div>
+                    <div class="banner__image">
+                        <img src="assets/images/catalog/banners/image 52.webp" alt="">
+                        <svg class="banner__image-elipse-one" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="50" fill="#FFCA78"/>
+                        </svg>
+                        <svg class="banner__image-elipse-two" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130" fill="none">
+                            <path d="M7.93926e-06 20C60.7513 20 110 69.2487 110 130" stroke="#F6906E" stroke-width="40"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" slide-index="2">
+                <div class="banner banners__two">
+                    <div class="banner__info">
+                        <div class="banner__top-info">You may also like</div>
+                        <div class="banner__title">Vitamins & Dietary Supplements</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">View category</a>
+                    </div>
+                    <div class="banner__image"><img src="assets/images/catalog/banners/image 80.webp" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-slide" slide-index="3">
+                <div class="banner banners__three">
+                    <div class="banner__info">
+                        <div class="banner__top-info">You may also like</div>
+                        <div class="banner__title">Pain Relief Products</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">View category</a>
+                    </div>
+                    <div class="banner__image"><img src="assets/images/catalog/banners/Banner3img.webp" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-slide" slide-index="1">
+                <div class="banner banners__one">
+                    <div class="banner__info">
+                        <div class="banner__title">Don’t know what vitamins your body needs?</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">Take the quiz</a>
+                    </div>
+                    <div class="banner__image">
+                        <img src="assets/images/catalog/banners/image 52.webp" alt="">
+                        <svg class="banner__image-elipse-one" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="50" fill="#FFCA78"/>
+                        </svg>
+                        <svg class="banner__image-elipse-two" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130" fill="none">
+                            <path d="M7.93926e-06 20C60.7513 20 110 69.2487 110 130" stroke="#F6906E" stroke-width="40"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" slide-index="2">
+                <div class="banner banners__two">
+                    <div class="banner__info">
+                        <div class="banner__top-info">You may also like</div>
+                        <div class="banner__title">Vitamins & Dietary Supplements</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">View category</a>
+                    </div>
+                    <div class="banner__image"><img src="assets/images/catalog/banners/image 80.webp" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-slide" slide-index="3">
+                <div class="banner banners__three">
+                    <div class="banner__info">
+                        <div class="banner__top-info">You may also like</div>
+                        <div class="banner__title">Pain Relief Products</div>
+                        <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                        <a href="" class="banner__btn">View category</a>
+                    </div>
+                    <div class="banner__image"><img src="assets/images/catalog/banners/Banner3img.webp" alt=""></div>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-button">
+                <div class="swiper-button__prev swiper-button__btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90" fill="none">
+                        <g filter="url(#filter0_d_537_4574)">
+                        <circle cx="35" cy="35" r="35" transform="matrix(-1 0 0 1 80 5)" fill="white"/>
+                        </g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M43.4638 48.6855L42 47.2405L48.0725 41.2461L42 35.2516L43.4638 33.8066L51 41.2461L43.4638 48.6855Z" fill="black"/>
+                        <defs>
+                        <filter id="filter0_d_537_4574" x="0" y="0" width="90" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="5"/>
+                            <feGaussianBlur stdDeviation="5"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_537_4574"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_537_4574" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="swiper-button__next swiper-button__btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90" fill="none">
+                        <g filter="url(#filter0_d_535_924)">
+                        <circle cx="45" cy="40" r="35" fill="white"/>
+                        </g>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M47.5362 48.6855L49 47.2405L42.9275 41.2461L49 35.2516L47.5362 33.8066L40 41.2461L47.5362 48.6855Z" fill="black"/>
+                        <defs>
+                        <filter id="filter0_d_535_924" x="0" y="0" width="90" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="5"/>
+                            <feGaussianBlur stdDeviation="5"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_535_924"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_535_924" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="swiper-pagination">
+                <div class="swiper-pagination__one swiper-pagination__item swiper-pagination__item-active"></div>
+                <div class="swiper-pagination__two swiper-pagination__item"></div>
+                <div class="swiper-pagination__three swiper-pagination__item"></div>
+            </div>
+        </div>
+        <div class="goods__menu">
+                <div class="goods__menu-list">
+                    <div class="goods__adaptine-menu">
+                        <span id="title-menu">All categories</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="11" viewBox="0 0 19 11" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 1.46376L17.5433 1.86833e-07L9.5 8.07249L1.45672 -6.36751e-08L-4.16842e-07 1.46376L9.5 11L19 1.46376Z" fill="#FF7D4E"/>
+                        </svg>
+                    </div>
+                    <nav class="menu-two goods__menu-main">
+                        <div id="allGoods" onclick="addAllGoods(); adaptiveBtn()" class="menu-two__item">All categories</div>
+                        <a id="vitamins" onclick="vitam(); adaptiveBtn()" class="menu-two__item">Vitamins & Dietary Supplements</a>
+                        <a id="weight-loss" onclick=" weights(); adaptiveBtn()" class="menu-two__item">Weight Loss</a>
+                        <a id="minerals" onclick="mineralFun(); adaptiveBtn()" class="menu-two__item">Minerals</a>
+                        <a id="antioxidants" onclick="antioxid(); adaptiveBtn()" class="menu-two__item anti">Antioxidants</a>
+                        <a id="probiotics" onclick="probiot(); adaptiveBtn()" class="menu-two__item">Probiotics</a>
+                        <a id="painId" onclick="painFun(); adaptiveBtn()" class="menu-two__item">Pain Relief</a>
+                        <a id="prenatalId" onclick="prenatalFun(); adaptiveBtn()" class="menu-two__item">Prenatal Vitamins</a>
+                        <a id="saleId" onclick="saleFun(); adaptiveBtn()" class="menu-two__item">Sale%</a>
+                    </nav>
+                </div>
+            <div class="goods goods__goods">
+                <div class="goods__goods-main">
+                    <div id="goods"></div>
+                </div>
+                <div  class="goods__button" id="loadButton" >
+                    <span>View more</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13 1.46376L11.5433 4.49102e-07L6.5 5.07249L1.45672 -6.36751e-08L-2.85708e-07 1.46376L6.5 8L13 1.46376Z" fill="#FF7D4E"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+     <div class="banner-bottom">
+        <div class="banner banners__three">
+            <div class="banner__info">
+                <div class="banner__top-info">You may also like</div>
+                <div class="banner__title">Pain Relief Products</div>
+                <div class="banner__text">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                <a href="" class="banner__btn">View category</a>
+            </div>
+            <div class="banner__image"><img src="assets/images/catalog/banners/Banner3img.webp" alt=""></div>
+        </div>
+    </div>
+    
+    
+    <div class="comentar-title"><span>What healthy and happy customer says</span></div>
+    
+     <div class="comentars">
+         <div class="comentars__one-coment comentars__one-column">
+             <div class="comentars__coment-stars">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                     <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                     <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                     <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                     <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                     <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                 </svg>
+             </div>
+             <div class="comentars__coment-title text-three">Easy monitoring your weight goal!</div>
+             <div class="comentars__coment-info">Love Vitamins! The individual packets make it so easy to remember you daily vitamins and makes travelling easy!!! 👍🏽</div>
+             <div class="comentars__coment-person-info">
+                 <div class="comentars__coment-person-image">
+                     <img src="assets/images/components/coment1.jpg" alt="">
+                 </div>
+                 <div class="comentars__coment-person-name">David S.</div>
+             </div>
+         </div>
+         <div class="comentars__one-coment comentars__two-column">
+             <div class="comentars__coment-stars">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                     <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                     <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                     <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                     <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                     <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                 </svg>
+             </div>
+             <div class="comentars__coment-title text-three">High quality vitamins & supplements</div>
+             <div class="comentars__coment-info">High quality vitamins & supplements, very easy on my stomach too. Great service! I really like the flexibility and options available in the subscriptions.</div>
+             <div class="comentars__coment-person-info">
+                 <div class="comentars__coment-person-image">
+                     <img src="assets/images/components/coment2.jpg" alt="">
+                 </div>
+                 <div class="comentars__coment-person-name">Bridget T.</div>
+             </div>
+         </div>
+         <div class="comentars__one-coment comentars__three-column">
+             <div class="comentars__coment-stars">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                     <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                     <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                     <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                     <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                     <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                 </svg>
+             </div>
+             <div class="comentars__coment-title text-three">I love it</div>
+             <div class="comentars__coment-info">I love it. It makes me feel good each morning and then it also makes me feel accomplished.</div>
+             <div class="comentars__coment-person-info">
+                 <div class="comentars__coment-person-image">
+                     <img src="assets/images/components/coment3.jpg" alt="">
+                 </div>
+                 <div class="comentars__coment-person-name">Jenna Y.</div>
+             </div>
+         </div>
+     </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__logo">
+                <img src="assets/images/svg/header-icon.svg" alt="">
+            </div>
+            <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
+            <div class="footer__shop">
+                <div class="footer__shop-title footer__title">Shop</div>
+                <a href="" class="footer__shop-link footer__link">Vitamins & Dietary Supplements</a>
+                <a href="" class="footer__shop-link footer__link">Weight Loss</a>
+                <a href="" class="footer__shop-link footer__link">Minerals</a>
+                <a href="" class="footer__shop-link footer__link">Antioxidants</a>
+            </div>
+            <div class="footer__shop-two">
+                <a href="" class="footer__shop-two-link footer__link">Probiotics</a>
+                <a href="" class="footer__shop-two-link footer__link">Pain Relief</a>
+                <a href="" class="footer__shop-two-link footer__link">Prenatal Vitamins</a>
+            </div>
+            <div class="footer__information">
+                <div class="footer__information-title footer__title">Information</div>
+                <a href="" class="footer__information-link footer__link">Terms & Conditions</a>
+                <a href="" class="footer__information-link footer__link">Privacy Policy</a>
+                <a href="" class="footer__information-link footer__link">Shipping & Delivery</a>
+                <a href="" class="footer__information-link footer__link">Subscription Cycle & Billing</a>
+                <a href="" class="footer__information-link footer__link">Return Policy</a>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-title footer__title">Contact</div>
+                <a href="" class="footer__contact-link footer__link">support@medstogo.com</a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+            </div>
+        </div>
+    </footer>
+    <script defer src="assets/js/app.js"></script>
+    <script defer  src="assets/js/catalog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="" ></script>
+</body>
+</html>

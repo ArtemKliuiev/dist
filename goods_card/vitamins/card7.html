@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Метаописание">
+    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
+    <link rel="stylesheet" href="../../assets/css/reset.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.min.css">
+    <link rel="stylesheet" href="../../assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="../../assets/css/component/header.min.css">
+    <link rel="stylesheet" href="../../assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="../../assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="../../assets/css/component/product.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../assets/css/pages/goods_card.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Item card</title>
+</head>
+<body>
+
+
+    <div class="indent-for-sticky"></div>
+    <header class="header">
+        <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+            <a href="../../index.html" class="header__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="50" viewBox="0 0 42 50" fill="none">
+                    <path class="path__one" fill-rule="evenodd" clip-rule="evenodd" d="M15.3281 21.1655H26.6712V28.9876C26.6712 32.1164 24.1267 34.6625 20.9997 34.6625C17.8727 34.6625 15.3281 32.1164 15.3281 28.9876V21.1655Z" fill="#FF7D4E"/>
+                    <path class="path__two" fill-rule="evenodd" clip-rule="evenodd" d="M34.3358 21.1655V28.9876C34.3358 36.3496 28.3577 42.3312 21 42.3312C13.6423 42.3312 7.66423 36.3496 7.66423 28.9876V21.1655H0V28.9876C0 40.5827 9.41168 49.9999 21 49.9999C32.5883 49.9999 42 40.5827 42 28.9876V21.1655H34.3358Z" fill="#725CF0"/>
+                    <path class="path__three" fill-rule="evenodd" clip-rule="evenodd" d="M20.9998 0C13.6422 0 7.66406 5.9816 7.66406 13.3436V21.1656H15.3283V13.3436C15.3283 10.2147 17.8728 7.66871 20.9998 7.66871C24.1268 7.66871 26.6714 10.2147 26.6714 13.3436V21.1656H34.3356V13.3436C34.3356 5.9816 28.3575 0 20.9998 0Z" fill="#FDC672"/>
+                </svg>
+            </a>
+            <a href="../../catalog.html" class="header__back-to-shop">
+                <div class="header__back-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.53624 15L9 13.5433L2.92751 7.5L9 1.45672L7.53624 0L0 7.5L7.53624 15Z" fill="black"/>
+                    </svg>
+                </div>
+                <span class="header__back-text" >Back to shop</span>
+            </a>
+            <a href="../../sing-in/input.html" class="header__profile">
+                <svg class="header__adaptiv-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M25.1901 19.9003C23.7022 18.4275 21.9168 17.3544 19.972 16.739C22.0975 15.424 23.5109 13.0886 23.5109 10.4323C23.5109 6.33482 20.142 3 16.0026 3C11.8633 3 8.49438 6.33482 8.49438 10.4323C8.49438 13.0886 9.90782 15.424 12.0333 16.739C10.0832 17.3544 8.29777 18.4275 6.81524 19.9003C4.34968 22.3304 3 25.5652 3 29H4.91294C4.91294 22.9458 9.88657 18.0225 16.0026 18.0225C22.1187 18.0225 27.0924 22.9458 27.0924 29H29.0053C29 25.5652 27.6503 22.3304 25.1901 19.9003ZM10.402 10.4323C10.402 7.38155 12.9154 4.89359 16.0026 4.89359C19.0846 4.89359 21.598 7.38155 21.598 10.4323C21.598 13.4831 19.0846 15.9711 16.0026 15.9711C12.9154 15.9763 10.402 13.4884 10.402 10.4323Z" fill="black"/>
+                </svg>
+            </a>
+            <a onclick="basket()" class="header__basket">
+                <svg class="header__adaptiv-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="24.5" cy="7.5" r="4.5" fill="#FF7D4E"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1998 3.4293C17.5196 3.15261 16.775 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116V27.1008L25.9824 14.8535C25.5032 14.9496 25.0075 15 24.5 15C24.3815 15 24.2637 14.9973 24.1466 14.9918L25.1482 27.1719H6.84642L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H17.5248C17.2959 9.68409 17.1367 9.07126 17.0575 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812C16.4889 4.82812 16.962 4.91789 17.3984 5.08181C17.5982 4.49488 17.8687 3.94066 18.1998 3.4293Z" fill="black"/>
+                </svg>
+            </a>
+            <a href="../../quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+        </div>
+    </header>
+    <div class="adaptive-menu">
+        <div class="adaptive-menu__main">
+            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="../../assets/images/svg/menu_arrow.svg" alt=""></div>
+            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="../../assets/images/svg/menu_arrow.svg" alt=""></div>
+            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+            <div class="adaptive-menu__email">support@medstogo.com</div>
+            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+        </div>
+    </div>
+    <div class="adaptive-menu-shop">
+        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+            <img src="../../assets/images/svg/Back_arrow.svg" alt="">
+            <span>Shop</span>
+        </div>
+        <nav class="menu adaptive-menu-shop__menu">
+            <a href="../../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+            <a href="../../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+            <a href="../../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+            <a href="../../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+            <a href="../../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+            <a href="../../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+            <a href="../../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+            <a href="../../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+            <a href="../../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+        </nav>
+        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+        <a href="../quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+    </div>
+    <div class="adaptive-menu-information">
+        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+            <img src="../../assets/images/svg/Back_arrow.svg" alt="">
+            <span>Information</span>
+        </div>
+        <nav class="menu adaptive-menu-information__menu">
+            <a href="" class="menu__item">Subscription Cycle & Billing</a>
+            <a href="" class="menu__item">Terms & Conditions</a>
+            <a href="" class="menu__item">Privacy Policy</a>
+            <a href="" class="menu__item">Shipping & Delivery</a>
+            <a href="" class="menu__item">Return Policy</a>
+        </nav>
+    </div>
+    <div class="adaptive-menu-profile">
+        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+            <img src="../../assets/images/svg/Back_arrow.svg" alt="">
+            <span>Profile</span>
+        </div>
+        <nav class="menu adaptive-menu-profile__menu">
+            <a href="" class="menu__item">Subscriptions</a>
+            <a href="" class="menu__item">Orders</a>
+            <a href="" class="menu__item">Account Overview</a>
+            <a href="" class="menu__item">Payment methods</a>
+            <a href="" class="menu__item">Change Password</a>
+            <a href="" class="menu__item">Sign Out</a>
+        </nav>
+    </div>
+    <div class="basket">
+        <div class="basket__title-row">
+            <div class="basket__title">Cart</div>
+            <div class="basket__exit" onclick="basket()"></div>
+        </div>
+        <div class="basket__line"></div>
+        <div id="basket-goods" class="basket__goods">
+        </div>
+        <div class="basket__btn">
+            <div class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$156.58</span></div>
+        </div>
+    </div>
+    <main>
+        <div class="item">
+            <div class="item__image">
+                <img src="../../assets/images/goods__big-size/12.webp" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="149" height="150" viewBox="0 0 149 150" fill="none">
+                    <path d="M20 149.314C20 77.9479 77.7553 20.094 149 20.094" stroke="#FACC88" stroke-width="40"/>
+                </svg>
+            </div>
+            <div class="item__main">
+                <div class="item__setting">
+                    <div class="item__type vitamin">Vitamins & Dietary Supplements</div>
+                    <div class="item__name">Ortho Molecular Products 5-HTP Capsules</div>
+                    <div class="item__line"></div>
+                    <div class="item__quantity">
+                        <div class="item__quantity-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" viewBox="0 0 50 60" fill="none">
+                                <rect x="39" y="36" width="10" height="22" rx="5" fill="white" stroke="black" stroke-width="2"/>
+                                <rect x="40" y="46" width="8" height="2" fill="black"/>
+                                <path d="M5 5C5 3.34315 6.34315 2 8 2H26C27.6569 2 29 3.34315 29 5V7C29 7.55228 28.5523 8 28 8H6C5.44772 8 5 7.55228 5 7V5Z" fill="white" stroke="black" stroke-width="2"/>
+                                <rect x="1" y="12" width="32" height="47" rx="6" fill="white" stroke="black" stroke-width="2"/>
+                                <path d="M5.5 31C5.5 31.2761 5.27611 31.5 5 31.5C4.72389 31.5 4.5 31.2761 4.5 31C4.5 30.7239 4.72389 30.5 5 30.5C5.27611 30.5 5.5 30.7239 5.5 31ZM5.5 39C5.5 39.2761 5.27611 39.5 5 39.5C4.72389 39.5 4.5 39.2761 4.5 39C4.5 38.7239 4.72389 38.5 5 38.5C5.27611 38.5 5.5 38.7239 5.5 39ZM7.5 35C7.5 35.2761 7.27611 35.5 7 35.5C6.72389 35.5 6.5 35.2761 6.5 35C6.5 34.7239 6.72389 34.5 7 34.5C7.27611 34.5 7.5 34.7239 7.5 35ZM13.5 31C13.5 31.2761 13.2761 31.5 13 31.5C12.7239 31.5 12.5 31.2761 12.5 31C12.5 30.7239 12.7239 30.5 13 30.5C13.2761 30.5 13.5 30.7239 13.5 31ZM13.5 39C13.5 39.2761 13.2761 39.5 13 39.5C12.7239 39.5 12.5 39.2761 12.5 39C12.5 38.7239 12.7239 38.5 13 38.5C13.2761 38.5 13.5 38.7239 13.5 39ZM15.5 35C15.5 35.2761 15.2761 35.5 15 35.5C14.7239 35.5 14.5 35.2761 14.5 35C14.5 34.7239 14.7239 34.5 15 34.5C15.2761 34.5 15.5 34.7239 15.5 35ZM21.5 31C21.5 31.2761 21.2761 31.5 21 31.5C20.7239 31.5 20.5 31.2761 20.5 31C20.5 30.7239 20.7239 30.5 21 30.5C21.2761 30.5 21.5 30.7239 21.5 31ZM21.5 39C21.5 39.2761 21.2761 39.5 21 39.5C20.7239 39.5 20.5 39.2761 20.5 39C20.5 38.7239 20.7239 38.5 21 38.5C21.2761 38.5 21.5 38.7239 21.5 39ZM23.5 35C23.5 35.2761 23.2761 35.5 23 35.5C22.7239 35.5 22.5 35.2761 22.5 35C22.5 34.7239 22.7239 34.5 23 34.5C23.2761 34.5 23.5 34.7239 23.5 35ZM9.5 31C9.5 31.2761 9.27611 31.5 9 31.5C8.72389 31.5 8.5 31.2761 8.5 31C8.5 30.7239 8.72389 30.5 9 30.5C9.27611 30.5 9.5 30.7239 9.5 31ZM9.5 39C9.5 39.2761 9.27611 39.5 9 39.5C8.72389 39.5 8.5 39.2761 8.5 39C8.5 38.7239 8.72389 38.5 9 38.5C9.27611 38.5 9.5 38.7239 9.5 39ZM11.5 35C11.5 35.2761 11.2761 35.5 11 35.5C10.7239 35.5 10.5 35.2761 10.5 35C10.5 34.7239 10.7239 34.5 11 34.5C11.2761 34.5 11.5 34.7239 11.5 35ZM17.5 31C17.5 31.2761 17.2761 31.5 17 31.5C16.7239 31.5 16.5 31.2761 16.5 31C16.5 30.7239 16.7239 30.5 17 30.5C17.2761 30.5 17.5 30.7239 17.5 31ZM17.5 39C17.5 39.2761 17.2761 39.5 17 39.5C16.7239 39.5 16.5 39.2761 16.5 39C16.5 38.7239 16.7239 38.5 17 38.5C17.2761 38.5 17.5 38.7239 17.5 39ZM19.5 35C19.5 35.2761 19.2761 35.5 19 35.5C18.7239 35.5 18.5 35.2761 18.5 35C18.5 34.7239 18.7239 34.5 19 34.5C19.2761 34.5 19.5 34.7239 19.5 35ZM25.5 31C25.5 31.2761 25.2761 31.5 25 31.5C24.7239 31.5 24.5 31.2761 24.5 31C24.5 30.7239 24.7239 30.5 25 30.5C25.2761 30.5 25.5 30.7239 25.5 31ZM25.5 39C25.5 39.2761 25.2761 39.5 25 39.5C24.7239 39.5 24.5 39.2761 24.5 39C24.5 38.7239 24.7239 38.5 25 38.5C25.2761 38.5 25.5 38.7239 25.5 39ZM27.5 35C27.5 35.2761 27.2761 35.5 27 35.5C26.7239 35.5 26.5 35.2761 26.5 35C26.5 34.7239 26.7239 34.5 27 34.5C27.2761 34.5 27.5 34.7239 27.5 35ZM29.5 31C29.5 31.2761 29.2761 31.5 29 31.5C28.7239 31.5 28.5 31.2761 28.5 31C28.5 30.7239 28.7239 30.5 29 30.5C29.2761 30.5 29.5 30.7239 29.5 31ZM29.5 39C29.5 39.2761 29.2761 39.5 29 39.5C28.7239 39.5 28.5 39.2761 28.5 39C28.5 38.7239 28.7239 38.5 29 38.5C29.2761 38.5 29.5 38.7239 29.5 39Z" fill="#FF7D4E" stroke="#FF7D4E"/>
+                                <rect x="7" y="8" width="20" height="4" fill="white" stroke="black" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="item__quantity-info">
+                            <span>90 Capsules</span>
+                            <span>500 mg plastic can</span>
+                        </div>
+                        <div class="item__quantity-buttons">
+                            <div class="container">
+                                <button class="decreaseButton item__btn-decrease item__add-btn">
+                                    <svg class="decreaseButton-remove" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <rect opacity="1" x="6" y="11" width="12" height="2" fill="black"/>
+                                    </svg>
+                                </button>
+                                <span class="item__quantity-number number">1</span>
+                                <button class="increaseButton item__btn-increase item__add-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M13 6H11V11H6V13H11V18H13V13H18V11H13V6Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item__buttons">
+                        <div class="item__check-row">
+                            <div class="item__check-row-info"><span>Autoship this item every</span><span>Deliver every</span></div>
+                            <div class="item__check-row-option">
+                                <div class="custom-select">
+                                    <span class="custom-select__option">
+                                        <span>30</span>
+                                    </span>
+                                    <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                        <path opacity="1" fill-rule="evenodd" clip-rule="evenodd" d="M10 0.975838L9.02886 5.59011e-07L5 4.04832L0.971145 4.34387e-07L-2.19613e-07 0.975838L5 6L10 0.975838Z" fill="black"/>
+                                    </svg>
+                                    <ul class="custom-select__list">
+                                      <li>15</li>
+                                      <li>30</li>
+                                      <li>45</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="item__check-row-days">days</div>
+                            <div class="item__check-row-cheked">
+                                <input class="apple-switch" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="item__button-row">
+                            <div class="item__price">$61.98</div>
+                            <div class="item__btn">
+                                <div class="oval-button">Add to cart</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__description">
+                    <div class="item__description-title">Description</div>
+                    <div class="item__description-info">500-C Methoxyflavone is a synergistic formula that features a specialized complex of bioflavonoids combined with vitamin C.*</div>
+                    <ul class="item__description-list">
+                        <li class="item__description-item">Citrus bioflavonoid complex</li>
+                        <li class="item__description-item">Provides potent antioxidant protection and supports healthy immune system function*</li>
+                        <li class="item__description-item">Supports healthy collagen production, the main component of connective tissue*</li>
+                        <li class="item__description-item">This product is non-GMO, gluten free, and vegetarian</li>
+                    </ul>
+                    <div class="item__important-main-title">Important information</div>
+                    <div class="item__important">
+                        <div class="item__important-title item__important-title1">Safety information</div>
+                        <div class="item__important-text item__important-text1">Keep out of the reach of children.</div>
+                        <div class="item__important-title item__important-title2">Indications</div>
+                        <div class="item__important-text item__important-text2">Deficient or weak Immune System Function</div>
+                        <div class="item__important-title item__important-title3">Ingredients</div>
+                        <div class="item__important-text item__important-text3">Vitamin C (as ascorbic acid), Citrus Bioflavonoid Complex [standardized to 45% (225 mg) bioflavonoids: hesperidin and other naturally occurring phenolic compounds]. Other Ingredients: Cellulose, silica, stearic acid (vegetable), croscarmellose sodium, magnesium stearate (vegetable), and coating (hypromellose, medium chain triglycerides, and hydroxypropylcellulose).</div>
+                        <div class="item__important-title item__important-title4">Directions</div>
+                        <div class="item__important-text item__important-text4">Take one tablet daily or as directed by your healthcare practitioner.</div>
+                        <div class="item__important-title item__important-title5">Legal Disclaimer</div>
+                        <div class="item__important-text item__important-text5">
+                            <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+                            <p>Statements regarding dietary supplements have not been evaluated by the FDA and are not intended to diagnose, treat, cure, or prevent any disease or health condition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-goods">
+            <div class="bottom-goods__title">You may also like</div>
+            <div class="bottom-goods__goods" id="productCards"></div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__logo">
+                <img src="../../assets/images/svg/header-icon.svg" alt="">
+            </div>
+            <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
+            <div class="footer__shop">
+                <div class="footer__shop-title footer__title">Shop</div>
+                <a href="" class="footer__shop-link footer__link">Vitamins & Dietary Supplements</a>
+                <a href="" class="footer__shop-link footer__link">Weight Loss</a>
+                <a href="" class="footer__shop-link footer__link">Minerals</a>
+                <a href="" class="footer__shop-link footer__link">Antioxidants</a>
+            </div>
+            <div class="footer__shop-two">
+                <a href="" class="footer__shop-two-link footer__link">Probiotics</a>
+                <a href="" class="footer__shop-two-link footer__link">Pain Relief</a>
+                <a href="" class="footer__shop-two-link footer__link">Prenatal Vitamins</a>
+            </div>
+            <div class="footer__information">
+                <div class="footer__information-title footer__title">Information</div>
+                <a href="" class="footer__information-link footer__link">Terms & Conditions</a>
+                <a href="" class="footer__information-link footer__link">Privacy Policy</a>
+                <a href="" class="footer__information-link footer__link">Shipping & Delivery</a>
+                <a href="" class="footer__information-link footer__link">Subscription Cycle & Billing</a>
+                <a href="" class="footer__information-link footer__link">Return Policy</a>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-title footer__title">Contact</div>
+                <a href="" class="footer__contact-link footer__link">support@medstogo.com</a>
+                <a href="" class="footer__contact-link"><img src="../../assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                <a href="" class="footer__contact-link"><img src="../../assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+            </div>
+        </div>
+    </footer>
+    <script defer src="../../assets/js/app.js"></script>
+    <script defer  src="../../assets/js/goods__items.js"></script>
+    <script src=""></script>
+    <script type="module" src="" ></script>
+</body>
+</html>

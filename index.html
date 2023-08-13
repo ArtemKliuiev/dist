@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Метаописание">
+    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="assets/css/component/header.min.css">
+    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/component/comentars.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/css/pages/main.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Home</title>
+</head>
+<body>
+
+
+    <div class="warapper">
+    <div class="indent-for-sticky"></div>
+    <header class="header">
+        <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+            <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
+            <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+            <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
+            <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+        </div>
+    </header>
+    <div class="adaptive-menu">
+        <div class="adaptive-menu__main">
+            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+            <div class="adaptive-menu__email">support@medstogo.com</div>
+            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+        </div>
+    </div>
+    <div class="adaptive-menu-shop">
+        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Shop</span>
+        </div>
+        <nav class="menu adaptive-menu-shop__menu">
+            <a href="../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+            <a href="../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+            <a href="../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+            <a href="../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+            <a href="../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+            <a href="../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+            <a href="../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+            <a href="../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+            <a href="../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+        </nav>
+        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+        <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+    </div>
+    <div class="adaptive-menu-information">
+        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Information</span>
+        </div>
+        <nav class="menu adaptive-menu-information__menu">
+            <a href="" class="menu__item">Subscription Cycle & Billing</a>
+            <a href="" class="menu__item">Terms & Conditions</a>
+            <a href="" class="menu__item">Privacy Policy</a>
+            <a href="" class="menu__item">Shipping & Delivery</a>
+            <a href="" class="menu__item">Return Policy</a>
+        </nav>
+    </div>
+    <div class="adaptive-menu-profile">
+        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Profile</span>
+        </div>
+        <nav class="menu adaptive-menu-profile__menu">
+            <a href="" class="menu__item">Subscriptions</a>
+            <a href="" class="menu__item">Orders</a>
+            <a href="" class="menu__item">Account Overview</a>
+            <a href="" class="menu__item">Payment methods</a>
+            <a href="" class="menu__item">Change Password</a>
+            <a href="" class="menu__item">Sign Out</a>
+        </nav>
+    </div>
+    <div class="basket">
+        <div class="basket__title-row">
+            <div class="basket__title">Cart</div>
+            <div class="basket__exit" onclick="basket()"></div>
+        </div>
+        <div class="basket__line"></div>
+        <div id="basket-goods" class="basket__goods">
+        </div>
+        <div class="basket__btn">
+            <div class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$156.58</span></div>
+        </div>
+    </div>    <main class="main">
+            <svg xmlns="http://www.w3.org/2000/svg" width="95" height="95" viewBox="0 0 95 95" fill="none" class="find-out__bg-elipse3">
+                <circle cx="47.5" cy="47.5" r="47.5" fill="#FFCA78"/>
+            </svg>
+            <div class="find-out">
+                <div class="find-out__main">
+                    <div class="find-out__title title">Find out what <span>vitamins</span> your body needs right now.</div>
+                    <div class="find-out__info text-one">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+                    <div class="find-out__button-row">
+                        <a href="quiz/quiz1.html" class="oval-button-purple find-out__button">Take the quiz</a>
+                        <a href="catalog.html" class="find-out__button-info text-three"><span>Go to the shop</span><img src="assets/images/svg/go-to-shop-arrow.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="find-out__image">
+                    <div class="find-out__circle">
+                        <img src="assets/images/main/image 51.webp" alt="">
+                    </div>
+                </div>
+                <div class="elipse__bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="158" height="158" viewBox="0 0 158 158" fill="none" class="find-out__bg-elipse1">
+                        <path d="M129 -3.84172e-06C129 71.2447 71.2447 129 7.69978e-07 129" stroke="#FFCA78" stroke-width="58"/>
+                    </svg>
+                    <svg  class="find-out__bg-elipse2" xmlns="http://www.w3.org/2000/svg" width="279" height="141" viewBox="0 0 279 141" fill="none">
+                        <path d="M250 -3.17821e-06C250 61.8559 200.527 112 139.5 112C78.4725 112 29 61.8559 29 6.48201e-06" stroke="#E99478" stroke-width="58"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="healthy">
+                <div class="healthy__title-column">
+                    <div class="healthy__elipse"></div>
+                    <div class="healthy__title title">Healthy doesn’t have to be hard. We make it easy.</div>
+                </div>
+                <div class="healthy__info-column text-two">
+                    <div class="healthy__info-row">
+                        <img src="assets/images/main/svg/svg1.svg" alt="">
+                        <span>Healthy doesn’t have to be hard. We make it easy.</span>
+                    </div>
+                    <div class="healthy__info-row">
+                        <img src="assets/images/main/svg/svg2.svg" alt="">
+                        <span>Healthy doesn’t have to be hard. We make it easy.</span>
+                    </div>
+                    <div class="healthy__info-row">
+                        <img src="assets/images/main/svg/svg3.svg" alt="">
+                        <span>Healthy doesn’t have to be hard. We make it easy.</span>
+                    </div>
+                </div>
+                <div class="healthy__bg-image-one">
+                    <img src="assets/images/main/t.webp" alt="">
+                </div>
+                <div class="healthy__bg-image-two">
+                    <img src="assets/images/main/t2.webp" alt="">
+                </div>
+            </div>
+            <div class="tell-us">
+                <div class="tell-us__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="99" height="99" viewBox="0 0 99 99" fill="none">
+                        <path d="M90.3165 5.80078C89.1754 5.80078 88.1117 6.01348 87.1061 6.41953C86.1004 2.72637 82.716 0 78.7126 0C73.9164 0 70.0098 3.90586 70.0098 8.70117V20.4381C67.4956 18.2918 64.2852 17.035 60.746 17.035C54.9441 17.035 51.2696 19.4133 49.1035 21.6176C46.8795 19.4133 43.1469 17.035 37.345 17.035C34.27 17.035 31.369 17.9824 28.9902 19.7613V8.70117C28.9902 3.90586 25.1029 0 20.3067 0C16.3034 0 12.9189 2.72637 11.9133 6.41953C10.9076 6.01348 9.84391 5.80078 8.70287 5.80078C3.90662 5.80078 0 9.70664 0 14.502V40.5281V40.7021C0.0193397 49.2293 3.8486 57.1764 10.4821 62.5131C14.8722 66.0709 17.4057 71.3303 17.4057 76.9957V99H81.6136V76.9957C81.6136 71.3496 84.1471 66.0709 88.5372 62.5324C95.1707 57.1957 98.9807 49.2293 99 40.7215V14.5213C99 9.70664 95.1127 5.80078 90.3165 5.80078ZM75.8117 8.70117C75.8117 7.09629 77.1074 5.80078 78.7126 5.80078C80.3178 5.80078 81.6136 7.09629 81.6136 8.70117V31.9043C79.7376 31.2469 77.6876 31.2469 75.8117 31.9043V8.70117ZM17.3864 8.70117C17.3864 7.09629 18.7015 5.80078 20.3067 5.80078C21.9119 5.80078 23.2077 7.09629 23.2077 8.70117V29.1006C23.0336 29.9707 22.9176 30.8795 22.8595 31.7883C21.0609 31.2275 19.1076 31.2855 17.3864 31.9043V8.70117ZM46.6087 93.1992H23.2077V81.2109H46.6087V93.1992ZM46.6087 75.4102H23.1496C22.7242 68.6039 19.4751 62.3197 14.118 58.0078C8.85759 53.7732 5.80191 47.4504 5.78257 40.7021V14.5213C5.78257 12.9164 7.09768 11.6209 8.70287 11.6209C10.3081 11.6209 11.6038 12.9164 11.6038 14.5213V40.1414C11.6038 42.365 12.4548 44.5887 14.1567 46.2902L25.0643 57.1957L29.1643 53.0965L18.2567 42.1523C17.135 41.0309 17.135 39.1746 18.2567 38.0531C19.3784 36.9316 21.1963 36.9123 22.3567 38.0531L36.3587 52.0523L36.436 51.975L42.354 57.8338C45.1002 60.5795 46.6087 64.2147 46.6087 68.0818V75.4102ZM46.454 53.7539L29.5317 37.009C29.319 36.4869 29.1256 35.9648 28.9902 35.4428V29.7387C30.0346 25.6588 33.303 22.8357 37.345 22.8357C43.9398 22.8357 46.3186 27.3217 46.512 27.6891L49.2196 34.1473L51.8111 27.6117C51.9852 27.2443 54.2092 22.8164 60.746 22.8164C65.7357 22.8164 69.6423 27.1283 69.6423 32.6391C69.6423 34.6113 69.1395 36.4289 68.0951 38.3432L58.3673 47.9531L58.3866 47.9725L52.5653 53.7539C51.3856 54.9334 50.3606 56.2482 49.5097 57.6404C48.6587 56.2482 47.6337 54.9334 46.454 53.7539ZM75.8117 93.1992H52.4106V81.2109H75.8117V93.1992ZM93.2174 40.5088V40.6828C93.1981 47.4504 90.1618 53.7539 84.9014 57.9885C79.5443 62.3004 76.2952 68.5846 75.8697 75.3908H52.3913V68.1012C52.3913 64.234 53.9191 60.5795 56.646 57.8531L76.6433 38.0531L76.6626 38.0338C77.7843 36.9123 79.6409 36.9123 80.7626 38.0338C81.8844 39.1553 81.8844 41.0115 80.7626 42.133L69.855 53.0385L73.9551 57.1377L84.8627 46.2322C86.5646 44.5307 87.3768 42.307 87.3962 40.0834V14.502C87.3962 12.8971 88.7113 11.6016 90.3165 11.6016C91.9217 11.6016 93.2174 12.8971 93.2174 14.502V40.5088Z" fill="#FFBE5A"/>
+                        <path d="M75.4944 31.9181C75.4555 30.9992 75.3388 30.0802 75.1444 29.2004C73.7054 22.7287 69.3302 19.7568 69.3302 19.7568C66.9384 17.958 64.0216 17 60.9298 17C55.0961 17 51.3432 19.4049 49.1069 21.6338L49.0097 21.7511L48.893 21.6338C46.6568 19.4049 42.9039 17 37.0702 17C33.9784 17 31.0616 17.958 28.6698 19.7568C28.6698 19.7568 24.2946 22.7287 22.8556 29.2004C22.6806 30.0802 22.5639 30.9992 22.5056 31.9181C22.5056 31.9181 22.3111 34.4599 22 38.253L36.0785 52.4086L36.1563 52.3303L48.9319 64.8827L48.9708 64.9804L48.9903 64.9609L49.0097 64.9804L49.0486 64.8827L61.8243 52.3303L61.9021 52.4086L75.9806 38.253C75.6889 34.4599 75.4944 31.9181 75.4944 31.9181ZM69.3302 35.5939C69.1941 36.1218 69.0191 36.6497 68.7857 37.1776L51.771 54.1096C50.7015 55.1849 49.7875 56.3385 48.9903 57.5703C48.193 56.3385 47.2791 55.1654 46.2096 54.1096L29.1948 37.1776C28.9809 36.6497 28.7865 36.1218 28.6503 35.5939V29.8456C29.7198 25.7202 33.0061 22.8656 37.0702 22.8656C43.7011 22.8656 46.0929 27.4016 46.2874 27.7731L48.893 34.0297L49.0097 34.3035V34.2839V34.3035L49.1264 34.0297L51.7321 27.7731C51.9265 27.4016 54.3183 22.8656 60.9492 22.8656C65.0328 22.8656 68.2996 25.7202 69.3497 29.8456V35.5939H69.3302Z" fill="#FF7D4E"/>
+                    </svg>
+                </div>
+                <div class="tell-us__title title">Tell us a little about yourself. We’re good listeners.</div>
+                <div class="tell-us__info text-one">We'll help you create a health plan with vitamins, supplements, and more that help <br> you feel your best today and support you long-term.</div>
+                <a href="quiz/quiz1.html" class="tell-us__button oval-button-purple">Take the quiz</a>
+                <div class="tell-us__bg">
+                    <svg class="tell-us__bg-elipse2" xmlns="http://www.w3.org/2000/svg" width="141" height="279" viewBox="0 0 141 279" fill="none">
+                        <path d="M141 250C79.1441 250 29 200.527 29 139.5C29 78.4725 79.1441 29 141 29" stroke="#FFCA78" stroke-width="58"/>
+                    </svg>
+                    <svg class="tell-us__bg-elipse3" xmlns="http://www.w3.org/2000/svg" width="95" height="95" viewBox="0 0 95 95" fill="none">
+                        <circle cx="47.5" cy="47.5" r="47.5" fill="#8172DD"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="products">
+                <div class="products__column-info">
+                    <div class="products__title title">Choose your products</div>
+                    <div class="products__text text-one">We'll help you create a health plan with <br> vitamins, supplements, and more that help you feel your best today and support you <br> long-term.</div>
+                    <a href="catalog.html" class="products__link text-three"><span>Go to the shop</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="15" viewBox="0 0 10 15" fill="none">
+                            <path d="M1.57422 14L8.14828 7.42594L1.57422 0.851878" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <div class="products__image">
+                        <img src="assets/images/main/products-image.webp" alt="">
+                    </div>
+                </div>
+                <div class="products__column-products">
+                    <div class="products__column-products-main">
+                        <div class="products__product-block">
+                            <div class="products__product-one product">
+                                <img src="assets/images/main/product1.webp" alt="" class="product__image">
+                                <div class="product__class">Minerals</div>
+                                <div class="product__title">Reacted Zinc</div>
+                                <div class="product__info">B vitamins are essential for your nervous system and proper brain functioning.</div>
+                            </div>
+                            <div class="products__product-two product">
+                                <img src="assets/images/main/product2.webp" alt="" class="product__image">
+                                <div class="product__class">Vitamins & Dietary Supplements</div>
+                                <div class="product__title">Ortho B Complex</div>
+                                <div class="product__info">B vitamins are essential for your nervous system and proper brain functioning.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products__column-healthy">
+                    <div class="products__healthy-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="86" height="98" viewBox="0 0 86 98" fill="none">
+                            <path d="M51.6005 22.9048H45.8672V28.631H51.6005V22.9048Z" fill="#FFBE5A"/>
+                            <path d="M71.6665 0H14.3334C9.59383 0 5.7334 3.85563 5.7334 8.58928V31.494C5.7334 36.2277 9.59383 40.0833 14.3334 40.0833H34.4V54.017L55.3266 40.0833H71.6665C76.406 40.0833 80.2665 36.2277 80.2665 31.494V8.58928C80.2665 3.85563 76.406 0 71.6665 0ZM74.5332 31.494C74.5332 33.0783 73.2527 34.3571 71.6665 34.3571H53.6066L40.1333 43.3282V34.3571H14.3334C12.7472 34.3571 11.4667 33.0783 11.4667 31.494V8.58928C11.4667 7.00504 12.7472 5.72619 14.3334 5.72619H71.6665C73.2527 5.72619 74.5332 7.00504 74.5332 8.58928V31.494Z" fill="#FFBE5A"/>
+                            <path d="M40.1335 22.9048H17.2002V28.631H40.1335V22.9048Z" fill="#FFBE5A"/>
+                            <path d="M17.2 45.8096C10.8743 45.8096 5.7334 50.9441 5.7334 57.2619C5.7334 63.5798 10.8743 68.7143 17.2 68.7143C23.5258 68.7143 28.6667 63.5798 28.6667 57.2619C28.6667 50.9441 23.5258 45.8096 17.2 45.8096ZM17.2 62.9881C14.0467 62.9881 11.4667 60.4113 11.4667 57.2619C11.4667 54.1125 14.0467 51.5358 17.2 51.5358C20.3533 51.5358 22.9333 54.1125 22.9333 57.2619C22.9333 60.4113 20.3533 62.9881 17.2 62.9881Z" fill="#FF7D4E"/>
+                            <path d="M20.0666 68.7144H17.1999H14.3333C6.42131 68.7144 0 75.1277 0 83.0298V97.727H34.3999V83.0298C34.3999 75.1277 27.9786 68.7144 20.0666 68.7144ZM28.6666 92.0009H5.73331V83.0298C5.73331 78.2962 9.59375 74.4405 14.3333 74.4405H20.0666C24.8061 74.4405 28.6666 78.2962 28.6666 83.0298V92.0009Z" fill="#FF7D4E"/>
+                            <path d="M68.7996 45.8096C62.4739 45.8096 57.333 50.9441 57.333 57.2619C57.333 63.5798 62.4739 68.7143 68.7996 68.7143C75.1254 68.7143 80.2663 63.5798 80.2663 57.2619C80.2663 50.9441 75.1254 45.8096 68.7996 45.8096ZM68.7996 62.9881C65.6463 62.9881 63.0663 60.4113 63.0663 57.2619C63.0663 54.1125 65.6463 51.5358 68.7996 51.5358C71.953 51.5358 74.5329 54.1125 74.5329 57.2619C74.5329 60.4113 71.953 62.9881 68.7996 62.9881Z" fill="#FF7D4E"/>
+                            <path d="M71.6672 68.7144H68.8005H65.9339C58.0219 68.7144 51.6006 75.1277 51.6006 83.0298V97.727H86.0005V83.0298C86.0005 75.1277 79.5792 68.7144 71.6672 68.7144ZM80.2672 92.0009H57.3339V83.0298C57.3339 78.2962 61.1943 74.4405 65.9339 74.4405H71.6672C76.4067 74.4405 80.2672 78.2962 80.2672 83.0298V92.0009Z" fill="#FF7D4E"/>
+                            <path d="M68.8 11.4524H17.2002V17.1786H68.8V11.4524Z" fill="#FFBE5A"/>
+                        </svg>
+                    </div>
+                    <div class="products__healthy-title title">What healthy and happy customer says</div>
+                    <div class="products__healthy-info text-one">We'll help you create a health plan with vitamins, supplements, and more that help you feel your best today and support you long-term.</div>
+                </div>
+            </div>
+            <div class="coment-row">
+            <div class="comentars">
+                <div class="comentars__one-coment comentars__one-column">
+                    <div class="comentars__coment-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                            <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                            <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                            <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                            <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                            <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                        </svg>
+                    </div>
+                    <div class="comentars__coment-title text-three">Easy monitoring your weight goal!</div>
+                    <div class="comentars__coment-info">Love Vitamins! The individual packets make it so easy to remember you daily vitamins and makes travelling easy!!! 👍🏽</div>
+                    <div class="comentars__coment-person-info">
+                        <div class="comentars__coment-person-image">
+                            <img src="assets/images/components/coment1.jpg" alt="">
+                        </div>
+                        <div class="comentars__coment-person-name">David S.</div>
+                    </div>
+                </div>
+                <div class="comentars__one-coment comentars__two-column">
+                    <div class="comentars__coment-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                            <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                            <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                            <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                            <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                            <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                        </svg>
+                    </div>
+                    <div class="comentars__coment-title text-three">High quality vitamins & supplements</div>
+                    <div class="comentars__coment-info">High quality vitamins & supplements, very easy on my stomach too. Great service! I really like the flexibility and options available in the subscriptions.</div>
+                    <div class="comentars__coment-person-info">
+                        <div class="comentars__coment-person-image">
+                            <img src="assets/images/components/coment2.jpg" alt="">
+                        </div>
+                        <div class="comentars__coment-person-name">Bridget T.</div>
+                    </div>
+                </div>
+                <div class="comentars__one-coment comentars__three-column">
+                    <div class="comentars__coment-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="19" viewBox="0 0 120 19" fill="none">
+                            <path d="M10.8713 0.590764L13.1058 5.15105C13.2713 5.48271 13.5609 5.68999 13.892 5.73145L18.8988 6.47768C19.7678 6.60205 20.1402 7.67993 19.4781 8.30179L15.8781 11.8256C15.6299 12.0744 15.5057 12.406 15.5885 12.7792L16.4575 17.754C16.623 18.6246 15.6713 19.2879 14.9264 18.8734L10.4575 16.5103C10.1265 16.3445 9.75409 16.3445 9.46444 16.5103L4.95415 18.8734C4.16795 19.2879 3.25762 18.6246 3.42314 17.754L4.29209 12.7792C4.33347 12.4475 4.25071 12.0744 4.00244 11.8256L0.319728 8.30179C-0.300954 7.67993 0.0300763 6.60205 0.899031 6.47768L5.90586 5.73145C6.23689 5.68999 6.56792 5.48271 6.69206 5.15105L8.92651 0.590764C9.3403 -0.196921 10.4575 -0.196921 10.8713 0.590764Z" fill="#FFC329"/>
+                            <path d="M36.1926 0.590764L38.4271 5.15105C38.5926 5.48271 38.8822 5.68999 39.2133 5.73145L44.2201 6.47768C45.089 6.60205 45.4615 7.67993 44.7994 8.30179L41.1994 11.8256C40.9512 12.0744 40.827 12.406 40.9098 12.7792L41.7787 17.754C41.9443 18.6246 40.9925 19.2879 40.2477 18.8734L35.7788 16.5103C35.4478 16.3445 35.0754 16.3445 34.7857 16.5103L30.2754 18.8734C29.4892 19.2879 28.5789 18.6246 28.7444 17.754L29.6134 12.7792C29.6548 12.4475 29.572 12.0744 29.3237 11.8256L25.641 8.30179C25.0203 7.67993 25.3514 6.60205 26.2203 6.47768L31.2272 5.73145C31.5582 5.68999 31.8892 5.48271 32.0133 5.15105L34.2478 0.590764C34.6616 -0.196921 35.7788 -0.196921 36.1926 0.590764Z" fill="#FFC329"/>
+                            <path d="M61.0163 0.590764L63.3749 5.15105C63.5496 5.48271 63.8553 5.68999 64.2048 5.73145L69.4897 6.47768C70.407 6.60205 70.8001 7.67993 70.1012 8.30179L66.3013 11.8256C66.0392 12.0744 65.9082 12.406 65.9955 12.7792L66.9128 17.754C67.0875 18.6246 66.0829 19.2879 65.2967 18.8734L60.5795 16.5103C60.2301 16.3445 59.837 16.3445 59.5313 16.5103L54.7704 18.8734C53.9405 19.2879 52.9796 18.6246 53.1543 17.754L54.0716 12.7792C54.1152 12.4475 54.0279 12.0744 53.7658 11.8256L49.8785 8.30179C49.2233 7.67993 49.5728 6.60205 50.49 6.47768L55.775 5.73145C56.1244 5.68999 56.4738 5.48271 56.6049 5.15105L58.9634 0.590764C59.4002 -0.196921 60.5795 -0.196921 61.0163 0.590764Z" fill="#FFC329"/>
+                            <path d="M85.7336 0.590764L87.9681 5.15105C88.1336 5.48271 88.4232 5.68999 88.7543 5.73145L93.7611 6.47768C94.6301 6.60205 95.0025 7.67993 94.3404 8.30179L90.7405 11.8256C90.4922 12.0744 90.368 12.406 90.4508 12.7792L91.3198 17.754C91.4853 18.6246 90.5336 19.2879 89.7887 18.8734L85.3198 16.5103C84.9888 16.3445 84.6164 16.3445 84.3267 16.5103L79.8165 18.8734C79.0303 19.2879 78.1199 18.6246 78.2854 17.754L79.1544 12.7792C79.1958 12.4475 79.113 12.0744 78.8647 11.8256L75.182 8.30179C74.5614 7.67993 74.8924 6.60205 75.7613 6.47768L80.7682 5.73145C81.0992 5.68999 81.4302 5.48271 81.5544 5.15105L83.7888 0.590764C84.2026 -0.196921 85.3198 -0.196921 85.7336 0.590764Z" fill="#FFC329"/>
+                            <path d="M111.055 0.590764L113.289 5.15105C113.455 5.48271 113.745 5.68999 114.076 5.73145L119.082 6.47768C119.951 6.60205 120.324 7.67993 119.662 8.30179L116.062 11.8256C115.813 12.0744 115.689 12.406 115.772 12.7792L116.641 17.754C116.807 18.6246 115.855 19.2879 115.11 18.8734L110.641 16.5103C110.31 16.3445 109.938 16.3445 109.648 16.5103L105.138 18.8734C104.352 19.2879 103.441 18.6246 103.607 17.754L104.476 12.7792C104.517 12.4475 104.434 12.0744 104.186 11.8256L100.503 8.30179C99.8826 7.67993 100.214 6.60205 101.083 6.47768L106.089 5.73145C106.42 5.68999 106.752 5.48271 106.876 5.15105L109.11 0.590764C109.524 -0.196921 110.641 -0.196921 111.055 0.590764Z" fill="#FFC329"/>
+                        </svg>
+                    </div>
+                    <div class="comentars__coment-title text-three">I love it</div>
+                    <div class="comentars__coment-info">I love it. It makes me feel good each morning and then it also makes me feel accomplished.</div>
+                    <div class="comentars__coment-person-info">
+                        <div class="comentars__coment-person-image">
+                            <img src="assets/images/components/coment3.jpg" alt="">
+                        </div>
+                        <div class="comentars__coment-person-name">Jenna Y.</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="ready-to-get">
+                <div class="ready-to-get__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="97" height="90" viewBox="0 0 97 90" fill="none">
+                        <path d="M87.8753 9.35737C77.193 -1.28476 60.6771 -2.4169 48.5174 4.96089C36.1115 -2.47351 19.5009 -1.05833 9.04586 9.35737C-3.47366 21.8298 -2.73499 42.265 9.63301 54.5676L17.8152 62.719C17.8152 62.719 17.8152 62.719 17.8342 62.7379C19.4062 64.304 21.4517 65.1342 23.5162 65.2474C23.6109 67.3042 24.4632 69.342 26.0353 70.9081C27.5695 72.4365 29.5771 73.3234 31.7174 73.4177C31.831 75.5499 32.7023 77.55 34.2364 79.0784C35.7706 80.6068 37.7783 81.4937 39.9185 81.588C40.0132 83.6447 40.8655 85.6826 42.4376 87.2487C45.8089 90.6074 51.2827 90.6074 54.654 87.2487L62.8552 79.0784C64.3893 77.55 65.2795 75.5499 65.3742 73.4177C67.4387 73.3234 69.4843 72.4743 71.0563 70.9081C72.5905 69.3797 73.4807 67.3796 73.5754 65.2474C75.7156 65.1531 77.7233 64.2662 79.2575 62.7379C80.7916 61.2095 81.6818 59.2093 81.7765 57.0771C83.9168 56.9828 85.9244 56.0959 87.4586 54.5676C99.9402 42.114 100.243 21.6788 87.8753 9.35737ZM26.0353 58.7376C24.8799 59.8886 23.0048 59.8886 21.8495 58.7376C20.6941 57.5866 20.6941 55.7186 21.8495 54.5676L30.562 45.8878C31.7174 44.7368 33.5925 44.7368 34.7478 45.8878C35.9032 47.0388 35.9032 48.9069 34.7478 50.0579C32.797 52.0014 27.1717 57.6055 26.0353 58.7376ZM30.0506 66.9079C28.8953 65.7569 28.8953 63.8889 30.0506 62.7379L38.2518 54.5676C39.4071 53.4165 41.2822 53.4165 42.4376 54.5676C43.5929 55.7186 43.5929 57.5866 42.4376 58.7376L34.2364 66.9079C33.0811 68.0589 31.206 68.0589 30.0506 66.9079ZM38.2518 75.0782C37.0964 73.9272 37.0964 72.0591 38.2518 70.9081L46.4529 62.7379C47.6083 61.5868 49.4833 61.5868 50.6387 62.7379C51.7941 63.8889 51.7941 65.7569 50.6387 66.9079L42.4376 75.0782C41.2822 76.2292 39.4071 76.2292 38.2518 75.0782ZM58.8209 75.0782L50.6198 83.2485C49.4644 84.3995 47.5893 84.3995 46.434 83.2485C45.2786 82.0975 45.2786 80.2294 46.434 79.0784L54.6351 70.9081C55.7905 69.7571 57.6655 69.7571 58.8209 70.9081C59.9763 72.0591 59.9763 73.9272 58.8209 75.0782ZM83.4243 50.5673C82.269 51.7183 80.3939 51.7183 79.2385 50.5673L62.8362 34.2267L58.8209 38.227L75.2232 54.5676C76.3785 55.7186 76.3785 57.5866 75.2232 58.7376C74.0678 59.8886 72.1927 59.8886 71.0374 58.7376L54.6351 42.397L50.6198 46.3973L67.022 62.7379C68.1774 63.8889 68.1774 65.7569 67.022 66.9079C65.8667 68.0589 63.9916 68.0589 62.8362 66.9079C61.3021 65.3795 59.2944 64.4927 57.1542 64.3983C57.0595 62.2661 56.1693 60.266 54.6351 58.7376C53.1009 57.2092 51.0933 56.3224 48.953 56.228C48.8583 54.1713 48.006 52.1335 46.434 50.5673C44.9945 49.1333 43.1573 48.303 41.2633 48.0955C41.3012 45.8501 40.4488 43.5858 38.7442 41.8876C35.3728 38.5289 29.8991 38.5289 26.5277 41.8876L17.8152 50.5673C17.0765 51.3032 16.5083 52.1335 16.0916 53.0203L13.6294 50.5673C3.4206 40.3969 2.81451 23.5469 13.0423 13.3576C20.9025 5.52696 33.422 3.77214 43.4982 8.69696C43.1194 9.0366 42.7596 9.37624 42.3997 9.73475L30.5052 21.5845C26.9065 25.1696 26.9065 30.9813 30.5052 34.5664C33.6114 37.6609 38.498 38.1138 42.1345 35.7174L60.4498 23.5469L83.4054 46.4161C84.5797 47.5483 84.5797 49.4163 83.4243 50.5673ZM87.4397 42.397L61.2074 16.2634L39.0094 31.0001C37.6078 31.9247 35.7327 31.736 34.5584 30.5662C33.1758 29.1887 33.1758 26.9622 34.5584 25.5847L46.4529 13.735C56.6807 3.54571 73.6322 3.16833 83.8599 13.3576C92.099 21.5656 93.3111 33.9814 88.4624 43.6235C88.1594 43.1895 87.8185 42.7744 87.4397 42.397Z" fill="#FF7D4E"/>
+                    </svg>
+                </div>
+                <div class="ready-to-get__title title">Ready to get started?</div>
+                <div class="ready-to-get__info text-one">We'll help you create a health plan with vitamins, supplements, and more that help you feel your <br> best today and support you long-term.</div>
+                <a href="quiz/quiz1.html" class="ready-to-get__button oval-button-purple">Take the quiz</a>
+                <a href="catalog.html" class="ready-to-get__button-info text-three"><span>Go to the shop</span><img src="assets/images/svg/go-to-shop-arrow.svg" alt=""></a>
+                <div >
+                    <svg class="ready-to-get__bg-elipse2" xmlns="http://www.w3.org/2000/svg" width="141" height="279" viewBox="0 0 141 279" fill="none">
+                        <path d="M141 250C79.1441 250 29 200.527 29 139.5C29 78.4725 79.1441 29 141 29" stroke="#E99478" stroke-width="58"/>
+                    </svg>
+                    <svg class="ready-to-get__bg-elipse3" xmlns="http://www.w3.org/2000/svg" width="140" height="141" viewBox="0 0 140 141" fill="none">
+                        <path d="M250 -3.17821e-06C250 61.8559 200.527 112 139.5 112C78.4725 112 29 61.8559 29 6.48201e-06" stroke="#FFCA78" stroke-width="58"/>
+                    </svg>
+                </div>
+            </div>
+            <svg class="bottom-bg-elipse" xmlns="http://www.w3.org/2000/svg" width="90" height="70" viewBox="0 0 90 70" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M70 41.2057C92.4019 41.2057 110.896 22.9409 110.896 0H140C140 38.4763 108.844 70 70 70C31.1557 70 1.91419e-06 38.4763 0 5.42517e-06L29.1039 4.16653e-06C29.1039 22.9409 47.5981 41.2057 70 41.2057Z" fill="#F6906E"/>
+            </svg>
+        </main>
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__logo">
+                <img src="assets/images/svg/header-icon.svg" alt="">
+            </div>
+            <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
+            <div class="footer__shop">
+                <div class="footer__shop-title footer__title">Shop</div>
+                <a href="" class="footer__shop-link footer__link">Vitamins & Dietary Supplements</a>
+                <a href="" class="footer__shop-link footer__link">Weight Loss</a>
+                <a href="" class="footer__shop-link footer__link">Minerals</a>
+                <a href="" class="footer__shop-link footer__link">Antioxidants</a>
+            </div>
+            <div class="footer__shop-two">
+                <a href="" class="footer__shop-two-link footer__link">Probiotics</a>
+                <a href="" class="footer__shop-two-link footer__link">Pain Relief</a>
+                <a href="" class="footer__shop-two-link footer__link">Prenatal Vitamins</a>
+            </div>
+            <div class="footer__information">
+                <div class="footer__information-title footer__title">Information</div>
+                <a href="" class="footer__information-link footer__link">Terms & Conditions</a>
+                <a href="" class="footer__information-link footer__link">Privacy Policy</a>
+                <a href="" class="footer__information-link footer__link">Shipping & Delivery</a>
+                <a href="" class="footer__information-link footer__link">Subscription Cycle & Billing</a>
+                <a href="" class="footer__information-link footer__link">Return Policy</a>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-title footer__title">Contact</div>
+                <a href="" class="footer__contact-link footer__link">support@medstogo.com</a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+            </div>
+        </div>
+    </footer></div>
+
+    <script defer src="assets/js/app.js"></script>
+    <script defer  src=""></script>
+    <script src=""></script>
+    <script type="module" src="" ></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Метаописание">
+    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="assets/css/component/header.min.css">
+    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/component/product.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/css/pages/personal-pack.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Personal pack</title>
+</head>
+<body>
+
+
+    
+    <div class="indent-for-sticky"></div>
+    <header class="header">
+        <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+            <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
+            <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+            <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
+            <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+        </div>
+    </header>
+    <div class="adaptive-menu">
+        <div class="adaptive-menu__main">
+            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+            <div class="adaptive-menu__email">support@medstogo.com</div>
+            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+        </div>
+    </div>
+    <div class="adaptive-menu-shop">
+        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Shop</span>
+        </div>
+        <nav class="menu adaptive-menu-shop__menu">
+            <a href="../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+            <a href="../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+            <a href="../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+            <a href="../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+            <a href="../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+            <a href="../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+            <a href="../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+            <a href="../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+            <a href="../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+        </nav>
+        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+        <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+    </div>
+    <div class="adaptive-menu-information">
+        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Information</span>
+        </div>
+        <nav class="menu adaptive-menu-information__menu">
+            <a href="" class="menu__item">Subscription Cycle & Billing</a>
+            <a href="" class="menu__item">Terms & Conditions</a>
+            <a href="" class="menu__item">Privacy Policy</a>
+            <a href="" class="menu__item">Shipping & Delivery</a>
+            <a href="" class="menu__item">Return Policy</a>
+        </nav>
+    </div>
+    <div class="adaptive-menu-profile">
+        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+            <img src="assets/images/svg/Back_arrow.svg" alt="">
+            <span>Profile</span>
+        </div>
+        <nav class="menu adaptive-menu-profile__menu">
+            <a href="" class="menu__item">Subscriptions</a>
+            <a href="" class="menu__item">Orders</a>
+            <a href="" class="menu__item">Account Overview</a>
+            <a href="" class="menu__item">Payment methods</a>
+            <a href="" class="menu__item">Change Password</a>
+            <a href="" class="menu__item">Sign Out</a>
+        </nav>
+    </div>
+    <div class="basket">
+        <div class="basket__title-row">
+            <div class="basket__title">Cart</div>
+            <div class="basket__exit" onclick="basket()"></div>
+        </div>
+        <div class="basket__line"></div>
+        <div id="basket-goods" class="basket__goods">
+        </div>
+        <div class="basket__btn">
+            <div class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$156.58</span></div>
+        </div>
+    </div>
+    <main>
+        <div class="inform">
+            <div class="inform__title">Alex, we made personalized pack for you!</div>
+            <div class="inform__info">Recommenadation</div>
+            <div class="inform__text">Your recommendation is based on your answers and our database of clinical research. This health plan, made just for you, is recommended for you to feel your best today while supporting long-term health.</div>
+            <div class="inform__bg-img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="158" height="158" viewBox="0 0 158 158" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M100 158C100 102.772 55.2285 58 6.91643e-07 58L0 1.88413e-06C87.261 8.43554e-07 158 70.739 158 158L100 158Z" fill="#FFCA78"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="183" height="141" viewBox="0 0 183 141" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M139.5 83C184.144 83 221 46.2095 221 0H279C279 77.5023 216.911 141 139.5 141C62.0889 141 3.8147e-06 77.5023 0 1.09278e-05L58 8.39259e-06C58 46.2095 94.8562 83 139.5 83Z" fill="#F6906E"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="122" height="122" viewBox="0 0 122 122" fill="none">
+                    <circle cx="61" cy="61" r="61" fill="#FFCA78"/>
+                </svg>
+            </div>
+        </div>
+        <div class="goods-bottom">
+            <div class="goods-bottom__title">Your Personalized Pack</div>
+            <div id="goods" class="goods-bottom__goods"></div>
+            <div class="goods-bottom__btn">
+                <div class="oval-button">Continue</div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__logo">
+                <img src="assets/images/svg/header-icon.svg" alt="">
+            </div>
+            <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
+            <div class="footer__shop">
+                <div class="footer__shop-title footer__title">Shop</div>
+                <a href="" class="footer__shop-link footer__link">Vitamins & Dietary Supplements</a>
+                <a href="" class="footer__shop-link footer__link">Weight Loss</a>
+                <a href="" class="footer__shop-link footer__link">Minerals</a>
+                <a href="" class="footer__shop-link footer__link">Antioxidants</a>
+            </div>
+            <div class="footer__shop-two">
+                <a href="" class="footer__shop-two-link footer__link">Probiotics</a>
+                <a href="" class="footer__shop-two-link footer__link">Pain Relief</a>
+                <a href="" class="footer__shop-two-link footer__link">Prenatal Vitamins</a>
+            </div>
+            <div class="footer__information">
+                <div class="footer__information-title footer__title">Information</div>
+                <a href="" class="footer__information-link footer__link">Terms & Conditions</a>
+                <a href="" class="footer__information-link footer__link">Privacy Policy</a>
+                <a href="" class="footer__information-link footer__link">Shipping & Delivery</a>
+                <a href="" class="footer__information-link footer__link">Subscription Cycle & Billing</a>
+                <a href="" class="footer__information-link footer__link">Return Policy</a>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-title footer__title">Contact</div>
+                <a href="" class="footer__contact-link footer__link">support@medstogo.com</a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                <a href="" class="footer__contact-link"><img src="assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+            </div>
+        </div>
+    </footer>
+    <script defer src="assets/js/app.js"></script>
+    <script defer  src="assets/js/personal-pack.js"></script>
+    <script src=""></script>
+    <script type="module" src="" ></script>
+</body>
+</html>
