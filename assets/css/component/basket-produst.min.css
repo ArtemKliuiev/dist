@@ -277,6 +277,10 @@ input[type=radio] + label:before {
   opacity: 1;
 }
 
+.img-weight {
+  max-width: 100px;
+}
+
 @media (max-width: 600px) {
   .item-basket__quantity-buttons {
     width: 90px;

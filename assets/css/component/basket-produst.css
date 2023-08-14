@@ -115,7 +115,7 @@
 .bg-basket-item__mineral .basket-product__image {
   background: var(--goods-mint, #94D6BE);
 }
-.bg-basket-item__pain__mineral .basket-product__image {
+.bg-basket-item__pain .basket-product__image {
   background: var(--goods-blue, #91CAF2);
 }
 .bg-basket-item__prenatal .basket-product__image {
@@ -129,6 +129,9 @@
 }
 .bg-basket-item__weight .basket-product__image {
   background: var(--goods-green, #A5B3FF);
+}
+.bg-basket-item__vitamin .basket-product__image {
+  background: var(--goods-purple, #9C91E0);
 }
 
 .custom-select-basket {

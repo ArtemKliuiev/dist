@@ -188,12 +188,12 @@ function localStorageFunc () {
         }))
 }
 
-
-const localInfo = JSON.parse(localStorage.getItem('goods'));
-// console.log(localInfo.script);
-// console.log(localInfo.goodsCard);
-arrScript = localInfo.script;
-basketGoods = localInfo.goodsCard;
-loadGoods ();
-loadScript();
-//okeyNew
+(function(){
+    const localInfo = JSON.parse(localStorage.getItem('goods'));
+    if(localInfo !== null){
+        arrScript = localInfo.script;
+        basketGoods = localInfo.goodsCard;
+    }
+    loadGoods ();
+    loadScript();
+}())
