@@ -10,7 +10,7 @@ setTimeout(function(){
     const item = thisProduct.querySelector('.container');
     const price = thisProduct.querySelector('#price');
     const priceAll = document.querySelectorAll('.basket-product__price');
-    const check = thisProduct.querySelector('#check');
+    const check = thisProduct.querySelector('#check23');
     const option = thisProduct.querySelector('#custom-select');
     const basketTotalPrice = document.querySelector('#basket-total-price');
     const productCard = thisProduct.querySelector('#product');
@@ -55,6 +55,7 @@ setTimeout(function(){
         if(localGoodsInfo.checked){
             check.checked = true;
         }
+        option.innerHTML = localGoodsInfo.days
         console.log(localGoodsInfo.checked, 'check')
         totalPrice ()
 
@@ -129,7 +130,6 @@ setTimeout(function(){
             'goodsCard': basketGoods,
             'script': arrScript,
         }))
-
         localStorage.removeItem(goodsInfo);
         thisProduct.remove()
     });
@@ -145,18 +145,6 @@ setTimeout(function(){
             }
         ))
     }
-
-    
-
-
-
-
-
-
-
-
-
-
 },100);
 
 

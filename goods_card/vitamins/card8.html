@@ -128,8 +128,9 @@
         <div class="basket__btn">
             <div class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$156.58</span></div>
         </div>
-    </div><main>
-        <div class="item">
+    </div>
+    <main>
+        <div class="item" id="card14">
             <div class="item__image">
                 <img src="../../assets/images/goods__big-size/14.webp" alt="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="149" height="150" viewBox="0 0 149 150" fill="none">
@@ -158,13 +159,13 @@
                         </div>
                         <div class="item__quantity-buttons">
                             <div class="container">
-                                <button class="decreaseButton item__btn-decrease item__add-btn">
+                                <button class="decreaseButton item__btn-decrease item__add-btn" aria-label="btn-remove">
                                     <svg class="decreaseButton-remove" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <rect opacity="1" x="6" y="11" width="12" height="2" fill="black"/>
                                     </svg>
                                 </button>
                                 <span class="item__quantity-number number">1</span>
-                                <button class="increaseButton item__btn-increase item__add-btn">
+                                <button class="increaseButton item__btn-increase item__add-btn" aria-label="btn-add">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M13 6H11V11H6V13H11V18H13V13H18V11H13V6Z" fill="black"/>
                                     </svg>
@@ -178,7 +179,7 @@
                             <div class="item__check-row-option">
                                 <div class="custom-select">
                                     <span class="custom-select__option">
-                                        <span>30</span>
+                                        <span id="custom-select-option">30</span>
                                     </span>
                                     <svg class="custom-select__arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
                                         <path opacity="1" fill-rule="evenodd" clip-rule="evenodd" d="M10 0.975838L9.02886 5.59011e-07L5 4.04832L0.971145 4.34387e-07L-2.19613e-07 0.975838L5 6L10 0.975838Z" fill="black"/>
@@ -192,13 +193,13 @@
                             </div>
                             <div class="item__check-row-days">days</div>
                             <div class="item__check-row-cheked">
-                                <input class="apple-switch" type="checkbox">
+                                <input class="apple-switch" type="checkbox" aria-label="checkbox">
                             </div>
                         </div>
                         <div class="item__button-row">
                             <div class="item__price">$61.98</div>
                             <div class="item__btn">
-                                <div class="oval-button">Add to cart</div>
+                                <div onclick="addItem('/dist/basket-goods/vitamins/8.html');addScript('/dist/assets/js/basket-goods/14.js');localStorageFuncCard();checkedFunc()" class="oval-button">Add to cart</div>
                             </div>
                         </div>
                     </div>
@@ -272,7 +273,7 @@
         </div>
     </footer>
     <script defer src="../../assets/js/app.js"></script>
-    <script defer  src="../../assets/js/goods__items.js"></script>
+    <script defer  src="../../assets/js/cards-js/goods__items14.js"></script>
     <script src=""></script>
     <script type="module" src="" ></script>
 </body>

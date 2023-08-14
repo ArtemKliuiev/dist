@@ -1,46 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Метаописание">
-    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
-    <link rel="stylesheet" href="assets/css/reset.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
-    <link rel="stylesheet" href="assets/css/component/header.min.css">
-    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
-    <link rel="stylesheet" href="assets/css/component/footer.min.css">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    
-    <!-- Useful meta tags -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="">
-    
-    <title></title>
-</head>
-<body>
 
-
-    <a href="goods_card/vitamins/card2.html" class="product">
-        <div class="product__image"><img src="assets/images/goods/2.webp" alt=""></div>
-        <div class="product__main">
-            <div class="product__type vitamin" >Vitamins & Dietary Supplements</div>
-            <div class="product__name">Metagenics - 500-C Methoxyflavone</div>
-            <div class="product__price">$61.98</div>
+    <div id="product2" class="basket-product bg-basket-item__vitamin">
+        <div class="basket-product__image">
+            <img src="/dist/assets/images/goods/2.webp" alt="">
         </div>
-    </a>
+        <div class="basket-product__main">
+            <div class="basket-product__title-row">
+                <div class="basket-product__title">Metagenics - 500-C Methoxyflavone</div>
+                <div class="basket-product__exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1 13L13 0.999998" stroke="#C7C7C7" stroke-width="2"/>
+                        <path d="M13 13L1 0.999999" stroke="#C7C7C7" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="basket-product__price-row">
+                <div class="basket-product__add-btn">
+                    <div class="item-basket__quantity-buttons">
+                        <div class="container ">
+                            <button class="decrease item-basket__btn-decrease item-basket__add-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <circle cx="15" cy="15" r="15" fill="#F5F5F5"/>
+                                    <rect opacity="0.3" x="11" y="14" width="8" height="2" fill="black"/>
+                                </svg>
+                            </button>
+                            <span class="item-basket__quantity-number number">1</span>
+                            <button class="increase item-basket__btn-increase item-basket__add-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <circle cx="15" cy="15" r="15" fill="#F5F5F5"/>
+                                    <path d="M16 11H14V14H11V16H14V19H16V16H19V14H16V11Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="price" class="basket-product__price">$61.98</div>
+            </div>
+            <div class="basket-product__setting-row">
+                <div class="basket-product__castum-check">
+                    <input type="checkbox" id="check2" name="check" />
+                    <label for="check2"></label>
+                </div>
+                <div class="basket-product__info"><span>Autoship every</span><span>Deliver every</span></div>
+                <div class="basket-product__option">
+                    <div class="custom-select-basket">
+                        <span class="custom-select-basket__option">
+                            <span id="custom-select">30</span>
+                        </span>
+                        <svg class="custom-select-basket__arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path opacity="1" fill-rule="evenodd" clip-rule="evenodd" d="M10 0.975838L9.02886 5.59011e-07L5 4.04832L0.971145 4.34387e-07L-2.19613e-07 0.975838L5 6L10 0.975838Z" fill="black"/>
+                        </svg>
+                        <ul class="custom-select-basket__list">
+                          <li class="li" >15</li>
+                          <li class="li" >30</li>
+                          <li class="li" >45</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="basket-product__days"><span>days</span></div>
+            </div>
+        </div>
+    </div>
+    
 
-    <script defer src=""></script>
-    <script defer  src=""></script>
-    <script src=""></script>
-    <script type="module" src="" ></script>
-</body>
-</html>

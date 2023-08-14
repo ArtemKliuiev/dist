@@ -119,12 +119,13 @@ let arrScript = [
 ]
   
   // Функция для загрузки и добавления контента на страницу
+  const containerElement = document.getElementById('basket-goods');
   function loadAndAppendContent(url) {
     fetch(url)
       .then(response => response.text())
       .then(htmlContent => {
         // Выбираем элемент, куда хотим добавить загруженный HTML код
-        const containerElement = document.getElementById('basket-goods');
+
   
         // Добавляем полученный HTML код внутрь выбранного элемента
         containerElement.innerHTML += htmlContent;
@@ -136,6 +137,7 @@ let arrScript = [
   }
     
   function loadScript() {
+    containerElement.innerHTML = '';
     for(i=0; i < arrScript.length; i++ ){
         var script = document.createElement('script');
         script.src = arrScript[i];
@@ -166,7 +168,6 @@ function addItem (oneItem) {
 }
 
 function addScript(script) {
-    console.log('скрипт уже подключен')
     if(arrScript.includes(script)){
         console.log('скрипт уже подключен')
     }else{
@@ -189,10 +190,10 @@ function localStorageFunc () {
 
 
 const localInfo = JSON.parse(localStorage.getItem('goods'));
-console.log(localInfo.script);
-console.log(localInfo.goodsCard);
+// console.log(localInfo.script);
+// console.log(localInfo.goodsCard);
 arrScript = localInfo.script;
 basketGoods = localInfo.goodsCard;
 loadGoods ();
 loadScript();
-//okey3
+//okeyNew
