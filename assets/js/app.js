@@ -195,4 +195,4 @@ arrScript = localInfo.script;
 basketGoods = localInfo.goodsCard;
 loadGoods ();
 loadScript();
-//okey2
+//okey3
