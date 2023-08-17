@@ -263,6 +263,10 @@ input:focus {
   outline: none;
 }
 
+.input-active {
+  border: 1px solid #FF7D4E;
+}
+
 .footer-two {
   display: grid;
   max-width: 1456px;

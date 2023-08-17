@@ -208,5 +208,22 @@ setTimeout(function(){
     allTotalPrice();
 },500);
 
+setTimeout(function(){
+    quantityItem();
+    allPriceCountItem();
+    discount();
+    allDiscount();
+    totalPriceNew();
+    allTotalPrice();
+},1000);
+
+setTimeout(function(){
+    quantityItem();
+    allPriceCountItem();
+    discount();
+    allDiscount();
+    totalPriceNew();
+    allTotalPrice();
+},1500);
 // //калькулятор цены
 
