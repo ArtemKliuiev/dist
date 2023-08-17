@@ -1,1 +1,39 @@
-.oval-button{height:56px;width:100%;line-height:56px;border-radius:200px;background-color:#ff7d4e;color:#fff;text-align:center;font-family:Effra;font-size:16px;font-weight:700;cursor:pointer;display:block}.oval-button-purple{height:74px;width:100%;line-height:74px;border-radius:200px;background-color:#6e5ddc;color:#fff;text-align:center;font-family:Open Sans;font-size:20px;font-weight:700;display:block;cursor:pointer}@media (max-width:650px){.oval-button-purple{font-family:Effra;font-size:16px;width:154px;height:50px;line-height:50px}}
+.oval-button {
+  height: 56px;
+  width: 100%;
+  line-height: 56px;
+  border-radius: 200px;
+  background-color: rgb(255, 125, 78);
+  color: #FFF;
+  text-align: center;
+  font-family: Effra;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+}
+
+.oval-button-purple {
+  height: 74px;
+  width: 100%;
+  line-height: 74px;
+  border-radius: 200px;
+  background-color: #6E5DDC;
+  color: #FFF;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .oval-button-purple {
+    font-family: Effra;
+    font-size: 16px;
+    width: 154px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
