@@ -4,7 +4,7 @@
   display: grid;
   grid-template: 30px auto/minmax(30px, 1fr) minmax(auto, 1396px) minmax(30px, 1fr);
 }
-.top-line a {
+.top-line__logo {
   grid-column: 2;
   grid-row: 2;
 }
