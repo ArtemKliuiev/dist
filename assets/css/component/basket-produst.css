@@ -1,7 +1,7 @@
 .basket-product {
   display: grid;
   height: 174px;
-  grid-template: 1fr/120px 25px 1fr 5px;
+  grid-template: 1fr/120px 25px 1fr 25px;
 }
 .basket-product__image {
   grid-column: 1;
@@ -15,6 +15,7 @@
   grid-column: 1;
   grid-row: 2;
   height: 100%;
+  max-width: 95px;
 }
 .basket-product__main {
   grid-column: 3;
@@ -282,6 +283,10 @@ input[type=radio] + label:before {
 
 .opacity .item-basket__btn-decrease rect {
   opacity: 1;
+}
+
+.img-weight {
+  max-width: 100px;
 }
 
 @media (max-width: 600px) {
