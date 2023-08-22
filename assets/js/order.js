@@ -5,6 +5,7 @@ const totalPrice = document.querySelector('#total-price');
 const discountPrice = document.querySelector('#discount-price');
 const delivery = document.querySelector('#delivery');
 const allPrice = document.querySelector('#all-price');
+const todayTotalAdaptive = document.querySelector('.adaprive-list__price');
 
 //
 btnList.addEventListener('click', function(){
@@ -196,6 +197,10 @@ function allTotalPrice() {
     allPrice.innerHTML = `$${sum.toFixed(2)}`
 }
 
+//TodayTotalAdaptive
+function todayTotal(){
+    todayTotalAdaptive.innerHTML = allPrice.textContent;
+}
 
 
 
@@ -206,6 +211,7 @@ setTimeout(function(){
     allDiscount();
     totalPriceNew();
     allTotalPrice();
+    todayTotal();
 },500);
 
 setTimeout(function(){
@@ -215,6 +221,7 @@ setTimeout(function(){
     allDiscount();
     totalPriceNew();
     allTotalPrice();
+    todayTotal();
 },1000);
 
 setTimeout(function(){
@@ -224,6 +231,7 @@ setTimeout(function(){
     allDiscount();
     totalPriceNew();
     allTotalPrice();
+    todayTotal();
 },1500);
 // //калькулятор цены
 

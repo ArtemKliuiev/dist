@@ -11,6 +11,7 @@ const inputCardNum2 = document.querySelector('#input-card-num');
 const inputCardData = document.querySelector('#input-card-data');
 const inputCardCVC = document.querySelector('#input-card-cvc');
 
+
 //Ссылки на название ошибок
 const errorFirstName = document.querySelector('.order-main__error-first-name');
 const errorLastName = document.querySelector('.order-main__error-last-name');
@@ -24,7 +25,12 @@ const errorRegNum = document.querySelector('.order-main__error-region-num');
 const errorCardNum = document.querySelector('.order-main__error-card-num');
 const errorCardData = document.querySelector('.order-main__error-card-data');
 const errorCardCVC = document.querySelector('.order-main__error-card-cvc');
+
+
+// regRex
 const regex = /\d/; 
+const regLetters = /[a-zA-Z]/
+const regEmail = /@/;
 
 console.log()
 function ExaminationFirstName(){
@@ -42,6 +48,11 @@ function ExaminationFirstName(){
     }
 }
 
+inputFirstName.addEventListener("input", function(){
+    errorFirstName.innerHTML = '';
+    inputFirstName.classList.remove('input-active');
+})
+
 function ExaminationLastName(){
     if(inputLastName.value === ''){
         errorLastName.innerHTML = 'Required'
@@ -57,6 +68,12 @@ function ExaminationLastName(){
     }
 }
 
+inputLastName.addEventListener("input", function(){
+    errorLastName.innerHTML = '';
+    inputLastName.classList.remove('input-active');
+})
+
+
 function ExaminationAdressOne(){
     if(inputAdressOne.value === ''){
         errorAdressOne.innerHTML = 'Required'
@@ -69,6 +86,11 @@ function ExaminationAdressOne(){
     }
 }
 
+inputAdressOne.addEventListener("input", function(){
+    errorAdressOne.innerHTML = '';
+    inputAdressOne.classList.remove('input-active');
+})
+
 function ExaminationAdressTwo(){
     if(inputAdressTwo.value.length <= 5 && inputAdressTwo.value.length !== 0){
         errorAdressTwo.innerHTML = 'The shipping address should be at least 5 characters long'
@@ -78,12 +100,189 @@ function ExaminationAdressTwo(){
     }
 }
 
+inputAdressTwo.addEventListener("input", function(){
+    errorAdressTwo.innerHTML = '';
+    inputAdressTwo.classList.remove('input-active');
+})
+
+
+function ExaminationCity(){
+    if(inputCity.value === ''){
+        errorCity.innerHTML = 'Required'
+        inputCity.classList.add('input-active')
+    }else if(regex.test(inputCity.value)){
+        errorCity.innerHTML = 'Please enter a valid city name'
+        inputCity.classList.add('input-active')
+    }else if(inputCity.value.length <= 3){
+        errorCity.innerHTML = 'at least three letters'
+        inputCity.classList.add('input-active')
+    }else{
+        console.log(inputCity.value)
+    }
+}
+
+inputCity.addEventListener("input", function(){
+    errorCity.innerHTML = '';
+    inputCity.classList.remove('input-active');
+})
+
+function ExaminationRegionCode(){
+    if(inputRegNum.value === ''){
+        errorRegNum.innerHTML = 'Required'
+        inputRegNum.classList.add('input-active')
+    }else if(inputRegNum.value.length <= 3){
+        errorRegNum.innerHTML = 'Min 3 characters long'
+        inputRegNum.classList.add('input-active')
+    }else if (inputRegNum.value.length > 10){
+        errorRegNum.innerHTML = 'You can write a maximum of 10 characters'
+        inputRegNum.classList.add('input-active')
+    }else{
+
+    }
+    console.log(inputRegNum.value.length )
+}
+
+inputRegNum.addEventListener("input", function(){
+    errorRegNum.innerHTML = '';
+    inputRegNum.classList.remove('input-active');
+})
+
+function ExaminationEmail(){
+    if(inputEmail.value === ''){
+        errorEmail.innerHTML = 'Required'
+        inputEmail.classList.add('input-active')
+    }else if(!regEmail.test(inputEmail.value) !== false){
+        errorEmail.innerHTML = 'Please enter a valid email address'
+        inputEmail.classList.add('input-active')
+    }else if(inputEmail.value.length <= 5){
+        errorEmail.innerHTML = 'at least five letters'
+        inputEmail.classList.add('input-active')
+    }else{
+        console.log(regEmail.test(inputEmail.value))
+    }
+}
+
+inputEmail.addEventListener("input", function(){
+    errorEmail.innerHTML = '';
+    inputEmail.classList.remove('input-active');
+})
+
+function ExaminationNumber(){
+    if(inputPhone.value === ''){
+        errorPhone.innerHTML = 'Required'
+        inputPhone.classList.add('input-active')
+    }else if(inputPhone.value.length < 10 || inputPhone.value.length > 12 ){
+        errorPhone.innerHTML = 'Please input numbers'
+        inputPhone.classList.add('input-active')
+    }else{
+        console.log(inputPhone.value.length)
+    }
+}
+
+inputPhone.addEventListener("input", function(){
+    errorPhone.innerHTML = '';
+    inputPhone.classList.remove('input-active');
+})
+
+function ExaminationCardNumber(){
+    if(inputCardNum2.value === ''){
+        errorCardNum.innerHTML = 'Required'
+        inputCardNum2.classList.add('input-active')
+    }else if(inputCardNum2.value.length < 12 || inputCardNum2.value.length > 20 ){
+        errorCardNum.innerHTML = 'Card numbers must contain between 12 and 20 numerical characters.'
+        inputCardNum2.classList.add('input-active')
+    }else{
+        console.log(inputCardNum2.value.length)
+    }
+}
+
+inputCardNum2.addEventListener("input", function(){
+    errorCardNum.innerHTML = '';
+    inputCardNum2.classList.remove('input-active');
+})
+
+inputCardData.addEventListener("input", function(){
+    errorCardData.innerHTML = '';
+    inputCardData.classList.remove('input-active');
+})
+
+function ExaminationCardData(){
+    if(inputCardData.value === ''){
+        errorCardData.innerHTML = 'Required'
+        inputCardData.classList.add('input-active')
+    }else if(inputCardData.value.length < 3){
+        errorCardData.innerHTML = 'Required'
+        inputCardData.classList.add('input-active')
+    }else{
+        console.log(inputCardData.value)
+    }
+}
+
+inputCardData.addEventListener("input", function(){
+    errorCardData.innerHTML = '';
+    inputCardData.classList.remove('input-active');
+})
+
+function ExaminationCardCVC(){
+    if(inputCardCVC.value === ''){
+        errorCardCVC.innerHTML = 'Required'
+        inputCardCVC.classList.add('input-active')
+    }else if(inputCardCVC.value.length < 3){
+        errorCardCVC.innerHTML = 'Required'
+        inputCardCVC.classList.add('input-active')
+    }else if(regLetters.test(inputCardCVC.value)){
+        errorCardCVC.innerHTML = 'Please enter numbers only'
+        inputCardCVC.classList.add('input-active')
+    }else{
+        console.log(regLetters.test(inputCardCVC.value))
+    }
+}
+
+inputCardCVC.addEventListener("input", function(){
+    errorCardCVC.innerHTML = '';
+    inputCardCVC.classList.remove('input-active');
+})
+
+function ExaminationSelect(){
+    if(inputCountry.textContent == 'NY'){
+        errorCountry.innerHTML = 'Please select State/Province'
+        inputCountry.classList.add('input-active')
+    }else{
+        console.log(inputCountry.textContent)
+    }
+}
+
+inputCountry.addEventListener("input", function(){
+    errorCountry.innerHTML = '';
+    inputCountry.classList.remove('input-active');
+})
+
+function castumSel(num){
+    errorCountry.innerHTML = ''
+    inputCountry.classList.remove('input-active')
+    if(num === 1){
+        inputCountry.innerHTML = 'Ukraine'
+    }else if( num === 2){
+        inputCountry.innerHTML = 'USA'
+    }else if (num ===3){
+        inputCountry.innerHTML = 'Mexico'
+    }
+}
 
 function orderBtn() {
     ExaminationFirstName();
     ExaminationLastName();
     ExaminationAdressOne();
     ExaminationAdressTwo();
+    ExaminationCity();
+    ExaminationRegionCode();
+    ExaminationEmail();
+    ExaminationNumber();
+    ExaminationCardNumber();
+    ExaminationCardData();
+    ExaminationCardCVC();
+    ExaminationSelect();
+    console.log('aaa')
 }
 
 // const text = "Пример текста с .  цифрами";

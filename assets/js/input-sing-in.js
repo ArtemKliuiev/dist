@@ -28,7 +28,7 @@ document.getElementById("sing-in").addEventListener("click", function(event) {
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       // Вход прошел успешно, перенаправляем пользователя на его персональную страницу
-      window.location.href = "person.html";
+      window.location.href = "/dist/person.html";
     })
     .catch((error) => {
       // Обработка ошибок при входе

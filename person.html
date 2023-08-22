@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Метаописание">
+    <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="assets/css/component/header.min.css">
+    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/pages/order.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/css/pages/profile.min.css">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Recovery</title>
+</head>
+<body>
+
+
+    <div class="profile-wrapper">
+      <div class="profile-header">
+        <div class="indent-for-sticky"></div>
+        <header class="header">
+            <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+                <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
+                <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+                <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
+                <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+            </div>
+        </header>
+        <div class="adaptive-menu">
+            <div class="adaptive-menu__main">
+                <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+                <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+                <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+                <div class="adaptive-menu__email">support@medstogo.com</div>
+                <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+            </div>
+        </div>
+        <div class="adaptive-menu-shop">
+            <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Shop</span>
+            </div>
+            <nav class="menu adaptive-menu-shop__menu">
+                <a href="/dist/catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+                <a href="/dist/catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+                <a href="/dist/catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+                <a href="/dist/catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+                <a href="/dist/catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+                <a href="/dist/catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+                <a href="/dist/catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+                <a href="/dist/catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+                <a href="/dist/catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+            </nav>
+            <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+            <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+            <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+        </div>
+        <div class="adaptive-menu-information">
+            <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Information</span>
+            </div>
+            <nav class="menu adaptive-menu-information__menu">
+                <a href="/dist/text-sample.html" class="menu__item">Subscription Cycle & Billing</a>
+                <a href="/dist/text-sample.html" class="menu__item">Terms & Conditions</a>
+                <a href="/dist/text-sample.html" class="menu__item">Privacy Policy</a>
+                <a href="/dist/text-sample.html" class="menu__item">Shipping & Delivery</a>
+                <a href="/dist/text-sample.html" class="menu__item">Return Policy</a>
+            </nav>
+        </div>
+        <div class="adaptive-menu-profile">
+            <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Profile</span>
+            </div>
+            <nav class="menu adaptive-menu-profile__menu">
+                <a href="/dist/person.html" onclick="filtrationProfile(1)" class="menu__item">Subscriptions</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(2)" class="menu__item">Orders</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
+                <a id="logoutButton" class="menu__item">Sign Out</a>
+            </nav>
+        </div>
+        <div class="basket">
+            <div class="basket__title-row">
+                <div class="basket__title">Cart</div>
+                <div class="basket__exit" onclick="basket()"></div>
+            </div>
+            <div class="basket__line"></div>
+            <div id="basket-goods" class="basket__goods">
+            </div>
+            <div class="basket__btn">
+                <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
+            </div>
+        </div>    <!-- <h1>Добро пожаловать в ваш персональный кабинет!</h1><br><br><br>
+        <p>Email: <span id="email"></span></p><br><br><br>
+        <button id="logoutButton">Выход</button> <br><br><br>
+        <button ><a href="../quiz/quiz1.html">Перейти к опросу</a></button>  -->
+        <div class="profile-main">
+          <div class="profile">
+            <div class="profile__menu">
+              <div onclick="tabs(1)" class="profile__subscriptions">Subscriptions</div>
+              <div onclick="tabs(2)" class="profile__orders">Orders</div>
+              <div onclick="tabs(3)" class="profile__account">Account Overview</div>
+              <div onclick="tabs(4)" class="profile__payment">Payment methods</div>
+              <div onclick="tabs(5)" class="profile__change">Change Password</div>
+              <div onclick="tabs(6)" class="profile__sign-out">Sign out</div>
+            </div>
+            <div class="profile__title">
+              <span class="profile__title-one">Subscriptions</span>
+              <span class="profile__title-two"></span>
+            </div>
+            <div class="profile__main">
+              <div class="profile__subscriptions-main">
+                <div class="profile__subscriptions-goods">
+    
+                </div>
+              </div>
+              <div class="profile__account-main">
+                    <div class="order-main__info">
+                      <div class="order-main__one-input order-main__first-name">
+                          <div class="order-main__one-input-title">First Name</div>
+                          <input id="input-first-name" class="order-main__one-input-input" aria-label="first-name" type="text">
+                          <div class="order-main__error order-main__error-first-name"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__last-name">
+                          <div class="order-main__one-input-title">Last Name</div>
+                          <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+                          <div class="order-main__error order-main__error-last-name"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__adress">
+                          <div class="order-main__one-input-title">Address Line 1</div>
+                          <input id="input-adress-one" class="order-main__one-input-input" aria-label="adress" type="text">
+                          <div class="order-main__error order-main__error-adress-one"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__adress-two">
+                          <div class="order-main__one-input-title">Address Line 2</div>
+                          <input id="input-adress-two" class="order-main__one-input-input" aria-label="adress-line2" type="text">
+                          <div class="order-main__error order-main__error-adress-two"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__city">
+                          <div class="order-main__one-input-title">City</div>
+                          <input id="input-city" class="order-main__one-input-input" aria-label="city" type="text">
+                          <div class="order-main__error order-main__error-ciry"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__email">
+                          <div class="order-main__one-input-title">Email</div>
+                          <input id="input-email" class="order-main__one-input-input" aria-label="email" type="text">
+                          <div class="order-main__error order-main__error-email"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__phone">
+                          <div class="order-main__one-input-title">Phone Number</div>
+                          <input id="input-phone" class="order-main__one-input-input" aria-label="number" type="number">
+                          <div class="order-main__error order-main__error-phone"></div>
+                      </div>
+                      <div class="order-main__one-input order-main__region">
+                          <div class="order-main__one-input-title order-main__region-title-one">State / Province</div>
+                          <div class="order-main__region-select dropdown">
+                              <button id="input-country" aria-label="select-btn" class="dropbtn">NY</button>
+                              <div class="dropdown-arrow">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
+                                      <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z" fill="black"/>
+                                  </svg>
+                              </div>
+                              <div class="dropdown-content">
+                                  <a onclick="castumSel(1)">UA</a>
+                                  <a onclick="castumSel(2)">USA</a>
+                                  <a onclick="castumSel(3)">MEX</a>
+                              </div>
+                              <div class="order-main__error order-main__error-region"></div>
+                          </div>
+                          <div class="order-main__region-title-two order-main__region-numbers ">
+                              <div class="order-main__one-input-title order-main__region-title">ZIP / Postal Code</div>
+                              <input id="input-region-num" type="number" class="order-main__region-number" maxlength="7">
+                              <div class="order-main__error order-main__error-region-num"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div onclick="orderBtn()" class="profile__btn profile__account-main-btn">Save</div>
+              </div>
+              <div class="profile__payment-main">
+                <div class="profile__biling">
+                    <div class="profile__one-input profile__card-number">
+                        <div class="profile__one-input-title">Card Number</div>
+                        <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="profile__one-input-input" maxlength="19" aria-label="card-number" type="text">
+                        <div class="profile__error profile__error-card-num"></div>
+                    </div>
+                    <div class="profile__one-input profile__data">
+                        <div class="profile__one-input-title">Expiration</div>
+                        <input id="input-card-data" class="profile__one-input-input" type="text"  maxlength="5" placeholder="MM/YY"> 
+                        <div class="profile__error profile__error-card-data"></div>
+                    </div>
+                    <div class="profile__one-input profile__cvc">
+                        <div class="profile__one-input-title">CVC</div>
+                        <input id="input-card-cvc" placeholder="CVC" maxlength="3" class="profile__one-input-input" aria-label="card-number" type="text">
+                        <span class="profile__cvc-lable"></span>
+                        <div class="profile__error profile__error-card-cvc"></div>
+                    </div>
+                </div>
+                <div  class="profile__btn">Save</div>
+              </div>
+              <div class="profile__change-password">
+                <div class="profile__change-password-main">
+                  <div class="order-main__one-input profile__current-password">
+                    <div class="order-main__one-input-title">Current Password</div>
+                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+                    <div class="order-main__error order-main__error-last-name"></div>
+                  </div>
+                  <div class="order-main__one-input profile__new-password">
+                    <div class="order-main__one-input-title">New Password</div>
+                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+                    <div class="order-main__error order-main__error-last-name"></div>
+                  </div>
+                  <div class="order-main__one-input profile__confirm-new-password">
+                    <div class="order-main__one-input-title">Confirm New Password</div>
+                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+                    <div class="order-main__error order-main__error-last-name"></div>
+                  </div>
+                </div>
+                <div class="profile__btn profile__change-btn">Save</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="profile-footer">
+      <footer class="footer">
+          <div class="footer__main">
+              <div class="footer__logo">
+                  <img src="assets/images/svg/header-icon.svg" alt="">
+              </div>
+              <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
+              <div class="footer__shop">
+                  <div class="footer__shop-title footer__title">Shop</div>
+                  <a href="/dist/catalog.html" onclick="filtration(2)" class="footer__shop-link footer__link">Vitamins & Dietary Supplements</a>
+                  <a href="/dist/catalog.html" onclick="filtration(3)" class="footer__shop-link footer__link">Weight Loss</a>
+                  <a href="/dist/catalog.html" onclick="filtration(4)" class="footer__shop-link footer__link">Minerals</a>
+                  <a href="/dist/catalog.html" onclick="filtration(5)" class="footer__shop-link footer__link">Antioxidants</a>
+              </div>
+              <div class="footer__shop-two">
+                  <a href="/dist/catalog.html" onclick="filtration(6)" class="footer__shop-two-link footer__link">Probiotics</a>
+                  <a href="/dist/catalog.html" onclick="filtration(7)" class="footer__shop-two-link footer__link">Pain Relief</a>
+                  <a href="/dist/catalog.html" onclick="filtration(8)" class="footer__shop-two-link footer__link">Prenatal Vitamins</a>
+              </div>
+              <div class="footer__information">
+                  <div class="footer__information-title footer__title">Information</div>
+                  <a href="/dist/text-sample.html" class="footer__information-link footer__link">Terms & Conditions</a>
+                  <a href="/dist/text-sample.html" class="footer__information-link footer__link">Privacy Policy</a>
+                  <a href="/dist/text-sample.html" class="footer__information-link footer__link">Shipping & Delivery</a>
+                  <a href="/dist/text-sample.html" class="footer__information-link footer__link">Subscription Cycle & Billing</a>
+                  <a href="/dist/text-sample.html" class="footer__information-link footer__link">Return Policy</a>
+              </div>
+              <div class="footer__contact">
+                  <div class="footer__contact-title footer__title">Contact</div>
+                  <a href="/dist/text-sample.html" class="footer__contact-link footer__link">support@medstogo.com</a>
+                  <a href="/dist/text-sample.html" class="footer__contact-link"><img src="assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                  <a href="/dist/text-sample.html" class="footer__contact-link"><img src="assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+              </div>
+          </div>
+      </footer>
+      
+      
+      </div>
+    </div>
+    
+    
+
+    <script defer src="assets/js/app.js"></script>
+    <script defer  src="/dist/assets/js/person-main.js"></script>
+    <script src=""></script>
+    <script type="module" src="/dist/assets/js/person.js" ></script>
+</body>
+</html>

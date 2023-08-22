@@ -197,3 +197,19 @@ function localStorageFunc () {
     loadGoods ();
     loadScript();
 }())
+
+
+//Адаптивное меню провиль
+function filtrationProfile(number){
+    if(number === 1){
+        localStorage.setItem('ProfileItem', 1);
+    }else if(number === 2){
+        localStorage.setItem('ProfileItem', 2);
+    }else if(number === 3){
+        localStorage.setItem('ProfileItem', 3);
+    }else if(number === 4){
+        localStorage.setItem('ProfileItem', 4);
+    }else if(number === 5){
+        localStorage.setItem('ProfileItem', 5);
+    }
+}

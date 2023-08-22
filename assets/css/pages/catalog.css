@@ -2,6 +2,18 @@
   margin-top: 32px;
 }
 
+.display-none {
+  display: none;
+}
+
+.quantity-item {
+  display: none;
+}
+
+.product__price-total {
+  display: none;
+}
+
 .banners__one {
   grid-template: 1fr/minmax(50px, 71px) minmax(auto, 575px) 1fr;
   background: #8172DD url(../../images/catalog/banners/Union1.webp) right no-repeat;

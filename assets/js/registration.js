@@ -100,7 +100,7 @@ function location() {
   if (hrefValue === "wholesale-after.html") {
     window.location.href = "wholesale-after.html";
   } else if (hrefValue === "") {
-    window.location.href = "person.html";
+    window.location.href = "../person.html";
   }
 }
 
