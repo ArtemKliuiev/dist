@@ -112,6 +112,21 @@
   font-weight: 700;
   line-height: 50px;
 }
+.profile__one-input {
+  position: relative;
+}
+.profile__error {
+  position: absolute;
+  top: 84px;
+  left: 5px;
+  color: #FF7D4E;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 100%;
+}
 .profile__payment-main {
   display: none;
 }
@@ -178,7 +193,6 @@
   grid-row: 3;
   height: 50px;
   border-radius: 100px;
-  background: #C3BDB6;
   width: 154px;
   color: #FFF;
   text-align: center;
@@ -277,10 +291,6 @@
 }
 .sign-out .profile__sign-out {
   font-weight: 700;
-}
-
-.active-btn {
-  background: var(--main-orange, #FF7D4E);
 }
 
 .product-profile {
@@ -403,6 +413,11 @@
 
 .weight {
   color: #5E73BB;
+}
+
+.active-btn {
+  background: #FF7D4E;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

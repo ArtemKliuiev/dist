@@ -602,7 +602,7 @@
     padding: 0;
   }
   .banner-bottom .banner {
-    height: 461px;
+    height: 500px;
     grid-template: 238px 1fr/minmax(auto, 20px) 1fr minmax(auto, 20px);
   }
   .banner-bottom .banner__info {
@@ -633,6 +633,9 @@
     grid-row: 2;
     grid-column: 1;
     max-width: 440px;
+  }
+  .banner-bottom .banner {
+    height: 461px;
   }
   .comentars {
     margin-bottom: 61px;

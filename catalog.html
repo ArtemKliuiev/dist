@@ -33,7 +33,7 @@
     <header class="header">
         <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
             <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
-            <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+            <a href="/dist/person.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
             <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
             <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
         </div>
@@ -91,7 +91,7 @@
             <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
             <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
             <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
-            <a id="logoutButton" class="menu__item">Sign Out</a>
+            <a class="menu__item sing-exit">Sign Out</a>
         </nav>
     </div>
     <div class="basket">
@@ -383,6 +383,8 @@
     <script defer src="assets/js/app.js"></script>
     <script defer  src="assets/js/catalog.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="assets/js/sing-exit.js" ></script>
+    <script type="module" src="" ></script>
     <script type="module" src="" ></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-
+//Основные ссылки
 const profileTitle = document.querySelector('.profile__title-one');
 const profileMinititle = document.querySelector('.profile__title-two');
 const cardNum = document.querySelector('#input-card-num');
@@ -14,9 +14,9 @@ const inputEmail = document.querySelector('#input-email');
 const inputPhone = document.querySelector('#input-phone');
 const inputCountry = document.querySelector('#input-country');
 const inputRegNum = document.querySelector('#input-region-num');
-const inputCardNum2 = document.querySelector('#input-card-num');
 const ProfileGoods = document.querySelector('.profile__subscriptions-goods')
-
+const saveBtn = document.querySelector('#saveInfo');
+const paySaveBtn = document.querySelector('#payInfoSave');
 
 //Ссылки на название ошибок
 const errorFirstName = document.querySelector('.order-main__error-first-name');
@@ -28,11 +28,71 @@ const errorEmail = document.querySelector('.order-main__error-email');
 const errorPhone = document.querySelector('.order-main__error-phone');
 const errorCountry = document.querySelector('.order-main__error-region');
 const errorRegNum = document.querySelector('.order-main__error-region-num');
-const errorCardNum = document.querySelector('.order-main__error-card-num');
-const errorCardData = document.querySelector('.order-main__error-card-data');
-const errorCardCVC = document.querySelector('.order-main__error-card-cvc');
+const errorCardNum = document.querySelector('.profile__error-card-num');
+const errorCardData = document.querySelector('.profile__error-card-data');
+const errorCardCVC = document.querySelector('.profile__error-card-cvc');
+const errorCurPas = document.querySelector('.order-main__error-сurrent-password');
+const errorNewPas = document.querySelector('.order-main__error-new-password');
+const errorCurNewPas = document.querySelector('.order-main__error-current-new-password');
 
+//Ссылки на изминение пароля
+const currentPassword = document.querySelector('#input-сurrent-password');
+const newPassword = document.querySelector('#input-new-password');
+const currentNewPassword = document.querySelector('#input-current-new-password');
+const passwordBtn = document.querySelector('.profile__change-btn');
 
+//Проверка полей для активации кнопки
+currentPassword.addEventListener('input', function(){
+    const curPas = currentPassword.value;
+    const newPas = newPassword.value;
+    const curNewPas = currentNewPassword.value; 
+    if(curPas != '' && curNewPas != '' && newPas != '' ){
+        passwordBtn.classList.add('active-btn');
+    }else{
+        passwordBtn.classList.remove('active-btn');
+    }
+});
+newPassword.addEventListener('input', function(){
+    const curPas = currentPassword.value;
+    const newPas = newPassword.value;
+    const curNewPas = currentNewPassword.value; 
+    if(curPas != '' && curNewPas != '' && newPas != '' ){
+        passwordBtn.classList.add('active-btn');
+    }else{
+        passwordBtn.classList.remove('active-btn');
+    }
+});
+currentNewPassword.addEventListener('input', function(){
+    if(currentPassword.value != '' && newPassword.value != '' && currentNewPassword.value != '' ){
+        passwordBtn.classList.add('active-btn');
+    }else{
+        passwordBtn.classList.remove('active-btn');
+    }
+});
+
+//Функции для проверки пароля
+function examNewPassword(){
+    errorNewPas.innerHTML = '';
+    if(newPassword.value.length < 6){
+        errorNewPas.innerHTML = 'Minimum 6 characters';
+    }else{
+        console.log('newPassword-Ok')
+    }
+};
+
+function examCurNewPas(){
+    errorCurNewPas.innerHTML = ''
+    if(newPassword.value != currentNewPassword.value){
+        errorCurNewPas.innerHTML = 'Password mismatch';
+    }
+};
+
+passwordBtn.addEventListener('click', function(){
+    examNewPassword();
+    examCurNewPas();
+});
+
+//Taбы
 function tabs(num){
     body.className = ''
     profileMinititle.innerHTML = "";
@@ -69,7 +129,6 @@ const localInfoTabs = localStorage.getItem('ProfileItem');
     }
 })();
 
-
 cardNum.addEventListener("input", function (event) {
     const input = event.target;
     let cardNumber = input.value.replace(/\s/g, ""); // Удаление существующих пробелов
@@ -100,14 +159,77 @@ inputCardCVC.addEventListener("input", function(){
     console.log(inputCardCVC.value)
 })
 
-
 // regRex
 const regex = /\d/; 
 const regLetters = /[a-zA-Z]/
 const regEmail = /@/;
 
-console.log()
+//Данные формы
+let orderData = {
+    firstName: '',
+    lastName: '',
+    adressOne: '',
+    adressTwo: '',
+    city: '',
+    region: '',
+    indexLocation: '',
+    email: '',
+    phoneNumber: '',
+};
+
+//Активации кнопки сохранить
+let btnInfo = {
+    firstName: '',
+    lastName: '',
+    adressOne: '',
+    city: '',
+    region: '',
+    indexLocation: '',
+    email: '',
+    phoneNumber: '',
+};
+// Проверка для активации кнопки
+function forSaveBtnActive(orderDataObj) {
+    for (const key in orderDataObj) {
+        if (orderDataObj.hasOwnProperty(key) && orderDataObj[key] === '') {
+            return false; 
+        }
+    }
+    return true; 
+};
+function btnActiva(){
+    if(forSaveBtnActive(btnInfo)){
+        saveBtn.classList.add('active-btn');
+    }else{
+        saveBtn.classList.remove('active-btn');
+    }
+};
+// Данные оплаты
+let payInfo = {
+    cardNumber: '',
+    cardDataNumber: '',
+    cardDataCVC: '',
+};
+//Активации кнопки сохранить реквизиты
+let btnPayInfo = {
+    cardNumber: '',
+    cardDataNumber: '',
+    cardDataCVC: '',
+};
+
+// Проверка для активации кнопки
+function btnSavePayActiva(){
+    console.log(payInfo, 'payInfo')
+    if(forSaveBtnActive(btnPayInfo)){
+        paySaveBtn.classList.add('active-btn');
+    }else{
+        paySaveBtn.classList.remove('active-btn');
+    }
+};
+
+//Функции для проверки полей ввода данных
 function ExaminationFirstName(){
+    dataFisrtName = '';
     if(inputFirstName.value === ''){
         errorFirstName.innerHTML = 'Required'
         inputFirstName.classList.add('input-active')
@@ -118,16 +240,12 @@ function ExaminationFirstName(){
         errorFirstName.innerHTML = 'at least three letters'
         inputFirstName.classList.add('input-active')
     }else{
-        console.log(inputFirstName.value)
+        orderData.firstName = inputFirstName.value;
     }
-}
-
-inputFirstName.addEventListener("input", function(){
-    errorFirstName.innerHTML = '';
-    inputFirstName.classList.remove('input-active');
-})
+};
 
 function ExaminationLastName(){
+    dataLastName = '';
     if(inputLastName.value === ''){
         errorLastName.innerHTML = 'Required'
         inputLastName.classList.add('input-active')
@@ -138,17 +256,12 @@ function ExaminationLastName(){
         errorLastName.innerHTML = 'at least three letters'
         inputLastName.classList.add('input-active')
     }else{
-        console.log(inputLastName.value)
+        orderData.lastName = inputLastName.value;
     }
-}
-
-inputLastName.addEventListener("input", function(){
-    errorLastName.innerHTML = '';
-    inputLastName.classList.remove('input-active');
-})
-
+};
 
 function ExaminationAdressOne(){
+    dataAdressOne = '';
     if(inputAdressOne.value === ''){
         errorAdressOne.innerHTML = 'Required'
         inputAdressOne.classList.add('input-active')
@@ -156,31 +269,22 @@ function ExaminationAdressOne(){
         errorAdressOne.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressOne.classList.add('input-active')
     }else{
-        console.log(inputAdressOne.value)
+        orderData.adressOne = inputAdressOne.value;
     }
-}
-
-inputAdressOne.addEventListener("input", function(){
-    errorAdressOne.innerHTML = '';
-    inputAdressOne.classList.remove('input-active');
-})
+};
 
 function ExaminationAdressTwo(){
+    dataAdressTwo = '';
     if(inputAdressTwo.value.length <= 5 && inputAdressTwo.value.length !== 0){
         errorAdressTwo.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressTwo.classList.add('input-active')
     }else{
-        console.log(inputAdressTwo.value)
+        orderData.adressTwo = inputAdressTwo.value;
     }
-}
-
-inputAdressTwo.addEventListener("input", function(){
-    errorAdressTwo.innerHTML = '';
-    inputAdressTwo.classList.remove('input-active');
-})
-
+};
 
 function ExaminationCity(){
+    dataCity = '';
     if(inputCity.value === ''){
         errorCity.innerHTML = 'Required'
         inputCity.classList.add('input-active')
@@ -191,16 +295,12 @@ function ExaminationCity(){
         errorCity.innerHTML = 'at least three letters'
         inputCity.classList.add('input-active')
     }else{
-        console.log(inputCity.value)
+        orderData.city = inputCity.value;
     }
-}
-
-inputCity.addEventListener("input", function(){
-    errorCity.innerHTML = '';
-    inputCity.classList.remove('input-active');
-})
+};
 
 function ExaminationRegionCode(){
+    dataRegionCode = '';
     if(inputRegNum.value === ''){
         errorRegNum.innerHTML = 'Required'
         inputRegNum.classList.add('input-active')
@@ -211,17 +311,12 @@ function ExaminationRegionCode(){
         errorRegNum.innerHTML = 'You can write a maximum of 10 characters'
         inputRegNum.classList.add('input-active')
     }else{
-
+        orderData.indexLocation = inputRegNum.value;
     }
-    console.log(inputRegNum.value.length )
-}
-
-inputRegNum.addEventListener("input", function(){
-    errorRegNum.innerHTML = '';
-    inputRegNum.classList.remove('input-active');
-})
+};
 
 function ExaminationEmail(){
+    dataEmail = '';
     if(inputEmail.value === ''){
         errorEmail.innerHTML = 'Required'
         inputEmail.classList.add('input-active')
@@ -232,16 +327,12 @@ function ExaminationEmail(){
         errorEmail.innerHTML = 'at least five letters'
         inputEmail.classList.add('input-active')
     }else{
-        console.log(regEmail.test(inputEmail.value))
+        orderData.email = inputEmail.value;
     }
-}
-
-inputEmail.addEventListener("input", function(){
-    errorEmail.innerHTML = '';
-    inputEmail.classList.remove('input-active');
-})
+};
 
 function ExaminationNumber(){
+    dataNumber = '';
     if(inputPhone.value === ''){
         errorPhone.innerHTML = 'Required'
         inputPhone.classList.add('input-active')
@@ -249,38 +340,34 @@ function ExaminationNumber(){
         errorPhone.innerHTML = 'Please input numbers'
         inputPhone.classList.add('input-active')
     }else{
-        console.log(inputPhone.value.length)
+        orderData.phoneNumber = inputPhone.value;
     }
-}
+};
 
-inputPhone.addEventListener("input", function(){
-    errorPhone.innerHTML = '';
-    inputPhone.classList.remove('input-active');
-})
+function ExaminationSelect(){
+    if(inputCountry.textContent == 'NY'){
+        errorCountry.innerHTML = 'Please select State/Province'
+        inputCountry.classList.add('input-active')
+    }else{
+        orderData.region = inputCountry.textContent;
+    }
+};
 
 function ExaminationCardNumber(){
-    if(inputCardNum2.value === ''){
+    payInfo.cardNumber = '';
+    if(cardNum.value === ''){
         errorCardNum.innerHTML = 'Required'
-        inputCardNum2.classList.add('input-active')
-    }else if(inputCardNum2.value.length < 12 || inputCardNum2.value.length > 20 ){
-        errorCardNum.innerHTML = 'Card numbers must contain between 12 and 20 numerical characters.'
-        inputCardNum2.classList.add('input-active')
+        cardNum.classList.add('input-active')
+    }else if(cardNum.value.length < 12 || cardNum.value.length > 20 ){
+        errorCardNum.innerHTML = 'Min 12 letters'
+        cardNum.classList.add('input-active')
     }else{
-        console.log(inputCardNum2.value.length)
+        payInfo.cardNumber = cardNum.value;
     }
-}
-
-inputCardNum2.addEventListener("input", function(){
-    errorCardNum.innerHTML = '';
-    inputCardNum2.classList.remove('input-active');
-})
-
-inputCardData.addEventListener("input", function(){
-    errorCardData.innerHTML = '';
-    inputCardData.classList.remove('input-active');
-})
+};
 
 function ExaminationCardData(){
+    payInfo.cardDataNumber = '';
     if(inputCardData.value === ''){
         errorCardData.innerHTML = 'Required'
         inputCardData.classList.add('input-active')
@@ -288,16 +375,12 @@ function ExaminationCardData(){
         errorCardData.innerHTML = 'Required'
         inputCardData.classList.add('input-active')
     }else{
-        console.log(inputCardData.value)
+        payInfo.cardDataNumber = inputCardData.value;
     }
-}
-
-inputCardData.addEventListener("input", function(){
-    errorCardData.innerHTML = '';
-    inputCardData.classList.remove('input-active');
-})
+};
 
 function ExaminationCardCVC(){
+    payInfo.cardDataCVC = '';
     if(inputCardCVC.value === ''){
         errorCardCVC.innerHTML = 'Required'
         inputCardCVC.classList.add('input-active')
@@ -308,41 +391,119 @@ function ExaminationCardCVC(){
         errorCardCVC.innerHTML = 'Please enter numbers only'
         inputCardCVC.classList.add('input-active')
     }else{
-        console.log(regLetters.test(inputCardCVC.value))
+        payInfo.cardDataCVC = inputCardCVC.value;
     }
-}
+};
 
-inputCardCVC.addEventListener("input", function(){
-    errorCardCVC.innerHTML = '';
-    inputCardCVC.classList.remove('input-active');
-})
+//События для удвления ошиюок о неправильнном вводе и активации кнопки сохранить
+inputFirstName.addEventListener("input", function(){
+    errorFirstName.innerHTML = '';
+    inputFirstName.classList.remove('input-active');
+    btnInfo.firstName = inputFirstName.value;
+    btnActiva();
+});
 
-function ExaminationSelect(){
-    if(inputCountry.textContent == 'NY'){
-        errorCountry.innerHTML = 'Please select State/Province'
-        inputCountry.classList.add('input-active')
-    }else{
-        console.log(inputCountry.textContent)
-    }
-}
+inputLastName.addEventListener("input", function(){
+    errorLastName.innerHTML = '';
+    inputLastName.classList.remove('input-active');
+    btnInfo.lastName = inputLastName.value;
+    btnActiva();
+});
+
+inputAdressOne.addEventListener("input", function(){
+    errorAdressOne.innerHTML = '';
+    inputAdressOne.classList.remove('input-active');
+    btnInfo.adressOne = inputAdressOne.value;
+    btnActiva();
+});
+
+inputAdressTwo.addEventListener("input", function(){
+    errorAdressTwo.innerHTML = '';
+    inputAdressTwo.classList.remove('input-active');
+    btnInfo.adressTwo = inputAdressTwo.value;
+    btnActiva();
+});
+
+inputCity.addEventListener("input", function(){
+    errorCity.innerHTML = '';
+    inputCity.classList.remove('input-active');
+    btnInfo.city = inputCity.value;
+    btnActiva();
+});
+
+
+inputRegNum.addEventListener("input", function(){
+    errorRegNum.innerHTML = '';
+    inputRegNum.classList.remove('input-active');
+    btnInfo.indexLocation = inputRegNum.value;
+    btnActiva();
+});
+
+inputEmail.addEventListener("input", function(){
+    errorEmail.innerHTML = '';
+    inputEmail.classList.remove('input-active');
+    btnInfo.email = inputEmail.value;
+    btnActiva();
+});
+
+inputPhone.addEventListener("input", function(){
+    errorPhone.innerHTML = '';
+    inputPhone.classList.remove('input-active');
+    btnInfo.phoneNumber = inputPhone.value;
+    btnActiva();
+});
 
 inputCountry.addEventListener("input", function(){
     errorCountry.innerHTML = '';
     inputCountry.classList.remove('input-active');
-})
+    btnActiva();
 
-function castumSel(num){
-    errorCountry.innerHTML = ''
-    inputCountry.classList.remove('input-active')
-    if(num === 1){
-        inputCountry.innerHTML = 'UA'
-    }else if( num === 2){
-        inputCountry.innerHTML = 'USA'
-    }else if (num ===3){
-        inputCountry.innerHTML = 'MEX'
-    }
-}
+});
 
+cardNum.addEventListener("input", function(){
+    errorCardNum.innerHTML = '';
+    cardNum.classList.remove('input-active');
+    btnPayInfo.cardNumber = cardNum.value
+    btnSavePayActiva()
+});
+
+inputCardData.addEventListener("input", function(){
+    errorCardData.innerHTML = '';
+    inputCardData.classList.remove('input-active');
+    btnPayInfo.cardDataNumber = inputCardData.value;
+    btnSavePayActiva()
+});
+
+inputCardCVC.addEventListener("input", function(){
+    errorCardCVC.innerHTML = '';
+    inputCardCVC.classList.remove('input-active');
+    btnPayInfo.cardDataCVC = inputCardCVC.value;
+    btnSavePayActiva()
+});
+
+//Функция которая разделяет пробеллом цыфры при вводе данных (реквизиты карточки - номер)
+cardNum.addEventListener("input", function (event) {
+    const input = event.target;
+    let cardNumber = input.value.replace(/\s/g, ""); // Удаление существующих пробелов
+
+    // Разбиение номера карты на блоки по 4 цифры с добавлением пробелов
+    const formattedCardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ");
+    input.value = formattedCardNumber;
+    btnActiva();
+});
+
+//Функция которая разделяет пробеллом цыфры при вводе данных (реквизиты карточки - дата)
+inputCardData.addEventListener("input", function (event) {
+    const input = event.target;
+    let cardNumber = input.value.replace(/[/]/g, ""); // Удаление существующих слешей
+
+    // Разбиение номера карты на блоки по 2 цифры с добавлением слешей
+    const formattedCardData = cardNumber.replace(/(\d{2})(?=\d)/g, "$1/");
+    input.value = formattedCardData;
+});
+
+
+//Функция проверки всех волей ввода данных пользователя
 function orderBtn() {
     ExaminationFirstName();
     ExaminationLastName();
@@ -355,7 +516,34 @@ function orderBtn() {
     ExaminationSelect();
 }
 
+//Функция проверки всех волей ввода платежных данных
+function paySaveBtnFunc() {
+    ExaminationCardNumber();
+    ExaminationCardData();
+    ExaminationCardCVC();
+    if(forSaveBtnActive(btnPayInfo)){
 
+    }else{
+        console.log('некоректно введены данные')
+    }
+};
+
+//Кастумный option
+function castumSel(num){
+    errorCountry.innerHTML = ''
+    inputCountry.classList.remove('input-active')
+    if(num === 1){
+        inputCountry.innerHTML = 'Kiev'
+    }else if( num === 2){
+        inputCountry.innerHTML = 'Poltava'
+    }else if (num ===3){
+        inputCountry.innerHTML = 'Sumy'
+    }
+    btnInfo.region = inputCountry.textContent;
+    btnActiva();
+}
+
+//Подписка на товары
 let profileGoodsArr = [];
 let profileScriotArr = [];
 
@@ -365,7 +553,7 @@ function profileloadGoods (arr){
     })
 }
 
-// Ajax 
+//Функция загрузки через Ajax 
 function loadGoodsAjax(url){
     var xhrProfile = new XMLHttpRequest();
     xhrProfile.onreadystatechange = function() {
@@ -375,12 +563,10 @@ function loadGoodsAjax(url){
         }
     };
     xhrProfile.open('GET', url, true); // true указывает на асинхронный режим
-
     xhrProfile.send();
 };
 
-
-
+//Функция которая считывает данные с кэша браузера, о том какие ссылки на товары нужно передать для загрузки через Ajax
 (function(){
     const localInfo = JSON.parse(localStorage.getItem('goods'));
     if(localInfo !== null){
@@ -393,3 +579,16 @@ function loadGoodsAjax(url){
         profileloadGoods(profileGoodsArr);
     }
 }())
+
+
+
+
+
+
+
+
+
+
+
+
+

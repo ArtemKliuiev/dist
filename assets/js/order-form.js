@@ -7,7 +7,7 @@ const inputEmail = document.querySelector('#input-email');
 const inputPhone = document.querySelector('#input-phone');
 const inputCountry = document.querySelector('#input-country');
 const inputRegNum = document.querySelector('#input-region-num');
-const inputCardNum2 = document.querySelector('#input-card-num');
+const cardNum = document.querySelector('#input-card-num');
 const inputCardData = document.querySelector('#input-card-data');
 const inputCardCVC = document.querySelector('#input-card-cvc');
 
@@ -32,8 +32,28 @@ const regex = /\d/;
 const regLetters = /[a-zA-Z]/
 const regEmail = /@/;
 
-console.log()
+//Данные формы
+
+
+let orderData = {
+    firstName: '',
+    lastName: '',
+    adressOne: '',
+    adressTwo: '',
+    city: '',
+    region: '',
+    indexLocation: '',
+    email: '',
+    phoneNumber: '',
+    cardNumber: '',
+    cardDataNumber: '',
+    cardDataCVC: '',
+};
+
+
+
 function ExaminationFirstName(){
+    dataFisrtName = '';
     if(inputFirstName.value === ''){
         errorFirstName.innerHTML = 'Required'
         inputFirstName.classList.add('input-active')
@@ -44,7 +64,7 @@ function ExaminationFirstName(){
         errorFirstName.innerHTML = 'at least three letters'
         inputFirstName.classList.add('input-active')
     }else{
-        console.log(inputFirstName.value)
+        orderData.firstName = inputFirstName.value;
     }
 }
 
@@ -54,6 +74,7 @@ inputFirstName.addEventListener("input", function(){
 })
 
 function ExaminationLastName(){
+    dataLastName = '';
     if(inputLastName.value === ''){
         errorLastName.innerHTML = 'Required'
         inputLastName.classList.add('input-active')
@@ -64,7 +85,7 @@ function ExaminationLastName(){
         errorLastName.innerHTML = 'at least three letters'
         inputLastName.classList.add('input-active')
     }else{
-        console.log(inputLastName.value)
+        orderData.lastName = inputLastName.value;
     }
 }
 
@@ -75,6 +96,7 @@ inputLastName.addEventListener("input", function(){
 
 
 function ExaminationAdressOne(){
+    dataAdressOne = '';
     if(inputAdressOne.value === ''){
         errorAdressOne.innerHTML = 'Required'
         inputAdressOne.classList.add('input-active')
@@ -82,7 +104,7 @@ function ExaminationAdressOne(){
         errorAdressOne.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressOne.classList.add('input-active')
     }else{
-        console.log(inputAdressOne.value)
+        orderData.adressOne = inputAdressOne.value;
     }
 }
 
@@ -92,11 +114,12 @@ inputAdressOne.addEventListener("input", function(){
 })
 
 function ExaminationAdressTwo(){
+    dataAdressTwo = '';
     if(inputAdressTwo.value.length <= 5 && inputAdressTwo.value.length !== 0){
         errorAdressTwo.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressTwo.classList.add('input-active')
     }else{
-        console.log(inputAdressTwo.value)
+        orderData.adressTwo = inputAdressTwo.value;
     }
 }
 
@@ -107,6 +130,7 @@ inputAdressTwo.addEventListener("input", function(){
 
 
 function ExaminationCity(){
+    dataCity = '';
     if(inputCity.value === ''){
         errorCity.innerHTML = 'Required'
         inputCity.classList.add('input-active')
@@ -117,7 +141,7 @@ function ExaminationCity(){
         errorCity.innerHTML = 'at least three letters'
         inputCity.classList.add('input-active')
     }else{
-        console.log(inputCity.value)
+        orderData.city = inputCity.value;
     }
 }
 
@@ -127,6 +151,7 @@ inputCity.addEventListener("input", function(){
 })
 
 function ExaminationRegionCode(){
+    dataRegionCode = '';
     if(inputRegNum.value === ''){
         errorRegNum.innerHTML = 'Required'
         inputRegNum.classList.add('input-active')
@@ -137,9 +162,8 @@ function ExaminationRegionCode(){
         errorRegNum.innerHTML = 'You can write a maximum of 10 characters'
         inputRegNum.classList.add('input-active')
     }else{
-
+        orderData.indexLocation = inputRegNum.value;
     }
-    console.log(inputRegNum.value.length )
 }
 
 inputRegNum.addEventListener("input", function(){
@@ -148,6 +172,7 @@ inputRegNum.addEventListener("input", function(){
 })
 
 function ExaminationEmail(){
+    dataEmail = '';
     if(inputEmail.value === ''){
         errorEmail.innerHTML = 'Required'
         inputEmail.classList.add('input-active')
@@ -158,7 +183,7 @@ function ExaminationEmail(){
         errorEmail.innerHTML = 'at least five letters'
         inputEmail.classList.add('input-active')
     }else{
-        console.log(regEmail.test(inputEmail.value))
+        orderData.email = inputEmail.value;
     }
 }
 
@@ -168,6 +193,7 @@ inputEmail.addEventListener("input", function(){
 })
 
 function ExaminationNumber(){
+    dataNumber = '';
     if(inputPhone.value === ''){
         errorPhone.innerHTML = 'Required'
         inputPhone.classList.add('input-active')
@@ -175,7 +201,7 @@ function ExaminationNumber(){
         errorPhone.innerHTML = 'Please input numbers'
         inputPhone.classList.add('input-active')
     }else{
-        console.log(inputPhone.value.length)
+        orderData.phoneNumber = inputPhone.value;
     }
 }
 
@@ -184,29 +210,36 @@ inputPhone.addEventListener("input", function(){
     inputPhone.classList.remove('input-active');
 })
 
+cardNum.addEventListener("input", function (event) {
+    const input = event.target;
+    let cardNumber = input.value.replace(/\s/g, ""); // Удаление существующих пробелов
+
+    // Разбиение номера карты на блоки по 4 цифры с добавлением пробелов
+    const formattedCardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ");
+
+    input.value = formattedCardNumber;
+});
+
 function ExaminationCardNumber(){
-    if(inputCardNum2.value === ''){
+    dataCardNumber = '';
+    if(cardNum.value === ''){
         errorCardNum.innerHTML = 'Required'
-        inputCardNum2.classList.add('input-active')
-    }else if(inputCardNum2.value.length < 12 || inputCardNum2.value.length > 20 ){
+        cardNum.classList.add('input-active')
+    }else if(cardNum.value.length < 12 || cardNum.value.length > 20 ){
         errorCardNum.innerHTML = 'Card numbers must contain between 12 and 20 numerical characters.'
-        inputCardNum2.classList.add('input-active')
+        cardNum.classList.add('input-active')
     }else{
-        console.log(inputCardNum2.value.length)
+        orderData.cardNumber = cardNum.value;
     }
-}
+};
 
-inputCardNum2.addEventListener("input", function(){
+cardNum.addEventListener("input", function(){
     errorCardNum.innerHTML = '';
-    inputCardNum2.classList.remove('input-active');
-})
-
-inputCardData.addEventListener("input", function(){
-    errorCardData.innerHTML = '';
-    inputCardData.classList.remove('input-active');
-})
+    cardNum.classList.remove('input-active');
+});
 
 function ExaminationCardData(){
+    dataCardData = '';
     if(inputCardData.value === ''){
         errorCardData.innerHTML = 'Required'
         inputCardData.classList.add('input-active')
@@ -214,16 +247,27 @@ function ExaminationCardData(){
         errorCardData.innerHTML = 'Required'
         inputCardData.classList.add('input-active')
     }else{
-        console.log(inputCardData.value)
+        orderData.cardDataNumber = inputCardData.value;
     }
-}
+};
+
+inputCardData.addEventListener("input", function (event) {
+    const input = event.target;
+    let cardNumber = input.value.replace(/[/]/g, ""); // Удаление существующих слешей
+
+    // Разбиение номера карты на блоки по 2 цифры с добавлением слешей
+    const formattedCardData = cardNumber.replace(/(\d{2})(?=\d)/g, "$1/");
+
+    input.value = formattedCardData;
+});
 
 inputCardData.addEventListener("input", function(){
     errorCardData.innerHTML = '';
     inputCardData.classList.remove('input-active');
-})
+});
 
 function ExaminationCardCVC(){
+    dataCardCVC = '';
     if(inputCardCVC.value === ''){
         errorCardCVC.innerHTML = 'Required'
         inputCardCVC.classList.add('input-active')
@@ -234,7 +278,7 @@ function ExaminationCardCVC(){
         errorCardCVC.innerHTML = 'Please enter numbers only'
         inputCardCVC.classList.add('input-active')
     }else{
-        console.log(regLetters.test(inputCardCVC.value))
+        orderData.cardDataCVC = inputCardCVC.value;
     }
 }
 
@@ -248,7 +292,7 @@ function ExaminationSelect(){
         errorCountry.innerHTML = 'Please select State/Province'
         inputCountry.classList.add('input-active')
     }else{
-        console.log(inputCountry.textContent)
+        orderData.region = inputCountry.textContent;
     }
 }
 
@@ -261,11 +305,11 @@ function castumSel(num){
     errorCountry.innerHTML = ''
     inputCountry.classList.remove('input-active')
     if(num === 1){
-        inputCountry.innerHTML = 'Ukraine'
+        inputCountry.innerHTML = 'Kiev'
     }else if( num === 2){
-        inputCountry.innerHTML = 'USA'
+        inputCountry.innerHTML = 'Poltava'
     }else if (num ===3){
-        inputCountry.innerHTML = 'Mexico'
+        inputCountry.innerHTML = 'Sumy'
     }
 }
 
@@ -282,7 +326,6 @@ function orderBtn() {
     ExaminationCardData();
     ExaminationCardCVC();
     ExaminationSelect();
-    console.log('aaa')
 }
 
 // const text = "Пример текста с .  цифрами";
@@ -296,3 +339,8 @@ function orderBtn() {
 // } else {
 //   console.log("В тексте нет цифр.");
 // }
+
+
+
+
+

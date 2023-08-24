@@ -102,9 +102,9 @@
                         </svg>
                     </div>
                     <div class="dropdown-content">
-                        <a onclick="castumSel(1)">Ukraine</a>
-                        <a onclick="castumSel(2)">USA</a>
-                        <a onclick="castumSel(3)">Mexico</a>
+                        <a onclick="castumSel(1)">Kiev</a>
+                        <a onclick="castumSel(2)">Poltava</a>
+                        <a onclick="castumSel(3)">Sumy</a>
                     </div>
                     <div class="order-main__error order-main__error-region"></div>
                 </div>
@@ -142,7 +142,7 @@
             <div class="order-main__biling-title">Biling</div>
             <div class="order-main__one-input order-main__card-number">
                 <div class="order-main__one-input-title">Card Number</div>
-                <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="order-main__one-input-input" aria-label="card-number" type="number">
+                <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="profile__one-input-input" maxlength="19" aria-label="card-number" type="text">
                 <div class="order-main__error order-main__error-card-num"></div>
             </div>
             <div class="order-main__one-input order-main__data">
@@ -178,54 +178,17 @@
     </div>
     
     
-    <script>
-            const dateInput = document.getElementById('input-card-data');
-            dateInput.addEventListener('input', function() {
-                console.log(this.value.length)
-                if(this.value.length == 2){
-                    this.value = this.value + '/'
-                }else if (this.value.length <= 3){
-                    this.value = this.value.replace("/", "");
-                }
-            });
+    
+    <script type="module">
+    
     </script>
     
-    <script type="module" >
-        // Firebase
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
-        import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';
-        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
-        // Конфигурация Firebase (здесь используются ваши реальные данные из Firebase проекта)
-        const firebaseConfig = {
-            apiKey: "AIzaSyBj0V9Ad6uhLGLP62KChqHwnUaKHL3_C3o",
-            authDomain: "passord.firebaseapp.com",
-            databaseURL: "https://passord-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "passord",
-            storageBucket: "passord.appspot.com",
-            messagingSenderId: "278411986072",
-            appId: "1:278411986072:web:7f61a849fa521d7f7e3ced"
-        };
-        // Инициализация Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-    
-        // Проверка аутентификации при загрузке страницы
-        var userEmail = null;
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // Аутентификация прошла успешно, отображаем email пользователя на странице
-                userEmail = user.email;
-                console.log(userEmail);
-            } else {
-                // Пользователь не аутентифицирован, перенаправляем его на страницу входа
-                window.location.href = "/dist/sing-in/input.html";
-            }
-        });
-    </script>
 
     <script defer src="assets/js/order-form.js"></script>
     <script defer  src="assets/js/order.js"></script>
     <script src=""></script>
     <script type="module" src="" ></script>
+    <script type="module" src="" ></script>
+    <script type="module" src="assets/js/order-firebase.js" ></script>
 </body>
 </html>

@@ -24,7 +24,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="">
     
-    <title>Recovery</title>
+    <title>Profile</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
         <header class="header">
             <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
                 <a href="index.html" class="header__icon"><img src="assets/images/svg/header-icon.svg" alt="main"></a>
-                <a href="sing-in/input.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
+                <a href="/dist/person.html" class="header__profile"><img src="assets/images/svg/Profile.svg" alt="profile"></a>
                 <a onclick="basket()" class="header__basket"><img src="assets/images/svg/basket.svg" alt="basket"></a>
                 <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
             </div>
@@ -93,7 +93,7 @@
                 <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
                 <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
                 <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
-                <a id="logoutButton" class="menu__item">Sign Out</a>
+                <a class="menu__item sing-exit">Sign Out</a>
             </nav>
         </div>
         <div class="basket">
@@ -107,11 +107,7 @@
             <div class="basket__btn">
                 <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
             </div>
-        </div>    <!-- <h1>Добро пожаловать в ваш персональный кабинет!</h1><br><br><br>
-        <p>Email: <span id="email"></span></p><br><br><br>
-        <button id="logoutButton">Выход</button> <br><br><br>
-        <button ><a href="../quiz/quiz1.html">Перейти к опросу</a></button>  -->
-        <div class="profile-main">
+        </div>    <div class="profile-main">
           <div class="profile">
             <div class="profile__menu">
               <div onclick="tabs(1)" class="profile__subscriptions">Subscriptions</div>
@@ -119,7 +115,7 @@
               <div onclick="tabs(3)" class="profile__account">Account Overview</div>
               <div onclick="tabs(4)" class="profile__payment">Payment methods</div>
               <div onclick="tabs(5)" class="profile__change">Change Password</div>
-              <div onclick="tabs(6)" class="profile__sign-out">Sign out</div>
+              <div onclick="tabs(6)" class="profile__sign-out sing-exit">Sign out</div>
             </div>
             <div class="profile__title">
               <span class="profile__title-one">Subscriptions</span>
@@ -128,7 +124,7 @@
             <div class="profile__main">
               <div class="profile__subscriptions-main">
                 <div class="profile__subscriptions-goods">
-    
+                  <!--Товары-->
                 </div>
               </div>
               <div class="profile__account-main">
@@ -178,9 +174,9 @@
                                   </svg>
                               </div>
                               <div class="dropdown-content">
-                                  <a onclick="castumSel(1)">UA</a>
-                                  <a onclick="castumSel(2)">USA</a>
-                                  <a onclick="castumSel(3)">MEX</a>
+                                  <a onclick="castumSel(1)">Kiev</a>
+                                  <a onclick="castumSel(2)">Poltava</a>
+                                  <a onclick="castumSel(3)">Sumy</a>
                               </div>
                               <div class="order-main__error order-main__error-region"></div>
                           </div>
@@ -191,7 +187,7 @@
                           </div>
                       </div>
                   </div>
-                  <div onclick="orderBtn()" class="profile__btn profile__account-main-btn">Save</div>
+                  <div onclick="orderBtn()" id="saveInfo" class="profile__btn profile__account-main-btn">Save</div>
               </div>
               <div class="profile__payment-main">
                 <div class="profile__biling">
@@ -212,24 +208,24 @@
                         <div class="profile__error profile__error-card-cvc"></div>
                     </div>
                 </div>
-                <div  class="profile__btn">Save</div>
+                <div onclick="paySaveBtnFunc()" id="payInfoSave" class="profile__btn">Save</div>
               </div>
               <div class="profile__change-password">
                 <div class="profile__change-password-main">
                   <div class="order-main__one-input profile__current-password">
                     <div class="order-main__one-input-title">Current Password</div>
-                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
-                    <div class="order-main__error order-main__error-last-name"></div>
+                    <input id="input-сurrent-password" class="order-main__one-input-input" aria-label="input-сurrent-password" type="text">
+                    <div class="order-main__error order-main__error-сurrent-password"></div>
                   </div>
                   <div class="order-main__one-input profile__new-password">
                     <div class="order-main__one-input-title">New Password</div>
-                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
-                    <div class="order-main__error order-main__error-last-name"></div>
+                    <input id="input-new-password" class="order-main__one-input-input" aria-label="input-new-password" type="text">
+                    <div class="order-main__error order-main__error-new-password"></div>
                   </div>
                   <div class="order-main__one-input profile__confirm-new-password">
                     <div class="order-main__one-input-title">Confirm New Password</div>
-                    <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
-                    <div class="order-main__error order-main__error-last-name"></div>
+                    <input id="input-current-new-password" class="order-main__one-input-input" aria-label="input-current-new-password" type="text">
+                    <div class="order-main__error order-main__error-current-new-password"></div>
                   </div>
                 </div>
                 <div class="profile__btn profile__change-btn">Save</div>
@@ -282,6 +278,8 @@
     <script defer src="assets/js/app.js"></script>
     <script defer  src="/dist/assets/js/person-main.js"></script>
     <script src=""></script>
+    <script type="module" src="assets/js/registration-check.js" ></script>
+    <script type="module" src="assets/js/sing-exit.js" ></script>
     <script type="module" src="/dist/assets/js/person.js" ></script>
 </body>
 </html>

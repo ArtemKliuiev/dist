@@ -138,6 +138,11 @@
     display: grid;
     grid-template: auto 10px auto minmax(10px, 1fr) auto 35px/1fr;
   }
+  .sale::after {
+    content: "";
+    top: -15px;
+    right: -5px;
+  }
 }
 @media (max-width: 350px) {
   .product {
