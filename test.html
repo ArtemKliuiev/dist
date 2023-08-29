@@ -29,15 +29,49 @@
 <body>
 
 
-    <a href="goods_card/vitamins/card7.html" class="product">
-        <div class="product__image image-bg__vitamin"><img src="assets/images/goods/12.webp" alt=""></div>
-        <div class="product__main">
-            <div class="product__type vitamin" onclick="vitam ()">Vitamins & Dietary Supplements</div>
-            <div class="product__name"><span class="display-none" ><span class="quantity-item item12">1</span> x </span>Ortho Molecular Products <br> 5-HTP Capsules</div>
-            <div class="product__price">$61.98</div>
-            <div class="product__price-total">$0.00</div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FIrebase_test</title>
+    </head>
+    <style>
+        body{
+            background-color: #333333;
+        }
+        .wrapper {
+            background-color: #969494;
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+            display: grid;
+            grid-template: 1fr auto 20px auto 1fr / 1fr minmax(auto, 400px) 1fr;
+        }
+        .btn {
+            grid-row: 4;
+            grid-column: 2;
+            font-size: 30px;
+            background-color: #fff;
+            width: 100%;
+            height: 50px;
+        }
+        input {
+            grid-row: 4;
+            grid-column: 2;
+            font-size: 30px;
+            background-color: #fff;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+    <body>
+        <div class="wrapper">
+            <input type="text">
+            <div class="btn"></div>
         </div>
-    </a>
+    </body>
+    </html>
 
     <script defer src=""></script>
     <script defer  src=""></script>

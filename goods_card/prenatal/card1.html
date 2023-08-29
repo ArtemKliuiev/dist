@@ -130,7 +130,7 @@
         </div>
     </div>
     <main>
-        <div class="item" id="card23">
+        <div class="item" data-id="23">
             <div class="item__image bg__prenatal">
                 <img src="../../assets/images/goods__big-size/23.webp" alt="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="149" height="150" viewBox="0 0 149 150" fill="none">
@@ -199,7 +199,7 @@
                         <div class="item__button-row">
                             <div class="item__price">$61.98</div>
                             <div class="item__btn">
-                                <div onclick="addItem('/dist/basket-goods/prenatal/1.html');addScript('/dist/assets/js/basket-goods/23.js');localStorageFuncCard();checkedFunc()" class="oval-button">Add to cart</div>
+                                <div id="add-item-btn" class="add-item-btn oval-button">Add to cart</div>
                             </div>
                         </div>
                     </div>
@@ -274,10 +274,12 @@
     </footer>
     
     
+    
 
     <script defer src="../../assets/js/app.js"></script>
-    <script defer  src="../../assets/js/cards-js/goods__items23.js"></script>
+    <script defer  src="../../assets/js/goods__items.js"></script>
     <script src=""></script>
+    <script defer src="../../assets/js/basket-goods.js"></script>
     <script type="module" src="" ></script>
     <script type="module" src="" ></script>
     <script type="module" src="" ></script>

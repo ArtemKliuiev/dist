@@ -33,8 +33,6 @@ const regLetters = /[a-zA-Z]/
 const regEmail = /@/;
 
 //Данные формы
-
-
 let orderData = {
     firstName: '',
     lastName: '',

@@ -9,6 +9,10 @@ function isOrderDataComplete(orderDataObj) {
 
 const placeOrder = document.querySelectorAll('.oval-button');
 
+let localStorageFirebase = JSON.parse(localStorage.getItem('itemGoods'));
+console.log(localStorageFirebase);
+orderData.order = localStorageFirebase;
+
     // Firebase
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
     import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';

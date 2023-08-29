@@ -242,6 +242,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 input[type=checkbox] + label:before {
+  cursor: pointer;
   content: "";
   color: transparent;
   display: inline-block;

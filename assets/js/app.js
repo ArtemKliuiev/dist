@@ -92,113 +92,6 @@ function basket(){
     body.classList.toggle('basket-active');
 }
 
-//Ajax загрузка товаров
-
-// Функция для загрузки страницы через XMLHttpRequest
-var contentElement = document.getElementById("basket-goods");
-function loadItem(url) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var newContent = this.responseText;
-            contentElement.insertAdjacentHTML('beforeend', newContent);
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-}
-
-
-// Ваш массив с URL-адресами товаров
-let basketGoods = [
-    // '/basket-goods/prenatal/1.html',
-];
-
-let arrScript = [
-
-]
-  
-  // Функция для загрузки и добавления контента на страницу
-  const containerElement = document.getElementById('basket-goods');
-  function loadAndAppendContent(url) {
-    fetch(url)
-      .then(response => response.text())
-      .then(htmlContent => {
-        // Выбираем элемент, куда хотим добавить загруженный HTML код
-
-  
-        // Добавляем полученный HTML код внутрь выбранного элемента
-        containerElement.innerHTML += htmlContent;
-      })
-      .catch(error => {
-        // Обрабатываем ошибку, если запрос не удался
-        console.error('Ошибка при загрузке HTML файла:', error);
-      });
-  }
-    
-  function loadScript() {
-    containerElement.innerHTML = '';
-    for(i=0; i < arrScript.length; i++ ){
-        var script = document.createElement('script');
-        script.src = arrScript[i];
-        // script.setAttribute('data-dynamic', 'true'); // Добавляем атрибут data-dynamic
-        document.head.appendChild(script);
-    }
-  }
-
-//   
-
-  // Загружаем и добавляем контент для каждого URL-адреса из массива
-function loadGoods (){
-        for (let i = 0; i < basketGoods.length; i++) {
-            loadAndAppendContent(basketGoods[i]);
-        }
-}
-loadGoods ()
-
-
-function addItem (oneItem) {
-    if(basketGoods.includes(oneItem)){
-        console.log('товар уже в корзине')
-    }else{
-        basketGoods.push(oneItem)
-        loadGoods ()
-    }
-    localStorageFunc ()
-}
-
-function addScript(script) {
-    if(arrScript.includes(script)){
-        console.log('скрипт уже подключен')
-    }else{
-        arrScript.push(script)
-        console.log(arrScript)
-        loadScript()
-    }
-    localStorageFunc ()
-}
-
-
-//Локальное хранилище, товары и скрипты
-function localStorageFunc () {
-        console.log('ok')
-        localStorage.setItem('goods', JSON.stringify({
-            'goodsCard': basketGoods,
-            'script': arrScript,
-        }))
-}
-
-(function(){
-    const localInfo = JSON.parse(localStorage.getItem('goods'));
-    if(localInfo !== null){
-        arrScript = localInfo.script;
-        basketGoods = localInfo.goodsCard;
-    }
-    loadGoods ();
-    loadScript();
-}())
-
-
 //Адаптивное меню провиль
 function filtrationProfile(number){
     if(number === 1){
@@ -215,4 +108,4 @@ function filtrationProfile(number){
 }
 
 
-//okeyGit
+ 

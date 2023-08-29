@@ -1,12 +1,20 @@
-// const thisCard = document.querySelector('#card23')
-const check = thisCard.querySelector('.apple-switch')
+const check = document.querySelector('.apple-switch');
 var decreaseButtons = document.getElementsByClassName("decreaseButton");
 var increaseButtons = document.getElementsByClassName("increaseButton");
 const removeBtn = document.querySelector('.decreaseButton-remove');
-const selectedOption = thisCard.querySelector('#custom-select-option');
-let numberRes = 1;
-let checked = false;
+const selectedOption = document.querySelector('#custom-select-option');
+const btnAddItem = document.getElementById('add-item-btn');
+const cardItem = document.querySelector('.item');
+const itemName = document.querySelector('.item__name');
+const itemPrice = document.querySelector('.item__price');
+const number = document.querySelector('.number');
+const itemType = document.querySelector('.item__type');
+const customSelects = document.querySelectorAll('.custom-select');
+const thisCardId = parseFloat(cardItem.getAttribute('data-id'));
 
+let sale = thisCardId === 7;
+
+//Cчетчик товаров
 function attachEventHandlers() {
   for (var i = 0; i < decreaseButtons.length; i++) {
     decreaseButtons[i].addEventListener("click", decreaseNumber);
@@ -15,7 +23,7 @@ function attachEventHandlers() {
   for (var i = 0; i < increaseButtons.length; i++) {
     increaseButtons[i].addEventListener("click", increaseNumber);
   }
-}
+};
 
 function decreaseNumber() {
   var numberElement = this.parentNode.querySelector(".number");
@@ -27,9 +35,7 @@ function decreaseNumber() {
     }
   }
   numberRes = parseInt(numberElement.textContent);
-  console.log(numberRes)
-  localStorageFuncCard()
-}
+};
 
 function increaseNumber() {
   var numberElement = this.parentNode.querySelector(".number");
@@ -39,88 +45,88 @@ function increaseNumber() {
     removeBtn.classList.add('opacity')
   }
   numberRes = parseInt(numberElement.textContent);
-  console.log(numberRes)
-  localStorageFuncCard()
-}
-
+};
 attachEventHandlers();
 
+//Тип товара
+let thisItemType = '';
+(function(){
+  if(itemType.textContent === 'Vitamins & Dietary Supplements'){
+    thisItemType = 'bg-basket-item__vitamin';
+  }else if(itemType.textContent === 'Antioxidants'){
+    thisItemType = 'bg-basket-item__antiox';
+  }else if(itemType.textContent === 'Minerals'){
+    thisItemType = 'bg-basket-item__mineral';
+  }else if(itemType.textContent === 'Pain Relief'){
+    thisItemType = 'bg-basket-item__pain';
+  }else if(itemType.textContent === 'Prenatal Vitamins'){
+    thisItemType = 'bg-basket-item__prenatal';
+  }else if(itemType.textContent === 'Probiotics'){
+    thisItemType = 'bg-basket-item__probiotics';
+  }else if(itemType.textContent === 'Weight Loss'){
+    thisItemType = 'bg-basket-item__weight';
+  }
+}());
 
-////////////////////////////////////////////
-
-  // Получаем список всех выпадающих списков
-  const customSelects = document.querySelectorAll('.custom-select');
-
-  // Проходимся по каждому выпадающему списку и привязываем события
-  customSelects.forEach((select) => {
-    const optionsList = select.querySelector('.custom-select__list');
-    const options = optionsList.querySelectorAll('li');
-    options.forEach((option) => {
-      option.addEventListener('click', () => {
-        selectedOption.textContent = option.textContent;
-        localStorageFuncCard()
-      });
+//Касиумный Оптион
+customSelects.forEach((select) => {
+  const optionsList = select.querySelector('.custom-select__list');
+  const options = optionsList.querySelectorAll('li');
+  options.forEach((option) => {
+    option.addEventListener('click', () => {
+      selectedOption.textContent = option.textContent;
     });
-  });  
-
-
-    console.log(selectedOption.textContent)
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const productCardsContainer = document.getElementById('productCards');
-  
-    // Очистка содержимого контейнера
-    productCardsContainer.innerHTML = '';
-  
-    // Функция для загрузки данных о товарах через AJAX
-    function loadProducts(url) {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', url, true);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            productCardsContainer.insertAdjacentHTML('beforeend', xhr.responseText);
-          } else {
-            console.log('Ошибка при загрузке данных о товарах. Код ошибки: ' + xhr.status);
-          }
-        }
-      };
-      xhr.send();
-    }
-  
-    // Загрузка данных из 4 различных HTML файлов
-    loadProducts('../../goods/for-one-item/1.html');
-    loadProducts('../../goods/for-one-item/2.html');
-    loadProducts('../../goods/for-one-item/3.html');
-    loadProducts('../../goods/for-one-item/4.html');
   });
-  
-function checkedFun (){
-    checked = check.checked
-    localStorageFuncCard()
+});  
+
+//
+let arr = [];
+let localStorageArr = JSON.parse(localStorage.getItem('itemGoods'));
+if(localStorageArr != null){
+  arr = localStorageArr
 };
-check.addEventListener("change", checkedFun);
 
 
+btnAddItem.addEventListener('click', function(){
+  const findId = arr.find(function(item){
+  return item.id === thisCardId;
+  });
+  if(!findId){
+    arr.push({
+      id: thisCardId,
+      imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
+      type: thisItemType, 
+      name: itemName.textContent, 
+      price: itemPrice.textContent, 
+      quantity: number.textContent,
+      checkbox: check.checked,
+      days: selectedOption.textContent,
+      sale: sale,
+    });
+  }else{
+    for(i=0;i < arr.length; i++){
+      if(arr[i].id === thisCardId){
+        arr[i] = {
+          id: thisCardId,
+          imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
+          type: thisItemType, 
+          name: itemName.textContent, 
+          price: itemPrice.textContent, 
+          quantity: number.textContent, 
+          checkbox: check.checked,
+          days: selectedOption.textContent,
+          sale: sale,
+        }
+      }
+    }
+  }
+  console.log(arr);
+  localStorageGoods()
+});
+//Локальное хранилище
+function localStorageGoods() {
+  localStorage.setItem('itemGoods', JSON.stringify(arr));
+};
+console.log(arr)
 
 
-//Local Storage
-const goodsInfo = 'item23';
-    //Локальное хранилище
-function localStorageFuncCard() {
-    localStorage.setItem(goodsInfo, JSON.stringify({
-        'checked': checked,
-        'days': selectedOption.textContent,
-        'quantity': numberRes,
-    }))
-}
-localStorageFuncCard()
-
-// setInterval(function(){
-//   console.log(checked)
-// },500)
-
-function checkedFunc(){
-  // check.checked = false
-}

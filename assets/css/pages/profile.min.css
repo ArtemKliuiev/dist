@@ -1,1 +1,560 @@
-.profile-wrapper{height:100vh;display:grid;grid-template:auto 1fr auto/1fr}.profile-header{grid-row:1;grid-column:1}.profile-main{grid-row:2;grid-column:1}.profile-footer{grid-row:3;grid-column:1}.profile{max-width:1456px;padding:0 30px;margin:0 auto;display:grid;grid-template:140px 44px 40px minmax(400px,auto)/200px minmax(50px,1fr) minmax(auto,1041px)}.profile__menu{grid-row:2/5;grid-column:1;font-family:Effra;font-size:22px;font-style:normal;font-weight:400;display:grid;-ms-flex-align:center;align-items:center;grid-template:54px 16px 54px 16px 54px 17px 54px 17px 54px 17px 54px/1fr}.profile__subscriptions{cursor:pointer;grid-column:1;grid-row:1}.profile__orders{cursor:pointer;grid-column:1;grid-row:3}.profile__account{cursor:pointer;grid-column:1;grid-row:5}.profile__payment{cursor:pointer;grid-column:1;grid-row:7}.profile__change{cursor:pointer;grid-column:1;grid-row:9}.profile__sign-out{cursor:pointer;grid-column:1;grid-row:11;color:var(--red,#d32d2c)}.profile__title{grid-row:2;grid-column:3;width:100%;display:grid;grid-template:1fr/auto 1fr auto 120px}.profile__title-one{grid-row:1;grid-column:1;font-family:Effra;font-size:36px;font-style:normal;font-weight:500;line-height:normal}.profile__title-two{grid-row:1;grid-column:3;text-align:right;font-family:Effra;font-size:22px;font-style:normal;font-weight:500;line-height:55px}.profile__main{grid-row:4;grid-column:3}.profile__btn{width:154px;height:50px;border-radius:100px;background:#c3bdb6;color:#fff;text-align:center;font-family:Effra;font-size:16px;font-style:normal;font-weight:700;line-height:50px}.profile__one-input{position:relative}.profile__error{position:absolute;top:84px;left:5px;color:#ff7d4e;font-family:Open Sans;font-size:12px;font-style:normal;font-weight:400;line-height:normal;max-width:100%}.profile__payment-main{display:none}.profile__account-main{display:none}.profile__change-password{display:none}.profile__subscriptions-main{display:none}.profile__subscriptions-goods{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:20px;width:100%}.subscriptions .profile__subscriptions{font-weight:700}.subscriptions .profile__subscriptions-main{display:block}.orders .profile__orders{font-weight:700}.account .profile__account{font-weight:700}.account .profile__account-main{display:block;max-width:920px;margin-left:2px;margin-bottom:100px}.account .order-main__info{grid-template:auto 30px auto 30px auto 30px auto minmax(40px,1fr)/1fr 32px 1fr}.payment .profile__payment{font-weight:700}.payment .profile__payment-main{display:block;display:grid;grid-template:auto 40px 50px 100px/minmax(auto,674px) 1fr}.payment .profile__biling{grid-column:1;grid-row:1;max-width:100%;height:336px;background:url(/dist/assets/images/profile/Image_basement.webp) center/cover no-repeat;display:grid;grid-template:50px auto 30px 40px 44px 40px 1fr/minmax(auto,43px) minmax(auto,410px) minmax(auto,80px) minmax(auto,104px) minmax(auto,40px)}.payment .profile__btn{grid-column:1;grid-row:3;height:50px;border-radius:100px;width:154px;color:#fff;text-align:center;font-family:Effra;font-size:16px;font-style:normal;font-weight:700;line-height:50px}.payment .profile__one-input{display:grid;grid-template:20px 8px 56px/1fr}.payment .profile__one-input-title{grid-column:1;grid-row:1;font-family:Open Sans;font-size:14px;font-style:normal;font-weight:400;line-height:normal;opacity:.5}.payment .profile__one-input-input{grid-column:1;grid-row:3}.payment .profile__card-number{grid-row:2;grid-column:2;max-width:410px}.payment .profile__data{max-width:104px;grid-row:4/6;grid-column:2}.payment .profile__cvc{max-width:104px;grid-row:5/7;grid-column:4;position:relative}.payment .profile__cvc input{color:#fff}.payment .profile__cvc-lable{position:absolute;left:24px;top:44px;font-family:Open Sans;font-size:18px;font-style:normal;font-weight:400;line-height:normal}.payment input{width:100%;height:56px;border-radius:12px;background:#fff;border:none;font-family:Open Sans;font-size:18px;font-style:normal;font-weight:400;line-height:normal;padding-left:24px}.change .profile__change{font-weight:700}.change .profile__change-password{max-width:444px;display:block}.change .profile__change-password-main{display:grid;grid-template:auto 30px auto 30px auto 40px/2px 1fr}.change .profile__current-password{grid-column:2;grid-row:1}.change .profile__new-password{grid-column:2;grid-row:3}.change .profile__confirm-new-password{grid-column:2;grid-row:5}.change .profile__change-btn{margin-left:2px}.sign-out .profile__sign-out{font-weight:700}.product-profile{border-radius:16px;background:#faf6f6;display:grid;grid-template:30px 35px 25px 50px 50px 10px 30px/40px 120px 30px 1fr 30px 164px 42px;width:100%}.product-profile__image{border-radius:8px;grid-row:2/7;grid-column:2;display:grid;-ms-flex-align:center;align-items:center;justify-items:center}.product-profile__image img{max-width:84.226px}.product-profile__price{grid-row:3;grid-column:6;font-family:Open Sans;font-size:18px;font-style:normal;font-weight:600;line-height:normal;text-align:right}.product-profile__btn{grid-row:5;grid-column:6;color:var(--red,#d32d2c);text-align:center;font-family:Effra;font-size:16px;font-style:normal;font-weight:500;line-height:46px;width:164px;height:50px;border-radius:100px;border:2px solid rgba(211,45,44,.2)}.product-profile__btn span{opacity:1}.product-profile__main{grid-row:2/7;grid-column:4;font-family:Effra;font-size:20px;font-style:normal;font-weight:400;line-height:normal;display:grid;grid-template:12px auto 5px auto 55px auto 4px auto 1fr/1fr}.product-profile__type{grid-column:1;grid-row:2}.product-profile__name{grid-column:1;grid-row:4}.product-profile__data-title{grid-column:1;grid-row:6;font-family:Open Sans;font-size:14px;font-style:normal;font-weight:400;line-height:normal;opacity:.5}.product-profile__next-data{grid-column:1;grid-row:8;font-family:Open Sans;font-size:16px;font-style:normal;font-weight:400;line-height:normal}.product__type{display:block;font-size:14px}.antiox{color:#e5ac3b}.mineral{color:#6bb0a4}.mineral__bg{background:var(--goods-mint,#94d6be)}.pain{color:#5f9dca}.prenatal{color:#9448a0}.probiotics{color:#e5463b}.vitamin{color:#6b5ebb}.weight{color:#5e73bb}.active-btn{background:#ff7d4e;cursor:pointer}@media (max-width:1200px){.profile__title{grid-template:1fr/auto 1fr auto}}@media (max-width:800px){.account .order-main__info{grid-template:auto 30px auto 30px auto 30px auto 30px auto 30px auto 30px auto 30px auto 80px/1fr}.change .profile__change-btn{margin:50px 0}}@media (max-width:768px){.profile{padding:0;grid-template:120px auto 30px auto/50px 1fr 50px}.profile__menu{display:none}.profile__title{grid-row:2;grid-column:2;font-size:24px}.profile__main{grid-row:4;grid-column:2}.payment .profile__biling{background:0 0;grid-template:50px auto 30px auto 30px auto 1fr/1fr 30px 1fr}.payment .profile__card-number{grid-row:2;grid-column:1/4;max-width:100%}.payment .profile__data{grid-row:4;grid-column:1;max-width:100%}.payment .profile__cvc{grid-row:4;grid-column:3;max-width:100%}.payment .profile__cvc input{color:#faf6f6}.payment .profile__btn{width:100%}.payment .profile input{background:#faf6f6}.change .profile__change-password{max-width:100%;width:100%}}@media (max-width:600px){.profile__title{grid-template:29px 10px 22px/1fr}.profile__title-one{grid-column:1;grid-row:1;font-size:24px}.profile__title-two{grid-column:1;grid-row:3;font-size:18px;text-align:left;line-height:normal}.profile__btn{width:100%}.account .profile__account-main{margin-bottom:60px}.account .profile input{padding-left:22px}.account .order-main__info{grid-template:auto 25px auto 25px auto 25px auto 25px auto 25px auto 25px auto 25px auto 35px/1fr}.change .profile__title{grid-template:1fr/1fr}.change .profile__change-password-main{grid-template:auto 25px auto 25px auto 35px/2px 1fr}.change .profile__change-btn{margin:0 0 60px 0}}@media (max-width:500px){.profile{padding:0;grid-template:120px auto 30px auto/20px 1fr 20px}.payment .profile__biling{background:0 0;height:auto;grid-template:0 auto 25px auto 1fr/1fr 15px 1fr}.payment .profile__payment-main{display:block;display:grid;grid-template:auto 35px 50px 60px/minmax(auto,674px) 1fr}.payment .profile__one-input{display:grid;grid-template:20px 5px 56px/1fr}.payment .profile__cvc-lable{top:40px}.payment .profile__card-number{grid-row:2;grid-column:1/4;max-width:100%}.payment .profile__data{grid-row:4;grid-column:1;max-width:100%}.payment .profile__cvc{grid-row:4;grid-column:3;max-width:100%}.payment .profile__btn{width:100%}}
+.profile-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template: auto 1fr auto/1fr;
+}
+
+.profile-header {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.profile-main {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.profile-footer {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.profile {
+  max-width: 1456px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 140px 44px 40px minmax(400px, auto)/200px minmax(50px, 1fr) minmax(auto, 1041px);
+}
+.profile__menu {
+  grid-row: 2/5;
+  grid-column: 1;
+  font-family: Effra;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  display: grid;
+  align-items: center;
+  grid-template: 54px 16px 54px 16px 54px 17px 54px 17px 54px 17px 54px/1fr;
+}
+.profile__subscriptions {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 1;
+}
+.profile__orders {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 3;
+}
+.profile__account {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 5;
+}
+.profile__payment {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 7;
+}
+.profile__change {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 9;
+}
+.profile__sign-out {
+  cursor: pointer;
+  grid-column: 1;
+  grid-row: 11;
+  color: var(--red, #D32D2C);
+}
+.profile__title {
+  grid-row: 2;
+  grid-column: 3;
+  width: 100%;
+  display: grid;
+  grid-template: 1fr/auto 1fr auto 120px;
+}
+.profile__title-one {
+  grid-row: 1;
+  grid-column: 1;
+  font-family: Effra;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.profile__title-two {
+  grid-row: 1;
+  grid-column: 3;
+  text-align: right;
+  font-family: Effra;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 55px;
+}
+.profile__main {
+  grid-row: 4;
+  grid-column: 3;
+}
+.profile__btn {
+  width: 154px;
+  height: 50px;
+  border-radius: 100px;
+  background: #C3BDB6;
+  color: #FFF;
+  text-align: center;
+  font-family: Effra;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+}
+.profile__one-input {
+  position: relative;
+}
+.profile__error {
+  position: absolute;
+  top: 84px;
+  left: 5px;
+  color: #FF7D4E;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 100%;
+}
+.profile__payment-main {
+  display: none;
+}
+.profile__account-main {
+  display: none;
+}
+.profile__change-password {
+  display: none;
+}
+.profile__subscriptions-main {
+  display: none;
+}
+.profile__subscriptions-goods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.subscriptions .profile__subscriptions {
+  font-weight: 700;
+}
+.subscriptions .profile__subscriptions-main {
+  display: block;
+}
+
+.orders .profile__orders {
+  font-weight: 700;
+}
+
+.account .profile__account {
+  font-weight: 700;
+}
+.account .profile__account-main {
+  display: block;
+  max-width: 920px;
+  margin-left: 2px;
+  margin-bottom: 100px;
+}
+.account .order-main__info {
+  grid-template: auto 30px auto 30px auto 30px auto minmax(40px, 1fr)/1fr 32px 1fr;
+}
+.payment .profile__payment {
+  font-weight: 700;
+}
+.payment .profile__payment-main {
+  display: block;
+  display: grid;
+  grid-template: auto 40px 50px 100px/minmax(auto, 674px) 1fr;
+}
+.payment .profile__biling {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 100%;
+  height: 336px;
+  background: url(/dist/assets/images/profile/Image_basement.webp) center/cover no-repeat;
+  display: grid;
+  grid-template: 50px auto 30px 40px 44px 40px 1fr/minmax(auto, 43px) minmax(auto, 410px) minmax(auto, 80px) minmax(auto, 104px) minmax(auto, 40px);
+}
+.payment .profile__btn {
+  grid-column: 1;
+  grid-row: 3;
+  height: 50px;
+  border-radius: 100px;
+  width: 154px;
+  color: #FFF;
+  text-align: center;
+  font-family: Effra;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+}
+.payment .profile__one-input {
+  display: grid;
+  grid-template: 20px 8px 56px/1fr;
+}
+.payment .profile__one-input-title {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+.payment .profile__one-input-input {
+  grid-column: 1;
+  grid-row: 3;
+}
+.payment .profile__card-number {
+  grid-row: 2;
+  grid-column: 2;
+  max-width: 410px;
+}
+.payment .profile__data {
+  max-width: 104px;
+  grid-row: 4/6;
+  grid-column: 2;
+}
+.payment .profile__cvc {
+  max-width: 104px;
+  grid-row: 5/7;
+  grid-column: 4;
+  position: relative;
+}
+.payment .profile__cvc input {
+  color: #FFF;
+}
+.payment .profile__cvc-lable {
+  position: absolute;
+  left: 24px;
+  top: 44px;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.payment input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background: #FFF;
+  border: none;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 24px;
+}
+
+.change .profile__change {
+  font-weight: 700;
+}
+.change .profile__change-password {
+  max-width: 444px;
+  display: block;
+}
+.change .profile__change-password-main {
+  display: grid;
+  grid-template: auto 30px auto 30px auto 40px/2px 1fr;
+}
+.change .profile__current-password {
+  grid-column: 2;
+  grid-row: 1;
+}
+.change .profile__new-password {
+  grid-column: 2;
+  grid-row: 3;
+}
+.change .profile__confirm-new-password {
+  grid-column: 2;
+  grid-row: 5;
+}
+.change .profile__change-btn {
+  margin-left: 2px;
+}
+.sign-out .profile__sign-out {
+  font-weight: 700;
+}
+
+.product-profile {
+  border-radius: 16px;
+  background: #faf6f6;
+  display: grid;
+  grid-template: 30px 35px 25px 50px 50px 10px 30px/40px 120px 30px 1fr 30px 164px 42px;
+  width: 100%;
+}
+.product-profile__image {
+  border-radius: 8px;
+  grid-row: 2/7;
+  grid-column: 2;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.product-profile__image img {
+  max-width: 84.226px;
+}
+.product-profile__price {
+  grid-row: 3;
+  grid-column: 6;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: right;
+}
+.product-profile__btn {
+  grid-row: 5;
+  grid-column: 6;
+  color: var(--red, #D32D2C);
+  text-align: center;
+  font-family: Effra;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 46px;
+  width: 164px;
+  height: 50px;
+  border-radius: 100px;
+  border: 2px solid rgba(211, 45, 44, 0.2);
+}
+.product-profile__btn span {
+  opacity: 1;
+}
+.product-profile__main {
+  grid-row: 2/7;
+  grid-column: 4;
+  font-family: Effra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: grid;
+  grid-template: 12px auto 5px auto 55px auto 4px auto 1fr/1fr;
+}
+.product-profile__type {
+  grid-column: 1;
+  grid-row: 2;
+}
+.product-profile__name {
+  grid-column: 1;
+  grid-row: 4;
+}
+.product-profile__data-title {
+  grid-column: 1;
+  grid-row: 6;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+.product-profile__next-data {
+  grid-column: 1;
+  grid-row: 8;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.product__type {
+  display: block;
+  font-size: 14px;
+}
+
+.antiox {
+  color: #E5AC3B;
+}
+
+.mineral {
+  color: #6BB0A4;
+}
+.mineral__bg {
+  background: var(--goods-mint, #94D6BE);
+}
+
+.pain {
+  color: #5F9DCA;
+}
+
+.prenatal {
+  color: #9448A0;
+}
+
+.probiotics {
+  color: #E5463B;
+}
+
+.vitamin {
+  color: #6B5EBB;
+}
+
+.weight {
+  color: #5E73BB;
+}
+
+.active-btn {
+  background: #FF7D4E;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .profile__title {
+    grid-template: 1fr/auto 1fr auto;
+  }
+}
+@media (max-width: 800px) {
+  .account .order-main__info {
+    grid-template: auto 30px auto 30px auto 30px auto 30px auto 30px auto 30px auto 30px auto 80px/1fr;
+  }
+  .change .profile__change-btn {
+    margin: 50px 0;
+  }
+}
+@media (max-width: 768px) {
+  .profile {
+    padding: 0;
+    grid-template: 120px auto 30px auto/50px 1fr 50px;
+  }
+  .profile__menu {
+    display: none;
+  }
+  .profile__title {
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 24px;
+  }
+  .profile__main {
+    grid-row: 4;
+    grid-column: 2;
+  }
+  .payment .profile__biling {
+    background: none;
+    grid-template: 50px auto 30px auto 30px auto 1fr/1fr 30px 1fr;
+  }
+  .payment .profile__card-number {
+    grid-row: 2;
+    grid-column: 1/4;
+    max-width: 100%;
+  }
+  .payment .profile__data {
+    grid-row: 4;
+    grid-column: 1;
+    max-width: 100%;
+  }
+  .payment .profile__cvc {
+    grid-row: 4;
+    grid-column: 3;
+    max-width: 100%;
+  }
+  .payment .profile__cvc input {
+    color: #faf6f6;
+  }
+  .payment .profile__btn {
+    width: 100%;
+  }
+  .payment .profile input {
+    background: #faf6f6;
+  }
+  .change .profile__change-password {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .profile__title {
+    grid-template: 29px 10px 22px/1fr;
+  }
+  .profile__title-one {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 24px;
+  }
+  .profile__title-two {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 18px;
+    text-align: left;
+    line-height: normal;
+  }
+  .profile__btn {
+    width: 100%;
+  }
+  .account .profile__account-main {
+    margin-bottom: 60px;
+  }
+  .account .profile input {
+    padding-left: 22px;
+  }
+  .account .order-main__info {
+    grid-template: auto 25px auto 25px auto 25px auto 25px auto 25px auto 25px auto 25px auto 35px/1fr;
+  }
+  .change .profile__title {
+    grid-template: 1fr/1fr;
+  }
+  .change .profile__change-password-main {
+    grid-template: auto 25px auto 25px auto 35px/2px 1fr;
+  }
+  .change .profile__change-btn {
+    margin: 0 0 60px 0;
+  }
+}
+@media (max-width: 500px) {
+  .profile {
+    padding: 0;
+    grid-template: 120px auto 30px auto/20px 1fr 20px;
+  }
+  .payment .profile__biling {
+    background: none;
+    height: auto;
+    grid-template: 0px auto 25px auto 1fr/1fr 15px 1fr;
+  }
+  .payment .profile__payment-main {
+    display: block;
+    display: grid;
+    grid-template: auto 35px 50px 60px/minmax(auto, 674px) 1fr;
+  }
+  .payment .profile__one-input {
+    display: grid;
+    grid-template: 20px 5px 56px/1fr;
+  }
+  .payment .profile__cvc-lable {
+    top: 40px;
+  }
+  .payment .profile__card-number {
+    grid-row: 2;
+    grid-column: 1/4;
+    max-width: 100%;
+  }
+  .payment .profile__data {
+    grid-row: 4;
+    grid-column: 1;
+    max-width: 100%;
+  }
+  .payment .profile__cvc {
+    grid-row: 4;
+    grid-column: 3;
+    max-width: 100%;
+  }
+  .payment .profile__btn {
+    width: 100%;
+  }
+}

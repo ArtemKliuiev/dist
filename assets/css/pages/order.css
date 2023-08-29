@@ -483,25 +483,25 @@ input:focus {
   color: var(--red, #D32D2C);
 }
 
-.image-bg__antiox {
+.bg-basket-item__antiox {
   background: var(--goods-orange, #F2B385);
 }
-.image-bg__mineral {
+.bg-basket-item__mineral {
   background: var(--goods-mint, #94D6BE);
 }
-.image-bg__pain {
+.bg-basket-item__pain {
   background: var(--goods-blue, #91CAF2);
 }
-.image-bg__prenatal {
+.bg-basket-item__prenatal {
   background: var(--goods-pink, #DA91E0);
 }
-.image-bg__probiotic {
+.bg-basket-item__probiotic {
   background: var(--goods-red, #E8939D);
 }
-.image-bg__vitamin {
+.bg-basket-item__vitamin {
   background: var(--goods-purple, #9C91E0);
 }
-.image-bg__weight {
+.bg-basket-item__weight {
   background: var(--goods-green, #A5B3FF);
 }
 

@@ -359,10 +359,8 @@ function adaptiveBtn() {
 //Фильтрация при переходе по ссылке
 const filerFun = localStorage.getItem('filerFun');
 setTimeout(function(){
-  console.log(filerFun)
   if(filerFun == 1){
       addAllGoods()
-      console.log(1)
   }else if(filerFun == 2){
       vitam()
   }else if(filerFun == 3){
