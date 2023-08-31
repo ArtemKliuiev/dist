@@ -114,7 +114,7 @@ setTimeout(function(){
     .catch((error) => {
         console.error("Ошибка при получении данных:", error);
     });
-},500);
+},600);
 
 //История заказов
 function historyOrderInfo(){
@@ -143,7 +143,7 @@ function historyOrderInfo(){
         `; 
         const script = document.createElement('script');
         script.textContent = `
-        const thisOrder = document.getElementById('${value.data}');
+        // const thisOrder = document.getElementById('${value.data}');
         // const orderContainer = document.querySelector('.one-order__goods');
         // console.log(orderContainer);
         // const itemHTML = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffff';
