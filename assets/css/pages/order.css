@@ -360,7 +360,7 @@
   display: none;
 }
 
-.product {
+.product-order {
   width: 100%;
   height: 70px;
   display: grid;
@@ -374,7 +374,7 @@
   overflow: hidden;
   grid-template: 1fr/70px 20px 1fr 10px;
 }
-.product__image {
+.product-order__image {
   border-radius: 8px;
   grid-row: 1;
   grid-column: 1;
@@ -385,32 +385,53 @@
       align-items: center;
   justify-items: center;
 }
-.product__image img {
+.product-order__image img {
   width: 49.132px;
   height: 55.449px;
 }
-.product__main {
+.product-order__main {
   grid-row: 1;
   grid-column: 3;
   display: grid;
   grid-template: 1fr/190px 1fr auto;
 }
-.product__type {
+.product-order__type {
   display: none;
 }
-.product__name {
+.product-order__name {
   grid-column: 1;
   grid-row: 1;
 }
-.product__old-price {
+.product-order__old-price {
   display: none;
 }
-.product__price-total {
+.product-order__price-total {
   grid-column: 3;
   grid-row: 1;
 }
-.product__price {
+.product-order__price {
   display: none;
+}
+.product-order .bg-basket-item__antiox {
+  background: var(--goods-orange, #F2B385);
+}
+.product-order .bg-basket-item__mineral {
+  background: var(--goods-mint, #94D6BE);
+}
+.product-order .bg-basket-item__pain {
+  background: var(--goods-blue, #91CAF2);
+}
+.product-order .bg-basket-item__prenatal {
+  background: var(--goods-pink, #DA91E0);
+}
+.product-order .bg-basket-item__probiotic {
+  background: var(--goods-red, #E8939D);
+}
+.product-order .bg-basket-item__vitamin {
+  background: var(--goods-purple, #9C91E0);
+}
+.product-order .bg-basket-item__weight {
+  background: var(--goods-green, #A5B3FF);
 }
 
 input {
@@ -436,7 +457,7 @@ input:focus {
   border: 1px solid #FF7D4E;
 }
 
-.sale .product__main {
+.sale .product-order__main {
   grid-row: 1;
   grid-column: 3;
   display: grid;
@@ -444,12 +465,12 @@ input:focus {
       align-items: center;
   grid-template: auto 1px auto/190px 1fr auto;
 }
-.sale .product__name {
+.sale .product-order__name {
   grid-column: 1;
   grid-row: 1/4;
   line-height: 41px;
 }
-.sale .product__old-price {
+.sale .product-order__old-price {
   display: block;
   grid-column: 3;
   grid-row: 1;
@@ -462,13 +483,13 @@ input:focus {
   line-height: normal;
   text-decoration-line: strikethrough;
 }
-.sale .product__price {
+.sale .product-order__price {
   color: var(--red, #D32D2C);
   grid-column: 3;
   grid-row: 3;
   margin-bottom: 5px;
 }
-.sale .product__price-total {
+.sale .product-order__price-total {
   color: var(--red, #D32D2C);
   grid-column: 3;
   grid-row: 3;
@@ -481,28 +502,6 @@ input:focus {
 }
 .discount .order-main__order-info-discount span:nth-child(2) {
   color: var(--red, #D32D2C);
-}
-
-.bg-basket-item__antiox {
-  background: var(--goods-orange, #F2B385);
-}
-.bg-basket-item__mineral {
-  background: var(--goods-mint, #94D6BE);
-}
-.bg-basket-item__pain {
-  background: var(--goods-blue, #91CAF2);
-}
-.bg-basket-item__prenatal {
-  background: var(--goods-pink, #DA91E0);
-}
-.bg-basket-item__probiotic {
-  background: var(--goods-red, #E8939D);
-}
-.bg-basket-item__vitamin {
-  background: var(--goods-purple, #9C91E0);
-}
-.bg-basket-item__weight {
-  background: var(--goods-green, #A5B3FF);
 }
 
 @media (max-width: 1150px) {
@@ -740,20 +739,20 @@ input:focus {
   .adaprive-list-active .order-main__order {
     top: 0;
   }
-  .product {
+  .product-order {
     font-size: 14px;
     grid-template: 1fr/70px 20px 1fr 20px;
   }
-  .product__main {
+  .product-order__main {
     -ms-flex-align: center;
         align-items: center;
     grid-template: 1fr/1fr 20px auto;
   }
-  .sale .product {
+  .sale .product-order {
     font-size: 14px;
     grid-template: 1fr/70px 20px 1fr 20px;
   }
-  .sale .product__main {
+  .sale .product-order__main {
     -ms-flex-align: center;
         align-items: center;
     grid-template: 1fr/1fr 20px auto;

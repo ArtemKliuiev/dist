@@ -28,14 +28,14 @@ function addGoods(){
     productsContainer.innerHTML = ''
     products.forEach(product => { 
         const productHTML = `         
-        <div class="product" id="product${product.id}" >
-        <div class="product__image ${product.type}"><img src="${product.imageSrc}" alt=""></div>
-        <div class="product__main">
-            <div class="product__type mineral" onclick="mineralFun()">Minerals</div>
-            <div class="product__name"><span class="display-none" ><span class="quantity-item item8">${product.quantity}</span> x </span>Reacted Zinc</div>
-            <div class="product__price">${product.price}</div>
-            <div class="product__price-total">$0.00</div>
-            <div data-discount="63.02" class="product__old-price"><span class="old-price" >$125.00</span></div>
+        <div class="product-order" id="product${product.id}" >
+        <div class="product-order__image ${product.type}"><img src="${product.imageSrc}" alt=""></div>
+        <div class="product-order__main">
+            <div class="product-order__type mineral" onclick="mineralFun()">Minerals</div>
+            <div class="product-order__name"><span class="display-none" ><span class="quantity-item item8">${product.quantity}</span> x </span>Reacted Zinc</div>
+            <div class="product-order__price">${product.price}</div>
+            <div class="product-order__price-total">$0.00</div>
+            <div data-discount="63.02" class="product-order__old-price"><span class="old-price" >$125.00</span></div>
         </div>
         </div>
         `; 
@@ -43,9 +43,9 @@ function addGoods(){
         script.textContent = `
         (function(){
             const thisProduct = document.getElementById('product${product.id}');
-            const price = thisProduct.querySelector('.product__price');
-            const totalPrice = thisProduct.querySelector('.product__price-total');
-            const thisImage = thisProduct.querySelector('.product__image');
+            const price = thisProduct.querySelector('.product-order__price');
+            const totalPrice = thisProduct.querySelector('.product-order__price-total');
+            const thisImage = thisProduct.querySelector('.product-order__image');
             (function(){
                 const thisPriseInfo = '${product.price}';
                 totalPrice.innerHTML = thisPriseInfo ;
@@ -57,7 +57,7 @@ function addGoods(){
                 document.body.classList.add('discount');
                 const priceInfo = document.querySelector('.old-price');
                 const thisOldPrice = parseFloat(priceInfo.textContent.replace("$", ""));
-                const thisDiscount = parseFloat(document.querySelector('.product__old-price').getAttribute('data-discount'));
+                const thisDiscount = parseFloat(document.querySelector('.product-order__old-price').getAttribute('data-discount'));
                 const allThisDiscount = thisDiscount * ${product.quantity};
                 totalAllPrice =  totalAllPrice +  allThisDiscount;
                 const allOldPrice = thisOldPrice - thisDiscount;

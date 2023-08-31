@@ -139,6 +139,9 @@
 .profile__subscriptions-main {
   display: none;
 }
+.profile__orders-main {
+  display: none;
+}
 .profile__subscriptions-goods {
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +160,9 @@
 
 .orders .profile__orders {
   font-weight: 700;
+}
+.orders .profile__orders-main {
+  display: block;
 }
 
 .account .profile__account {
@@ -378,6 +384,27 @@
   font-weight: 400;
   line-height: normal;
 }
+.product-profile .bg-basket-item__antiox {
+  background: var(--goods-orange, #F2B385);
+}
+.product-profile .bg-basket-item__mineral {
+  background: var(--goods-mint, #94D6BE);
+}
+.product-profile .bg-basket-item__pain {
+  background: var(--goods-blue, #91CAF2);
+}
+.product-profile .bg-basket-item__prenatal {
+  background: var(--goods-pink, #DA91E0);
+}
+.product-profile .bg-basket-item__probiotic {
+  background: var(--goods-red, #E8939D);
+}
+.product-profile .bg-basket-item__vitamin {
+  background: var(--goods-purple, #9C91E0);
+}
+.product-profile .bg-basket-item__weight {
+  background: var(--goods-green, #A5B3FF);
+}
 
 .product__type {
   display: block;
@@ -418,6 +445,106 @@
 .active-btn {
   background: #FF7D4E;
   cursor: pointer;
+}
+
+#orders {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.one-order {
+  width: 100%;
+  border-radius: 16px;
+  background: #FAF8F6;
+  display: grid;
+  grid-template: 40px auto 40px auto 87px auto 36px/40px 1fr 42px;
+}
+.one-order__top-line {
+  grid-row: 2;
+  grid-column: 2;
+  display: grid;
+  grid-template: auto 9px auto/1fr;
+}
+.one-order__data {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+  grid-row: 1;
+}
+.one-order__order-number {
+  color: #000;
+  font-family: Effra;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  grid-row: 3;
+}
+.one-order__info {
+  color: #000;
+  text-align: right;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  grid-row: 1;
+  margin-top: 3px;
+}
+.one-order__goods {
+  grid-row: 4;
+  grid-column: 2;
+}
+.one-order__bottom-line {
+  grid-row: 6;
+  grid-column: 2;
+  display: grid;
+  grid-template: auto 4px auto/auto 1fr auto;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.one-order__amount-title {
+  grid-column: 1;
+  grid-row: 1;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+.one-order__amount {
+  grid-column: 1;
+  grid-row: 3;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.one-order__amount-btn {
+  grid-column: 3;
+  grid-row: 1/4;
+  color: #FFF;
+  text-align: center;
+  font-family: Effra;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+  width: 154px;
+  height: 50px;
+  border-radius: 100px;
+  background: #FF7D4E;
 }
 
 @media (max-width: 1200px) {

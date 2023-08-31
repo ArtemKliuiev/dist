@@ -126,110 +126,115 @@
                 <div class="profile__subscriptions-goods">
                   <!--Товары-->
                 </div>
-              </div>
-              <div class="profile__account-main">
-                    <div class="order-main__info">
-                      <div class="order-main__one-input order-main__first-name">
-                          <div class="order-main__one-input-title">First Name</div>
-                          <input id="input-first-name" class="order-main__one-input-input" aria-label="first-name" type="text">
-                          <div class="order-main__error order-main__error-first-name"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__last-name">
-                          <div class="order-main__one-input-title">Last Name</div>
-                          <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
-                          <div class="order-main__error order-main__error-last-name"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__adress">
-                          <div class="order-main__one-input-title">Address Line 1</div>
-                          <input id="input-adress-one" class="order-main__one-input-input" aria-label="adress" type="text">
-                          <div class="order-main__error order-main__error-adress-one"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__adress-two">
-                          <div class="order-main__one-input-title">Address Line 2</div>
-                          <input id="input-adress-two" class="order-main__one-input-input" aria-label="adress-line2" type="text">
-                          <div class="order-main__error order-main__error-adress-two"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__city">
-                          <div class="order-main__one-input-title">City</div>
-                          <input id="input-city" class="order-main__one-input-input" aria-label="city" type="text">
-                          <div class="order-main__error order-main__error-ciry"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__email">
-                          <div class="order-main__one-input-title">Email</div>
-                          <input id="input-email" class="order-main__one-input-input" aria-label="email" type="text">
-                          <div class="order-main__error order-main__error-email"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__phone">
-                          <div class="order-main__one-input-title">Phone Number</div>
-                          <input id="input-phone" class="order-main__one-input-input" aria-label="number" type="number">
-                          <div class="order-main__error order-main__error-phone"></div>
-                      </div>
-                      <div class="order-main__one-input order-main__region">
-                          <div class="order-main__one-input-title order-main__region-title-one">State / Province</div>
-                          <div class="order-main__region-select dropdown">
-                              <button id="input-country" aria-label="select-btn" class="dropbtn">NY</button>
-                              <div class="dropdown-arrow">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
-                                      <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z" fill="black"/>
-                                  </svg>
-                              </div>
-                              <div class="dropdown-content">
-                                  <a onclick="castumSel(1)">Kiev</a>
-                                  <a onclick="castumSel(2)">Poltava</a>
-                                  <a onclick="castumSel(3)">Sumy</a>
-                              </div>
-                              <div class="order-main__error order-main__error-region"></div>
-                          </div>
-                          <div class="order-main__region-title-two order-main__region-numbers ">
-                              <div class="order-main__one-input-title order-main__region-title">ZIP / Postal Code</div>
-                              <input id="input-region-num" type="number" class="order-main__region-number" maxlength="7">
-                              <div class="order-main__error order-main__error-region-num"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div onclick="orderBtn()" id="saveInfo" class="profile__btn profile__account-main-btn">Save</div>
-              </div>
-              <div class="profile__payment-main">
-                <div class="profile__biling">
-                    <div class="profile__one-input profile__card-number">
-                        <div class="profile__one-input-title">Card Number</div>
-                        <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="profile__one-input-input" maxlength="19" aria-label="card-number" type="text">
-                        <div class="profile__error profile__error-card-num"></div>
-                    </div>
-                    <div class="profile__one-input profile__data">
-                        <div class="profile__one-input-title">Expiration</div>
-                        <input id="input-card-data" class="profile__one-input-input" type="text"  maxlength="5" placeholder="MM/YY"> 
-                        <div class="profile__error profile__error-card-data"></div>
-                    </div>
-                    <div class="profile__one-input profile__cvc">
-                        <div class="profile__one-input-title">CVC</div>
-                        <input id="input-card-cvc" placeholder="CVC" maxlength="3" class="profile__one-input-input" aria-label="card-number" type="text">
-                        <span class="profile__cvc-lable"></span>
-                        <div class="profile__error profile__error-card-cvc"></div>
-                    </div>
                 </div>
-                <div onclick="paySaveBtnFunc()" id="payInfoSave" class="profile__btn">Save</div>
-              </div>
-              <div class="profile__change-password">
-                <div class="profile__change-password-main">
-                  <div class="order-main__one-input profile__current-password">
-                    <div class="order-main__one-input-title">Current Password</div>
-                    <input id="input-сurrent-password" class="order-main__one-input-input" aria-label="input-сurrent-password" type="text">
-                    <div class="order-main__error order-main__error-сurrent-password"></div>
-                  </div>
-                  <div class="order-main__one-input profile__new-password">
-                    <div class="order-main__one-input-title">New Password</div>
-                    <input id="input-new-password" class="order-main__one-input-input" aria-label="input-new-password" type="text">
-                    <div class="order-main__error order-main__error-new-password"></div>
-                  </div>
-                  <div class="order-main__one-input profile__confirm-new-password">
-                    <div class="order-main__one-input-title">Confirm New Password</div>
-                    <input id="input-current-new-password" class="order-main__one-input-input" aria-label="input-current-new-password" type="text">
-                    <div class="order-main__error order-main__error-current-new-password"></div>
+                <div class="profile__orders-main">
+                  <div id="orders">
+                <!--Заказы(история)-->
                   </div>
                 </div>
-                <div class="profile__btn profile__change-btn">Save</div>
-              </div>
+                <div class="profile__account-main">
+                      <div class="order-main__info">
+                        <div class="order-main__one-input order-main__first-name">
+                            <div class="order-main__one-input-title">First Name</div>
+                            <input id="input-first-name" class="order-main__one-input-input" aria-label="first-name" type="text">
+                            <div class="order-main__error order-main__error-first-name"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__last-name">
+                            <div class="order-main__one-input-title">Last Name</div>
+                            <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+                            <div class="order-main__error order-main__error-last-name"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__adress">
+                            <div class="order-main__one-input-title">Address Line 1</div>
+                            <input id="input-adress-one" class="order-main__one-input-input" aria-label="adress" type="text">
+                            <div class="order-main__error order-main__error-adress-one"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__adress-two">
+                            <div class="order-main__one-input-title">Address Line 2</div>
+                            <input id="input-adress-two" class="order-main__one-input-input" aria-label="adress-line2" type="text">
+                            <div class="order-main__error order-main__error-adress-two"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__city">
+                            <div class="order-main__one-input-title">City</div>
+                            <input id="input-city" class="order-main__one-input-input" aria-label="city" type="text">
+                            <div class="order-main__error order-main__error-ciry"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__email">
+                            <div class="order-main__one-input-title">Email</div>
+                            <input id="input-email" class="order-main__one-input-input" aria-label="email" type="text">
+                            <div class="order-main__error order-main__error-email"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__phone">
+                            <div class="order-main__one-input-title">Phone Number</div>
+                            <input id="input-phone" class="order-main__one-input-input" aria-label="number" type="number">
+                            <div class="order-main__error order-main__error-phone"></div>
+                        </div>
+                        <div class="order-main__one-input order-main__region">
+                            <div class="order-main__one-input-title order-main__region-title-one">State / Province</div>
+                            <div class="order-main__region-select dropdown">
+                                <button id="input-country" aria-label="select-btn" class="dropbtn">NY</button>
+                                <div class="dropdown-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
+                                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z" fill="black"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-content">
+                                    <a onclick="castumSel(1)">Kiev</a>
+                                    <a onclick="castumSel(2)">Poltava</a>
+                                    <a onclick="castumSel(3)">Sumy</a>
+                                </div>
+                                <div class="order-main__error order-main__error-region"></div>
+                            </div>
+                            <div class="order-main__region-title-two order-main__region-numbers ">
+                                <div class="order-main__one-input-title order-main__region-title">ZIP / Postal Code</div>
+                                <input id="input-region-num" type="number" class="order-main__region-number" maxlength="7">
+                                <div class="order-main__error order-main__error-region-num"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="orderBtn()" id="saveInfo" class="profile__btn profile__account-main-btn">Save</div>
+                </div>
+                <div class="profile__payment-main">
+                  <div class="profile__biling">
+                      <div class="profile__one-input profile__card-number">
+                          <div class="profile__one-input-title">Card Number</div>
+                          <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="profile__one-input-input" maxlength="19" aria-label="card-number" type="text">
+                          <div class="profile__error profile__error-card-num"></div>
+                      </div>
+                      <div class="profile__one-input profile__data">
+                          <div class="profile__one-input-title">Expiration</div>
+                          <input id="input-card-data" class="profile__one-input-input" type="text"  maxlength="5" placeholder="MM/YY"> 
+                          <div class="profile__error profile__error-card-data"></div>
+                      </div>
+                      <div class="profile__one-input profile__cvc">
+                          <div class="profile__one-input-title">CVC</div>
+                          <input id="input-card-cvc" placeholder="CVC" maxlength="3" class="profile__one-input-input" aria-label="card-number" type="text">
+                          <span class="profile__cvc-lable"></span>
+                          <div class="profile__error profile__error-card-cvc"></div>
+                      </div>
+                  </div>
+                  <div onclick="paySaveBtnFunc()" id="payInfoSave" class="profile__btn">Save</div>
+                </div>
+                <div class="profile__change-password">
+                  <div class="profile__change-password-main">
+                    <div class="order-main__one-input profile__current-password">
+                      <div class="order-main__one-input-title">Current Password</div>
+                      <input id="input-сurrent-password" class="order-main__one-input-input" aria-label="input-сurrent-password" type="text">
+                      <div class="order-main__error order-main__error-сurrent-password"></div>
+                    </div>
+                    <div class="order-main__one-input profile__new-password">
+                      <div class="order-main__one-input-title">New Password</div>
+                      <input id="input-new-password" class="order-main__one-input-input" aria-label="input-new-password" type="text">
+                      <div class="order-main__error order-main__error-new-password"></div>
+                    </div>
+                    <div class="order-main__one-input profile__confirm-new-password">
+                      <div class="order-main__one-input-title">Confirm New Password</div>
+                      <input id="input-current-new-password" class="order-main__one-input-input" aria-label="input-current-new-password" type="text">
+                      <div class="order-main__error order-main__error-current-new-password"></div>
+                    </div>
+                  </div>
+                  <div class="profile__btn profile__change-btn">Save</div>
+                </div>
             </div>
           </div>
         </div>

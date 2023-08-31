@@ -7,6 +7,20 @@ function isOrderDataComplete(orderDataObj) {
     return true; 
 }
 
+//Текуща дата
+const currentDate = new Date();
+
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth() + 1;
+const day = currentDate.getDate();
+const hours = currentDate.getHours();
+const minutes = currentDate.getMinutes();
+const seconds = currentDate.getSeconds();
+
+const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+orderData.data = formattedDate;
+
+
 const placeOrder = document.querySelectorAll('.oval-button');
 
 let localStorageFirebase = JSON.parse(localStorage.getItem('itemGoods'));
@@ -52,7 +66,7 @@ orderData.order = localStorageFirebase;
     function firebasePush() {
         const database = getDatabase(app);
         if (userEmail) {
-            const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/orderData`);
+            const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/orderData/${formattedDate}`);
             // Устанавливаем данные для пользователя с определенным ключом (email)
             set(userRef, orderData)
                 .then(() => {
