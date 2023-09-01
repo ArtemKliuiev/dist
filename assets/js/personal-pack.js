@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Загрузка данных из 4 различных HTML файлов
-    loadProducts('goods/personal-pack/1.html');
-    loadProducts('goods/personal-pack/2.html');
-    loadProducts('goods/personal-pack/3.html');
-    loadProducts('goods/personal-pack/4.html');
+    loadProducts('/dist/goods/personal-pack/1.html');
+    loadProducts('/dist/goods/personal-pack/2.html');
+    loadProducts('/dist/goods/personal-pack/3.html');
+    loadProducts('/dist/goods/personal-pack/4.html');
   });
   
 // Получаем элемент, которому хотим добавить класс
