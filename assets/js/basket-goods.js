@@ -190,19 +190,21 @@ function addGoods(){
 
 
 
-
-function startLoad(){
-    let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
-    if(localStorageApp != null){
-        products = localStorageApp
+document.addEventListener('DOMContentLoaded', function() {
+    function startLoad(){
+        let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
+        if(localStorageApp != null){
+            products = localStorageApp
+        };
+        addGoods();
     };
-    addGoods();
-};
-startLoad();
+    startLoad();
+    
+    if(btnAddGoods != null){
+        btnAddGoods.addEventListener('click', startLoad);
+    }
+});
 
-if(btnAddGoods != null){
-    btnAddGoods.addEventListener('click', startLoad);
-}
 
 
 
