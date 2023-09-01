@@ -25,29 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProducts('goods/personal-pack/2.html');
     loadProducts('goods/personal-pack/3.html');
     loadProducts('goods/personal-pack/4.html');
+
+    // Получаем элемент, которому хотим добавить класс
+    const boxElement = document.querySelector('.goods-bottom');
+    function checkScrollPosition() {
+      let totalPageHeight = document.documentElement.scrollHeight; // Полная высота страницы
+      let fixedBtn = 730;
+      let res = totalPageHeight - fixedBtn;
+
+      let scrollButtonPosition = window.scrollY + window.innerHeight;
+
+      if (scrollButtonPosition > res) {
+        boxElement.classList.add('fixed')
+      } else {
+        boxElement.classList.remove('fixed')
+      }
+    }
+
+    // Выполняем функцию при загрузке страницы
+    window.addEventListener('load', checkScrollPosition);
+
+    // Выполняем функцию при скролле
+    window.addEventListener('scroll', checkScrollPosition);
   });
   
-// Получаем элемент, которому хотим добавить класс
-const boxElement = document.querySelector('.goods-bottom');
-function checkScrollPosition() {
-  let totalPageHeight = document.documentElement.scrollHeight; // Полная высота страницы
-  let fixedBtn = 730;
-  let res = totalPageHeight - fixedBtn;
 
-  let scrollButtonPosition = window.scrollY + window.innerHeight;
-
-  if (scrollButtonPosition > res) {
-    boxElement.classList.add('fixed')
-  } else {
-    boxElement.classList.remove('fixed')
-  }
-}
-
-// Выполняем функцию при загрузке страницы
-window.addEventListener('load', checkScrollPosition);
-
-// Выполняем функцию при скролле
-window.addEventListener('scroll', checkScrollPosition);
 
 
 
