@@ -264,13 +264,19 @@
     max-width: 166px;
   }
   .banners__three .banner__info {
-    grid-template: 21px auto 10px auto 15px auto 22px 50px 1fr/1fr;
+    grid-template: 21px auto 10px auto 15px auto 1fr 50px 68px/1fr;
   }
   .banners__three .banner__image {
     grid-template: 1.75fr auto 1fr/1fr auto 1fr;
   }
   .banners__three .banner__image img {
     max-width: 110px;
+  }
+  .banners__two .banner__info {
+    grid-template: 21px auto 10px auto 15px auto 1fr 50px 68px/1fr;
+  }
+  .banners__two .banner__btn {
+    max-width: 166px;
   }
   .swiper-button {
     display: none;
@@ -294,7 +300,7 @@
     top: 28px;
   }
   .banners__one .banner__info {
-    grid-template: 212px auto 15px auto 15px auto 20px 50px 1fr/1fr;
+    grid-template: 212px auto 15px auto 15px auto 1fr 50px 68px/1fr;
   }
 }
 @media (max-width: 330px) {
@@ -311,6 +317,9 @@
   }
   .banners__one .banner__info {
     grid-template: 181px auto 15px auto 15px auto 20px 50px 1fr/1fr;
+  }
+  .banners__two .banner__info {
+    grid-template: 0 auto 5px auto 5px auto 1fr 50px 68px/1fr;
   }
   .banners__three {
     height: 464px;
@@ -642,6 +651,9 @@
   }
 }
 @media (max-width: 350px) {
+  main {
+    overflow: hidden;
+  }
   .banner-bottom .banner {
     height: 492px;
   }

@@ -12,6 +12,7 @@
 .adaprive-list {
   display: none;
 }
+
 .order-main {
   max-width: 1456px;
   padding: 0 30px;
@@ -244,6 +245,7 @@
 .order-main__error-region {
   top: 60px;
 }
+
 .footer-two {
   display: grid;
   max-width: 1456px;

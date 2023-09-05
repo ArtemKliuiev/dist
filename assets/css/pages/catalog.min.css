@@ -635,6 +635,9 @@
   }
 }
 @media (max-width: 350px) {
+  main {
+    overflow: hidden;
+  }
   .banner-bottom .banner {
     height: 492px;
   }
