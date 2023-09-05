@@ -3,7 +3,6 @@ document.getElementById('back-button').addEventListener('click', () => {
   window.history.back(); // Используем стандартную браузерную функцию "назад"
 });
 
-
 (function() {
   const answer1 = localStorage.getItem('answer1');
   const answer2 = localStorage.getItem('answer2');

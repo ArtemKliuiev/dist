@@ -6,7 +6,7 @@ const discountPrice = document.querySelector('#discount-price');
 const delivery = document.querySelector('#delivery');
 const allPrice = document.querySelector('#all-price');
 const todayTotalAdaptive = document.querySelector('.adaprive-list__price');
-/////////////////////////////////////////////////////////////////////////////////////
+
 btnList.addEventListener('click', function(){
     body.classList.toggle('adaprive-list-active')
 });

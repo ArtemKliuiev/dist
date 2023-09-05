@@ -11,7 +11,6 @@ const cardNum = document.querySelector('#input-card-num');
 const inputCardData = document.querySelector('#input-card-data');
 const inputCardCVC = document.querySelector('#input-card-cvc');
 
-
 //Ссылки на название ошибок
 const errorFirstName = document.querySelector('.order-main__error-first-name');
 const errorLastName = document.querySelector('.order-main__error-last-name');
@@ -25,7 +24,6 @@ const errorRegNum = document.querySelector('.order-main__error-region-num');
 const errorCardNum = document.querySelector('.order-main__error-card-num');
 const errorCardData = document.querySelector('.order-main__error-card-data');
 const errorCardCVC = document.querySelector('.order-main__error-card-cvc');
-
 
 // regRex
 const regex = /\d/; 
@@ -47,8 +45,6 @@ let orderData = {
     cardDataNumber: '',
     cardDataCVC: '',
 };
-
-
 
 function ExaminationFirstName(){
     dataFisrtName = '';
@@ -85,13 +81,12 @@ function ExaminationLastName(){
     }else{
         orderData.lastName = inputLastName.value;
     }
-}
+};
 
 inputLastName.addEventListener("input", function(){
     errorLastName.innerHTML = '';
     inputLastName.classList.remove('input-active');
-})
-
+});
 
 function ExaminationAdressOne(){
     dataAdressOne = '';
@@ -119,13 +114,12 @@ function ExaminationAdressTwo(){
     }else{
         orderData.adressTwo = inputAdressTwo.value;
     }
-}
+};
 
 inputAdressTwo.addEventListener("input", function(){
     errorAdressTwo.innerHTML = '';
     inputAdressTwo.classList.remove('input-active');
-})
-
+});
 
 function ExaminationCity(){
     dataCity = '';
@@ -141,12 +135,12 @@ function ExaminationCity(){
     }else{
         orderData.city = inputCity.value;
     }
-}
+};
 
 inputCity.addEventListener("input", function(){
     errorCity.innerHTML = '';
     inputCity.classList.remove('input-active');
-})
+});
 
 function ExaminationRegionCode(){
     dataRegionCode = '';
@@ -162,12 +156,12 @@ function ExaminationRegionCode(){
     }else{
         orderData.indexLocation = inputRegNum.value;
     }
-}
+};
 
 inputRegNum.addEventListener("input", function(){
     errorRegNum.innerHTML = '';
     inputRegNum.classList.remove('input-active');
-})
+});
 
 function ExaminationEmail(){
     dataEmail = '';
@@ -183,12 +177,12 @@ function ExaminationEmail(){
     }else{
         orderData.email = inputEmail.value;
     }
-}
+};
 
 inputEmail.addEventListener("input", function(){
     errorEmail.innerHTML = '';
     inputEmail.classList.remove('input-active');
-})
+});
 
 function ExaminationNumber(){
     dataNumber = '';
@@ -201,12 +195,12 @@ function ExaminationNumber(){
     }else{
         orderData.phoneNumber = inputPhone.value;
     }
-}
+};
 
 inputPhone.addEventListener("input", function(){
     errorPhone.innerHTML = '';
     inputPhone.classList.remove('input-active');
-})
+});
 
 cardNum.addEventListener("input", function (event) {
     const input = event.target;
@@ -278,12 +272,12 @@ function ExaminationCardCVC(){
     }else{
         orderData.cardDataCVC = inputCardCVC.value;
     }
-}
+};
 
 inputCardCVC.addEventListener("input", function(){
     errorCardCVC.innerHTML = '';
     inputCardCVC.classList.remove('input-active');
-})
+});
 
 function ExaminationSelect(){
     if(inputCountry.textContent == 'NY'){
@@ -292,12 +286,12 @@ function ExaminationSelect(){
     }else{
         orderData.region = inputCountry.textContent;
     }
-}
+};
 
 inputCountry.addEventListener("input", function(){
     errorCountry.innerHTML = '';
     inputCountry.classList.remove('input-active');
-})
+});
 
 function castumSel(num){
     errorCountry.innerHTML = ''
@@ -309,7 +303,7 @@ function castumSel(num){
     }else if (num ===3){
         inputCountry.innerHTML = 'Sumy'
     }
-}
+};
 
 function orderBtn() {
     ExaminationFirstName();
@@ -324,19 +318,7 @@ function orderBtn() {
     ExaminationCardData();
     ExaminationCardCVC();
     ExaminationSelect();
-}
-
-// const text = "Пример текста с .  цифрами";
-
-// // Регулярное выражение, которое ищет цифры
-
-
-
-// if (hasNumbers) {
-//   console.log("В тексте есть цифры.");
-// } else {
-//   console.log("В тексте нет цифр.");
-// }
+};
 
 
 

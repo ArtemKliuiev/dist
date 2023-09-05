@@ -143,33 +143,3 @@ function localStorageGoods() {
 console.log(arr);
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const productCardsContainer = document.getElementById('productCards');
-
-  // Очистка содержимого контейнера
-  productCardsContainer.innerHTML = '';
-
-  // Функция для загрузки данных о товарах через AJAX
-  function loadProducts(url) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          productCardsContainer.insertAdjacentHTML('beforeend', xhr.responseText);
-        } else {
-          console.log('Ошибка при загрузке данных о товарах. Код ошибки: ' + xhr.status);
-        }
-      }
-    };
-    xhr.send();
-  }
-
-  // Загрузка данных из 4 различных HTML файлов
-  loadProducts('/dist/goods/for-one-item/1.html');
-  loadProducts('/dist/goods/for-one-item/2.html');
-  loadProducts('/dist/goods/for-one-item/3.html');
-  loadProducts('/dist/goods/for-one-item/4.html');
-});
-
-

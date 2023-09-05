@@ -62,7 +62,6 @@ window.addEventListener('scroll', () => {
             }
         }
 });
-
  
 function filtration(number){
     if(number === 1){
@@ -87,7 +86,6 @@ function filtration(number){
 }
 
 // Корзина
-
 function basket(){
     body.classList.toggle('basket-active');
 }
@@ -106,6 +104,3 @@ function filtrationProfile(number){
         localStorage.setItem('ProfileItem', 5);
     }
 }
-
-
- 

@@ -1,8 +1,7 @@
 const btnAddGoods = document.querySelector('#add-item-btn');
 const basketTotalPrice = document.querySelector('#basket-total-price');
-
-let products = [];
 const productsContainer = document.querySelector('#basket-goods');
+let products = [];
 
 function allPrice(){
     const allPrices = document.querySelectorAll('.basket-product__price');
@@ -93,7 +92,6 @@ function addGoods(){
         `; 
         const script = document.createElement('script');
         script.textContent = `
-
         (function(){
             const thisProduct = document.querySelector('#product${product.id}');
             const optionLi = thisProduct.querySelectorAll('.li');
@@ -188,8 +186,6 @@ function addGoods(){
     });     
 };
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     function startLoad(){
         let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
@@ -205,8 +201,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-
-
-// console.log(allPrices)
 

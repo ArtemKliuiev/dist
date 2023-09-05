@@ -253,8 +253,6 @@ function historyOrderInfo(){
     }
 };
 
-
-//
 let arr = [];
 let localStorageArr = JSON.parse(localStorage.getItem('itemGoods'));
 if(localStorageArr != null){
@@ -271,7 +269,6 @@ const hours = currentDate.getHours();
 const minutes = currentDate.getMinutes();
 const seconds = currentDate.getSeconds();
 const infoDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
 
 //Локальное хранилище
 function localStorageGoods() {
@@ -322,6 +319,7 @@ document.addEventListener('thisOrder', function(event) {
     });
 });
 console.log(arr);
+
 //Подписка
 let newInfo;
 let dataThisOrder;
@@ -381,9 +379,6 @@ function orderInfo(){
             <div id="btn${product.id}" class="product-profile__btn">Unsubscribe</div>
         </div>
         `; 
-        // function checkFunction(){
-        //     console.log('ok')
-        // }
         const script = document.createElement('script');
         script.textContent = `
         (function(){    

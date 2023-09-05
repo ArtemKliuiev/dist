@@ -173,9 +173,7 @@ let AllGoods = [
   "goods/vitamins/12.html",
   "goods/pain/1.html",
   "goods/prenatal/1.html",
-]
-
-// let AllGoods = [...antiox, ...mineral, ...pain, ...prenatal, ...probiotic, ...sale, ...vitamin, ...weight];
+];
 
 // Функция для загрузки каждой страницы из массива
 function loadPages(urls) {
@@ -196,7 +194,6 @@ function loadPages(urls) {
         onPageLoad();
       }
     };
-
     xhr.open("GET", url, true); 
     xhr.send();
   }
@@ -220,6 +217,7 @@ function loadPages(urls) {
     }
     count = count + 6;
   }
+
   // Цикл для загрузки каждой страницы
   if(urls.length > number){
     for (var i = 0; i < number; i++) {
@@ -235,15 +233,8 @@ function loadPages(urls) {
 
 }
 
-
 // Вызываем функцию загрузки страниц
-
-  loadPages(AllGoods);
-
-
-
-
-
+loadPages(AllGoods);
 
 function addAllGoods(){
   document.getElementById("goods").innerHTML = '';
@@ -344,7 +335,6 @@ function saleFun(){
   menuTitle.innerHTML = saleId.innerText;
   menuTitle.style.color = '#D32D2C';
 }
-
 
 //adaptive-menu
 const containerMenu = document.querySelector('.goods__menu')
