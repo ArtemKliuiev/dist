@@ -122,7 +122,8 @@ const localInfoTabs = localStorage.getItem('ProfileItem');
 
 (function(){
     if(localInfoTabs == null){
-        tabs(1);
+        // tabs(1);
+        tabs(2);
     }else{
         let tabsNum = parseFloat(localInfoTabs);
         tabs(tabsNum);

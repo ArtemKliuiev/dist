@@ -328,6 +328,9 @@
   line-height: normal;
   text-align: right;
 }
+.product-profile__price-adaptive {
+  display: none;
+}
 .product-profile__btn {
   grid-row: 5;
   grid-column: 6;
@@ -355,7 +358,7 @@
   font-weight: 400;
   line-height: normal;
   display: grid;
-  grid-template: 12px auto 5px auto 55px auto 4px auto 1fr/1fr;
+  grid-template: 12px auto 5px auto 1fr auto 4px auto 12px/1fr;
 }
 .product-profile__type {
   grid-column: 1;
@@ -396,8 +399,9 @@
 .product-profile .bg-basket-item__prenatal {
   background: var(--goods-pink, #DA91E0);
 }
-.product-profile .bg-basket-item__probiotic {
+.product-profile .bg-basket-item__probiotics {
   background: var(--goods-red, #E8939D);
+  color: var(--goods-red, #E8939D);
 }
 .product-profile .bg-basket-item__vitamin {
   background: var(--goods-purple, #9C91E0);
@@ -412,34 +416,34 @@
 }
 
 .antiox {
-  color: #E5AC3B;
+  color: var(--goods-orange, #F2B385);
 }
 
 .mineral {
-  color: #6BB0A4;
+  color: var(--goods-mint, #94D6BE);
 }
 .mineral__bg {
   background: var(--goods-mint, #94D6BE);
 }
 
 .pain {
-  color: #5F9DCA;
+  color: var(--goods-blue, #91CAF2);
 }
 
 .prenatal {
-  color: #9448A0;
+  color: var(--goods-pink, #DA91E0);
 }
 
-.probiotics {
-  color: #E5463B;
+.probiotic {
+  color: var(--goods-red, #E8939D);
 }
 
 .vitamin {
-  color: #6B5EBB;
+  color: var(--goods-purple, #9C91E0);
 }
 
 .weight {
-  color: #5E73BB;
+  color: var(--goods-green, #A5B3FF);
 }
 
 .active-btn {
@@ -451,9 +455,10 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  gap: 20px;
+  gap: 21px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 102px;
 }
 
 .one-order {
@@ -461,7 +466,7 @@
   border-radius: 16px;
   background: #FAF8F6;
   display: grid;
-  grid-template: 40px auto 40px auto 87px auto 36px/40px 1fr 42px;
+  grid-template: 40px auto 40px auto 57px auto 36px/40px 1fr 42px;
 }
 .one-order__top-line {
   grid-row: 2;
@@ -470,7 +475,6 @@
   grid-template: auto 9px auto/1fr;
 }
 .one-order__data {
-  color: #000;
   font-family: Open Sans;
   font-size: 18px;
   font-style: normal;
@@ -480,7 +484,6 @@
   grid-row: 1;
 }
 .one-order__order-number {
-  color: #000;
   font-family: Effra;
   font-size: 22px;
   font-style: normal;
@@ -489,7 +492,6 @@
   grid-row: 3;
 }
 .one-order__info {
-  color: #000;
   text-align: right;
   font-family: Open Sans;
   font-size: 18px;
@@ -501,6 +503,8 @@
 .one-order__goods {
   grid-row: 4;
   grid-column: 2;
+  display: grid;
+  grid-template: auto auto auto auto/1fr 40px 1fr;
 }
 .one-order__bottom-line {
   grid-row: 6;
@@ -547,9 +551,275 @@
   background: #FF7D4E;
 }
 
+.product-history {
+  display: grid;
+  grid-template: 1fr 30px/auto 30px 1fr;
+}
+.product-history__image {
+  grid-row: 1;
+  grid-column: 1;
+  width: 120px;
+  height: 170px;
+  border-radius: 8px;
+  display: grid;
+  -ms-flex-align: center;
+      align-items: center;
+  justify-items: center;
+}
+.product-history__image img {
+  width: 84.226px;
+  height: 95.543px;
+}
+.product-history__main {
+  grid-row: 1;
+  grid-column: 3;
+  display: grid;
+  grid-template: 10px auto 5px auto 1fr auto 12px/1fr;
+}
+.product-history__type {
+  grid-row: 2;
+  grid-column: 1;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.product-history__name {
+  grid-row: 4;
+  grid-column: 1;
+  font-family: Effra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product-history__price {
+  grid-row: 6;
+  grid-column: 1;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.product-history__all-price {
+  display: none;
+}
+.product-history:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+.product-history:nth-child(2) {
+  grid-row: 1;
+  grid-column: 3;
+}
+.product-history:nth-child(3) {
+  grid-row: 2;
+  grid-column: 1;
+}
+.product-history:nth-child(4) {
+  grid-row: 2;
+  grid-column: 3;
+}
+.product-history:nth-child(5) {
+  grid-row: 3;
+  grid-column: 1;
+}
+.product-history:nth-child(6) {
+  grid-row: 3;
+  grid-column: 3;
+}
+.product-history:nth-child(7) {
+  grid-row: 4;
+  grid-column: 1;
+}
+.product-history:nth-child(8) {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.vitamin .product-history__image {
+  background: var(--goods-purple, #9C91E0);
+}
+.vitamin .product-history__type {
+  color: var(--goods-purple, #9C91E0);
+}
+
+.antioxid .product-history__image {
+  background: var(--goods-orange, #F2B385);
+}
+.antioxid .product-history__type {
+  color: var(--goods-orange, #F2B385);
+}
+
+.mineral .product-history__image {
+  background: var(--goods-mint, #94D6BE);
+}
+.mineral .product-history__type {
+  color: var(--goods-mint, #94D6BE);
+}
+
+.pain .product-history__image {
+  background: var(--goods-blue, #91CAF2);
+}
+.pain .product-history__type {
+  color: var(--goods-blue, #91CAF2);
+}
+
+.prenatal .product-history__image {
+  background: var(--goods-pink, #DA91E0);
+}
+.prenatal .product-history__type {
+  color: var(--goods-pink, #DA91E0);
+}
+
+.probiotic .product-history__image {
+  background: var(--goods-red, #E8939D);
+}
+.probiotic .product-history__type {
+  color: var(--goods-red, #E8939D);
+}
+
+.weight .product-history__image {
+  background: var(--goods-green, #A5B3FF);
+}
+.weight .product-history__type {
+  color: var(--goods-green, #A5B3FF);
+}
+
+.span-adaptive {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .profile__title {
     grid-template: 1fr/auto 1fr auto;
+  }
+}
+@media (max-width: 1000px) {
+  .span-adaptive {
+    display: block;
+    margin-left: 5px;
+  }
+  .span-adaptive span {
+    margin: 0 8px 0 5px;
+  }
+  #orders {
+    margin-bottom: 50px;
+    gap: 75px;
+  }
+  .one-order {
+    grid-template: 0 auto/20px 1fr 20px;
+  }
+  .one-order__top-line {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    grid-template: auto 7px auto/auto 1fr auto 4px;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  .one-order__data {
+    grid-row: 1;
+    grid-column: 1;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+  }
+  .one-order__order-number {
+    font-size: 20px;
+  }
+  .one-order__arrow {
+    grid-row: 1/4;
+    grid-column: 3;
+    transition: all 100ms ease 0s;
+  }
+  .one-order__goods {
+    display: none;
+    grid-row: 4;
+    grid-column: 2;
+    grid-template: auto auto auto auto auto auto auto auto/1fr;
+  }
+  .one-order__bottom-line {
+    display: none;
+  }
+  .one-order__info {
+    display: none;
+  }
+  .one-order__amount-title {
+    font-size: 14px;
+  }
+  .one-order__amount {
+    font-size: 16px;
+  }
+  .product-history {
+    grid-template: 1fr 15px/auto 20px 1fr;
+  }
+  .product-history__image {
+    width: 100px;
+    height: 120px;
+  }
+  .product-history__image img {
+    max-width: 70.189px;
+    max-height: 80.188px;
+  }
+  .product-history__type {
+    font-size: 12px;
+  }
+  .product-history__name {
+    font-size: 14px;
+  }
+  .product-history__price {
+    font-size: 14px;
+  }
+  .product-history__main {
+    grid-template: 10px auto 5px auto 10px auto 1fr/1fr;
+  }
+  .product-history:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .product-history:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .product-history:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .product-history:nth-child(4) {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  .product-history:nth-child(5) {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  .product-history:nth-child(6) {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  .product-history:nth-child(7) {
+    grid-row: 7;
+    grid-column: 1;
+  }
+  .product-history:nth-child(8) {
+    grid-row: 8;
+    grid-column: 1;
+  }
+  .orders-active .one-order__goods {
+    display: grid;
+    margin: 30px 0 52px 0;
+  }
+  .orders-active .one-order__bottom-line {
+    display: grid;
+  }
+  .orders-active .one-order__arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
   }
 }
 @media (max-width: 800px) {
@@ -560,7 +830,7 @@
     margin: 50px 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .profile {
     padding: 0;
     grid-template: 120px auto 30px auto/50px 1fr 50px;
@@ -610,6 +880,70 @@
     width: 100%;
   }
 }
+@media (max-width: 750px) {
+  .subscriptions .profile {
+    margin-bottom: 60px;
+    grid-template: 120px auto 18px auto/20px 1fr 20px;
+  }
+  .subscriptions .profile__subscriptions-goods {
+    gap: 35px;
+  }
+  .product-profile {
+    min-height: 382px;
+    padding: 0 20px;
+    grid-template: 132px 21px auto 20px 50px 20px/1fr;
+  }
+  .product-profile__image {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .product-profile__image img {
+    max-width: 84.226px;
+  }
+  .product-profile__btn {
+    grid-row: 5;
+    grid-column: 1;
+    width: 100%;
+  }
+  .product-profile__main {
+    grid-row: 3;
+    grid-column: 1;
+    grid-template: auto 7px auto minmax(20px, 1fr) auto 2px auto/1fr 20px auto;
+  }
+  .product-profile__price {
+    display: none;
+  }
+  .product-profile__price-adaptive {
+    grid-row: 3;
+    grid-column: 3;
+    display: block;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .product-profile__type {
+    grid-row: 1;
+    grid-column: 1/4;
+    font-size: 12px;
+  }
+  .product-profile__name {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: 16px;
+  }
+  .product-profile__data-title {
+    grid-row: 5;
+    grid-column: 1/4;
+    font-size: 12px;
+  }
+  .product-profile__next-data {
+    grid-row: 7;
+    grid-column: 1/4;
+    font-size: 14px;
+  }
+}
 @media (max-width: 600px) {
   .profile__title {
     grid-template: 29px 10px 22px/1fr;
@@ -651,7 +985,7 @@
 @media (max-width: 500px) {
   .profile {
     padding: 0;
-    grid-template: 120px auto 30px auto/20px 1fr 20px;
+    grid-template: 120px auto 28px auto/20px 1fr 20px;
   }
   .payment .profile__biling {
     background: none;
@@ -687,5 +1021,10 @@
   }
   .payment .profile__btn {
     width: 100%;
+  }
+}
+@media (max-width: 330px) {
+  .product-history__main {
+    grid-template: 0px auto 2px auto 5px auto 1fr/1fr;
   }
 }

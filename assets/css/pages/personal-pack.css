@@ -1,6 +1,9 @@
 .product {
   background-color: #fff;
 }
+.product__price-total {
+  display: none;
+}
 
 main {
   overflow: hidden;

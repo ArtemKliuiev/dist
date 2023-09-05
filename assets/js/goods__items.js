@@ -86,6 +86,17 @@ if(localStorageArr != null){
   arr = localStorageArr
 };
 
+//Текуща дата
+const currentDate = new Date();
+
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth() + 1;
+const day = currentDate.getDate();
+const hours = currentDate.getHours();
+const minutes = currentDate.getMinutes();
+const seconds = currentDate.getSeconds();
+const infoDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
 
 btnAddItem.addEventListener('click', function(){
   const findId = arr.find(function(item){
@@ -102,6 +113,7 @@ btnAddItem.addEventListener('click', function(){
       checkbox: check.checked,
       days: selectedOption.textContent,
       sale: sale,
+      data: infoDate,
     });
   }else{
     for(i=0;i < arr.length; i++){
@@ -116,6 +128,7 @@ btnAddItem.addEventListener('click', function(){
           checkbox: check.checked,
           days: selectedOption.textContent,
           sale: sale,
+          data: infoDate,
         }
       }
     }

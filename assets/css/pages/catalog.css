@@ -328,8 +328,8 @@
   max-width: 1800px;
   min-height: 1100px;
   margin: 0 auto;
-  grid-template: 60px 1fr/minmax(30px, 1.15fr) minmax(auto, 220px) minmax(20px, 1fr) minmax(auto, 1039px) minmax(30px, 1.25fr);
-  margin-bottom: 100px;
+  grid-template: 60px 1fr/minmax(30px, 1.15fr) minmax(auto, 215px) minmax(20px, 1fr) minmax(auto, 1039px) minmax(30px, 1.25fr);
+  margin-bottom: 98px;
 }
 .goods__menu-list {
   grid-row: 2;
@@ -378,7 +378,7 @@
 
 .menu-two {
   display: grid;
-  grid-template: 50px 26px 70px 25px 50px 22px 50px 21px 50px 23px 50px 22px 50px 22px 50px 22px 50px/20px 1fr 20px;
+  grid-template: 50px 26px 70px 25px 50px 22px 50px 21px 50px 23px 50px 22px 50px 22px 50px 22px 50px/16px 1fr 15px;
 }
 .menu-two__item {
   font-family: Effra;

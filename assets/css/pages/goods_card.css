@@ -86,9 +86,10 @@
   grid-column: 2;
   grid-row: 2;
   display: grid;
-  grid-template: 22px 13px 97px 40px 1px 37px 60px 43px 221px/1fr;
+  grid-template: 22px 13px 97px 40px 1px 37px 60px 45px 218px/1fr;
 }
 .item__type {
+  height: 100%;
   grid-column: 1;
   grid-row: 1;
   font-family: Open Sans;

@@ -24,6 +24,10 @@ body {
   color: #000;
 }
 
+.basket-active {
+  overflow: hidden;
+}
+
 .title {
   font-family: Effra;
   font-size: 56px;
