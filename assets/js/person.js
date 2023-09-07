@@ -216,7 +216,12 @@ function historyOrderInfo(){
                 });
                 thisOrderContainer.innerHTML += '\
                 <div class="product-history ${typeForClass}">\
-                    <div class="product-history__image"><img src="${thisOrderInfo[i].imageSrc}" alt=""></div>\
+                    <div class="product-history__image">\
+                    <picture>\
+                        <source srcset="${thisOrderInfo[i].imageSrc}" type="image/webp">\
+                        <img src="${thisOrderInfo[i].imageSrcPng}" alt="#">\
+                    </picture>\
+                    </div>\
                     <div class="product-history__main">\
                         <div class="product-history__type">${typeInfo}</div>\
                         <div class="product-history__name"><span class="display-none"><span class="quantity-item">${thisOrderInfo[i].quantity}</span> x </span>${thisOrderInfo[i].name}</div>\
@@ -367,7 +372,12 @@ function orderInfo(){
         }
         const productHTML = `         
         <div class="product-profile " id="product${product.id}">
-            <div class="product-profile__image ${product.type}"><img src="${product.imageSrc}" alt=""></div>
+            <div class="product-profile__image ${product.type}">
+            <picture>
+                <source srcset="${product.imageSrc}" type="image/webp">
+                <img src="${product.imageSrcPng}" alt="#">
+            </picture>
+            </div>
             <div class="product-profile__main">
                 <div class="product-profile__type ${typeForClass}">${typeInfo}</div>
                 <div class="product-profile__name"><span class="display-none"><span class="quantity-item">${product.quantity}</span> x </span>${product.name}</div>

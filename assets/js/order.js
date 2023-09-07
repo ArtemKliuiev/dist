@@ -29,7 +29,12 @@ function addGoods(){
     products.forEach(product => { 
         const productHTML = `         
         <div class="product-order" id="product${product.id}" >
-        <div class="product-order__image ${product.type}"><img src="${product.imageSrc}" alt=""></div>
+        <div class="product-order__image ${product.type}">
+        <picture>
+            <source srcset="${product.imageSrc}" type="image/webp">
+            <img src="${product.imageSrcPng}" alt="#">
+        </picture>
+        </div>
         <div class="product-order__main">
             <div class="product-order__type mineral" onclick="mineralFun()">Minerals</div>
             <div class="product-order__name"><span class="display-none" ><span class="quantity-item item8">${product.quantity}</span> x </span>Reacted Zinc</div>

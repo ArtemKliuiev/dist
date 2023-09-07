@@ -30,10 +30,9 @@ function addGoods(){
             </style>
             <div id="product${product.id}" class="basket-product ${product.type}">
             <div class="basket-product__image">
-                <img src=${product.imageSrc} alt="#">
                 <picture>
                     <source srcset="${product.imageSrc}" type="image/webp">
-                    <img src="${product.imageSrcPng}" alt="Описание изображения">
+                    <img src="${product.imageSrcPng}" alt="#">
                 </picture>
             </div>
             <div class="basket-product__main">
