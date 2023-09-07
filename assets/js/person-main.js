@@ -165,7 +165,7 @@ const regLetters = /[a-zA-Z]/
 const regEmail = /@/;
 
 //Данные формы
-let orderData = {
+let newOrderData = {
     firstName: '',
     lastName: '',
     adressOne: '',
@@ -230,6 +230,7 @@ function btnSavePayActiva(){
 //Функции для проверки полей ввода данных
 function ExaminationFirstName(){
     dataFisrtName = '';
+    newOrderData.firstName = '';
     if(inputFirstName.value === ''){
         errorFirstName.innerHTML = 'Required'
         inputFirstName.classList.add('input-active')
@@ -240,12 +241,13 @@ function ExaminationFirstName(){
         errorFirstName.innerHTML = 'at least three letters'
         inputFirstName.classList.add('input-active')
     }else{
-        orderData.firstName = inputFirstName.value;
+        newOrderData.firstName = inputFirstName.value;
     }
 };
 
 function ExaminationLastName(){
     dataLastName = '';
+    newOrderData.lastName = '';
     if(inputLastName.value === ''){
         errorLastName.innerHTML = 'Required'
         inputLastName.classList.add('input-active')
@@ -256,12 +258,13 @@ function ExaminationLastName(){
         errorLastName.innerHTML = 'at least three letters'
         inputLastName.classList.add('input-active')
     }else{
-        orderData.lastName = inputLastName.value;
+        newOrderData.lastName = inputLastName.value;
     }
 };
 
 function ExaminationAdressOne(){
     dataAdressOne = '';
+    newOrderData.adressOne = '';
     if(inputAdressOne.value === ''){
         errorAdressOne.innerHTML = 'Required'
         inputAdressOne.classList.add('input-active')
@@ -269,22 +272,24 @@ function ExaminationAdressOne(){
         errorAdressOne.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressOne.classList.add('input-active')
     }else{
-        orderData.adressOne = inputAdressOne.value;
+        newOrderData.adressOne = inputAdressOne.value;
     }
 };
 
 function ExaminationAdressTwo(){
     dataAdressTwo = '';
+    newOrderData.adressTwo = '';
     if(inputAdressTwo.value.length <= 5 && inputAdressTwo.value.length !== 0){
         errorAdressTwo.innerHTML = 'The shipping address should be at least 5 characters long'
         inputAdressTwo.classList.add('input-active')
     }else{
-        orderData.adressTwo = inputAdressTwo.value;
+        newOrderData.adressTwo = inputAdressTwo.value;
     }
 };
 
 function ExaminationCity(){
     dataCity = '';
+    newOrderData.city = '';
     if(inputCity.value === ''){
         errorCity.innerHTML = 'Required'
         inputCity.classList.add('input-active')
@@ -295,12 +300,13 @@ function ExaminationCity(){
         errorCity.innerHTML = 'at least three letters'
         inputCity.classList.add('input-active')
     }else{
-        orderData.city = inputCity.value;
+        newOrderData.city = inputCity.value;
     }
 };
 
 function ExaminationRegionCode(){
     dataRegionCode = '';
+    newOrderData.indexLocation = '';
     if(inputRegNum.value === ''){
         errorRegNum.innerHTML = 'Required'
         inputRegNum.classList.add('input-active')
@@ -311,12 +317,13 @@ function ExaminationRegionCode(){
         errorRegNum.innerHTML = 'You can write a maximum of 10 characters'
         inputRegNum.classList.add('input-active')
     }else{
-        orderData.indexLocation = inputRegNum.value;
+        newOrderData.indexLocation = inputRegNum.value;
     }
 };
 
 function ExaminationEmail(){
     dataEmail = '';
+    newOrderData.email = '';
     if(inputEmail.value === ''){
         errorEmail.innerHTML = 'Required'
         inputEmail.classList.add('input-active')
@@ -327,12 +334,13 @@ function ExaminationEmail(){
         errorEmail.innerHTML = 'at least five letters'
         inputEmail.classList.add('input-active')
     }else{
-        orderData.email = inputEmail.value;
+        newOrderData.email = inputEmail.value;
     }
 };
 
 function ExaminationNumber(){
     dataNumber = '';
+    newOrderData.phoneNumber = ''
     if(inputPhone.value === ''){
         errorPhone.innerHTML = 'Required'
         inputPhone.classList.add('input-active')
@@ -340,7 +348,7 @@ function ExaminationNumber(){
         errorPhone.innerHTML = 'Please input numbers'
         inputPhone.classList.add('input-active')
     }else{
-        orderData.phoneNumber = inputPhone.value;
+        newOrderData.phoneNumber = inputPhone.value;
     }
 };
 
@@ -349,7 +357,7 @@ function ExaminationSelect(){
         errorCountry.innerHTML = 'Please select State/Province'
         inputCountry.classList.add('input-active')
     }else{
-        orderData.region = inputCountry.textContent;
+        newOrderData.region = inputCountry.textContent;
     }
 };
 

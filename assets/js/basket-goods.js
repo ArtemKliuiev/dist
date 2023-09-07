@@ -37,7 +37,7 @@ function addGoods(){
             </div>
             <div class="basket-product__main">
                 <div class="basket-product__title-row">
-                    <div class="basket-product__title">${product.name}</div>
+                    <a href="${product.thisItemUrl}" class="basket-product__title">${product.name}</a>
                     <div class="basket-product__exit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                             <path d="M1 13L13 0.999998" stroke="#C7C7C7" stroke-width="2"/>
@@ -108,15 +108,12 @@ function addGoods(){
             const dataPrice = parseFloat(price.getAttribute("data-price").replace("$", ""));
             const check = thisProduct.querySelector('.checkbox');
             const exitCard = thisProduct.querySelector('.basket-product__exit');
-            
             if(${product.checkbox}){
                 check.checked = true;
             };
-
             let indexThisObj = products.findIndex(function(obj){
                 return obj.id === ${product.id};
             });
-
             function optionFunc(num){
                 option.innerHTML = num;
                 if (indexThisObj !== -1) {
@@ -174,7 +171,7 @@ function addGoods(){
                     products.splice(indexThisObj, 1);
                 }
                 localStorageBasketGoods();
-                addGoods();
+                startLoad();
             });
             check.addEventListener("input", function(event) {
                 if (indexThisObj !== -1) {
@@ -189,19 +186,29 @@ function addGoods(){
     });     
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    function startLoad(){
-        let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
-        if(localStorageApp != null){
-            products = localStorageApp
-        };
-        addGoods();
+function startLoad(){
+    let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
+    if(localStorageApp != null){
+        products = localStorageApp
+        if(products.length > 0){
+            document.body.classList.add('not-empty');
+
+            var cartIcon = document.querySelector('.header__basket')
+            cartIcon.classList.add('shake');
+            cartIcon.addEventListener('animationend', function() {
+            cartIcon.classList.remove('shake');
+        });
+        }else{
+            document.body.classList.remove('not-empty');
+        }
     };
+    addGoods();
+};
+
+document.addEventListener('DOMContentLoaded', function() {
     startLoad();
-    
     if(btnAddGoods != null){
         btnAddGoods.addEventListener('click', startLoad);
     }
 });
-
 

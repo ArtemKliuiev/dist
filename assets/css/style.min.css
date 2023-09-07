@@ -25,6 +25,36 @@ body {
   color: #000;
 }
 
+.no-empty {
+  display: none;
+  margin-bottom: 2px;
+}
+
+.not-empty .empty {
+  display: none;
+}
+.not-empty .no-empty {
+  display: block;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
 /* Стили полосы прокрутки в Google Chrome и Safari */
 ::-webkit-scrollbar {
   width: 13px; /* Установите нужную ширину */

@@ -25,6 +25,8 @@ function attachEventHandlers() {
   }
 };
 
+var currentURL = window.location.pathname;
+
 function decreaseNumber() {
   var numberElement = this.parentNode.querySelector(".number");
   var currentValue = parseInt(numberElement.textContent);
@@ -115,6 +117,7 @@ btnAddItem.addEventListener('click', function(){
       days: selectedOption.textContent,
       sale: sale,
       data: infoDate,
+      thisItemUrl: currentURL,
     });
   }else{
     for(i=0;i < arr.length; i++){
@@ -131,6 +134,7 @@ btnAddItem.addEventListener('click', function(){
           days: selectedOption.textContent,
           sale: sale,
           data: infoDate,
+          thisItemUrl: currentURL,
         }
       }
     }
@@ -143,5 +147,35 @@ function localStorageGoods() {
   localStorage.setItem('itemGoods', JSON.stringify(arr));
 };
 console.log(arr);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const productCardsContainer = document.getElementById('productCards');
+
+  // Очистка содержимого контейнера
+  productCardsContainer.innerHTML = '';
+
+  // Функция для загрузки данных о товарах через AJAX
+  function loadProducts(url) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          productCardsContainer.insertAdjacentHTML('beforeend', xhr.responseText);
+        } else {
+          console.log('Ошибка при загрузке данных о товарах. Код ошибки: ' + xhr.status);
+        }
+      }
+    };
+    xhr.send();
+  }
+
+  // Загрузка данных из 4 различных HTML файлов
+  loadProducts('../../goods/for-one-item/1.html');
+  loadProducts('../../goods/for-one-item/2.html');
+  loadProducts('../../goods/for-one-item/3.html');
+  loadProducts('../../goods/for-one-item/4.html');
+});
 
 

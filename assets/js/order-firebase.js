@@ -60,7 +60,10 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-
+//Обнуление корзины
+function basketNull() {
+    localStorage.removeItem('itemGoods');
+};
 
 function firebasePush() {
     const database = getDatabase(app);
@@ -69,6 +72,7 @@ function firebasePush() {
         // Устанавливаем данные для пользователя с определенным ключом (email)
         set(userRef, orderData)
             .then(() => {
+                basketNull()
                 alert('Данные успешно сохранены в Firebase!');
                 location(); // Перенаправление пользователя после сохранения данных
             })

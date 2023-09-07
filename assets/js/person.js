@@ -31,7 +31,7 @@ function firebaseDataPush() {
     if (userEmail) {
         const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/profileData`);
         // Устанавливаем данные для пользователя с определенным ключом (email)
-        set(userRef, orderData)
+        set(userRef, newOrderData)
             .then(() => {
                 alert('Данные успешно сохранены в Firebase!');
             })
@@ -71,10 +71,11 @@ function isOrderDataComplete(orderDataObj) {
 
 const saveInfoBtn = document.querySelector('#saveInfo');
 saveInfoBtn.addEventListener('click', function(){
-    console.log('есть ли все данные:', isOrderDataComplete(orderData));
-    console.log('orderData', orderData)
-    if(isOrderDataComplete(orderData)){
+    // console.log('есть ли все данные:', isOrderDataComplete(orderData));
+    // console.log('orderData', orderData)
+    if(isOrderDataComplete(newOrderData)){
         firebaseDataPush()
+        console.log(true)
     }else{
         console.log('не все данные были введены коректно'); 
     }
@@ -461,3 +462,57 @@ function addGoodsTwo(){
         btnAddGoods.addEventListener('click', startLoad);
     }
 }
+
+//Загрузка данных о доставке с firebase
+setTimeout(function(){
+    console.log(userEmail);
+    const database = getDatabase(app);
+    const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/profileData/`);
+    get(userRef)
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            inputFirstName.value = data.firstName;
+            inputLastName.value = data.lastName;
+            inputAdressOne.value = data.adressOne;
+            inputAdressTwo.value = data.adressTwo;
+            inputCity.value = data.city;
+            inputEmail.value = data.email;
+            inputPhone.value = data.phoneNumber;
+            inputCountry.innerHTML = data.region;
+            inputRegNum.value = data.indexLocation;
+        } else {
+            console.log("Данные не найдены");
+        }
+    })
+    .catch((error) => {
+        console.error("Ошибка при получении данных:", error);
+    });
+},800);
+
+//Загрузка данных о доставке с firebase
+setTimeout(function(){
+    console.log(userEmail);
+    const database = getDatabase(app);
+    const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/profilePayInfo/`);
+    get(userRef)
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            cardNum.value = data.cardNumber;
+            inputCardData.value = data.cardDataNumber;
+            inputCardCVC.value = data.cardDataCVC;
+            console.log(inputCardCVC);
+            console.log(inputResCVC)
+            let arr = [... inputCardCVC.value] ;
+            let resArr = arr.map((letter) => letter = '•');
+            labelForCVC.value = resArr.join('');
+            labelForCVC.innerHTML = labelForCVC.value
+        } else {
+            console.log("Данные не найдены");
+        }
+    })
+    .catch((error) => {
+        console.error("Ошибка при получении данных:", error);
+    });
+},800);
