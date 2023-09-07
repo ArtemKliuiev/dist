@@ -25,9 +25,29 @@
     <meta name="description" content="">
     
     <title>Quiz</title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -137,52 +157,62 @@
             const saveButton = document.getElementById("quizFinish");
         
             // Обработка нажатия кнопки сохранения данных в Firebase
-            saveButton.addEventListener("click", () => {
-                // Получаем значения из полей ввода
-                var answer1 = localStorage.getItem('answer1');
-                var answer2 = localStorage.getItem('answer2');
-                var answer3 = localStorage.getItem('answer3');
-                var answer4 = localStorage.getItem('answer4');
-                var answer5 = localStorage.getItem('answer5');
-                var answer6 = localStorage.getItem('answer6');
-                var answer7 = localStorage.getItem('answer7');
-                var answer8 = localStorage.getItem('answer8');
-                var answer9 = localStorage.getItem('answer9');
-        
-                // Создаем объект с данными для добавления в Realtime Database
-                const newData = {
-                    answer1: answer1,
-                    answer2: answer2,
-                    answer3: answer3,
-                    answer4: answer4,
-                    answer5: answer5,
-                    answer6: answer6,
-                    answer7: answer7,
-                    answer8: answer8,
-                    answer9: answer9,
-                };
-        
-                // Получаем ссылку на пункт 'quiz' в Realtime Database и добавляем туда новые данные
-                const database = getDatabase(app);
-                if (userEmail) {
-                    const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/quiz`);
-                    // Устанавливаем данные для пользователя с определенным ключом (email)
-                    set(userRef, newData)
-                        .then(() => {
-                            alert('Данные успешно сохранены в Firebase!');
-                            location(); // Перенаправление пользователя после сохранения данных
-                        })
-                        .catch((error) => {
-                            console.error('Ошибка сохранения данных в Firebase:', error);
-                        });
+            saveButton.addEventListener('click', function(event) {
+                if (quizInput.value.length >= 1) {
+                    var answer1 = localStorage.getItem('answer1');
+                    var answer2 = localStorage.getItem('answer2');
+                    var answer3 = localStorage.getItem('answer3');
+                    var answer4 = localStorage.getItem('answer4');
+                    var answer5 = localStorage.getItem('answer5');
+                    var answer6 = localStorage.getItem('answer6');
+                    var answer7 = localStorage.getItem('answer7');
+                    var answer8 = localStorage.getItem('answer8');
+                    var answer9 = localStorage.getItem('answer9');
+                    const newData = {
+                        answer1: answer1,
+                        answer2: answer2,
+                        answer3: answer3,
+                        answer4: answer4,
+                        answer5: answer5,
+                        answer6: answer6,
+                        answer7: answer7,
+                        answer8: answer8,
+                        answer9: answer9,
+                    };
+                    const database = getDatabase(app);
+                    if (userEmail) {
+                        const userRef = ref(database, `users/${userEmail.replace(/\./g, '_')}/quiz`);
+                        set(userRef, newData)
+                            .then(() => {
+                                alert('Данные успешно сохранены в Firebase!');
+                                location(); 
+                            })
+                            .catch((error) => {
+                                console.error('Ошибка сохранения данных в Firebase:', error);
+                            });
+                    } else {
+                        console.error('Ошибка: пользователь не аутентифицирован');
+                    }
                 } else {
-                    console.error('Ошибка: пользователь не аутентифицирован');
+                    console.log('Нужно ввести email');
                 }
             });
+    
         
             function location() {
                 window.location.href = "../index.html";
             }
+            const quizInput = document.querySelector('.quiz__input');
+            function thisInput(){
+                if(quizInput.value.length < 1){
+                    saveButton.classList.remove('btn-active')
+                }else{
+                    saveButton.classList.add('btn-active')
+                }
+    
+            };
+            thisInput();
+            quizInput.addEventListener('input', thisInput);
         </script>
         
     </body>

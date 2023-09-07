@@ -65,9 +65,11 @@
   display: grid;
   grid-template: 225px auto 1fr/1fr auto 1fr;
 }
-.item__image img {
+.item__image picture {
   grid-row: 2;
   grid-column: 2;
+}
+.item__image img {
   width: 426.747px;
   height: 477.127px;
 }

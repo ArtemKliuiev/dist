@@ -12,7 +12,7 @@
   display: grid;
   grid-template: 1.12fr auto 1fr/1fr auto 1fr;
 }
-.product__image img {
+.product__image picture {
   grid-row: 2;
   grid-column: 2;
 }

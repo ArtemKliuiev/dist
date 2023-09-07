@@ -71,6 +71,7 @@
     grid-column: 6;
   }
   .header__burger {
+    cursor: pointer;
     grid-column: 2;
     grid-row: 2;
     display: block;
@@ -574,9 +575,14 @@
   margin: 0 16px 0 14px;
 }
 
-.basket-active {
+body.basket-active.touch-device {
   overflow: hidden;
 }
+
+body.non-touch-device.burger-acive {
+  padding-right: 15px;
+}
+
 .basket-active .basket {
   right: 0;
   transition: all 0.2s ease 0.1s;

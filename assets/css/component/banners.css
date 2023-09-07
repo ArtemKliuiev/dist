@@ -1,5 +1,5 @@
 .banner {
-  background: #9C91E0 url(../../images/catalog/banners/Union.webp) right no-repeat;
+  background: #9C91E0 url(../../images/catalog/banners/Union.png) right no-repeat;
   border-radius: 22px;
   height: 472px;
   display: grid;
@@ -65,7 +65,7 @@
       align-items: center;
   grid-template: 43px auto 1fr/1fr auto minmax(auto, 72px);
 }
-.banner__image img {
+.banner__image picture {
   grid-row: 2;
   grid-column: 2;
 }
@@ -108,7 +108,7 @@
 @media (max-width: 850px) {
   .banner {
     height: 594px;
-    background: #9C91E0 url(../../images/catalog/banners/Union_adaptive.webp) 0 -45px/100% no-repeat;
+    background: #9C91E0 url(../../images/catalog/banners/Union_adaptive.png) 0 -45px/100% no-repeat;
     grid-template: auto auto/minmax(auto, 50px) 1fr minmax(auto, 50px);
     text-align: center;
   }

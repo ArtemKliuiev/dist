@@ -25,9 +25,29 @@
     <meta name="description" content="">
     
     <title>Home</title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
     <div class="warapper">
     <div class="indent-for-sticky"></div>
@@ -121,7 +141,11 @@
                 </div>
                 <div class="find-out__image">
                     <div class="find-out__circle">
-                        <img src="assets/images/main/image 51.webp" alt="">
+                        <picture>
+                            <source srcset="assets/images/main/image1.webp" type="image/webp">
+                            <img src="assets/images/main/image1.png" alt="Описание изображения">
+                        </picture>
+                        <img src="" alt="">
                     </div>
                 </div>
                 <div class="elipse__bg">
@@ -153,10 +177,16 @@
                     </div>
                 </div>
                 <div class="healthy__bg-image-one">
-                    <img src="assets/images/main/t.webp" alt="">
+                    <picture>
+                        <source srcset="assets/images/main/t.webp" type="image/webp">
+                        <img src="assets/images/main/t.png" alt="Описание изображения">
+                    </picture>
                 </div>
                 <div class="healthy__bg-image-two">
-                    <img src="assets/images/main/t2.webp" alt="">
+                    <picture>
+                        <source srcset="assets/images/main/t2.webp" type="image/webp">
+                        <img src="assets/images/main/t2.png" alt="Описание изображения">
+                    </picture>
                 </div>
             </div>
             <div class="tell-us">
@@ -188,20 +218,29 @@
                         </svg>
                     </a>
                     <div class="products__image">
-                        <img src="assets/images/main/products-image.webp" alt="">
+                        <picture>
+                            <source srcset="assets/images/main/products-image.webp" type="image/webp">
+                            <img src="assets/images/main/products-image.png" alt="Описание изображения">
+                        </picture>
                     </div>
                 </div>
                 <div class="products__column-products">
                     <div class="products__column-products-main">
                         <div class="products__product-block">
                             <div class="products__product-one product">
-                                <img src="assets/images/main/product1.webp" alt="" class="product__image">
+                                <picture class="product__image">
+                                    <source srcset="assets/images/main/product1.webp" type="image/webp">
+                                    <img src="assets/images/main/product1.png" alt="Описание изображения">
+                                </picture>
                                 <div class="product__class">Minerals</div>
                                 <div class="product__title">Reacted Zinc</div>
                                 <div class="product__info">B vitamins are essential for your nervous system and proper brain functioning.</div>
                             </div>
                             <div class="products__product-two product">
-                                <img src="assets/images/main/product2.webp" alt="" class="product__image">
+                                <picture class="product__image">
+                                    <source srcset="assets/images/main/product2.webp" type="image/webp">
+                                    <img src="assets/images/main/product2.png" alt="Описание изображения">
+                                </picture>
                                 <div class="product__class">Vitamins & Dietary Supplements</div>
                                 <div class="product__title">Ortho B Complex</div>
                                 <div class="product__info">B vitamins are essential for your nervous system and proper brain functioning.</div>

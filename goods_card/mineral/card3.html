@@ -25,9 +25,29 @@
     <meta name="description" content="">
     
     <title>Item card</title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
     <div class="indent-for-sticky"></div>
     <header class="header">
@@ -132,7 +152,10 @@
     <main>
         <div class="item" data-id="10">
             <div class="item__image bg__mineral">
-                <img src="../../assets/images/goods__big-size/10.webp" alt="">
+                <picture>
+                    <source srcset="../../assets/images/goods__big-size/10.webp" type="image/webp">
+                    <img src="../../assets/images/goods__big-size/10.png" alt="Описание изображения">
+                </picture>
                 <svg xmlns="http://www.w3.org/2000/svg" width="149" height="150" viewBox="0 0 149 150" fill="none">
                     <path d="M20 149.314C20 77.9479 77.7553 20.094 149 20.094" stroke="#FACC88" stroke-width="40"/>
                 </svg>

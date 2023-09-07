@@ -312,7 +312,7 @@
 .healthy__title-column {
   grid-row: 1;
   grid-column: 1;
-  background: url(../../images/main/1.webp) center/cover no-repeat;
+  background: url(../../images/main/1.png) center/cover no-repeat;
   display: grid;
   grid-template: 65px 139px 152px auto 1fr/minmax(auto, 127px) 75px 64px 1fr;
 }
@@ -737,7 +737,7 @@
   height: 100%;
   grid-column: 2;
   grid-row: 2;
-  background: url(../../images/main/2.webp) center/cover no-repeat;
+  background: #E99478;
   display: grid;
   grid-template: 234px auto 31px auto 33px auto 1fr/1.25fr minmax(auto, 444px) 1fr;
 }

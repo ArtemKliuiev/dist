@@ -25,9 +25,29 @@
     <meta name="description" content="">
     
     <title>Quiz</title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -138,12 +158,31 @@
             const inputPageOne = document.getElementById('input-page-one');
             inputPageOne.addEventListener('input', function() {
             const answerValue = inputPageOne.value;
-            // Проверяем, чтобы поле ввода не было пустым
             if (answerValue.trim() !== '') {
-                // Сохраняем значение в localStorage
                 localStorage.setItem('answer1', answerValue);
             }
             });
+    
+            const quizBtn = document.querySelector('.quiz__btn');
+            const quizInput = document.querySelector('.quiz__input');
+            quizBtn.addEventListener('click', function(event) {
+            if (quizInput.value.length < 1) {
+                console.log(0);
+                event.preventDefault();
+            } else {
+                console.log(1, '+');
+            }
+            });
+            function thisInput(){
+                if(quizInput.value.length < 1){
+                    quizBtn.classList.remove('btn-active')
+                }else{
+                    quizBtn.classList.add('btn-active')
+                }
+    
+            };
+            thisInput();
+            quizInput.addEventListener('input', thisInput);
         </script>
     </body>
     </html>

@@ -183,12 +183,13 @@
   background-color: transparent;
 }
 .quiz__btn {
+  cursor: pointer;
   grid-column: 4;
   grid-row: 1;
   width: 69px;
   height: 69px;
   border-radius: 50%;
-  background-color: #FF7D4E;
+  background-color: #C3BDB6;
   display: grid;
   -ms-flex-align: center;
       align-items: center;
@@ -217,6 +218,10 @@
 }
 .quiz__button:hover {
   outline: 2px solid #8172DD;
+}
+
+.btn-active {
+  background-color: #FF7D4E;
 }
 
 @media (max-width: 1000px) {

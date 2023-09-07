@@ -25,9 +25,29 @@
     <meta name="description" content="">
     
     <title>Recovery</title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
       <h1>Добро пожаловать в ваш персональный кабинет!</h1>
       <p>Email: <span id="email"></span></p>

@@ -106,6 +106,7 @@ btnAddItem.addEventListener('click', function(){
     arr.push({
       id: thisCardId,
       imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
+      imageSrcPng: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
       type: thisItemType, 
       name: itemName.textContent, 
       price: itemPrice.textContent, 
@@ -121,6 +122,7 @@ btnAddItem.addEventListener('click', function(){
         arr[i] = {
           id: thisCardId,
           imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
+          imageSrcPng: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
           type: thisItemType, 
           name: itemName.textContent, 
           price: itemPrice.textContent, 

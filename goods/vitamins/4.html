@@ -25,12 +25,37 @@
     <meta name="description" content="">
     
     <title></title>
-</head>
+    
+    
+      
+      
+      
+      
+      
+      </head>
 <body>
-
+    <script>
+        function checkForTouchScreen() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('non-touch-device');
+                document.body.classList.add('touch-device');
+            } else {
+                document.body.classList.remove('touch-device');
+                document.body.classList.add('non-touch-device');
+            }
+        }
+        checkForTouchScreen();
+        window.addEventListener('resize', checkForTouchScreen);
+        window.addEventListener('orientationchange', checkForTouchScreen);
+    </script>
 
     <a href="goods_card/vitamins/card4.html" class="product">
-        <div class="product__image image-bg__vitamin"><img src="assets/images/goods/4.webp" alt=""></div>
+        <div class="product__image image-bg__vitamin">
+            <picture>
+                <source srcset="assets/images/goods/4.webp" type="image/webp">
+                <img src="assets/images/goods/4.png" alt="Описание изображения">
+            </picture>
+        </div>
         <div class="product__main">
             <div class="product__type vitamin" onclick="vitam ()">Vitamins & Dietary Supplements</div>
             <div class="product__name"><span class="display-none" ><span class="quantity-item item4">1</span> x </span>Ortho Molecular - Vitamin K2</div>
