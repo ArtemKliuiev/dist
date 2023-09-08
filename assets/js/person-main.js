@@ -131,7 +131,7 @@ const localInfoTabs = localStorage.getItem('ProfileItem');
 
 cardNum.addEventListener("input", function (event) {
     const input = event.target;
-    let cardNumber = input.value.replace(/\s/g, ""); // Удаление существующих пробелов
+    let cardNumber = input.value.replace(/\s/g, ""); 
 
     // Разбиение номера карты на блоки по 4 цифры с добавлением пробелов
     const formattedCardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ");
@@ -141,7 +141,7 @@ cardNum.addEventListener("input", function (event) {
 
 inputCardData.addEventListener("input", function (event) {
     const input = event.target;
-    let cardNumber = input.value.replace(/[/]/g, ""); // Удаление существующих слешей
+    let cardNumber = input.value.replace(/[/]/g, "");
 
     // Разбиение номера карты на блоки по 2 цифры с добавлением слешей
     const formattedCardData = cardNumber.replace(/(\d{2})(?=\d)/g, "$1/");
@@ -340,7 +340,7 @@ function ExaminationEmail(){
 
 function ExaminationNumber(){
     dataNumber = '';
-    newOrderData.phoneNumber = ''
+    newOrderData.phoneNumber = '';
     if(inputPhone.value === ''){
         errorPhone.innerHTML = 'Required'
         inputPhone.classList.add('input-active')

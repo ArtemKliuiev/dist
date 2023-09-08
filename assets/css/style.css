@@ -25,6 +25,60 @@ body {
   color: #000;
 }
 
+.no-empty {
+  display: none;
+  margin-bottom: 2px;
+}
+
+.not-empty .empty {
+  display: none;
+}
+.not-empty .no-empty {
+  display: block;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: scale(1.1) rotate(0);
+            transform: scale(1.1) rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: scale(1) rotate(0);
+            transform: scale(1) rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: scale(1.1) rotate(0);
+            transform: scale(1.1) rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+.shake {
+  -webkit-animation: shake 0.5s ease-in-out;
+          animation: shake 0.5s ease-in-out;
+}
+
 /* Стили полосы прокрутки в Google Chrome и Safari */
 ::-webkit-scrollbar {
   width: 13px; /* Установите нужную ширину */

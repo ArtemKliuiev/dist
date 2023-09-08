@@ -11,9 +11,11 @@
   justify-items: center;
   grid-template: 1.3fr 95px 1fr/1fr;
 }
-.basket-product__image img {
+.basket-product__image picture {
   grid-column: 1;
   grid-row: 2;
+}
+.basket-product__image img {
   height: 100%;
   max-width: 95px;
 }

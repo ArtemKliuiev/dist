@@ -6,11 +6,15 @@ let products = [];
 function allPrice(){
     const allPrices = document.querySelectorAll('.basket-product__price');
     let thisTotalPrice = 0;
-    allPrices.forEach(function(onePrice){
-        let thisPrice = parseFloat( onePrice.textContent.replace("$", ""));
-        thisTotalPrice += thisPrice;
-    });
-    basketTotalPrice.innerHTML = `$${thisTotalPrice.toFixed(2)}`
+    if(products.length >= 1){
+        allPrices.forEach(function(onePrice){
+            let thisPrice = parseFloat( onePrice.textContent.replace("$", ""));
+            thisTotalPrice += thisPrice;
+        });
+        basketTotalPrice.innerHTML = `$${thisTotalPrice.toFixed(2)}`
+    }else{
+        basketTotalPrice.innerHTML = `$0.00`
+    }
 };
 
 //Локальное хранилище
@@ -172,6 +176,7 @@ function addGoods(){
                 }
                 localStorageBasketGoods();
                 startLoad();
+                allPrice();
             });
             check.addEventListener("input", function(event) {
                 if (indexThisObj !== -1) {
