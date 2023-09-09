@@ -90,7 +90,6 @@ if(localStorageArr != null){
 
 //Текуща дата
 const currentDate = new Date();
-
 const year = currentDate.getFullYear();
 const month = currentDate.getMonth() + 1;
 const day = currentDate.getDate();
@@ -98,7 +97,6 @@ const hours = currentDate.getHours();
 const minutes = currentDate.getMinutes();
 const seconds = currentDate.getSeconds();
 const infoDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
 
 btnAddItem.addEventListener('click', function(){
   const findId = arr.find(function(item){
@@ -148,7 +146,6 @@ function localStorageGoods() {
 };
 console.log(arr);
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const productCardsContainer = document.getElementById('productCards');
 
@@ -178,4 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
   loadProducts('../../goods/for-one-item/4.html');
 });
 
+//Кастумная галочка
+const checkbox = document.querySelector('.apple-switch');
+const checkRow = document.querySelector(".item__check-row");
 
+checkbox.addEventListener("change", function () {
+  if (checkbox.checked) {
+    checkRow.classList.add("opacity-check-row"); 
+  } else {
+    checkRow.classList.remove("opacity-check-row");
+  }
+});
