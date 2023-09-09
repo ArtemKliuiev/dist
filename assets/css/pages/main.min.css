@@ -728,7 +728,7 @@
   height: 100%;
   grid-column: 2;
   grid-row: 2;
-  background: #E99478;
+  background: #E99478 url("/dist/assets/images/main/2.png") right no-repeat;
   display: grid;
   grid-template: 234px auto 31px auto 33px auto 1fr/1.25fr minmax(auto, 444px) 1fr;
 }
@@ -862,14 +862,6 @@
     padding: 0 30px;
     grid-template: 100px auto 31px auto 33px auto 1fr/1fr minmax(auto, 800px) 1fr;
   }
-  .products__column-info::before {
-    content: url("/dist/assets/images/main/Group2.png");
-    position: absolute;
-    height: 546.57px;
-    width: 244px;
-    right: 0;
-    bottom: 100px;
-  }
   .products__column-products {
     position: relative;
     grid-column: 1;
@@ -943,13 +935,12 @@
     padding: 0 10px;
     text-align: center;
     grid-template: 60px auto 15px auto 20px auto 1fr/1fr;
+    background: #E99478 url("/dist/assets/images/main/2.2.png") right no-repeat;
   }
   .products__column-info::before {
     content: url("/dist/assets/images/main/Group2.png");
-    position: absolute;
     height: 546.57px;
     width: 244px;
-    right: 0;
     bottom: 53px;
   }
   .products__title {
