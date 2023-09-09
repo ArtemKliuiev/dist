@@ -1,7 +1,7 @@
 .basket-product {
   display: grid;
   height: 174px;
-  grid-template: 1fr/120px 25px 1fr 25px;
+  grid-template: 1fr/120px 25px 1fr 20px;
 }
 .basket-product__image {
   grid-column: 1;
