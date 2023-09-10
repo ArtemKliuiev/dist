@@ -37,8 +37,27 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button__prev',
       prevEl: '.swiper-button__next',
     },
-
   });
+
+  const comentarSwiper = new Swiper('.comentars-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 3000,
+      },
+    breakpoints: {
+      650: {
+          slidesPerView: 2,
+          spaceBetween: 33,
+      },
+      1350: {
+        slidesPerView: 3,
+        spaceBetween: 33,
+      },
+    },
+});
 
   // Добавление обработчика события на завершение перехода к новому слайду
   swiper.on('slideChangeTransitionEnd', function () {
@@ -99,7 +118,6 @@ const prenatalId = document.getElementById('prenatalId')
 const saleId = document.getElementById('saleId')
 const menuTitle = document.querySelector('#title-menu')
 
-      
 // Массив с URL-адресами страниц для загрузки
 let vitamin = [
   "goods/vitamins/1.html",
