@@ -3,6 +3,7 @@ var decreaseButtons = document.getElementsByClassName("decreaseButton");
 var increaseButtons = document.getElementsByClassName("increaseButton");
 const removeBtn = document.querySelector('.decreaseButton-remove');
 const selectedOption = document.querySelector('#custom-select-option');
+const selectedOptionWrapper = document.querySelector('.custom-select__option');
 const btnAddItem = document.getElementById('add-item-btn');
 const cardItem = document.querySelector('.item');
 const itemName = document.querySelector('.item__name');
@@ -11,6 +12,8 @@ const number = document.querySelector('.number');
 const itemType = document.querySelector('.item__type');
 const customSelects = document.querySelectorAll('.custom-select');
 const thisCardId = parseFloat(cardItem.getAttribute('data-id'));
+const checkRowItem = document.querySelector('.item__check-row');
+const checkRowItemLabel = document.querySelectorAll('.item__check-row label');
 
 let sale = thisCardId === 7;
 
@@ -71,15 +74,43 @@ let thisItemType = '';
 }());
 
 //Касиумный Оптион
+selectedOptionWrapper.addEventListener('click', function() {
+  checkRowItem.classList.toggle('list-active');
+});
+
+checkRowItemLabel.forEach(function(label){
+  label.addEventListener('click', function(){
+    checkRowItem.classList.toggle('list-active');
+  });
+});
+
 customSelects.forEach((select) => {
   const optionsList = select.querySelector('.custom-select__list');
   const options = optionsList.querySelectorAll('li');
   options.forEach((option) => {
     option.addEventListener('click', () => {
       selectedOption.textContent = option.textContent;
+      checkRowItem.classList.remove('list-active');
+      checkbox.checked = true
+      checkRow.classList.add("opacity-check-row"); 
     });
   });
 });  
+
+document.addEventListener('click', function(event) {
+  const labelOne = checkRowItemLabel[0];
+  const labelTwo = checkRowItemLabel[1];
+  if ( labelOne.contains(event.target)) {
+
+  }else if(labelTwo.contains(event.target)){
+
+  }else if(selectedOptionWrapper.contains(event.target)){
+
+  }else{
+    checkRowItem.classList.remove('list-active');
+  }
+});
+
 
 //
 let arr = [];

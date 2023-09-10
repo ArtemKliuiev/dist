@@ -392,6 +392,9 @@
 .item__important-text5 p {
   margin-bottom: 28px;
 }
+.item label {
+  cursor: pointer;
+}
 
 .bottom-goods {
   display: grid;
@@ -436,10 +439,12 @@
   z-index: 1;
 }
 .custom-select__arrow {
+  cursor: pointer;
   position: absolute;
   top: 12px;
   right: 15px;
   z-index: 10;
+  transition: all 150ms ease 0s;
 }
 .custom-select__list {
   display: none;
@@ -465,8 +470,21 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: #ffffff;
 }
-.custom-select:hover .custom-select__list {
+
+.list-active .custom-select__list {
   display: block;
+}
+.list-active .custom-select__arrow {
+  transform: rotate(180deg);
+}
+.list-active .item__check-row-info {
+  opacity: 1;
+}
+.list-active .item__check-row-days {
+  opacity: 1;
+}
+.list-active .custom-select {
+  opacity: 1;
 }
 
 .opacity-check-row .item__check-row-info {

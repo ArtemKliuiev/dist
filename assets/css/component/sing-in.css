@@ -165,6 +165,8 @@ body {
   line-height: 65px;
 }
 .sing-in__or-input-item {
+  background-color: #FAF8F6;
+  border-radius: 12px;
   display: grid;
   -ms-flex-align: center;
       align-items: center;
