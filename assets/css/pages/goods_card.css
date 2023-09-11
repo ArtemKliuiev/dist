@@ -403,6 +403,9 @@
 .item__important-text5 p {
   margin-bottom: 28px;
 }
+.item label {
+  cursor: pointer;
+}
 
 .bottom-goods {
   display: grid;
