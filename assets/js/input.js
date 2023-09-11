@@ -15,16 +15,21 @@ var singIn = document.querySelector('.sing-in')
 var email = document.getElementById('email');
 var password = document.getElementById('password');
 
-function handleInputChange() {
-    if(email.value != 0 && password.value != 0 ){
-        singIn.classList.add('btn-active')
-    } else{
-        singIn.classList.remove('btn-active')
-    }
-}
 
-// Добавляем слушатели события input для каждого input и привязываем общую функцию
-email.addEventListener('input', handleInputChange);
-password.addEventListener('input', handleInputChange);
+function isValidEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9а-яА-ЯёЁіІїЇґҐ.-]+\.[a-zA-Zа-яА-ЯёЁіІїЇґҐ]{2,4}$/;
+  return emailPattern.test(email);
+}
+function thisInput(){
+  if (isValidEmail(email.value) && password.value.length > 5 ) {
+    singIn.classList.add('btn-active')
+  } else {
+    singIn.classList.remove('btn-active')
+  }
+}
+thisInput();
+email.addEventListener('input', thisInput);
+password.addEventListener('input', thisInput);
+
 
 
