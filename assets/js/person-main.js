@@ -18,6 +18,7 @@ const ProfileGoods = document.querySelector('.profile__subscriptions-goods')
 const saveBtn = document.querySelector('#saveInfo');
 const paySaveBtn = document.querySelector('#payInfoSave');
 
+
 //Ссылки на название ошибок
 const errorFirstName = document.querySelector('.order-main__error-first-name');
 const errorLastName = document.querySelector('.order-main__error-last-name');
@@ -94,6 +95,7 @@ passwordBtn.addEventListener('click', function(){
 
 //Taбы
 function tabs(num){
+    const body = document.body
     body.className = ''
     profileMinititle.innerHTML = "";
     if(num === 1){

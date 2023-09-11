@@ -101,11 +101,8 @@ document.addEventListener('click', function(event) {
   const labelOne = checkRowItemLabel[0];
   const labelTwo = checkRowItemLabel[1];
   if ( labelOne.contains(event.target)) {
-
   }else if(labelTwo.contains(event.target)){
-
   }else if(selectedOptionWrapper.contains(event.target)){
-
   }else{
     checkRowItem.classList.remove('list-active');
   }

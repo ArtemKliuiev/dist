@@ -204,14 +204,18 @@
                 window.location.href = "../index.html";
             }
             const quizInput = document.querySelector('.quiz__input');
-            function thisInput(){
-                if(quizInput.value.length < 1){
-                    saveButton.classList.remove('btn-active')
-                }else{
-                    saveButton.classList.add('btn-active')
-                }
     
-            };
+            function isValidEmail(email) {
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9а-яА-ЯёЁіІїЇґҐ.-]+\.[a-zA-Zа-яА-ЯёЁіІїЇґҐ]{2,4}$/;
+                return emailPattern.test(email);
+            }
+            function thisInput(){
+                if (isValidEmail(emailInput.value)) {
+                    saveButton.classList.add('btn-active')
+                } else {
+                    saveButton.classList.remove('btn-active');
+                }
+            }
             thisInput();
             quizInput.addEventListener('input', thisInput);
         </script>
