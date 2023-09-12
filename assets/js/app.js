@@ -89,14 +89,9 @@ function filtration(number){
 function basket(){
     body.classList.toggle('basket-active');
 }
-document.addEventListener('click', function(event) {
-    const basket = document.querySelector('.basket')
-    const basketIcon = document.querySelector('.header__basket')
-    if (basket.contains(event.target)) {
-    }else if(basketIcon.contains(event.target)){
-    }else{
-        body.classList.remove('basket-active');
-    }
+const basketBG = document.querySelector('.basket-active-bg');
+basketBG.addEventListener('click', function() {
+    body.classList.remove('basket-active');
 });
 
 //Адаптивное меню провиль

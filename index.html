@@ -49,11 +49,11 @@
         window.addEventListener('resize', checkForTouchScreen);
         window.addEventListener('orientationchange', checkForTouchScreen);
     </script>
-
+    <div class="basket-active-bg"></div>
     <div class="warapper">
     <div class="indent-for-sticky"></div>
     <header>
-    <div class="header">
+        <div class="header">
         <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
             <a href="index.html" class="header__icon"><img src="https://artemkliuiev.github.io/dist/assets/images/svg/header-icon.svg" alt="main"></a>
             <a href="/dist/person.html" class="header__profile"><img src="https://artemkliuiev.github.io/dist/assets/images/svg/Profile.svg" alt="profile"></a>
@@ -68,74 +68,74 @@
             </a>
             <a href="quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
         </div>
-    <div class="adaptive-menu">
-        <div class="adaptive-menu__main">
-            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
-            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
-            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
-            <div class="adaptive-menu__email">support@medstogo.com</div>
-            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+        <div class="adaptive-menu">
+            <div class="adaptive-menu__main">
+                <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+                <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="assets/images/svg/menu_arrow.svg" alt=""></div>
+                <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+                <div class="adaptive-menu__email">support@medstogo.com</div>
+                <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+            </div>
         </div>
-    </div>
-    <div class="adaptive-menu-shop">
-        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
-            <img src="assets/images/svg/Back_arrow.svg" alt="">
-            <span>Shop</span>
+        <div class="adaptive-menu-shop">
+            <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Shop</span>
+            </div>
+            <nav class="menu adaptive-menu-shop__menu">
+                <a href="/dist/catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+                <a href="/dist/catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+                <a href="/dist/catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+                <a href="/dist/catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+                <a href="/dist/catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+                <a href="/dist/catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+                <a href="/dist/catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+                <a href="/dist/catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+                <a href="/dist/catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+            </nav>
+            <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+            <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+            <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
         </div>
-        <nav class="menu adaptive-menu-shop__menu">
-            <a href="/dist/catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
-            <a href="/dist/catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
-            <a href="/dist/catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
-            <a href="/dist/catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
-            <a href="/dist/catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
-            <a href="/dist/catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
-            <a href="/dist/catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
-            <a href="/dist/catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
-            <a href="/dist/catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
-        </nav>
-        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
-        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
-        <a href="quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
-    </div>
-    <div class="adaptive-menu-information">
-        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
-            <img src="assets/images/svg/Back_arrow.svg" alt="">
-            <span>Information</span>
+        <div class="adaptive-menu-information">
+            <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Information</span>
+            </div>
+            <nav class="menu adaptive-menu-information__menu">
+                <a href="/dist/text-sample.html" class="menu__item">Subscription Cycle & Billing</a>
+                <a href="/dist/text-sample.html" class="menu__item">Terms & Conditions</a>
+                <a href="/dist/text-sample.html" class="menu__item">Privacy Policy</a>
+                <a href="/dist/text-sample.html" class="menu__item">Shipping & Delivery</a>
+                <a href="/dist/text-sample.html" class="menu__item">Return Policy</a>
+            </nav>
         </div>
-        <nav class="menu adaptive-menu-information__menu">
-            <a href="/dist/text-sample.html" class="menu__item">Subscription Cycle & Billing</a>
-            <a href="/dist/text-sample.html" class="menu__item">Terms & Conditions</a>
-            <a href="/dist/text-sample.html" class="menu__item">Privacy Policy</a>
-            <a href="/dist/text-sample.html" class="menu__item">Shipping & Delivery</a>
-            <a href="/dist/text-sample.html" class="menu__item">Return Policy</a>
-        </nav>
-    </div>
-    <div class="adaptive-menu-profile">
-        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
-            <img src="assets/images/svg/Back_arrow.svg" alt="">
-            <span>Profile</span>
+        <div class="adaptive-menu-profile">
+            <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+                <img src="assets/images/svg/Back_arrow.svg" alt="">
+                <span>Profile</span>
+            </div>
+            <nav class="menu adaptive-menu-profile__menu">
+                <a href="/dist/person.html" onclick="filtrationProfile(1)" class="menu__item">Subscriptions</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(2)" class="menu__item">Orders</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
+                <a class="menu__item sing-exit">Sign Out</a>
+            </nav>
         </div>
-        <nav class="menu adaptive-menu-profile__menu">
-            <a href="/dist/person.html" onclick="filtrationProfile(1)" class="menu__item">Subscriptions</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(2)" class="menu__item">Orders</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
-            <a class="menu__item sing-exit">Sign Out</a>
-        </nav>
-    </div>
-    <div class="basket">
-        <div class="basket__title-row">
-            <div class="basket__title">Cart</div>
-            <div class="basket__exit" onclick="basket()"></div>
+        <div class="basket">
+            <div class="basket__title-row">
+                <div class="basket__title">Cart</div>
+                <div class="basket__exit" onclick="basket()"></div>
+            </div>
+            <div class="basket__line"></div>
+            <div id="basket-goods" class="basket__goods">
+            </div>
+            <div class="basket__btn">
+                <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
+            </div>
         </div>
-        <div class="basket__line"></div>
-        <div id="basket-goods" class="basket__goods">
-        </div>
-        <div class="basket__btn">
-            <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
-        </div>
-    </div>
     </header>    <main class="main">
             <svg xmlns="http://www.w3.org/2000/svg" width="95" height="95" viewBox="0 0 95 95" fill="none" class="find-out__bg-elipse3">
                 <circle cx="47.5" cy="47.5" r="47.5" fill="#FFCA78"/>

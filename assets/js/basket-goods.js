@@ -188,7 +188,7 @@ function addGoods(){
         `;
         productsContainer.insertAdjacentHTML('beforeend', productHTML); 
         document.body.appendChild(script);
-    });     
+    });    
 };
 
 function startLoad(){
@@ -197,7 +197,6 @@ function startLoad(){
         products = localStorageApp
         if(products.length > 0){
             document.body.classList.add('not-empty');
-
             var cartIcon = document.querySelector('.header__basket')
             cartIcon.classList.add('shake');
             cartIcon.addEventListener('animationend', function() {

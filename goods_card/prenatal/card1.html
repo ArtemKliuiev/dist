@@ -49,110 +49,112 @@
         window.addEventListener('resize', checkForTouchScreen);
         window.addEventListener('orientationchange', checkForTouchScreen);
     </script>
-
-    <div class="indent-for-sticky"></div>
-    <header class="header">
-        <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
-            <a href="../../index.html" class="header__icon" aria-label="Main">
-                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="50" viewBox="0 0 42 50" fill="none">
-                    <path class="path__one" fill-rule="evenodd" clip-rule="evenodd" d="M15.3281 21.1655H26.6712V28.9876C26.6712 32.1164 24.1267 34.6625 20.9997 34.6625C17.8727 34.6625 15.3281 32.1164 15.3281 28.9876V21.1655Z" fill="#FF7D4E"/>
-                    <path class="path__two" fill-rule="evenodd" clip-rule="evenodd" d="M34.3358 21.1655V28.9876C34.3358 36.3496 28.3577 42.3312 21 42.3312C13.6423 42.3312 7.66423 36.3496 7.66423 28.9876V21.1655H0V28.9876C0 40.5827 9.41168 49.9999 21 49.9999C32.5883 49.9999 42 40.5827 42 28.9876V21.1655H34.3358Z" fill="#725CF0"/>
-                    <path class="path__three" fill-rule="evenodd" clip-rule="evenodd" d="M20.9998 0C13.6422 0 7.66406 5.9816 7.66406 13.3436V21.1656H15.3283V13.3436C15.3283 10.2147 17.8728 7.66871 20.9998 7.66871C24.1268 7.66871 26.6714 10.2147 26.6714 13.3436V21.1656H34.3356V13.3436C34.3356 5.9816 28.3575 0 20.9998 0Z" fill="#FDC672"/>
-                </svg>
-            </a>
-            <a href="../../catalog.html" class="header__back-to-shop">
-                <div class="header__back-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.53624 15L9 13.5433L2.92751 7.5L9 1.45672L7.53624 0L0 7.5L7.53624 15Z" fill="black"/>
+    <div class="basket-active-bg"></div>
+    <header>
+        <div class="indent-for-sticky"></div>
+        <div class="header">
+            <div class="header__burger" onclick="adaptiveMenu()"><span></span></div>
+                <a href="../../index.html" class="header__icon" aria-label="Main">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="50" viewBox="0 0 42 50" fill="none">
+                        <path class="path__one" fill-rule="evenodd" clip-rule="evenodd" d="M15.3281 21.1655H26.6712V28.9876C26.6712 32.1164 24.1267 34.6625 20.9997 34.6625C17.8727 34.6625 15.3281 32.1164 15.3281 28.9876V21.1655Z" fill="#FF7D4E"/>
+                        <path class="path__two" fill-rule="evenodd" clip-rule="evenodd" d="M34.3358 21.1655V28.9876C34.3358 36.3496 28.3577 42.3312 21 42.3312C13.6423 42.3312 7.66423 36.3496 7.66423 28.9876V21.1655H0V28.9876C0 40.5827 9.41168 49.9999 21 49.9999C32.5883 49.9999 42 40.5827 42 28.9876V21.1655H34.3358Z" fill="#725CF0"/>
+                        <path class="path__three" fill-rule="evenodd" clip-rule="evenodd" d="M20.9998 0C13.6422 0 7.66406 5.9816 7.66406 13.3436V21.1656H15.3283V13.3436C15.3283 10.2147 17.8728 7.66871 20.9998 7.66871C24.1268 7.66871 26.6714 10.2147 26.6714 13.3436V21.1656H34.3356V13.3436C34.3356 5.9816 28.3575 0 20.9998 0Z" fill="#FDC672"/>
                     </svg>
-                </div>
-                <span class="header__back-text" >Back to shop</span>
-            </a>
-            <a href="/dist/person.html" class="header__profile">
-                <svg class="header__adaptiv-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M25.1901 19.9003C23.7022 18.4275 21.9168 17.3544 19.972 16.739C22.0975 15.424 23.5109 13.0886 23.5109 10.4323C23.5109 6.33482 20.142 3 16.0026 3C11.8633 3 8.49438 6.33482 8.49438 10.4323C8.49438 13.0886 9.90782 15.424 12.0333 16.739C10.0832 17.3544 8.29777 18.4275 6.81524 19.9003C4.34968 22.3304 3 25.5652 3 29H4.91294C4.91294 22.9458 9.88657 18.0225 16.0026 18.0225C22.1187 18.0225 27.0924 22.9458 27.0924 29H29.0053C29 25.5652 27.6503 22.3304 25.1901 19.9003ZM10.402 10.4323C10.402 7.38155 12.9154 4.89359 16.0026 4.89359C19.0846 4.89359 21.598 7.38155 21.598 10.4323C21.598 13.4831 19.0846 15.9711 16.0026 15.9711C12.9154 15.9763 10.402 13.4884 10.402 10.4323Z" fill="black"/>
-                </svg>
-            </a>
-            <a onclick="basket()" class="header__basket">
-                <svg class="empty" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M26.9973 27.116V27.1008L25.5989 10.2262C25.5374 9.2207 24.6974 8.43359 23.6781 8.43359H21.8033C21.6292 5.40703 19.0937 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116ZM15.9947 4.82812C18.0744 4.82812 19.7801 6.41758 19.9491 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812ZM6.84642 27.1719L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H23.6832C23.7242 10.2617 23.76 10.2922 23.7652 10.3379V10.3531L25.1482 27.1719H6.84642Z" fill="black"/>
-                </svg>
-                <svg class="no-empty" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="24.5" cy="7.5" r="4.5" fill="#FF7D4E"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1998 3.4293C17.5196 3.15261 16.775 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116V27.1008L25.9824 14.8535C25.5032 14.9496 25.0075 15 24.5 15C24.3815 15 24.2637 14.9973 24.1466 14.9918L25.1482 27.1719H6.84642L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H17.5248C17.2959 9.68409 17.1367 9.07126 17.0575 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812C16.4889 4.82812 16.962 4.91789 17.3984 5.08181C17.5982 4.49488 17.8687 3.94066 18.1998 3.4293Z" fill="black"/>
-                </svg>
-            </a>
-            <a href="../../quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+                </a>
+                <a href="../../catalog.html" class="header__back-to-shop">
+                    <div class="header__back-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.53624 15L9 13.5433L2.92751 7.5L9 1.45672L7.53624 0L0 7.5L7.53624 15Z" fill="black"/>
+                        </svg>
+                    </div>
+                    <span class="header__back-text" >Back to shop</span>
+                </a>
+                <a href="/dist/person.html" class="header__profile">
+                    <svg class="header__adaptiv-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M25.1901 19.9003C23.7022 18.4275 21.9168 17.3544 19.972 16.739C22.0975 15.424 23.5109 13.0886 23.5109 10.4323C23.5109 6.33482 20.142 3 16.0026 3C11.8633 3 8.49438 6.33482 8.49438 10.4323C8.49438 13.0886 9.90782 15.424 12.0333 16.739C10.0832 17.3544 8.29777 18.4275 6.81524 19.9003C4.34968 22.3304 3 25.5652 3 29H4.91294C4.91294 22.9458 9.88657 18.0225 16.0026 18.0225C22.1187 18.0225 27.0924 22.9458 27.0924 29H29.0053C29 25.5652 27.6503 22.3304 25.1901 19.9003ZM10.402 10.4323C10.402 7.38155 12.9154 4.89359 16.0026 4.89359C19.0846 4.89359 21.598 7.38155 21.598 10.4323C21.598 13.4831 19.0846 15.9711 16.0026 15.9711C12.9154 15.9763 10.402 13.4884 10.402 10.4323Z" fill="black"/>
+                    </svg>
+                </a>
+                <a onclick="basket()" class="header__basket">
+                    <svg class="empty" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M26.9973 27.116V27.1008L25.5989 10.2262C25.5374 9.2207 24.6974 8.43359 23.6781 8.43359H21.8033C21.6292 5.40703 19.0937 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116ZM15.9947 4.82812C18.0744 4.82812 19.7801 6.41758 19.9491 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812ZM6.84642 27.1719L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H23.6832C23.7242 10.2617 23.76 10.2922 23.7652 10.3379V10.3531L25.1482 27.1719H6.84642Z" fill="black"/>
+                    </svg>
+                    <svg class="no-empty" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="24.5" cy="7.5" r="4.5" fill="#FF7D4E"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1998 3.4293C17.5196 3.15261 16.775 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116V27.1008L25.9824 14.8535C25.5032 14.9496 25.0075 15 24.5 15C24.3815 15 24.2637 14.9973 24.1466 14.9918L25.1482 27.1719H6.84642L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H17.5248C17.2959 9.68409 17.1367 9.07126 17.0575 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812C16.4889 4.82812 16.962 4.91789 17.3984 5.08181C17.5982 4.49488 17.8687 3.94066 18.1998 3.4293Z" fill="black"/>
+                    </svg>
+                </a>
+                <a href="../../quiz/quiz1.html" class="header__button"><div class="oval-button header__oval-button">Take the quiz</div></a>
+            </div>
+        </div>
+        <div class="adaptive-menu">
+            <div class="adaptive-menu__main">
+                <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="https://artemkliuiev.github.io/dist/assets/images/svg/menu_arrow.svg" alt=""></div>
+                <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="https://artemkliuiev.github.io/dist/assets/images/svg/menu_arrow.svg" alt=""></div>
+                <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
+                <div class="adaptive-menu__email">support@medstogo.com</div>
+                <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
+            </div>
+        </div>
+        <div class="adaptive-menu-shop">
+            <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
+                <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
+                <span>Shop</span>
+            </div>
+            <nav class="menu adaptive-menu-shop__menu">
+                <a href="../../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
+                <a href="../../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
+                <a href="../../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
+                <a href="../../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
+                <a href="../../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
+                <a href="../../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
+                <a href="../../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
+                <a href="../../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
+                <a href="../../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
+            </nav>
+            <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
+            <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
+            <a href="../quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
+        </div>
+        <div class="adaptive-menu-information">
+            <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
+                <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
+                <span>Information</span>
+            </div>
+            <nav class="menu adaptive-menu-information__menu">
+                <a href="/dist/text-sample.html" class="menu__item">Subscription Cycle & Billing</a>
+                <a href="/dist/text-sample.html" class="menu__item">Terms & Conditions</a>
+                <a href="/dist/text-sample.html" class="menu__item">Privacy Policy</a>
+                <a href="/dist/text-sample.html" class="menu__item">Shipping & Delivery</a>
+                <a href="/dist/text-sample.html" class="menu__item">Return Policy</a>
+            </nav>
+        </div>
+        <div class="adaptive-menu-profile">
+            <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
+                <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
+                <span>Profile</span>
+            </div>
+            <nav class="menu adaptive-menu-profile__menu">
+                <a href="/dist/person.html" onclick="filtrationProfile(1)" class="menu__item">Subscriptions</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(2)" class="menu__item">Orders</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
+                <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
+                <a class="menu__item sing-exit">Sign Out</a>
+            </nav>
+        </div>
+        <div class="basket">
+            <div class="basket__title-row">
+                <div class="basket__title">Cart</div>
+                <div class="basket__exit" onclick="basket()"></div>
+            </div>
+            <div class="basket__line"></div>
+            <div id="basket-goods" class="basket__goods">
+            </div>
+            <div class="basket__btn">
+                <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
+            </div>
         </div>
     </header>
-    <div class="adaptive-menu">
-        <div class="adaptive-menu__main">
-            <div class="adaptive-menu__shop" onclick="adaptiveMenuShop(1)"><span>Shop</span><img src="https://artemkliuiev.github.io/dist/assets/images/svg/menu_arrow.svg" alt=""></div>
-            <div class="adaptive-menu__information" onclick="adaptiveMenuInformation(1)"><span>Information</span><img src="https://artemkliuiev.github.io/dist/assets/images/svg/menu_arrow.svg" alt=""></div>
-            <a href="quiz/quiz1.html" class="adaptive-menu__quiz">Take the quiz</a>
-            <div class="adaptive-menu__email">support@medstogo.com</div>
-            <div class="adaptive-menu__company-info">© 2020 Vitamins.com / All rights reserved</div>
-        </div>
-    </div>
-    <div class="adaptive-menu-shop">
-        <div class="adaptive-menu-shop__back" onclick="adaptiveMenuShop(2)">
-            <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
-            <span>Shop</span>
-        </div>
-        <nav class="menu adaptive-menu-shop__menu">
-            <a href="../../catalog.html" onclick="filtration(1)" class="menu__item">All categories</a>
-            <a href="../../catalog.html" onclick="filtration(2)" class="menu__item">Vitamins & Dietary Supplements</a>
-            <a href="../../catalog.html" onclick="filtration(3)" class="menu__item">Weight Loss</a>
-            <a href="../../catalog.html" onclick="filtration(4)" class="menu__item">Minerals</a>
-            <a href="../../catalog.html" onclick="filtration(5)" class="menu__item">Antioxidants</a>
-            <a href="../../catalog.html" onclick="filtration(6)" class="menu__item">Probiotics</a>
-            <a href="../../catalog.html" onclick="filtration(7)" class="menu__item">Pain Relief</a>
-            <a href="../../catalog.html" onclick="filtration(8)" class="menu__item">Prenatal Vitamins</a>
-            <a href="../../catalog.html" onclick="filtration(9)" class="menu__item">Sale%</a>
-        </nav>
-        <div class="adaptive-menu-shop__title">Don’t know what vitamins your body needs?</div>
-        <div class="adaptive-menu-shop__info">Answer a few simple questions and automatically get a personalazed list of vitamins in minutes</div>
-        <a href="../quiz/quiz1.html"  class="adaptive-menu-shop__button"><div class="oval-button">Take the quiz</div></a>
-    </div>
-    <div class="adaptive-menu-information">
-        <div class="adaptive-menu-information__back" onclick="adaptiveMenuInformation(2)">
-            <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
-            <span>Information</span>
-        </div>
-        <nav class="menu adaptive-menu-information__menu">
-            <a href="/dist/text-sample.html" class="menu__item">Subscription Cycle & Billing</a>
-            <a href="/dist/text-sample.html" class="menu__item">Terms & Conditions</a>
-            <a href="/dist/text-sample.html" class="menu__item">Privacy Policy</a>
-            <a href="/dist/text-sample.html" class="menu__item">Shipping & Delivery</a>
-            <a href="/dist/text-sample.html" class="menu__item">Return Policy</a>
-        </nav>
-    </div>
-    <div class="adaptive-menu-profile">
-        <div class="adaptive-menu-profile__back" onclick="adaptiveMenuProfile()">
-            <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Back_arrow.svg" alt="">
-            <span>Profile</span>
-        </div>
-        <nav class="menu adaptive-menu-profile__menu">
-            <a href="/dist/person.html" onclick="filtrationProfile(1)" class="menu__item">Subscriptions</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(2)" class="menu__item">Orders</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(3)" class="menu__item">Account Overview</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(4)" class="menu__item">Payment methods</a>
-            <a href="/dist/person.html"  onclick="filtrationProfile(5)" class="menu__item">Change Password</a>
-            <a class="menu__item sing-exit">Sign Out</a>
-        </nav>
-    </div>
-    <div class="basket">
-        <div class="basket__title-row">
-            <div class="basket__title">Cart</div>
-            <div class="basket__exit" onclick="basket()"></div>
-        </div>
-        <div class="basket__line"></div>
-        <div id="basket-goods" class="basket__goods">
-        </div>
-        <div class="basket__btn">
-            <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
-        </div>
-    </div>
     <main>
         <div class="item" data-id="23">
             <div class="item__image bg__prenatal">
