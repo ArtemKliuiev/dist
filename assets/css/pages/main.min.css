@@ -1,3 +1,18 @@
+.warapper {
+  overflow: hidden;
+  position: relative;
+}
+.warapper::before {
+  content: url("/dist/assets/images/main/Group 61.png");
+  position: absolute;
+  height: 1662.968px;
+  width: 1445.062px;
+  left: 50%;
+  top: 2199px;
+  transform: translateX(340px);
+  z-index: 2;
+}
+
 @media (max-width: 650px) {
   .title {
     font-size: 24px;
@@ -294,6 +309,13 @@
   }
 }
 .healthy {
+  width: 100%;
+  background: linear-gradient(to bottom, transparent 0%, transparent 0%, #8172DD 0%, #8172DD 10%), linear-gradient(to right, transparent 0%, transparent 25%, #ff0000 25%, #ff0000 50%);
+  background-position: top left, top left;
+  background-size: 50% 68.6%, 50% 50%;
+  background-repeat: no-repeat;
+}
+.healthy__main {
   max-width: 1800px;
   margin: 0 auto;
   position: relative;
@@ -368,6 +390,9 @@
 
 @media (max-width: 1300px) {
   .healthy {
+    background: none;
+  }
+  .healthy__main {
     min-height: 1350px;
     grid-template: 860px/1fr 1fr;
   }
@@ -408,7 +433,7 @@
   }
 }
 @media (max-width: 850px) {
-  .healthy {
+  .healthy__main {
     min-height: 1550px;
     grid-template: 300px 700px/1fr;
   }
@@ -436,7 +461,7 @@
   }
 }
 @media (max-width: 650px) {
-  .healthy {
+  .healthy__main {
     min-height: 750px;
     grid-template: 198px 540px/1fr;
   }
@@ -718,6 +743,14 @@
 }
 
 .products {
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent 10.9%, transparent 0%, #E99478 0%, #E99478 10%), linear-gradient(to left, transparent 0%, transparent 25%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 50%);
+  background-position: top right, top right;
+  background-size: 50% 68.7%, 50% 50%;
+  background-repeat: no-repeat;
+}
+.products__main {
   display: grid;
   margin: 0 auto;
   max-width: 1800px;
@@ -728,17 +761,9 @@
   height: 100%;
   grid-column: 2;
   grid-row: 2;
-  background: #E99478 url("/dist/assets/images/main/2.png") right no-repeat;
+  background: #E99478;
   display: grid;
   grid-template: 234px auto 31px auto 33px auto 1fr/1.25fr minmax(auto, 444px) 1fr;
-}
-.products__column-info::before {
-  content: url("/dist/assets/images/main/Group 61.png");
-  position: absolute;
-  height: 1662.968px;
-  width: 560px;
-  right: 0;
-  bottom: 58px;
 }
 .products__column-products {
   grid-column: 1;
@@ -854,6 +879,9 @@
 }
 @media (max-width: 1450px) {
   .products {
+    background: none;
+  }
+  .products__main {
     grid-template: 101px 600px 400px 50px auto/1fr;
   }
   .products__column-info {
@@ -928,7 +956,7 @@
   }
 }
 @media (max-width: 650px) {
-  .products {
+  .products__main {
     grid-template: 15px 370px 243px 50px auto/1fr;
   }
   .products__column-info {
@@ -991,7 +1019,7 @@
   }
 }
 @media (max-width: 360px) {
-  .products {
+  .products__main {
     grid-template: 15px 370px 243px 87px auto/1fr;
   }
   .products__text {

@@ -176,9 +176,6 @@
 .quiz__input:focus {
   border: none;
 }
-.quiz__input::selection {
-  background-color: transparent;
-}
 .quiz__input::-moz-selection {
   background-color: transparent;
 }

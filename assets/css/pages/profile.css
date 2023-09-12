@@ -271,6 +271,9 @@
   padding-left: 24px;
 }
 
+.change .profile__main {
+  margin-bottom: 100px;
+}
 .change .profile__change {
   font-weight: 700;
 }
