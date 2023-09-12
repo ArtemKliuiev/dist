@@ -140,9 +140,15 @@
     left: 35%;
   }
 }
-@media (max-width: 1370px) {
+@media (max-width: 1400px) {
+  .find-out {
+    grid-template: 940px/1fr 1fr;
+  }
   .find-out__bg-elipse2 {
     left: 30%;
+  }
+  .find-out__main {
+    grid-template: 241px auto 36px auto 51px 74px 1fr/minmax(15px, 100px) auto 1fr;
   }
 }
 @media (max-width: 1300px) {
