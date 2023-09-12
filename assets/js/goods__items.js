@@ -14,6 +14,8 @@ const customSelects = document.querySelectorAll('.custom-select');
 const thisCardId = parseFloat(cardItem.getAttribute('data-id'));
 const checkRowItem = document.querySelector('.item__check-row');
 const checkRowItemLabel = document.querySelectorAll('.item__check-row label');
+const checkbox = document.querySelector('.apple-switch');
+const checkRow = document.querySelector(".item__check-row");
 
 let sale = thisCardId === 7;
 
@@ -75,13 +77,17 @@ let thisItemType = '';
 
 //Касиумный Оптион
 selectedOptionWrapper.addEventListener('click', function() {
-  checkRowItem.classList.toggle('list-active');
+  if (checkbox.checked){
+    checkRowItem.classList.toggle('list-active');
+  }
 });
 
 checkRowItemLabel.forEach(function(label){
+  if (checkbox.checked){
   label.addEventListener('click', function(){
     checkRowItem.classList.toggle('list-active');
   });
+  }
 });
 
 customSelects.forEach((select) => {
@@ -204,9 +210,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //Кастумная галочка
-const checkbox = document.querySelector('.apple-switch');
-const checkRow = document.querySelector(".item__check-row");
-
 checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
     checkRow.classList.add("opacity-check-row"); 
