@@ -19,7 +19,7 @@ const adaptiveMenuInformation = (number) => {
 const adaptiveMenuProfile = () => {
     body.classList.remove('burger-acive__profile')
 }
-const header = document.querySelector('header');
+const header = document.querySelector('.header');
 window.addEventListener('resize', () => {
     if (window.innerWidth <= 768) {
         header.style.top = '0px';
