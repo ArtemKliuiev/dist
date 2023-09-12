@@ -26,19 +26,9 @@ window.addEventListener('resize', () => {
         header.style.position = 'fixed';
     }
   });
-// Отключаем ссылку Profile при зарширении меньше 768px
-const linkProfile = document.querySelector('.header__profile');
-linkProfile.addEventListener('click', preventLink);
-function preventLink(event) {
-    if (window.innerWidth < 768) {
-      event.preventDefault(); 
-      body.classList.add('burger-acive__profile')
-    } else {
-    }
-  }
-
 //Задний фон апр скроле
 window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 768) {
         if (window.scrollY > 20) {
             header.classList.add('scrolled');
             header.style.position = 'fixed';
@@ -61,8 +51,26 @@ window.addEventListener('scroll', () => {
                 header.style.position = 'absolute';
             }
         }
+    }else{
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
 });
  
+// Отключаем ссылку Profile при зарширении меньше 768px
+const linkProfile = document.querySelector('.header__profile');
+linkProfile.addEventListener('click', preventLink);
+function preventLink(event) {
+    if (window.innerWidth < 768) {
+      event.preventDefault(); 
+      body.classList.add('burger-acive__profile')
+    } else {
+    }
+  }
+
 function filtration(number){
     if(number === 1){
         localStorage.setItem('filerFun', 1);
