@@ -456,6 +456,7 @@
 }
 
 .basket {
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
   display: grid;
   position: fixed;
   transition: all 0.3s ease 0.15s;
