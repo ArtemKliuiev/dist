@@ -59,6 +59,8 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+
+
   // Добавление обработчика события на завершение перехода к новому слайду
   swiper.on('slideChangeTransitionEnd', function () {
     var activeSlide = swiper.slides[swiper.activeIndex];
@@ -386,4 +388,6 @@ setTimeout(function(){
   }else if(filerFun == 9){
       saleFun()
   }
+  localStorage.setItem('filerFun', 0);
 }, 200);
+
