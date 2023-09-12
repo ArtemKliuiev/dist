@@ -98,25 +98,31 @@ function tabs(num){
     const body = document.body
     body.className = ''
     profileMinititle.innerHTML = "";
-    if(num === 1){
+    if(num == 1){
         body.classList.add('subscriptions');
         profileTitle.innerHTML = 'Subscriptions';
-    }else if(num === 2){
+        localStorage.setItem('ProfileItem', 1);
+    }else if(num == 2){
         body.classList.add('orders');
         profileTitle.innerHTML = 'Orders';
-    }else if(num === 3){
+        localStorage.setItem('ProfileItem', 2);
+    }else if(num == 3){
         body.classList.add('account');
         profileTitle.innerHTML = 'Account Overview';
         profileMinititle.innerHTML = "Regular customer";
-    }else if(num === 4){
+        localStorage.setItem('ProfileItem', 3);
+    }else if(num == 4){
         body.classList.add('payment');
         profileTitle.innerHTML = 'Payment methods';
-    }else if(num === 5){
+        localStorage.setItem('ProfileItem', 4);
+    }else if(num == 5){
         body.classList.add('change');
         profileTitle.innerHTML = 'Change Password';
-    }else if(num === 6){
+        localStorage.setItem('ProfileItem', 5);
+    }else if(num == 6){
         body.classList.add('sign-out');
         profileTitle.innerHTML = 'Sign out';
+        localStorage.setItem('ProfileItem', 6);
     }
 };
 
