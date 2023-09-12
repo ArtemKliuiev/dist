@@ -1,3 +1,19 @@
+.warapper {
+  overflow: hidden;
+  position: relative;
+}
+.warapper::before {
+  content: url("/dist/assets/images/main/Group 61.png");
+  position: absolute;
+  height: 1662.968px;
+  width: 1445.062px;
+  left: 50%;
+  top: 2199px;
+  -webkit-transform: translateX(340px);
+          transform: translateX(340px);
+  z-index: 2;
+}
+
 @media (max-width: 650px) {
   .title {
     font-size: 24px;
@@ -127,9 +143,15 @@
     left: 35%;
   }
 }
-@media (max-width: 1370px) {
+@media (max-width: 1400px) {
+  .find-out {
+    grid-template: 940px/1fr 1fr;
+  }
   .find-out__bg-elipse2 {
     left: 30%;
+  }
+  .find-out__main {
+    grid-template: 241px auto 36px auto 51px 74px 1fr/minmax(15px, 100px) auto 1fr;
   }
 }
 @media (max-width: 1300px) {
@@ -758,14 +780,6 @@
   background: #E99478;
   display: grid;
   grid-template: 234px auto 31px auto 33px auto 1fr/1.25fr minmax(auto, 444px) 1fr;
-}
-.products__column-info::before {
-  content: url("/dist/assets/images/main/Group 61.png");
-  position: absolute;
-  height: 1662.968px;
-  width: 1445.062px;
-  left: 340px;
-  bottom: 58px;
 }
 .products__column-products {
   grid-column: 1;

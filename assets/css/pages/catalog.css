@@ -125,6 +125,9 @@
 }
 
 @media (max-width: 1400px) {
+  .banners__one .banner__image .picture {
+    background-color: red;
+  }
   .banners__one .banner__image img {
     position: absolute;
     z-index: 1;

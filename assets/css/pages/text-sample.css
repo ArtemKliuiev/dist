@@ -106,3 +106,13 @@
     grid-template: 120px auto 28px auto 62px auto 29px auto 62px auto 30px auto 29px auto 5px auto minmax(62px, 1fr)/minmax(20px, 1fr) minmax(auto, 279px) minmax(20px, 1fr);
   }
 }
+@media (max-width: 400px) {
+  .text__wrapper {
+    grid-template: 120px auto 28px auto 62px auto 29px auto 62px auto 30px auto 29px auto 5px auto minmax(62px, 1fr)/20px 1fr 20px;
+  }
+}
+@media (max-width: 350px) {
+  .text__wrapper {
+    grid-template: 120px auto 28px auto 62px auto 29px auto 62px auto 30px auto 29px auto 5px auto minmax(62px, 1fr)/20px 1fr 20px;
+  }
+}
