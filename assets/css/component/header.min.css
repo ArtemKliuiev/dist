@@ -112,6 +112,15 @@
   .header__button {
     display: none;
   }
+  .header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    opacity: 0.07;
+    background-color: #000;
+    height: 1px;
+    bottom: -3.5px;
+  }
 }
 .menu {
   display: grid;
@@ -205,6 +214,17 @@
   font-size: 14px;
   font-weight: 400;
   opacity: 0.5;
+  position: relative;
+}
+.adaptive-menu__email::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  opacity: 0.07;
+  background-color: #000;
+  height: 1px;
+  top: -43px;
+  left: 0;
 }
 .adaptive-menu__company-info {
   grid-column: 2;
