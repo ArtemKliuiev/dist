@@ -340,7 +340,10 @@ function orderInfo(){
     newInfo = subscription;
     dataThisOrder = subscription.data;
     let subscriptioArr = subscription.order.filter((order) => order.checkbox === true)
-    const container = document.querySelector('.profile__subscriptions-goods')
+    const container = document.querySelector('.profile__subscriptions-goods');
+    if(subscriptioArr.length == 0){
+        document.body.classList.add('subscriptions-no-empty')
+    }
     container.innerHTML = ''
     subscriptioArr.forEach(product => { 
         const currentDate = new Date(product.data);
@@ -509,7 +512,9 @@ setTimeout(function(){
             labelForCVC.value = resArr.join('');
             labelForCVC.innerHTML = labelForCVC.value
         } else {
-            console.log("Данные не найдены");
+            console.log("Данные не найдены + s");
+            document.querySelector('.profile').classList.add('subscriptions-no-empty');
+            document.querySelector('.profile').classList.add('no-empty-order');
         }
     })
     .catch((error) => {
