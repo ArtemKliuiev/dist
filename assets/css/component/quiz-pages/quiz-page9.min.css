@@ -215,6 +215,7 @@
     grid-column: 1;
   }
   .quiz__column2 {
+    overflow: auto;
     grid-row: 2;
     grid-column: 1;
   }
@@ -240,6 +241,19 @@
   }
   .quiz__back path {
     fill: #8172DD;
+  }
+}
+@media (max-width: 800px) and (max-height: 450px) {
+  .quiz__title {
+    font-size: 24px;
+  }
+  .quiz__main {
+    display: grid;
+    height: 100vh;
+    grid-template: 1fr 1.3fr 65px/1fr;
+  }
+  .quiz__column2 {
+    padding: 30px 0;
   }
 }
 @media (max-width: 600px) {
