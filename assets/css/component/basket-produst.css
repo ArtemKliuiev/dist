@@ -181,7 +181,8 @@
   margin: 0;
 }
 .custom-select-basket__list li {
-  padding: 8px 8px 8px 17px;
+  padding: 8px 0;
+  text-align: center;
   cursor: pointer;
 }
 .custom-select-basket__list li:hover {

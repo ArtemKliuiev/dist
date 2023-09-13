@@ -33,6 +33,7 @@ function addGoods(){
                 }
             </style>
             <div id="product${product.id}" class="basket-product ${product.type}">
+            <div class="basket-product__break"></div>
             <div class="basket-product__image">
                 <picture>
                     <source srcset="${product.imageSrc}" type="image/webp">
@@ -88,7 +89,7 @@ function addGoods(){
                             <ul class="custom-select-basket__list">
                             <li class="li" >15</li>
                             <li class="li" >30</li>
-                            <li class="li" >45</li>
+                            <li class="li last-li" >45</li>
                             </ul>
                         </div>
                     </div>
@@ -102,6 +103,9 @@ function addGoods(){
         (function(){
             const thisProduct = document.querySelector('#product${product.id}');
             const optionLi = thisProduct.querySelectorAll('.li');
+            const castumOption = thisProduct.querySelector('.custom-select-basket');
+            const thisBreak = thisProduct.querySelector('.basket-product__break');
+            const castumOptionAll = document.querySelectorAll('.custom-select-basket');
             const option = thisProduct.querySelector('#custom-select');
             const decreaseButtons = thisProduct.querySelector(".decrease");
             const increaseButtons = thisProduct.querySelector(".increase");
@@ -184,13 +188,53 @@ function addGoods(){
                     localStorageBasketGoods();
                 }
             });
-        }())
+            const outerContainer = document.querySelector('#basket-goods');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    castumOption.classList.remove('list-active-top');
+                  } else {
+                    castumOption.classList.add('list-active-top');
+                  }
+                });
+              }, {
+                threshold: 1,
+                rootMargin: '50px', // Добавляем отступ в 50px
+              });
+              
+              observer.observe(thisBreak);
+            }());
         `;
         productsContainer.insertAdjacentHTML('beforeend', productHTML); 
         document.body.appendChild(script);
     });    
+    const scriptTwo = document.createElement('script');
+    scriptTwo.textContent = `
+        const castumOptionAll = document.querySelectorAll('.custom-select-basket');
+        function removeClass(){
+            for(i=0; i < castumOptionAll.length; i++){
+                castumOptionAll[i].classList.remove('list-active');
+            }
+        }
+        castumOptionAll.forEach(function(element) {
+            document.addEventListener('click', function(event){
+                if (element.contains(event.target)) {
+                }else{
+                    element.classList.remove('list-active');
+                }
+            });
+            element.addEventListener('click', function(){
+                if (element.classList.contains('list-active')) {
+                    removeClass();
+                } else {
+                    removeClass();
+                    element.classList.add('list-active');
+                }
+            });
+        });
+    `;
+    document.body.appendChild(scriptTwo);
 };
-
 function startLoad(){
     let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
     if(localStorageApp != null){

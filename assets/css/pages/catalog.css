@@ -125,13 +125,10 @@
 }
 
 @media (max-width: 1400px) {
-  .banners__one .banner__image .picture {
-    background-color: red;
-  }
   .banners__one .banner__image img {
     position: absolute;
     z-index: 1;
-    right: 90px;
+    right: 0px;
     top: 110px;
     width: 300px;
   }
@@ -155,9 +152,7 @@
     font-size: 42px;
   }
   .banners__one .banner__image img {
-    position: absolute;
     z-index: 1;
-    right: 50px;
     top: 105px;
   }
   .banners__one .banner__image-elipse-one {
@@ -189,10 +184,13 @@
     grid-column: 2;
     grid-template: 30px auto 1fr/1fr auto 1fr;
   }
+  .banners__one .banner__image picture {
+    position: absolute;
+    z-index: 1;
+    right: 50%;
+    top: -17px;
+  }
   .banners__one .banner__image img {
-    right: 60%;
-    -webkit-transform: translateX(40px);
-            transform: translateX(40px);
     top: 10px;
     max-width: 450px;
   }
@@ -211,6 +209,12 @@
   }
 }
 @media (max-width: 650px) {
+  .banners__one .banner__image picture {
+    position: absolute;
+    z-index: 1;
+    right: 60%;
+    top: 0px;
+  }
   .banners__one .banner__image img {
     right: 60%;
     top: 0px;

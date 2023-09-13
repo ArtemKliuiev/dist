@@ -524,7 +524,6 @@
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 60px;
   margin-bottom: 125px;
 }
 .basket__btn {

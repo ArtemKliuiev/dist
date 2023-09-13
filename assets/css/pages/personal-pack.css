@@ -226,22 +226,6 @@ main {
   .window__info {
     font-size: 20px;
   }
-}
-@media (max-width: 600px) {
-  .inform {
-    grid-template: 120px auto 30px auto 19px auto 63px/minmax(20px, 1fr) minmax(auto, 1394px) minmax(21px, 1fr);
-  }
-  .inform__title {
-    font-size: 24px;
-    max-width: 227px;
-  }
-  .inform__info {
-    font-size: 20px;
-  }
-  .inform__text {
-    font-size: 14px;
-    line-height: 24px;
-  }
   .inform__bg-img svg {
     position: absolute;
     z-index: -5;
@@ -262,6 +246,22 @@ main {
     right: 9%;
     bottom: -60px;
     width: 62px;
+  }
+}
+@media (max-width: 600px) {
+  .inform {
+    grid-template: 120px auto 30px auto 19px auto 63px/minmax(20px, 1fr) minmax(auto, 1394px) minmax(21px, 1fr);
+  }
+  .inform__title {
+    font-size: 24px;
+    max-width: 227px;
+  }
+  .inform__info {
+    font-size: 20px;
+  }
+  .inform__text {
+    font-size: 14px;
+    line-height: 24px;
   }
   .goods-bottom {
     margin-bottom: 0;

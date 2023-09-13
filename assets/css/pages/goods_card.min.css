@@ -606,7 +606,13 @@
   .header__adaptiv-svg path {
     fill: #fff;
   }
+  .header__basket path {
+    fill: #fff;
+  }
   .scrolled .header__adaptiv-svg path {
+    fill: #000000;
+  }
+  .scrolled .header__basket path {
     fill: #000000;
   }
   .item {
