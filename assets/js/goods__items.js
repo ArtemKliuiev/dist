@@ -19,6 +19,13 @@ const checkRow = document.querySelector(".item__check-row");
 
 let sale = thisCardId === 7;
 
+//Прелоадер
+(function(){
+  const html = document.querySelector('html');
+  html.classList.add('preloager-active')
+}());
+
+
 //Cчетчик товаров
 function attachEventHandlers() {
   for (var i = 0; i < decreaseButtons.length; i++) {
@@ -180,40 +187,3 @@ function localStorageGoods() {
 };
 console.log(arr);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const productCardsContainer = document.getElementById('productCards');
-
-  // Очистка содержимого контейнера
-  productCardsContainer.innerHTML = '';
-
-  // Функция для загрузки данных о товарах через AJAX
-  function loadProducts(url) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          productCardsContainer.insertAdjacentHTML('beforeend', xhr.responseText);
-        } else {
-          console.log('Ошибка при загрузке данных о товарах. Код ошибки: ' + xhr.status);
-        }
-      }
-    };
-    xhr.send();
-  }
-
-  // Загрузка данных из 4 различных HTML файлов
-  loadProducts('../../goods/for-one-item/1.html');
-  loadProducts('../../goods/for-one-item/2.html');
-  loadProducts('../../goods/for-one-item/3.html');
-  loadProducts('../../goods/for-one-item/4.html');
-});
-
-//Кастумная галочка
-checkbox.addEventListener("change", function () {
-  if (checkbox.checked) {
-    checkRow.classList.add("opacity-check-row"); 
-  } else {
-    checkRow.classList.remove("opacity-check-row");
-  }
-});

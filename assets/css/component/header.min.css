@@ -571,20 +571,20 @@
   margin: 0 16px 0 14px;
 }
 
-/* Установка фиксированной высоты полосы прокрутки */
-.basket__goods::-webkit-scrollbar {
+.non-touch-device {
+  /* Установка фиксированной высоты полосы прокрутки */
+  /* Установка фиксированной высоты полосы прокрутки */
+  /* Установка фиксированной высоты трека скроллбара */
+}
+.non-touch-device .basket__goods::-webkit-scrollbar {
   width: 8px; /* Ширина полосы прокрутки */
 }
-
-/* Установка фиксированной высоты полосы прокрутки */
-.basket__goods::-webkit-scrollbar-thumb {
+.non-touch-device .basket__goods::-webkit-scrollbar-thumb {
   background-color: #6E5DDC; /* Цвет ползунка */
   border-radius: 4px; /* Скругление углов ползунка */
   height: 150px; /* Фиксированная высота ползунка */
 }
-
-/* Установка фиксированной высоты трека скроллбара */
-.basket__goods::-webkit-scrollbar-track {
+.non-touch-device .basket__goods::-webkit-scrollbar-track {
   background-color: rgba(136, 136, 136, 0.3960784314); /* Цвет фона скроллбара */
   border-radius: 4px; /* Скругление углов фона скроллбара */
   height: 150px; /* Фиксированная высота трека */

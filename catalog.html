@@ -135,7 +135,7 @@
                 <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
             </div>
         </div>
-    </header><main>
+    </header><main >
         <div class="swiper">
             <div class="swiper-wrapper">
             <div class="swiper-slide" slide-index="1">
@@ -300,7 +300,7 @@
                         </svg>
                     </div>
                     <nav class="menu-two goods__menu-main">
-                        <div id="allGoods" onclick="addAllGoods(); adaptiveBtn()" class="menu-two__item">All categories</div>
+                        <div id="allGoods" onclick="addAllGoods(); adaptiveBtn() " class="menu-two__item">All categories</div>
                         <a id="vitamins" onclick="vitam(); adaptiveBtn()" class="menu-two__item">Vitamins & Dietary Supplements</a>
                         <a id="weight-loss" onclick=" weights(); adaptiveBtn()" class="menu-two__item">Weight Loss</a>
                         <a id="minerals" onclick="mineralFun(); adaptiveBtn()" class="menu-two__item">Minerals</a>
@@ -312,6 +312,7 @@
                     </nav>
                 </div>
             <div class="goods goods__goods">
+                <div class="preloager"><span></span></div>
                 <div class="goods__goods-main">
                     <div id="goods"></div>
                 </div>
@@ -540,6 +541,6 @@
     <script defer src="assets/js/basket-goods.js"></script>
     <script type="module" src="assets/js/sing-exit.js" ></script>
     <script type="module" src="" ></script>
-    <script type="module" src="" ></script>
+    <script type="module" src="assets/js/catalog-firebase.js" ></script>
 </body>
 </html>

@@ -38,6 +38,18 @@
       align-items: center;
   grid-template: 54px 16px 54px 16px 54px 17px 54px 17px 54px 17px 54px/1fr;
 }
+.profile__empty-subscriptions {
+  display: none;
+}
+.profile__empty-order {
+  display: none;
+}
+.profile__empty {
+  text-align: center;
+  font-family: Effra;
+  font-size: 18px;
+  margin: 100px 0 150px 0;
+}
 .profile__subscriptions {
   cursor: pointer;
   grid-column: 1;
@@ -150,6 +162,14 @@
   gap: 20px;
   margin-bottom: 30px;
   width: 100%;
+}
+
+.subscriptions-no-empty .profile__empty-subscriptions {
+  display: block;
+}
+
+.no-empty-order .profile__empty-order {
+  display: block;
 }
 
 .subscriptions .profile__subscriptions {

@@ -116,6 +116,15 @@
   .header__button {
     display: none;
   }
+  .header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    opacity: 0.07;
+    background-color: #000;
+    height: 1px;
+    bottom: -3.5px;
+  }
 }
 .menu {
   display: grid;
@@ -216,6 +225,17 @@
   font-size: 14px;
   font-weight: 400;
   opacity: 0.5;
+  position: relative;
+}
+.adaptive-menu__email::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  opacity: 0.07;
+  background-color: #000;
+  height: 1px;
+  top: -43px;
+  left: 0;
 }
 .adaptive-menu__company-info {
   grid-column: 2;
@@ -548,7 +568,6 @@
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  gap: 60px;
   margin-bottom: 125px;
 }
 .basket__btn {
@@ -576,20 +595,20 @@
   margin: 0 16px 0 14px;
 }
 
-/* Установка фиксированной высоты полосы прокрутки */
-.basket__goods::-webkit-scrollbar {
+.non-touch-device {
+  /* Установка фиксированной высоты полосы прокрутки */
+  /* Установка фиксированной высоты полосы прокрутки */
+  /* Установка фиксированной высоты трека скроллбара */
+}
+.non-touch-device .basket__goods::-webkit-scrollbar {
   width: 8px; /* Ширина полосы прокрутки */
 }
-
-/* Установка фиксированной высоты полосы прокрутки */
-.basket__goods::-webkit-scrollbar-thumb {
+.non-touch-device .basket__goods::-webkit-scrollbar-thumb {
   background-color: #6E5DDC; /* Цвет ползунка */
   border-radius: 4px; /* Скругление углов ползунка */
   height: 150px; /* Фиксированная высота ползунка */
 }
-
-/* Установка фиксированной высоты трека скроллбара */
-.basket__goods::-webkit-scrollbar-track {
+.non-touch-device .basket__goods::-webkit-scrollbar-track {
   background-color: rgba(136, 136, 136, 0.3960784314); /* Цвет фона скроллбара */
   border-radius: 4px; /* Скругление углов фона скроллбара */
   height: 150px; /* Фиксированная высота трека */

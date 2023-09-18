@@ -1,3 +1,9 @@
+//Прелоадер
+(function(){
+  const html = document.querySelector('html');
+  html.classList.add('preloager-active')
+}());
+
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -121,144 +127,15 @@ const saleId = document.getElementById('saleId')
 const menuTitle = document.querySelector('#title-menu')
 
 // Массив с URL-адресами страниц для загрузки
-let vitamin = [
-  "goods/vitamins/1.html",
-  "goods/vitamins/2.html",
-  "goods/vitamins/3.html",
-  "goods/sale/1.html",
-  "goods/vitamins/4.html",
-  "goods/vitamins/5.html",
-  "goods/vitamins/6.html",
-  "goods/vitamins/7.html",
-  "goods/vitamins/8.html",
-  "goods/vitamins/9.html",
-  "goods/vitamins/10.html",
-  "goods/vitamins/11.html",
-  "goods/vitamins/12.html",
-];
 
-let antiox = [
-  "goods/antioxidants/1.html",
-];
 
-let mineral = [
-  "goods/minerals/1.html",
-  "goods/minerals/2.html",
-  "goods/minerals/3.html",
-  "goods/minerals/4.html",
-  "goods/minerals/5.html",
-];
 
-let pain = [
-  "goods/pain/1.html",
-];
 
-let prenatal = [
-  "goods/prenatal/1.html",
-];
 
-let probiotic = [
-  "goods/probiotics/1.html",
-];
 
-let sale = [
-  "goods/sale/1.html",
-];
-
-let weight = [
-  "goods/weight/1.html",
-]
-
-let AllGoods = [
-  "goods/vitamins/1.html",
-  "goods/vitamins/2.html",
-  "goods/vitamins/3.html",
-  "goods/vitamins/4.html",
-  "goods/weight/1.html",
-  "goods/vitamins/5.html",
-  "goods/sale/1.html",
-  "goods/minerals/1.html",
-  "goods/minerals/2.html",
-  "goods/minerals/3.html",
-  "goods/vitamins/6.html",
-  "goods/vitamins/7.html",
-  "goods/minerals/4.html",
-  "goods/vitamins/8.html",
-  "goods/vitamins/9.html",
-  "goods/minerals/5.html",
-  "goods/vitamins/10.html",
-  "goods/vitamins/11.html",
-  "goods/antioxidants/1.html",
-  "goods/probiotics/1.html",
-  "goods/vitamins/12.html",
-  "goods/pain/1.html",
-  "goods/prenatal/1.html",
-];
-
-// Функция для загрузки каждой страницы из массива
-function loadPages(urls) {
-  if(urls.length > 6){
-    loadBtn.classList.add('btn-active')
-  }
-  var loadedPages = 0;
-  // Функция для обработки успешно загруженных страниц
-  function onPageLoad() {
-    loadedPages++;
-  }
-  function sendRequest(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var response = xhr.responseText;
-        document.getElementById("goods").innerHTML += response;
-        onPageLoad();
-      }
-    };
-    xhr.open("GET", url, true); 
-    xhr.send();
-  }
-  let number = 23
-  if (window.innerWidth <= 350) {
-    number = 4
-  } else if (window.innerWidth <= 768){
-    number = 6
-  }
-  let count = 6;
-  loadBtn.onclick = function (){
-    for (var i = 0; i < 6; i++) {
-      if(count+i < urls.length){
-        let index = count+i;
-        sendRequest(urls[index]);
-        console.log(count >= (urls.length - 6))
-        if(count >= (urls.length - 6)){
-          loadBtn.classList.remove('btn-active')
-        }
-      }
-    }
-    count = count + 6;
-  }
-
-  // Цикл для загрузки каждой страницы
-  if(urls.length > number){
-    for (var i = 0; i < number; i++) {
-      sendRequest(urls[i]);
-    }
-    loadBtn.classList.add('btn-active')
-  } else {
-    for (var i = 0; i < urls.length; i++) {
-      sendRequest(urls[i]);
-    }
-    loadBtn.classList.remove('btn-active')
-  }
-
-}
-
-// Вызываем функцию загрузки страниц
-loadPages(AllGoods);
 
 function addAllGoods(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(AllGoods);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -269,18 +146,15 @@ function addAllGoods(){
 }
 function vitam(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(vitamin);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
   });
   vitamins.classList.add('active')
-  menuTitle.innerHTML = vitamins.innerText;
   menuTitle.style.color = '#000000';
 }
 function weights(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(weight);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -291,7 +165,6 @@ function weights(){
 }
 function mineralFun(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(mineral);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -302,7 +175,6 @@ function mineralFun(){
 }
 function probiot(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(probiotic);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -313,7 +185,6 @@ function probiot(){
 }
 function antioxid(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(antiox);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -324,7 +195,6 @@ function antioxid(){
 }
 function painFun(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(pain);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -335,7 +205,6 @@ function painFun(){
 }
 function prenatalFun(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(prenatal);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -346,7 +215,6 @@ function prenatalFun(){
 }
 function saleFun(){
   document.getElementById("goods").innerHTML = '';
-  loadPages(sale);
   const activeElements = document.querySelectorAll('.active');
   activeElements.forEach(element => {
     element.classList.remove('active');
@@ -388,6 +256,5 @@ setTimeout(function(){
   }else if(filerFun == 9){
       saleFun()
   }
-  localStorage.setItem('filerFun', 0);
 }, 200);
 

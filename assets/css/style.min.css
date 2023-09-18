@@ -55,20 +55,20 @@ body {
   animation: shake 0.5s ease-in-out;
 }
 
-/* Стили полосы прокрутки в Google Chrome и Safari */
-::-webkit-scrollbar {
+.non-touch-device {
+  /* Стили полосы прокрутки в Google Chrome и Safari */
+  /* Стили ползунка (бегунка) полосы прокрутки */
+  /* Стили трека (фона) полосы прокрутки */
+}
+.non-touch-device::-webkit-scrollbar {
   width: 13px; /* Установите нужную ширину */
 }
-
-/* Стили ползунка (бегунка) полосы прокрутки */
-::-webkit-scrollbar-thumb {
+.non-touch-device::-webkit-scrollbar-thumb {
   background-color: #6E5DDC; /* Цвет ползунка */
   border-radius: 5px; /* Закругление углов ползунка */
   cursor: pointer; /* Добавление указателя при наведении на ползунок */
 }
-
-/* Стили трека (фона) полосы прокрутки */
-::-webkit-scrollbar-track {
+.non-touch-device::-webkit-scrollbar-track {
   background-color: #f1f1f1; /* Цвет фона трека */
 }
 

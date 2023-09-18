@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="description" content="Метаописание">
     <link rel="icon" type="image/png" href="/dist/assets/images/svg/header-icon.svg">
-    <link rel="stylesheet" href="../../assets/css/reset.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.min.css">
-    <link rel="stylesheet" href="../../assets/css/component/small-component.min.css">
-    <link rel="stylesheet" href="../../assets/css/component/header.min.css">
-    <link rel="stylesheet" href="../../assets/css/component/basket-produst.min.css">
-    <link rel="stylesheet" href="../../assets/css/component/footer.min.css">
-    <link rel="stylesheet" href="../../assets/css/component/product.min.css">
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/component/small-component.min.css">
+    <link rel="stylesheet" href="assets/css/component/header.min.css">
+    <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
+    <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/component/product.min.css">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="../../assets/css/pages/goods_card.min.css">
+    <link rel="stylesheet" href="assets/css/pages/goods_card.min.css">
     <link rel="stylesheet" href="">
     
     <!-- Useful meta tags -->
@@ -154,13 +154,13 @@
                 <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
             </div>
         </div>
-    </header>
-    <main>
-        <div class="item" data-id="6">
+    </header><div class="preloager"><span></span></div>
+    <main id="main">
+        <div class="item" data-id="2">
             <div class="item__image">
                 <picture>
-                    <source srcset="https://artemkliuiev.github.io/dist/assets/images/goods__big-size/6.webp" type="image/webp">
-                    <img src="https://artemkliuiev.github.io/dist/assets/images/goods__big-size/6.png" alt="Описание изображения">
+                    <source id="srcImg" srcset="" type="image/webp">
+                    <img id="img" src="" alt="img">
                 </picture>
                 <svg xmlns="http://www.w3.org/2000/svg" width="149" height="150" viewBox="0 0 149 150" fill="none">
                     <path d="M20 149.314C20 77.9479 77.7553 20.094 149 20.094" stroke="#FACC88" stroke-width="40"/>
@@ -168,8 +168,8 @@
             </div>
             <div class="item__main">
                 <div class="item__setting">
-                    <div class="item__type vitamin">Vitamins & Dietary Supplements</div>
-                    <div class="item__name">Ortho Molecular - Reacted Magnesium</div>
+                    <div class="item__type" id="type"></div>
+                    <div class="item__name" id="name"></div>
                     <div class="item__line"></div>
                     <div class="item__quantity">
                         <div class="item__quantity-icon">
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <div class="item__button-row">
-                            <div class="item__price">$61.98</div>
+                            <div class="item__price">$<span id="price"></span></div>
                             <div class="item__btn">
                                 <div id="add-item-btn" class="oval-button">Add to cart</div>
                             </div>
@@ -238,27 +238,27 @@
                 </div>
                 <div class="item__description">
                     <div class="item__description-title">Description</div>
-                    <div class="item__description-info">500-C Methoxyflavone is a synergistic formula that features a specialized complex of bioflavonoids combined with vitamin C.*</div>
+                    <div class="item__description-info" id="description"></div>
                     <ul class="item__description-list">
-                        <li class="item__description-item">Citrus bioflavonoid complex</li>
-                        <li class="item__description-item">Provides potent antioxidant protection and supports healthy immune system function*</li>
-                        <li class="item__description-item">Supports healthy collagen production, the main component of connective tissue*</li>
-                        <li class="item__description-item">This product is non-GMO, gluten free, and vegetarian</li>
+                        <li class="item__description-item" id="li-1"></li>
+                        <li class="item__description-item" id="li-2"></li>
+                        <li class="item__description-item" id="li-3"></li>
+                        <li class="item__description-item" id="li-4"></li>
                     </ul>
                     <div class="item__important-main-title">Important information</div>
                     <div class="item__important">
                         <div class="item__important-title item__important-title1">Safety information</div>
-                        <div class="item__important-text item__important-text1">Keep out of the reach of children.</div>
+                        <div class="item__important-text item__important-text1" id="info-1"></div>
                         <div class="item__important-title item__important-title2">Indications</div>
-                        <div class="item__important-text item__important-text2">Deficient or weak Immune System Function</div>
+                        <div class="item__important-text item__important-text2" id="info-2"></div>
                         <div class="item__important-title item__important-title3">Ingredients</div>
-                        <div class="item__important-text item__important-text3">Vitamin C (as ascorbic acid), Citrus Bioflavonoid Complex [standardized to 45% (225 mg) bioflavonoids: hesperidin and other naturally occurring phenolic compounds]. Other Ingredients: Cellulose, silica, stearic acid (vegetable), croscarmellose sodium, magnesium stearate (vegetable), and coating (hypromellose, medium chain triglycerides, and hydroxypropylcellulose).</div>
+                        <div class="item__important-text item__important-text3" id="info-3"></div>
                         <div class="item__important-title item__important-title4">Directions</div>
-                        <div class="item__important-text item__important-text4">Take one tablet daily or as directed by your healthcare practitioner.</div>
+                        <div class="item__important-text item__important-text4" id="info-4"></div>
                         <div class="item__important-title item__important-title5">Legal Disclaimer</div>
                         <div class="item__important-text item__important-text5">
-                            <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-                            <p>Statements regarding dietary supplements have not been evaluated by the FDA and are not intended to diagnose, treat, cure, or prevent any disease or health condition.</p>
+                            <p id="info-5-1"></p>
+                            <p id="info-5-2"></p>
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
     <footer class="footer">
         <div class="footer__main">
             <div class="footer__logo">
-                <img src="../../assets/images/svg/header-icon.svg" alt="">
+                <img src="assets/images/svg/header-icon.svg" alt="">
             </div>
             <div class="footer__info"><span>© 2020 Vitamins.com / All rights reserved</span></div>
             <div class="footer__shop">
@@ -299,8 +299,8 @@
             <div class="footer__contact">
                 <div class="footer__contact-title footer__title">Contact</div>
                 <a href="/dist/text-sample.html" class="footer__contact-link footer__link">support@medstogo.com</a>
-                <a href="/dist/text-sample.html" class="footer__contact-link"><img src="../../assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
-                <a href="/dist/text-sample.html" class="footer__contact-link"><img src="../../assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
+                <a href="/dist/text-sample.html" class="footer__contact-link"><img src="assets/images/svg/f-b.svg" alt=""><span>Facebook</span></a>
+                <a href="/dist/text-sample.html" class="footer__contact-link"><img src="assets/images/svg/insta.svg" alt=""><span>Instagram</span></a>
             </div>
         </div>
     </footer>
@@ -308,11 +308,11 @@
     
 
     <script src=""></script>
-    <script defer src="../../assets/js/app.js"></script>
-    <script src="../../assets/js/goods__items.js"></script>
-    <script defer src="../../assets/js/basket-goods.js"></script>
+    <script defer src="assets/js/app.js"></script>
+    <script src="assets/js/goods__items.js"></script>
+    <script defer src="assets/js/basket-goods.js"></script>
     <script type="module" src="" ></script>
     <script type="module" src="" ></script>
-    <script type="module" src="" ></script>
+    <script type="module" src="assets/js/goods-items-firebase.js" ></script>
 </body>
 </html>
