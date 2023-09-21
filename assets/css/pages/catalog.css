@@ -108,6 +108,8 @@
 }
 
 .swiper {
+  position: relative;
+  z-index: 3;
   margin: 77px auto 0;
   height: 100%;
   width: 100%;
@@ -403,6 +405,8 @@
   grid-column: 2;
 }
 .goods__menu-main {
+  position: relative;
+  z-index: 2;
   -ms-flex-align: center;
       align-items: center;
   margin-top: 17px;

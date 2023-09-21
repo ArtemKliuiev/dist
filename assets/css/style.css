@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 @font-face {
   font-family: "Effra";
@@ -67,21 +66,16 @@ body {
           animation: shake 0.5s ease-in-out;
 }
 
-.non-touch-device {
-  /* Стили полосы прокрутки в Google Chrome и Safari */
-  /* Стили ползунка (бегунка) полосы прокрутки */
-  /* Стили трека (фона) полосы прокрутки */
-}
 .non-touch-device::-webkit-scrollbar {
-  width: 13px; /* Установите нужную ширину */
+  width: 13px;
 }
 .non-touch-device::-webkit-scrollbar-thumb {
-  background-color: #6E5DDC; /* Цвет ползунка */
-  border-radius: 5px; /* Закругление углов ползунка */
-  cursor: pointer; /* Добавление указателя при наведении на ползунок */
+  background-color: #6E5DDC;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .non-touch-device::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Цвет фона трека */
+  background-color: #f1f1f1;
 }
 
 .title {

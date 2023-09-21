@@ -180,30 +180,37 @@ let newOrderData = {
 };
 
 //Активации кнопки сохранить
-let btnInfo = {
-    firstName: '',
-    lastName: '',
-    adressOne: '',
-    city: '',
-    region: '',
-    indexLocation: '',
-    email: '',
-    phoneNumber: '',
-};
-// Проверка для активации кнопки
+
+
 function forSaveBtnActive(orderDataObj) {
     for (const key in orderDataObj) {
         if (orderDataObj.hasOwnProperty(key) && orderDataObj[key] === '') {
+            console.log(orderDataObj[key])
             return false; 
         }
     }
     return true; 
 };
 function btnActiva(){
-    if(forSaveBtnActive(btnInfo)){
-        saveBtn.classList.add('active-btn');
-    }else{
+    let btnInfo = {
+        firstName: inputFirstName.value,
+        lastName: inputLastName.value,
+        adressOne: inputAdressOne.value,
+        city: inputCity.value,
+        indexLocation: inputRegNum.value,
+        email: inputEmail.value,
+        phoneNumber: inputPhone.value,
+    };
+    let emptyProperties = [];
+    for (let key of Object.keys(btnInfo)) {
+        if (btnInfo[key] === '') {
+            emptyProperties.push(key);
+        }
+    }
+    if (emptyProperties.length > 0) {
         saveBtn.classList.remove('active-btn');
+    } else {
+        saveBtn.classList.add('active-btn');
     }
 };
 // Данные оплаты
@@ -212,20 +219,26 @@ let payInfo = {
     cardDataNumber: '',
     cardDataCVC: '',
 };
-//Активации кнопки сохранить реквизиты
-let btnPayInfo = {
-    cardNumber: '',
-    cardDataNumber: '',
-    cardDataCVC: '',
-};
+
 
 // Проверка для активации кнопки
 function btnSavePayActiva(){
-    console.log(payInfo, 'payInfo')
-    if(forSaveBtnActive(btnPayInfo)){
-        paySaveBtn.classList.add('active-btn');
-    }else{
+    console.log(123)
+    let btnPayInfo = {
+        cardNumber: cardNum.value,
+        cardDataNumber: inputCardData.value,
+        cardDataCVC: inputCardCVC.value,
+    };
+    let emptyProperties = [];
+    for (let key of Object.keys(btnPayInfo)) {
+        if (btnPayInfo[key] === '') {
+            emptyProperties.push(key);
+        }
+    }
+    if (emptyProperties.length > 0) {
         paySaveBtn.classList.remove('active-btn');
+    } else {
+        paySaveBtn.classList.add('active-btn');
     }
 };
 
@@ -416,39 +429,33 @@ function ExaminationCardCVC(){
     }
 };
 
-//События для удвления ошиюок о неправильнном вводе и активации кнопки сохранить
 inputFirstName.addEventListener("input", function(){
     errorFirstName.innerHTML = '';
     inputFirstName.classList.remove('input-active');
-    btnInfo.firstName = inputFirstName.value;
     btnActiva();
 });
 
 inputLastName.addEventListener("input", function(){
     errorLastName.innerHTML = '';
     inputLastName.classList.remove('input-active');
-    btnInfo.lastName = inputLastName.value;
     btnActiva();
 });
 
 inputAdressOne.addEventListener("input", function(){
     errorAdressOne.innerHTML = '';
     inputAdressOne.classList.remove('input-active');
-    btnInfo.adressOne = inputAdressOne.value;
     btnActiva();
 });
 
 inputAdressTwo.addEventListener("input", function(){
     errorAdressTwo.innerHTML = '';
     inputAdressTwo.classList.remove('input-active');
-    btnInfo.adressTwo = inputAdressTwo.value;
     btnActiva();
 });
 
 inputCity.addEventListener("input", function(){
     errorCity.innerHTML = '';
     inputCity.classList.remove('input-active');
-    btnInfo.city = inputCity.value;
     btnActiva();
 });
 
@@ -456,21 +463,18 @@ inputCity.addEventListener("input", function(){
 inputRegNum.addEventListener("input", function(){
     errorRegNum.innerHTML = '';
     inputRegNum.classList.remove('input-active');
-    btnInfo.indexLocation = inputRegNum.value;
     btnActiva();
 });
 
 inputEmail.addEventListener("input", function(){
     errorEmail.innerHTML = '';
     inputEmail.classList.remove('input-active');
-    btnInfo.email = inputEmail.value;
     btnActiva();
 });
 
 inputPhone.addEventListener("input", function(){
     errorPhone.innerHTML = '';
     inputPhone.classList.remove('input-active');
-    btnInfo.phoneNumber = inputPhone.value;
     btnActiva();
 });
 
@@ -484,47 +488,36 @@ inputCountry.addEventListener("input", function(){
 cardNum.addEventListener("input", function(){
     errorCardNum.innerHTML = '';
     cardNum.classList.remove('input-active');
-    btnPayInfo.cardNumber = cardNum.value
     btnSavePayActiva()
 });
 
 inputCardData.addEventListener("input", function(){
     errorCardData.innerHTML = '';
     inputCardData.classList.remove('input-active');
-    btnPayInfo.cardDataNumber = inputCardData.value;
     btnSavePayActiva()
 });
 
 inputCardCVC.addEventListener("input", function(){
     errorCardCVC.innerHTML = '';
     inputCardCVC.classList.remove('input-active');
-    btnPayInfo.cardDataCVC = inputCardCVC.value;
     btnSavePayActiva()
 });
 
-//Функция которая разделяет пробеллом цыфры при вводе данных (реквизиты карточки - номер)
 cardNum.addEventListener("input", function (event) {
     const input = event.target;
-    let cardNumber = input.value.replace(/\s/g, ""); // Удаление существующих пробелов
-
-    // Разбиение номера карты на блоки по 4 цифры с добавлением пробелов
+    let cardNumber = input.value.replace(/\s/g, ""); 
     const formattedCardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ");
     input.value = formattedCardNumber;
     btnActiva();
 });
 
-//Функция которая разделяет пробеллом цыфры при вводе данных (реквизиты карточки - дата)
 inputCardData.addEventListener("input", function (event) {
     const input = event.target;
-    let cardNumber = input.value.replace(/[/]/g, ""); // Удаление существующих слешей
-
-    // Разбиение номера карты на блоки по 2 цифры с добавлением слешей
+    let cardNumber = input.value.replace(/[/]/g, ""); 
     const formattedCardData = cardNumber.replace(/(\d{2})(?=\d)/g, "$1/");
     input.value = formattedCardData;
 });
 
-
-//Функция проверки всех волей ввода данных пользователя
 function orderBtn() {
     ExaminationFirstName();
     ExaminationLastName();
@@ -537,7 +530,6 @@ function orderBtn() {
     ExaminationSelect();
 }
 
-//Функция проверки всех волей ввода платежных данных
 function paySaveBtnFunc() {
     ExaminationCardNumber();
     ExaminationCardData();
@@ -549,7 +541,6 @@ function paySaveBtnFunc() {
     }
 };
 
-//Кастумный option
 function castumSel(num){
     errorCountry.innerHTML = ''
     inputCountry.classList.remove('input-active')
@@ -587,7 +578,6 @@ function loadGoodsAjax(url){
     xhrProfile.send();
 };
 
-//Функция которая считывает данные с кэша браузера, о том какие ссылки на товары нужно передать для загрузки через Ajax
 (function(){
     const localInfo = JSON.parse(localStorage.getItem('goods'));
     if(localInfo !== null){
