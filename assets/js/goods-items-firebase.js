@@ -20,30 +20,27 @@ const auth = getAuth(app);
 
 
 // Проверка аутентификации при загрузке страницы
-var userEmail = null;
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // Аутентификация прошла успешно, отображаем email пользователя на странице
-        userEmail = user.email;
-        loadAllGoods()
-    } else {
-        // Пользователь не аутентифицирован, перенаправляем его на страницу входа
-        window.location.href = "/dist/sing-in/input.html";
-    }
-});
+// var userEmail = null;
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//         // Аутентификация прошла успешно, отображаем email пользователя на странице
+//         userEmail = user.email;
+//         loadAllGoods()
+//     } else {
+//         // Пользователь не аутентифицирован, перенаправляем его на страницу входа
+//         window.location.href = "/dist/sing-in/input.html";
+//     }
+// });
 
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
+
 
 const productCardsContainer = document.getElementById('productCards');
 let goods;
 function loadAllGoods(){
-    console.log(userEmail);
     const database = getDatabase(app);
     const userRef = ref(database, `goodInfo`);
     get(userRef)
     .then((snapshot) => {
-        if (snapshot.exists()) {
             goods = snapshot.val();
             //Поиск текущего товара
             const thisItem = goods.filter(function(item){
@@ -62,18 +59,15 @@ function loadAllGoods(){
                 }
               }
             goodsLoad(goodsArr);
-        } else {
-            console.log("Данные не найдены");
-        }
     })
     .catch((error) => {
         console.error("Ошибка при получении данных:", error);
     });
 };
+loadAllGoods()
 
 function goodsLoad(arr){
     arr.forEach(function(item){
-        console.log(item)
         let type = '';
         if(item.type === 'Vitamins & Dietary Supplements'){
             type = 'vitamin';
@@ -115,7 +109,7 @@ function goodsInfo(obj){
   const srcImg = document.getElementById('srcImg');
   const type = document.getElementById('type');
   const name = document.getElementById('name');
-  const price = document.getElementById('price');
+  const price = document.getElementById('priceItem');
   const description = document.getElementById('description');
   const li1 = document.getElementById('li-1');
   const li2 = document.getElementById('li-2');
@@ -166,5 +160,10 @@ function goodsInfo(obj){
 
   const html = document.querySelector('html');
   html.classList.remove('preloager-active')
+
+  if(obj.sale){
+    const main = document.querySelector('main');
+    main.classList.add('sale-info')
+  }
 }
 

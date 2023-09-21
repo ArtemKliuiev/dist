@@ -110,6 +110,8 @@ setTimeout(function(){
             historyOrderInfo();
         } else {
             console.log("Данные не найдены");
+            document.querySelector('.profile').classList.add('subscriptions-no-empty');
+            document.querySelector('.profile').classList.add('no-empty-order');
         }
     })
     .catch((error) => {
@@ -513,8 +515,6 @@ setTimeout(function(){
             labelForCVC.innerHTML = labelForCVC.value
         } else {
             console.log("Данные не найдены + s");
-            document.querySelector('.profile').classList.add('subscriptions-no-empty');
-            document.querySelector('.profile').classList.add('no-empty-order');
         }
     })
     .catch((error) => {

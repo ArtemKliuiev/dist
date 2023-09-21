@@ -16,8 +16,15 @@ const checkRowItem = document.querySelector('.item__check-row');
 const checkRowItemLabel = document.querySelectorAll('.item__check-row label');
 const checkbox = document.querySelector('.apple-switch');
 const checkRow = document.querySelector(".item__check-row");
+const img = document.getElementById('img');
+const srcImg = document.getElementById('srcImg');
 
 let sale = thisCardId === 7;
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
+
+
 
 //Прелоадер
 (function(){
@@ -48,7 +55,6 @@ function decreaseNumber() {
       removeBtn.classList.remove('opacity')
     }
   }
-  numberRes = parseInt(numberElement.textContent);
 };
 
 function increaseNumber() {
@@ -58,29 +64,9 @@ function increaseNumber() {
   if(currentValue > 0){
     removeBtn.classList.add('opacity')
   }
-  numberRes = parseInt(numberElement.textContent);
 };
 attachEventHandlers();
 
-//Тип товара
-let thisItemType = '';
-(function(){
-  if(itemType.textContent === 'Vitamins & Dietary Supplements'){
-    thisItemType = 'bg-basket-item__vitamin';
-  }else if(itemType.textContent === 'Antioxidants'){
-    thisItemType = 'bg-basket-item__antiox';
-  }else if(itemType.textContent === 'Minerals'){
-    thisItemType = 'bg-basket-item__mineral';
-  }else if(itemType.textContent === 'Pain Relief'){
-    thisItemType = 'bg-basket-item__pain';
-  }else if(itemType.textContent === 'Prenatal Vitamins'){
-    thisItemType = 'bg-basket-item__prenatal';
-  }else if(itemType.textContent === 'Probiotics'){
-    thisItemType = 'bg-basket-item__probiotics';
-  }else if(itemType.textContent === 'Weight Loss'){
-    thisItemType = 'bg-basket-item__weight';
-  }
-}());
 
 //Касиумный Оптион
 selectedOptionWrapper.addEventListener('click', function() {
@@ -94,6 +80,14 @@ checkRowItemLabel.forEach(function(label){
   label.addEventListener('click', function(){
     checkRowItem.classList.toggle('list-active');
   });
+  }
+});
+
+checkbox.addEventListener('change', function(){
+  if (checkbox.checked){
+    checkRow.classList.add("opacity-check-row"); 
+  }else{
+    checkRow.classList.remove("opacity-check-row"); 
   }
 });
 
@@ -123,13 +117,13 @@ document.addEventListener('click', function(event) {
 
 
 //
-let arr = [];
+let products = [];
 let localStorageArr = JSON.parse(localStorage.getItem('itemGoods'));
 if(localStorageArr != null){
-  arr = localStorageArr
+  products = localStorageArr
 };
 
-//Текуща дата
+//Текуща дата arr
 const currentDate = new Date();
 const year = currentDate.getFullYear();
 const month = currentDate.getMonth() + 1;
@@ -140,50 +134,59 @@ const seconds = currentDate.getSeconds();
 const infoDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
 
 btnAddItem.addEventListener('click', function(){
-  const findId = arr.find(function(item){
-  return item.id === thisCardId;
+  //Тип товара
+  let thisItemType = '';
+  (function(){
+    if(itemType.textContent === 'Vitamins & Dietary Supplements'){
+      thisItemType = 'bg-basket-item__vitamin';
+    }else if(itemType.textContent === 'Antioxidants'){
+      thisItemType = 'bg-basket-item__antiox';
+    }else if(itemType.textContent === 'Minerals'){
+      thisItemType = 'bg-basket-item__mineral';
+    }else if(itemType.textContent === 'Pain Relief'){
+      thisItemType = 'bg-basket-item__pain';
+    }else if(itemType.textContent === 'Prenatal Vitamins'){
+      thisItemType = 'bg-basket-item__prenatal';
+    }else if(itemType.textContent === 'Probiotics'){
+      thisItemType = 'bg-basket-item__probiotics';
+    }else if(itemType.textContent === 'Weight Loss'){
+      thisItemType = 'bg-basket-item__weight';
+    }
+  }());
+  const findId = products.find(function(item){
+    return item.id == productId;
   });
+
+
   if(!findId){
-    arr.push({
-      id: thisCardId,
-      imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
-      imageSrcPng: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.png`, 
+    products.push({
+      id: productId,
+      imageSrc: srcImg.srcset , 
+      imageSrcPng: img.src, 
       type: thisItemType, 
       name: itemName.textContent, 
-      price: itemPrice.textContent, 
+      price: itemPrice.textContent.replace('$', ''), 
       quantity: number.textContent,
       checkbox: check.checked,
       days: selectedOption.textContent,
       sale: sale,
       data: infoDate,
-      thisItemUrl: currentURL,
+      thisItemUrl: `${currentURL}?id=${productId}`,
     });
   }else{
-    for(i=0;i < arr.length; i++){
-      if(arr[i].id === thisCardId){
-        arr[i] = {
-          id: thisCardId,
-          imageSrc: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.webp`, 
-          imageSrcPng: `https://artemkliuiev.github.io/dist/assets/images/goods/${thisCardId}.png`, 
-          type: thisItemType, 
-          name: itemName.textContent, 
-          price: itemPrice.textContent, 
-          quantity: number.textContent, 
-          checkbox: check.checked,
-          days: selectedOption.textContent,
-          sale: sale,
-          data: infoDate,
-          thisItemUrl: currentURL,
-        }
+    for(i=0;i < products.length; i++){
+      if(products[i].id == productId){
+        products[i].quantity = parseFloat(products[i].quantity) + parseFloat(number.textContent);
+        products[i].days = selectedOption.textContent;
+        products[i].checkbox = check.checked;
       }
     }
   }
-  console.log(arr);
   localStorageGoods()
 });
 //Локальное хранилище
 function localStorageGoods() {
-  localStorage.setItem('itemGoods', JSON.stringify(arr));
+  localStorage.setItem('itemGoods', JSON.stringify(products));
 };
-console.log(arr);
+
 

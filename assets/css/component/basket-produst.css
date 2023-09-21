@@ -65,7 +65,7 @@
   grid-row: 3;
   display: grid;
   align-items: center;
-  grid-template: 1fr/auto minmax(10px, 1fr) 57px 6px;
+  grid-template: 1fr/auto minmax(10px, 1fr) auto 6px;
 }
 .basket-product__add-btn {
   grid-row: 1;
@@ -257,8 +257,8 @@
       justify-content: center;
 }
 
-.opacity .item__btn-decrease rect {
-  opacity: 1;
+.opacity .item__btn-decrease {
+  opacity: 0.5;
 }
 
 input[type=checkbox], input[type=radio] {

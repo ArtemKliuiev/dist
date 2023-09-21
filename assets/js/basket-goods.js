@@ -1,31 +1,12 @@
 const btnAddGoods = document.querySelector('#add-item-btn');
 const basketTotalPrice = document.querySelector('#basket-total-price');
 const productsContainer = document.querySelector('#basket-goods');
-let products = [];
 
-function allPrice(){
-    const allPrices = document.querySelectorAll('.basket-product__price');
-    let thisTotalPrice = 0;
-    if(products.length >= 1){
-        allPrices.forEach(function(onePrice){
-            let thisPrice = parseFloat( onePrice.textContent.replace("$", ""));
-            thisTotalPrice += thisPrice;
-        });
-        basketTotalPrice.innerHTML = `$${thisTotalPrice.toFixed(2)}`
-    }else{
-        basketTotalPrice.innerHTML = `$0.00`
-    }
-};
-
-//Локальное хранилище
-function localStorageBasketGoods() {
-    localStorage.setItem('itemGoods', JSON.stringify(products));
-};
 
 // function goodsAdd(){
-function addGoods(){
+function addGoods(productsArr){
     productsContainer.innerHTML = ''
-    products.forEach(product => { 
+    productsArr.forEach(product => { 
         const productHTML = `         
             <style>
                 .opacity{
@@ -70,7 +51,7 @@ function addGoods(){
                             </div>
                         </div>
                     </div>
-                    <div id="price" data-price= "${product.price}" class="basket-product__price">${product.price}</div>
+                    <div id="price" data-price= "${product.price}" class="basket-product__price">$${product.price}</div>
                 </div>
                 <div class="basket-product__setting-row">
                     <div class="basket-product__castum-check">
@@ -105,89 +86,84 @@ function addGoods(){
             const optionLi = thisProduct.querySelectorAll('.li');
             const castumOption = thisProduct.querySelector('.custom-select-basket');
             const thisBreak = thisProduct.querySelector('.basket-product__break');
-            const castumOptionAll = document.querySelectorAll('.custom-select-basket');
             const option = thisProduct.querySelector('#custom-select');
             const decreaseButtons = thisProduct.querySelector(".decrease");
             const increaseButtons = thisProduct.querySelector(".increase");
             const removeBtn = thisProduct.querySelector('.decreaseButton-remove');
-            let number = parseFloat(thisProduct.querySelector(".number").textContent) ;
-            let totalNumber = thisProduct.querySelector(".number");
-            let price = thisProduct.querySelector('#price');
-            const dataPrice = parseFloat(price.getAttribute("data-price").replace("$", ""));
+            const totalNumber = thisProduct.querySelector(".number");
+            const price = thisProduct.querySelector('#price');
+            const dataPrice = parseFloat(price.getAttribute("data-price"));
             const check = thisProduct.querySelector('.checkbox');
             const exitCard = thisProduct.querySelector('.basket-product__exit');
+
             if(${product.checkbox}){
                 check.checked = true;
-            };
-            let indexThisObj = products.findIndex(function(obj){
-                return obj.id === ${product.id};
-            });
-            function optionFunc(num){
-                option.innerHTML = num;
-                if (indexThisObj !== -1) {
-                    products[indexThisObj].days = num;
-                    localStorageBasketGoods();
+            }
+
+            decreaseButtons.addEventListener('click', function(){
+                if(parseFloat(totalNumber.innerHTML) > 1){
+                    totalNumber.innerHTML = parseFloat(totalNumber.innerHTML) - 1;
                 }
-            };
-            optionLi.forEach(function(btn,index){
-                btn.addEventListener('click', function(){
-                    optionFunc(optionLi[index].textContent)
-                });
-            });
-            //кнопки + -
-            (function(){
-                if(number < 2){
+                changeInfo();
+            });  
+            increaseButtons.addEventListener('click', function(){
+                totalNumber.innerHTML = parseFloat(totalNumber.innerHTML) + 1;
+                changeInfo();
+            });  
+            function opacityBtn(){
+                if(parseFloat(totalNumber.innerHTML) < 2){
                     decreaseButtons.classList.add('opacity')
                 }else{
                     decreaseButtons.classList.remove('opacity')
-                } 
-            }());
-            decreaseButtons.addEventListener('click', function(){
-                if(number < 2){
-                    decreaseButtons.classList.add('opacity')
-                }else{
-                    number -= 1; 
-                    if(number < 2){
-                        decreaseButtons.classList.add('opacity')
-                    }
                 }
-                totalNumber.innerHTML = number;
-                totalPrice();
-            });
-            increaseButtons.addEventListener('click', function(){
-                number += 1; 
-                decreaseButtons.classList.remove('opacity')
-                totalNumber.innerHTML = number;
-                totalPrice();
-                if (indexThisObj !== -1) {
-                    products[indexThisObj].quantity = number;
-                    localStorageBasketGoods();
+            }
+            function priceInfo(){
+                price.innerHTML = '$' + (dataPrice * parseFloat(totalNumber.innerHTML)).toFixed(2);
+            }
+
+            document.addEventListener('click', function(event) {
+                if (!castumOption.contains(event.target)) {
+                    castumOption.classList.remove('list-active');
                 }
             });
-            function totalPrice(){
-                const totalPrice = dataPrice * number;
-                price.innerHTML = '$' +  totalPrice.toFixed(2);
-                allPrice();
-                if (indexThisObj !== -1) {
-                    products[indexThisObj].quantity = number;
-                    localStorageBasketGoods();
-                }
-            };
-            totalPrice();
-            exitCard.addEventListener('click', function(){
-                if (indexThisObj !== -1) {
-                    products.splice(indexThisObj, 1);
-                }
-                localStorageBasketGoods();
-                startLoad();
-                allPrice();
+            castumOption.addEventListener('click', function(){
+                castumOption.classList.toggle('list-active');
             });
-            check.addEventListener("input", function(event) {
-                if (indexThisObj !== -1) {
-                    products[indexThisObj].checkbox = check.checked;
-                    localStorageBasketGoods();
-                }
+
+            optionLi.forEach(function(li){
+                li.addEventListener('click', function(){
+                    option.innerHTML = li.textContent
+                    changeInfo();
+                });
             });
+
+            check.addEventListener('change', function(){
+                changeInfo();
+            });
+
+            let delet = false;
+            exitCard.addEventListener('click', function(event) {
+                delet = true;
+                changeInfo();
+            });
+
+            function changeInfo(){
+                opacityBtn();
+                priceInfo();
+                const eventData = {
+                    id: ${product.id},
+                    checked: check.checked,
+                    quantity: parseFloat(totalNumber.innerHTML),
+                    days: parseFloat(option.innerHTML),
+                    delet: delet,
+                  };
+                  
+                const customEvent = new CustomEvent('myCustomEvent', {
+                    detail: eventData
+                });
+                document.dispatchEvent(customEvent);
+            }
+            changeInfo();
             const outerContainer = document.querySelector('#basket-goods');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -203,43 +179,15 @@ function addGoods(){
               });
               
               observer.observe(thisBreak);
-            }());
+        }());
         `;
         productsContainer.insertAdjacentHTML('beforeend', productHTML); 
         document.body.appendChild(script);
-    });    
-    const scriptTwo = document.createElement('script');
-    scriptTwo.textContent = `
-        const castumOptionAll = document.querySelectorAll('.custom-select-basket');
-        function removeClass(){
-            for(i=0; i < castumOptionAll.length; i++){
-                castumOptionAll[i].classList.remove('list-active');
-            }
-        }
-        castumOptionAll.forEach(function(element) {
-            document.addEventListener('click', function(event){
-                if (element.contains(event.target)) {
-                }else{
-                    element.classList.remove('list-active');
-                }
-            });
-            element.addEventListener('click', function(){
-                if (element.classList.contains('list-active')) {
-                    removeClass();
-                } else {
-                    removeClass();
-                    element.classList.add('list-active');
-                }
-            });
-        });
-    `;
-    document.body.appendChild(scriptTwo);
+    });  
 };
-function startLoad(){
-    let localStorageApp = JSON.parse(localStorage.getItem('itemGoods'));
-    if(localStorageApp != null){
-        products = localStorageApp
-        if(products.length > 0){
+
+function startLoad(itemsArr){
+        if(itemsArr.length > 0){
             document.body.classList.add('not-empty');
             var cartIcon = document.querySelector('.header__basket')
             cartIcon.classList.add('shake');
@@ -249,14 +197,58 @@ function startLoad(){
         }else{
             document.body.classList.remove('not-empty');
         }
-    };
-    addGoods();
+    addGoods(itemsArr);
 };
 
+function localInfoAdd(){
+    const itemGoodsJSON = localStorage.getItem('itemGoods');
+    if (itemGoodsJSON) {
+        products = JSON.parse(itemGoodsJSON)
+        startLoad(products);
+        
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    startLoad();
+    localInfoAdd()
     if(btnAddGoods != null){
-        btnAddGoods.addEventListener('click', startLoad);
+        btnAddGoods.addEventListener('click', localInfoAdd);
     }
 });
 
+function allPrice(){
+    const allPrices = document.querySelectorAll('.basket-product__price');
+    let thisTotalPrice = 0;
+    if(products.length >= 1){
+        allPrices.forEach(function(onePrice){
+            let thisPrice = parseFloat( onePrice.textContent.replace("$", ""));
+            thisTotalPrice += thisPrice;
+        });
+        basketTotalPrice.innerHTML = `$${thisTotalPrice.toFixed(2)}`
+    }else{
+        basketTotalPrice.innerHTML = `$0.00`
+    }
+};
+
+document.addEventListener('myCustomEvent', function(event) {
+    const info = event.detail;
+    const index = products.findIndex(function(obj) {
+        return obj.id == info.id;
+    });
+    products[index].checkbox = info.checked;
+    products[index].quantity = info.quantity
+    products[index].days = info.days;
+
+    if(info.delet){
+        products.splice(index, 1);
+        addGoods(products);
+        startLoad(products);
+    }
+    localStorageBasketGoods();
+    allPrice();
+});
+
+//Локальное хранилище
+function localStorageBasketGoods() {
+    localStorage.setItem('itemGoods', JSON.stringify(products));
+};

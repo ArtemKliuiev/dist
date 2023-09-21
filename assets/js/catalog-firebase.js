@@ -16,72 +16,24 @@ const firebaseConfig = {
 
 // Инициализация Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
-
-// Проверка аутентификации при загрузке страницы
-// var userEmail = null;
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         // Аутентификация прошла успешно, отображаем email пользователя на странице
-//         userEmail = user.email;
-//         console.log(userEmail);
-//         loadAllGoods()
-//     } else {
-//         // // Пользователь не аутентифицирован, перенаправляем его на страницу входа
-//         // window.location.href = "/dist/sing-in/input.html";
-//     }
-// });
-
-let goods;
-// function loadAllGoods(){
-//     const filerFun = localStorage.getItem('filerFun');
-//     console.log(userEmail);
-//     const database = getDatabase(app);
-//     const userRef = ref(database, `goodInfo`);
-//     get(userRef)
-//     .then((snapshot) => {
-//         if (snapshot.exists()) {
-//             goods = snapshot.val();
-//             if(filerFun !== null){
-//                 loadGoodsFilter(parseFloat(filerFun))
-//                 localStorage.setItem('filerFun', 1);
-//             }else{
-//                 loadGoodsFilter(1)
-//             }
-//         } else {
-//             console.log("Данные не найдены");
-//         }
-//     })
-//     .catch((error) => {
-//         console.error("Ошибка при получении данных:", error);
-//     });
-// };
 
 // Функция для загрузки данных
+let goods;
 function loadAllGoods() {
     const filerFun = localStorage.getItem('filerFun');
     const database = getDatabase(app);
     const userRef = ref(database, `goodInfo`);
-    
     get(userRef)
     .then((snapshot) => {
-        if (snapshot.exists()) {
-            goods = snapshot.val();
+        goods = snapshot.val();
             if(filerFun !== null){
                 loadGoodsFilter(parseFloat(filerFun))
                 localStorage.setItem('filerFun', 1);
             }else{
                 loadGoodsFilter(1)
             }
-            console.log("Загруженные данные:", goods);
-        } else {
-            console.log("Данные не найдены");
-        }
     })
-    .catch((error) => {
-        console.error("Ошибка при получении данных:", error);
-    });
 }
 
 // Вызываем функцию для загрузки данных
@@ -89,7 +41,7 @@ loadAllGoods();
 
 function loadGoodsFilter(num){
     let newArr = [];
-    if(num === 1){
+    if(num == 1){
         newArr = goods;
     }else if(num == 2){
         newArr = goods.filter(function(item){
@@ -169,45 +121,17 @@ function loadGoodsFilter(num){
     html.classList.remove('preloager-active')
 }
 
-allGoods.addEventListener('click', function(){
-    loadGoodsFilter(1);
-});
-vitamins.addEventListener('click', function(){
-    loadGoodsFilter(2);
-});
-weightLoss.addEventListener('click', function(){
-    loadGoodsFilter(8)
-});
-minerals.addEventListener('click', function(){
-    loadGoodsFilter(4)
-});
-probiotics.addEventListener('click', function(){
-    loadGoodsFilter(7)
-});
-antioxidants.addEventListener('click', function(){
-    loadGoodsFilter(3)
-});
-painId.addEventListener('click', function(){
-    loadGoodsFilter(5)
-});
-prenatalId.addEventListener('click', function(){
-    loadGoodsFilter(6)
-});
-saleId.addEventListener('click', function(){
-    loadGoodsFilter(9)
+//Табы
+const filterButtons = document.querySelectorAll('.menu-two__item');
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', function () {
+    const filterValue = button.getAttribute('data-filter');
+    loadGoodsFilter(filterValue);
+  });
 });
 
-// const loadBtn =document.querySelector('#loadButton')
-// const allGoods = document.getElementById('allGoods')
-// const vitamins = document.getElementById('vitamins')
-// const weightLoss = document.getElementById('weight-loss')
-// const minerals = document.getElementById('minerals')
-// const probiotics = document.getElementById('probiotics')
-// const antioxidants = document.getElementById('antioxidants')
-// const painId = document.getElementById('painId')
-// const prenatalId = document.getElementById('prenatalId')
-// const saleId = document.getElementById('saleId')
-// const menuTitle = document.querySelector('#title-menu')
+
 
 
 

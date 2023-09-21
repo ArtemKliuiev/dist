@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="assets/css/component/header.min.css">
     <link rel="stylesheet" href="assets/css/component/basket-produst.min.css">
     <link rel="stylesheet" href="assets/css/component/footer.min.css">
+    <link rel="stylesheet" href="assets/css/pages/goods_card.min.css">
     <link rel="stylesheet" href="assets/css/component/product.min.css">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="assets/css/pages/goods_card.min.css">
+    <link rel="stylesheet" href="assets/css/component/goods_card_sale.min.css">
     <link rel="stylesheet" href="">
     
     <!-- Useful meta tags -->
@@ -150,6 +150,7 @@
             <div class="basket__line"></div>
             <div id="basket-goods" class="basket__goods">
             </div>
+            <div class="basket__no-goods-title"><span>Your cart is empty</span></div>
             <div class="basket__btn">
                 <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
             </div>
@@ -229,7 +230,7 @@
                             </div>
                         </div>
                         <div class="item__button-row">
-                            <div class="item__price">$<span id="price"></span></div>
+                            <div class="item__price">$<span id="priceItem"></span></div>
                             <div class="item__btn">
                                 <div id="add-item-btn" class="oval-button">Add to cart</div>
                             </div>

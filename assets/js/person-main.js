@@ -169,7 +169,7 @@ inputCardCVC.addEventListener("input", function(){
 
 // regRex
 const regex = /\d/; 
-const regLetters = /[a-zA-Z]/
+const regLetters = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
 const regEmail = /@/;
 
 //Данные формы
@@ -298,17 +298,16 @@ function ExaminationAdressTwo(){
 function ExaminationCity(){
     dataCity = '';
     newOrderData.city = '';
+    const city = inputCity.value.trim();
+    const cityRegExp = /^[a-zA-Zа-яА-ЯёЁ\-]+$/;
     if(inputCity.value === ''){
         errorCity.innerHTML = 'Required'
         inputCity.classList.add('input-active')
-    }else if(regex.test(inputCity.value)){
+    }else if(cityRegExp.test(city)){
+        newOrderData.city = inputCity.value;
+    }else{
         errorCity.innerHTML = 'Please enter a valid city name'
         inputCity.classList.add('input-active')
-    }else if(inputCity.value.length <= 3){
-        errorCity.innerHTML = 'at least three letters'
-        inputCity.classList.add('input-active')
-    }else{
-        newOrderData.city = inputCity.value;
     }
 };
 
@@ -369,10 +368,16 @@ function ExaminationSelect(){
     }
 };
 
+const thisRegExp = /^[0-9\s]+$/;
+
 function ExaminationCardNumber(){
     payInfo.cardNumber = '';
+    const number = cardNum.value.trim();
     if(cardNum.value === ''){
         errorCardNum.innerHTML = 'Required'
+        cardNum.classList.add('input-active')
+    }else if(!thisRegExp.test(number)){
+        errorCardNum.innerHTML = 'only numbers'
         cardNum.classList.add('input-active')
     }else if(cardNum.value.length < 12 || cardNum.value.length > 20 ){
         errorCardNum.innerHTML = 'Min 12 letters'
@@ -384,8 +389,13 @@ function ExaminationCardNumber(){
 
 function ExaminationCardData(){
     payInfo.cardDataNumber = '';
+    const dataRegExp = /^[0-9\s/]+$/;
+    const number = inputCardData.value.trim();
     if(inputCardData.value === ''){
         errorCardData.innerHTML = 'Required'
+        inputCardData.classList.add('input-active')
+    }else if(!dataRegExp.test(number)){
+        errorCardData.innerHTML = 'only numbers'
         inputCardData.classList.add('input-active')
     }else if(inputCardData.value.length < 3){
         errorCardData.innerHTML = 'Required'
@@ -397,14 +407,15 @@ function ExaminationCardData(){
 
 function ExaminationCardCVC(){
     payInfo.cardDataCVC = '';
+    const number = inputCardCVC.value.trim();
     if(inputCardCVC.value === ''){
         errorCardCVC.innerHTML = 'Required'
         inputCardCVC.classList.add('input-active')
+    }else if(!thisRegExp.test(number)){
+        errorCardCVC.innerHTML = 'Please enter numbers only'
+        inputCardCVC.classList.add('input-active')
     }else if(inputCardCVC.value.length < 3){
         errorCardCVC.innerHTML = 'Required'
-        inputCardCVC.classList.add('input-active')
-    }else if(regLetters.test(inputCardCVC.value)){
-        errorCardCVC.innerHTML = 'Please enter numbers only'
         inputCardCVC.classList.add('input-active')
     }else{
         payInfo.cardDataCVC = inputCardCVC.value;

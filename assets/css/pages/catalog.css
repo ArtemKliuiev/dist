@@ -1,3 +1,54 @@
+.preloager-active .preloager {
+  position: absolute;
+  height: 100%;
+  top: -20px;
+  width: 100%;
+  z-index: 50;
+  background-color: #ffffff;
+}
+.preloager-active .preloager span {
+  width: 40px;
+  height: 40px;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+.preloager-active .preloager span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6E5DDC;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 0.5s linear infinite;
+          animation: spin 0.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .banner {
   margin-top: 32px;
 }
@@ -357,6 +408,7 @@
   margin-top: 17px;
 }
 .goods__goods {
+  position: relative;
   height: 100%;
   grid-row: 2;
   grid-column: 4;
