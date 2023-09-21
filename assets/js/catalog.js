@@ -231,7 +231,7 @@ menuBtn.onclick = function () {
   containerMenu.classList.toggle('adaptive-menu-active');
 };
 function adaptiveBtn() {
-  containerMenu.classList.toggle('adaptive-menu-active');
+  containerMenu.classList.remove('adaptive-menu-active');
 }
 
 //Фильтрация при переходе по ссылке
