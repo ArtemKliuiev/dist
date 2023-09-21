@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .registration {
   position: relative;
   display: grid;
@@ -184,8 +183,6 @@ body {
   height: 36px;
   border-radius: 12px;
   background: #FF7D4E;
-  /* Скрыть стандартный input типа file */
-  /* Стилизуем кастомную кнопку */
 }
 .wholesale-customer .sing-in__permission-btn input[type=file] {
   display: none;

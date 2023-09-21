@@ -1,0 +1,99 @@
+.order-finish {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template: minmax(30px, 1fr) auto 75px auto 13px auto 23px auto 90px auto minmax(30px, 1fr) /minmax(30px, 1fr) minmax(auto, 520px) minmax(30px, 1fr);
+    &__logo {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    &__title {
+        grid-column: 2;
+        grid-row: 4;
+        text-align: center;
+        font-family: Effra;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    &__info {
+        grid-column: 2;
+        grid-row: 6;
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 175% */
+    }
+    &__btn {
+        grid-column: 2;
+        grid-row: 8;
+        width: 330px;
+    }
+    &__text {
+        grid-column: 2;
+        grid-row: 10;
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 0.5;
+        max-width: 490;
+        padding-bottom: 30px;
+    }
+    br{
+        display: none;
+    }
+}
+.oval-button {
+    text-align: center;
+    font-family: Effra;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    height: 65px;
+    line-height: 65px;
+}
+@media (max-width: 500px) {
+    .order-finish {
+        grid-template: minmax(30px, 1.4fr) auto 27px auto 15px auto 20px auto 70px auto minmax(30px, 1fr) /minmax(20px, 1fr) minmax(auto, 520px) minmax(20px, 1fr);
+        &__logo {
+            svg{
+                width: 84px;
+                height: 100px;
+            }
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__info {
+            font-size: 14px;
+            line-height: normal;
+        }
+        &__btn {
+            grid-column: 2;
+            grid-row: 8;
+            width: 100%;
+        }
+        &__text {
+            font-size: 14px;
+        }
+        br{
+            display: block;
+        }
+    }
+    .oval-button {
+        font-size: 16px;
+        height: 56px;
+        line-height: 56px;
+    }
+}
+@media (max-width: 350px) {
+    .order-finish {
+        grid-template:  minmax(30px, 0.95fr) auto 29px auto 15px auto 20px auto 70px auto minmax(30px, 1fr) /minmax(20px, 1fr) minmax(auto, 520px) minmax(20px, 1fr);
+    }
+}

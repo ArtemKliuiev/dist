@@ -1,0 +1,92 @@
+
+//Page-two
+.quiz {
+    &__column1 {
+        grid-template: 1fr auto 1.005fr / 1fr auto 1.33fr;
+    }
+    &__column2 {
+        grid-template: 1fr auto 0.995fr /  minmax(30px, 1fr )  minmax(auto, 496px ) minmax(30px, 1fr );
+    }
+    &__bg-elip-one {
+        position: absolute;
+        top: 12.6%;
+        left: 7.9%;
+    }
+    &__bg-elip-two {
+        position: absolute;
+        bottom: 135px;
+        right: 98px;
+    }
+    &__input-info {
+        grid-template: auto 24px auto / 1fr;
+    }
+    &__button-one {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    &__button-two {
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+@media (max-width:800px) {
+    .quiz {
+        &__column2 {
+            grid-template: 1fr auto 1.8fr /  minmax(30px, 1fr )  minmax(auto, 496px ) minmax(30px, 1fr );
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .quiz {
+        &__main {
+            display: grid;
+            grid-template: 46vh 54vh  / 1fr ;
+        }
+        &__column1 {
+            grid-template: 1fr auto 0.12fr / 1fr auto 1fr;
+        }
+        &__column2 {
+            grid-template: 0.007fr auto 1.06fr /  minmax(5px, 1fr )  auto minmax(5px, 1fr );
+        }
+        &__input-info {
+            grid-row: 2;
+            grid-template: 1fr / minmax(auto, 160px) 15px minmax(auto, 160px);
+        }
+        &__button {
+            height: 104px;
+            grid-template: 1fr /1fr;
+            justify-items: center;
+            span{
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+        &__button-one {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        &__button-two {
+            grid-column: 3;
+            grid-row: 1;
+        }
+    }
+}
+@media (max-width: 330px) {
+    .quiz {
+        &__main {
+            display: grid;
+            grid-template: 44vh 56vh  / 1fr ;
+        }
+        &__column1 {
+            grid-template: 1fr auto 0.14fr / 1fr auto 1fr;
+        }
+        &__column2 {
+            grid-template: 0.045fr auto 1.06fr /  minmax(5px, 1fr )  auto minmax(5px, 1fr );
+        }
+        &__input-info {
+            grid-template: 1fr / minmax(auto, 132px) 16px minmax(auto, 132px);
+        }
+    }
+}

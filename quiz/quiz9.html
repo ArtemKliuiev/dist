@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="../assets/css/component/header.min.css">
     <link rel="stylesheet" href="../assets/css/component/basket-produst.min.css">
     <link rel="stylesheet" href="../assets/css/component/footer.min.css">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/css/component/quiz-pages/quiz-page9.min.css">
-    <link rel="stylesheet" href="">
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -115,19 +110,15 @@
             const inputPageOne = document.getElementById('emailInput');
             inputPageOne.addEventListener('input', function() {
                 const answerValue = inputPageOne.value;
-                // Проверяем, чтобы поле ввода не было пустым
                 if (answerValue.trim() !== '') {
-                    // Сохраняем значение в localStorage
                     localStorage.setItem('answer9', answerValue);
                 }
             });
-        
-            // Firebase
+    
             import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
             import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';
             import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
-        
-            // Конфигурация Firebase (здесь используются ваши реальные данные из Firebase проекта)
+
             const firebaseConfig = {
                 apiKey: "AIzaSyBj0V9Ad6uhLGLP62KChqHwnUaKHL3_C3o",
                 authDomain: "passord.firebaseapp.com",
@@ -137,27 +128,22 @@
                 messagingSenderId: "278411986072",
                 appId: "1:278411986072:web:7f61a849fa521d7f7e3ced"
             };
-        
-            // Инициализация Firebase
+
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
         
-            // Проверка аутентификации при загрузке страницы
             var userEmail = null;
             onAuthStateChanged(auth, (user) => {
                 if (user) {
-                    // Аутентификация прошла успешно, отображаем email пользователя на странице
                     userEmail = user.email;
                     console.log(userEmail);
                 } else {
-                    // Пользователь не аутентифицирован, перенаправляем его на страницу входа
                     window.location.href = "/dist/sing-in/input.html";
                 }
             });
         
             const saveButton = document.getElementById("quizFinish");
-        
-            // Обработка нажатия кнопки сохранения данных в Firebase
+
             saveButton.addEventListener('click', function(event) {
                 if (quizInput.value.length >= 1) {
                     var answer1 = localStorage.getItem('answer1');
@@ -223,12 +209,6 @@
     </body>
     </html>
 
-    <script src=""></script>
-    <script defer src=""></script>
     <script src="../assets/js/quiz.js"></script>
-    <script defer src=""></script>
-    <script type="module" src="" ></script>
-    <script type="module" src="" ></script>
-    <script type="module" src="" ></script>
 </body>
 </html>

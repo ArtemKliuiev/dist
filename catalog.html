@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/component/product.min.css">
     <link rel="stylesheet" href="assets/css/pages/catalog.min.css">
-    <link rel="stylesheet" href="">
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,14 +25,7 @@
     <meta name="description" content="">
     
     <title>Catalog</title>
-    
-    
-      
-      
-      
-      
-      
-      </head>
+</head>
 <body>
     <script>
         function checkForTouchScreen() {
@@ -131,12 +123,11 @@
             <div class="basket__line"></div>
             <div id="basket-goods" class="basket__goods">
             </div>
-            <div class="basket__no-goods-title"><span>Your cart is empty</span></div>
             <div class="basket__btn">
                 <a href="/dist/order.html" class="oval-button"><span>Check Out</span><span>•</span><span id="basket-total-price">$0.00</span></a>
             </div>
         </div>
-    </header><main >
+    </header><main>
         <div class="swiper">
             <div class="swiper-wrapper">
             <div class="swiper-slide" slide-index="1">
@@ -301,19 +292,18 @@
                         </svg>
                     </div>
                     <nav class="menu-two goods__menu-main">
-                        <div id="allGoods" data-filter="1" onclick="addAllGoods(); adaptiveBtn() " class="menu-two__item">All categories</div>
-                        <a id="vitamins" data-filter="2" onclick="vitam(); adaptiveBtn()" class="menu-two__item">Vitamins & Dietary Supplements</a>
-                        <a id="weight-loss" data-filter="8" onclick=" weights(); adaptiveBtn()" class="menu-two__item">Weight Loss</a>
-                        <a id="minerals" data-filter="4" onclick="mineralFun(); adaptiveBtn()" class="menu-two__item">Minerals</a>
-                        <a id="antioxidants" data-filter="3" onclick="antioxid(); adaptiveBtn()" class="menu-two__item anti">Antioxidants</a>
-                        <a id="probiotics" data-filter="7" onclick="probiot(); adaptiveBtn()" class="menu-two__item">Probiotics</a>
-                        <a id="painId" data-filter="5" onclick="painFun(); adaptiveBtn()" class="menu-two__item">Pain Relief</a>
-                        <a id="prenatalId" data-filter="6" onclick="prenatalFun(); adaptiveBtn()" class="menu-two__item">Prenatal Vitamins</a>
-                        <a id="saleId" data-filter="9" onclick="saleFun(); adaptiveBtn()" class="menu-two__item">Sale%</a>
+                        <div id="allGoods" onclick="addAllGoods(); adaptiveBtn()" class="menu-two__item">All categories</div>
+                        <a id="vitamins" onclick="vitam(); adaptiveBtn()" class="menu-two__item">Vitamins & Dietary Supplements</a>
+                        <a id="weight-loss" onclick=" weights(); adaptiveBtn()" class="menu-two__item">Weight Loss</a>
+                        <a id="minerals" onclick="mineralFun(); adaptiveBtn()" class="menu-two__item">Minerals</a>
+                        <a id="antioxidants" onclick="antioxid(); adaptiveBtn()" class="menu-two__item anti">Antioxidants</a>
+                        <a id="probiotics" onclick="probiot(); adaptiveBtn()" class="menu-two__item">Probiotics</a>
+                        <a id="painId" onclick="painFun(); adaptiveBtn()" class="menu-two__item">Pain Relief</a>
+                        <a id="prenatalId" onclick="prenatalFun(); adaptiveBtn()" class="menu-two__item">Prenatal Vitamins</a>
+                        <a id="saleId" onclick="saleFun(); adaptiveBtn()" class="menu-two__item">Sale%</a>
                     </nav>
                 </div>
             <div class="goods goods__goods">
-                <div class="preloager"><span></span></div>
                 <div class="goods__goods-main">
                     <div id="goods"></div>
                 </div>
@@ -531,17 +521,11 @@
             </div>
         </div>
     </footer>
-    
-    
-    
-    
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="assets/js/app.js"></script>
     <script src="assets/js/catalog.js"></script>
     <script defer src="assets/js/basket-goods.js"></script>
     <script type="module" src="assets/js/sing-exit.js" ></script>
-    <script type="module" src="" ></script>
-    <script type="module" src="assets/js/catalog-firebase.js" ></script>
+    <script type="module" src="assets/js/catalog-firebase.js"></script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+.input {
+    position: relative;
+    display: grid;
+    grid-template: minmax(100px , 1fr ) minmax(auto, 592px) 0.52fr 61px / 1fr minmax(auto, 920px) 1fr;
+    height: 100vh;
+    &__create-account {
+        grid-column: 2;
+        grid-row: 4;
+        padding: 0 20px;
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        a{
+            color: #FF7D4E;
+        }
+    }
+}
+@media (max-width:600px) {
+    .input {
+        display: block;
+        &__create-account {
+            display: grid;
+            grid-template: 91px auto 42px / 20px 1fr 20px;
+            font-size: 14px;
+            span{
+                grid-column: 2;
+                grid-row: 2;
+            }
+        }
+    }
+}

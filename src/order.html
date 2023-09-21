@@ -1,0 +1,162 @@
+---
+layout: default
+title: Orders
+link-pages: assets/css/pages/order.min.css
+css-component-one: 
+script-one: assets/js/order-form.js
+script-two: assets/js/order.js
+script-module: assets/js/order-firebase.js
+---
+
+<div class="top-line">
+    <a class="top-line__logo" href="/dist/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="50" viewBox="0 0 42 50" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3281 21.1655H26.6712V28.9876C26.6712 32.1164 24.1267 34.6625 20.9997 34.6625C17.8727 34.6625 15.3281 32.1164 15.3281 28.9876V21.1655Z" fill="#FF7D4E"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M34.3358 21.1655V28.9876C34.3358 36.3496 28.3577 42.3312 21 42.3312C13.6423 42.3312 7.66423 36.3496 7.66423 28.9876V21.1655H0V28.9876C0 40.5827 9.41168 49.9999 21 49.9999C32.5883 49.9999 42 40.5827 42 28.9876V21.1655H34.3358Z" fill="#725CF0"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9998 0C13.6422 0 7.66406 5.9816 7.66406 13.3436V21.1656H15.3283V13.3436C15.3283 10.2147 17.8728 7.66871 20.9998 7.66871C24.1268 7.66871 26.6714 10.2147 26.6714 13.3436V21.1656H34.3356V13.3436C34.3356 5.9816 28.3575 0 20.9998 0Z" fill="#FDC672"/>
+        </svg>
+    </a>
+</div>
+<div class="adaprive-list ">
+    <div class="adaprive-list__img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M26.9973 27.116V27.1008L25.5989 10.2262C25.5374 9.2207 24.6974 8.43359 23.6781 8.43359H21.8033C21.6292 5.40703 19.0937 3 15.9947 3C12.9009 3 10.3603 5.40703 10.1912 8.43359H8.3165C7.29717 8.43359 6.45713 9.2207 6.39566 10.2262L5.00241 27.0906V27.116C4.9768 27.6035 5.15608 28.0859 5.49415 28.4414C5.83221 28.7969 6.3137 29 6.80544 29H25.1943C25.686 29 26.1624 28.7969 26.5056 28.4414C26.8385 28.0859 27.0229 27.6035 26.9973 27.116ZM15.9947 4.82812C18.0744 4.82812 19.7801 6.41758 19.9491 8.43359H12.0404C12.2094 6.41758 13.9202 4.82812 15.9947 4.82812ZM6.84642 27.1719L8.23966 10.3633V10.3379C8.23966 10.2973 8.27552 10.2617 8.32162 10.2617H23.6832C23.7242 10.2617 23.76 10.2922 23.7652 10.3379V10.3531L25.1482 27.1719H6.84642Z" fill="black"/>
+        </svg>
+    </div>
+    <div class="adaprive-list__title">Today’s total</div>
+    <div class="adaprive-list__arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
+            <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z" fill="black"/>
+        </svg>
+    </div>
+    <div class="adaprive-list__price">$0.00</div>
+    <div class="adaprive-list__line"></div>
+</div>
+<div class="order-main">
+    <div class="order-main__title">Delivery Information</div>
+    <div class="order-main__info">
+        <div class="order-main__one-input order-main__first-name">
+            <div class="order-main__one-input-title">First Name</div>
+            <input id="input-first-name" class="order-main__one-input-input" aria-label="first-name" type="text">
+            <div class="order-main__error order-main__error-first-name"></div>
+        </div>
+        <div class="order-main__one-input order-main__last-name">
+            <div class="order-main__one-input-title">Last Name</div>
+            <input id="input-last-name" class="order-main__one-input-input" aria-label="last-name" type="text">
+            <div class="order-main__error order-main__error-last-name"></div>
+        </div>
+        <div class="order-main__one-input order-main__adress">
+            <div class="order-main__one-input-title">Address Line 1</div>
+            <input id="input-adress-one" class="order-main__one-input-input" aria-label="adress" type="text">
+            <div class="order-main__error order-main__error-adress-one"></div>
+        </div>
+        <div class="order-main__one-input order-main__adress-two">
+            <div class="order-main__one-input-title">Address Line 2</div>
+            <input id="input-adress-two" class="order-main__one-input-input" aria-label="adress-line2" type="text">
+            <div class="order-main__error order-main__error-adress-two"></div>
+        </div>
+        <div class="order-main__one-input order-main__city">
+            <div class="order-main__one-input-title">City</div>
+            <input id="input-city" class="order-main__one-input-input" aria-label="city" type="text">
+            <div class="order-main__error order-main__error-ciry"></div>
+        </div>
+        <div class="order-main__one-input order-main__email">
+            <div class="order-main__one-input-title">Email</div>
+            <input id="input-email" class="order-main__one-input-input" aria-label="email" type="text">
+            <div class="order-main__error order-main__error-email"></div>
+        </div>
+        <div class="order-main__one-input order-main__phone">
+            <div class="order-main__one-input-title">Phone Number</div>
+            <input id="input-phone" class="order-main__one-input-input" aria-label="number" type="number">
+            <div class="order-main__error order-main__error-phone"></div>
+        </div>
+        <div class="order-main__one-input order-main__region">
+            <div class="order-main__one-input-title order-main__region-title-one">State / Province</div>
+            <div class="order-main__region-select dropdown">
+                <button id="input-country" aria-label="select-btn" class="dropbtn">NY</button>
+                <div class="dropdown-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 15 9" fill="none">
+                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M14.8788 1.46376L13.4339 3.6646e-07L7.43942 6.07249L1.44495 -6.31608e-08L-3.2942e-07 1.46376L7.43942 9L14.8788 1.46376Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="dropdown-content">
+                    <a onclick="castumSel(1)">Kiev</a>
+                    <a onclick="castumSel(2)">Poltava</a>
+                    <a onclick="castumSel(3)">Sumy</a>
+                </div>
+                <div class="order-main__error order-main__error-region"></div>
+            </div>
+            <div class="order-main__region-title-two order-main__region-numbers ">
+                <div class="order-main__one-input-title order-main__region-title">ZIP / Postal Code</div>
+                <input id="input-region-num" type="number" class="order-main__region-number">
+                <div class="order-main__error order-main__error-region-num"></div>
+            </div>
+        </div>
+    </div>
+    <div class="order-main__order">
+        <div class="order-main__order-column">
+            <div  id="goods" class="order-main__order-goods">
+            </div>
+            <div class="order-main__order-stroke"></div>
+            <div class="order-main__order-info">
+                <div class="order-main__order-info-title order-main__order-info-subtotal">
+                    <span>Subtotal</span><span id="total-price">$0.00</span>
+                </div>
+                <div class="order-main__order-info-title order-main__order-info-discount">
+                    <span>Discount</span><span id="discount-price" >-$0.00</span>
+                </div>
+                <div class="order-main__order-info-title order-main__order-info-shipping ">
+                    <span>Shipping</span><span id="delivery">$9.20</span>
+                </div>
+            </div>
+            <div class="order-main__order-price">
+                <span>Today’s Total:</span>
+                <span id="all-price" >$0.00</span>
+            </div>
+            <div onclick="orderBtn()" class="order-main__order-btn oval-button">Place order</div>
+        </div>
+    </div>
+    <div class="order-main__biling">
+        <div class="order-main__biling-title">Biling</div>
+        <div class="order-main__one-input order-main__card-number">
+            <div class="order-main__one-input-title">Card Number</div>
+            <input id="input-card-num" placeholder="XXXX XXXX XXXX XXXX" class="profile__one-input-input" maxlength="19" aria-label="card-number" type="text">
+            <div class="order-main__error order-main__error-card-num"></div>
+        </div>
+        <div class="order-main__one-input order-main__data">
+            <div class="order-main__one-input-title">Expiration</div>
+            <input id="input-card-data" class="order-main__one-input-input" type="text"  maxlength="5" placeholder="MM/YY"> 
+            <div class="order-main__error order-main__error-card-data"></div>
+        </div>
+        <div class="order-main__one-input order-main__cvc">
+            <div class="order-main__one-input-title">CVC</div>
+            <input id="input-card-cvc" placeholder="CVC" maxlength="3" class="order-main__one-input-input" aria-label="card-number" type="text">
+            <div class="order-main__error order-main__error-card-cvc"></div>
+        </div>
+    </div>
+</div>
+<div class="order-btn-adaptive">
+    <div onclick="orderBtn()" class="oval-button">Place order</div>
+</div>
+<div class="footer-two">
+    <a href="/dist/order-finish.html" class="footer-two__link">Return Policy</a>
+    <a href="" class="footer-two__link">Privacy Policy</a>
+    <a href="" class="footer-two__link">Terms & Conditions</a>
+    <div class="footer-two__logos">
+        <div class="footer-two__loge-one">
+            <img src="https://artemkliuiev.github.io/dist/assets/images/svg/logos-line1.webp" alt="">
+        </div>
+        <div class="footer-two__loge-two">
+            <img src="https://artemkliuiev.github.io/dist/assets/images/svg/logos-line.webp" alt="">
+        </div>
+    </div>
+    <div class="footer-two__logos-mini">
+        <img src="https://artemkliuiev.github.io/dist/assets/images/svg/Logos-mini.webp" alt="">
+    </div>
+</div>
+
+
+
+<script type="module">
+
+</script>
